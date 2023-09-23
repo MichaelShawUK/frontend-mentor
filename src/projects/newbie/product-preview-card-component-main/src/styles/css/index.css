@@ -1,0 +1,92 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+@import "https://fonts.googleapis.com/css?family=Fraunces";
+body {
+  margin: 0;
+  height: 100vh;
+  background: hsl(30, 38%, 92%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+.app {
+  display: grid;
+  background: hsl(0, 0%, 100%);
+  grid-template-columns: 1fr 1fr;
+  max-width: 600px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.app img {
+  width: 100%;
+}
+.app .information {
+  margin: 2rem;
+}
+.app .information .product-details .category {
+  color: hsl(228, 12%, 48%);
+  font-weight: 700;
+  letter-spacing: 5px;
+  font-size: 13px;
+}
+.app .information .product-details .name {
+  font-family: "Fraunces";
+  font-size: 34px;
+  line-height: 36px;
+  margin: 20px 0;
+}
+.app .information .product-details .description {
+  color: hsl(228, 12%, 48%);
+  font-weight: 700;
+  line-height: 24px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.app .information .product-details .price {
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.app .information .product-details .price .current-price {
+  color: hsl(158, 36%, 37%);
+  font-weight: 700;
+  font-family: "Fraunces";
+  font-size: 32px;
+  margin: 0 16px 0 0;
+}
+.app .information .product-details .price .previous-price {
+  color: hsl(228, 12%, 48%);
+  text-decoration-line: line-through;
+  font-weight: 500;
+  font-size: 12px;
+  font-weight: 700;
+}
+.app .information button {
+  border: none;
+  background: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform ease 0.2s;
+}
+.app .information button:hover {
+  background: hsl(158, 33%, 22%);
+}
+.app .information button:active {
+  transform: scale(0.98);
+}
+.app .information button .cart-icon img {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=index.css.map */

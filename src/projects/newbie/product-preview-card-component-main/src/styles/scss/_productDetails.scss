@@ -1,0 +1,42 @@
+@mixin product-details() {
+  .category {
+    color: $dark-grayish-blue;
+    font-weight: 700;
+    letter-spacing: 5px;
+    font-size: 13px;
+  }
+  .name {
+    font-family: "Fraunces";
+    font-size: 34px;
+    line-height: 36px;
+    margin: 20px 0;
+  }
+  .description {
+    color: $dark-grayish-blue;
+    font-weight: 700;
+    line-height: 24px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+  .price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+
+    .current-price {
+      color: $dark-cyan;
+      font-weight: 700;
+      font-family: "Fraunces";
+      font-size: 32px;
+      margin: 0 16px 0 0;
+    }
+
+    .previous-price {
+      color: $dark-grayish-blue;
+      text-decoration-line: line-through;
+      font-weight: 500;
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+}

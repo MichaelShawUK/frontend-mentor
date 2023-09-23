@@ -1,0 +1,67 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+@import "https://fonts.googleapis.com/css?family=Fraunces";
+@import "colors";
+@import "productDetails";
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: $cream;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font: {
+    family: "Montserrat";
+    weight: 500;
+  }
+}
+
+.app {
+  display: grid;
+  background: $white;
+  grid-template-columns: 1fr 1fr;
+  max-width: 600px;
+  border-radius: 14px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+  .information {
+    margin: 2rem;
+
+    .product-details {
+      @include product-details;
+    }
+
+    button {
+      border: none;
+      background: $dark-cyan;
+      color: $white;
+      width: 100%;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform ease 0.2s;
+
+      &:hover {
+        background: hsl(158, 33%, 22%);
+      }
+      &:active {
+        transform: scale(0.98);
+      }
+
+      .cart-icon img {
+        height: 16px;
+        width: 16px;
+        margin-right: 10px
+      }
+    }
+  }
+}
