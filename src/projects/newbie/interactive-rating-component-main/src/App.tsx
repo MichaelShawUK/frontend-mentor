@@ -1,6 +1,6 @@
-import "./src/styles/css/index.css";
-import UserPrompt from "./src/components/UserPrompt";
-import ThankYou from "./src/components/ThankYou";
+import "./styles/css/index.css";
+import UserPrompt from "./components/UserPrompt";
+import ThankYou from "./components/ThankYou";
 
 import { useState } from "react";
 
