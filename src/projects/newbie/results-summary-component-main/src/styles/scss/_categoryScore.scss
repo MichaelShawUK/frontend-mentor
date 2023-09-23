@@ -1,0 +1,42 @@
+@mixin color-category($color) {
+  background-color: rgba($color, $alpha);
+  .title {
+    color: $color;
+  }
+  &:hover {
+    outline: 1px solid $color;
+  }
+}
+
+@mixin category-score() {
+  display: flex;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+
+  .icon {
+    margin-right: 0.5rem;
+  }
+
+  .score {
+    margin-left: auto;
+    color: #777;
+    .total {
+      font-weight: 700;
+      color: $darkGrayBlue;
+    }
+  }
+
+  &.reaction {
+    @include color-category($red);
+  }
+  &.memory {
+    @include color-category($orange);
+  }
+  &.verbal {
+    @include color-category($green);
+  }
+  &.visual {
+    @include color-category($blue);
+  }
+}

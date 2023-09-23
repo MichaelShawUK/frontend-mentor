@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font: {
+    family: "Arial";
+    size: 18px;
+    weight: 500;
+  }
+}

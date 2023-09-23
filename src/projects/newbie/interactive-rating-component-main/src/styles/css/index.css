@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial";
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=index.css.map */

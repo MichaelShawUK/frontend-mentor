@@ -1,0 +1,25 @@
+@import "result";
+@import "summary";
+
+@mixin app() {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 1rem;
+  width: 600px;
+  box-shadow: 4px 4px 7px rgb(210, 216, 228);
+
+  .result {
+    @include result;
+  }
+
+  .summary {
+    @include summary;  
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: none;
+  }
+}
