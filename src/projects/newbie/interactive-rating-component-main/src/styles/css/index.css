@@ -1,13 +1,79 @@
+@import "https://fonts.googleapis.com/css?family=Overpass";
 body {
   margin: 0;
   height: 100vh;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Arial";
-  font-size: 18px;
-  font-weight: 500;
+  background: RGB(20, 21, 25);
+  font-family: "Overpass";
+  font-size: 15px;
+}
+body .app {
+  max-width: 320px;
+  background: linear-gradient(RGB(36, 42, 48), RGB(22, 29, 39));
+  color: rgb(255, 255, 255);
+  padding: 2rem;
+  border-radius: 2rem;
+}
+body .app .circle {
+  background: rgb(37, 45, 55);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .app p {
+  color: rgb(149, 158, 172);
+  line-height: 24px;
+}
+body .app .rating {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 16px 0;
+  color: rgb(149, 158, 172);
+  font-weight: 700;
+}
+body .app .rating .circle {
+  cursor: pointer;
+  vertical-align: text-top;
+}
+body .app .rating .circle span {
+  position: relative;
+  top: 2px;
+  pointer-events: none;
+}
+body .app .rating .circle:hover {
+  background: rgb(251, 116, 19);
+  color: rgb(255, 255, 255);
+}
+body .app .rating .circle:active {
+  transform: scale(0.97);
+}
+body .app .rating .circle.selected {
+  background: rgb(149, 158, 172);
+  color: rgb(255, 255, 255);
+}
+body .app button {
+  cursor: pointer;
+  background: rgb(251, 116, 19);
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  letter-spacing: 4px;
+  border-radius: 24px;
+}
+body .app button:hover {
+  background: rgb(255, 255, 255);
+  color: rgb(251, 116, 19);
+}
+body .app button:active {
+  transform: scale(0.99);
 }
 
 /*# sourceMappingURL=index.css.map */
