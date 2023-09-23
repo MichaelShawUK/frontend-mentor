@@ -2,7 +2,7 @@ import thanks from "../assets/images/illustration-thank-you.svg";
 
 function ThankYou({ rating }: { rating: number | null }) {
   return (
-    <div className="thanks">
+    <div className="thank-you">
       <img src={thanks}></img>
       <div className="user-rating">
         <span className="baseline-correct">You selected {rating} out of 5</span>

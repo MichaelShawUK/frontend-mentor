@@ -1,0 +1,28 @@
+@mixin rating() {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 16px 0;
+  color: $light-grey;
+  font-weight: 700;
+
+  .circle {
+    cursor: pointer;
+    vertical-align: text-top;
+
+    span {
+      pointer-events: none;
+    }
+    &:hover {
+      background: $orange;
+      color: $white;
+    }
+    &:active {
+      transform: scale(0.97);
+    }
+    &.selected {
+      background: $light-grey;
+      color: $white;
+    }
+  }
+}

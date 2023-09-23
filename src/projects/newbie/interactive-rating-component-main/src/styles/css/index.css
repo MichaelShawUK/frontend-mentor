@@ -20,20 +20,7 @@ body .app .baseline-correct {
   position: relative;
   top: 2px;
 }
-body .app .thanks {
-  text-align: center;
-}
-body .app .thanks .user-rating {
-  font-weight: 400;
-  color: rgb(251, 116, 19);
-  background: rgb(37, 45, 55);
-  text-align: center;
-  margin: 24px auto;
-  padding: 8px 14px;
-  width: max-content;
-  border-radius: 14px;
-}
-body .app .circle {
+body .app .user-prompt .circle {
   background: rgb(37, 45, 55);
   width: 50px;
   height: 50px;
@@ -42,11 +29,11 @@ body .app .circle {
   justify-content: center;
   align-items: center;
 }
-body .app p {
+body .app .user-prompt p {
   color: rgb(149, 158, 172);
   line-height: 24px;
 }
-body .app .rating {
+body .app .user-prompt .rating {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
@@ -54,25 +41,25 @@ body .app .rating {
   color: rgb(149, 158, 172);
   font-weight: 700;
 }
-body .app .rating .circle {
+body .app .user-prompt .rating .circle {
   cursor: pointer;
   vertical-align: text-top;
 }
-body .app .rating .circle span {
+body .app .user-prompt .rating .circle span {
   pointer-events: none;
 }
-body .app .rating .circle:hover {
+body .app .user-prompt .rating .circle:hover {
   background: rgb(251, 116, 19);
   color: rgb(255, 255, 255);
 }
-body .app .rating .circle:active {
+body .app .user-prompt .rating .circle:active {
   transform: scale(0.97);
 }
-body .app .rating .circle.selected {
+body .app .user-prompt .rating .circle.selected {
   background: rgb(149, 158, 172);
   color: rgb(255, 255, 255);
 }
-body .app button {
+body .app .user-prompt button {
   cursor: pointer;
   background: rgb(251, 116, 19);
   color: rgb(255, 255, 255);
@@ -83,12 +70,29 @@ body .app button {
   letter-spacing: 4px;
   border-radius: 24px;
 }
-body .app button:hover {
+body .app .user-prompt button:hover {
   background: rgb(255, 255, 255);
   color: rgb(251, 116, 19);
 }
-body .app button:active {
+body .app .user-prompt button:active {
   transform: scale(0.99);
+}
+body .app .thank-you {
+  text-align: center;
+}
+body .app .thank-you .user-rating {
+  font-weight: 400;
+  color: rgb(251, 116, 19);
+  background: rgb(37, 45, 55);
+  text-align: center;
+  margin: 24px auto;
+  padding: 8px 14px;
+  width: max-content;
+  border-radius: 14px;
+}
+body .app .thank-you p {
+  color: rgb(149, 158, 172);
+  line-height: 24px;
 }
 
 /*# sourceMappingURL=index.css.map */

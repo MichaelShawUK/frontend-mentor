@@ -1,0 +1,43 @@
+@import "rating";
+
+@mixin user-prompt() {
+  .circle {
+    background: $dark-blue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;;
+    align-items:center;
+  }
+
+  p {
+    color: $light-grey;
+    line-height: 24px;
+  }
+
+  .rating {
+    @include rating;
+  }
+
+  button {
+    cursor: pointer;
+    background: $orange;
+    color: $white;
+    font-weight: 700;
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    letter-spacing: 4px;
+    border-radius: 24px;
+
+    &:hover {
+      background: $white;
+      color: $orange;
+    }
+
+    &:active {
+      transform: scale(0.99)
+    }
+  }
+}

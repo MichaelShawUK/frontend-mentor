@@ -1,5 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Overpass";
 @import "colors";
+@import "thankYou";
+@import "userPrompt";
 
 body {
   margin: 0;
@@ -26,84 +28,12 @@ body {
       top: 2px;
     }
 
-    .thanks {
-      text-align: center;
-
-      .user-rating {
-        font-weight: 400;
-        color: $orange;
-        background: $dark-blue;
-        text-align: center;
-        margin: 24px auto;
-        padding: 8px 14px;
-        width: max-content;
-        border-radius: 14px;
-      }
+    .user-prompt {
+      @include user-prompt;
     }
 
-    .circle {
-      background: $dark-blue;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;;
-      align-items:center;
-    }
-
-    p {
-      color: $light-grey;
-      line-height: 24px;
-    }
-
-    .rating {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 15px;
-      padding: 16px 0;
-      color: $light-grey;
-      font-weight: 700;
-
-      .circle {
-        cursor: pointer;
-        vertical-align: text-top;
-
-        span {
-          pointer-events: none;
-        }
-        &:hover {
-          background: $orange;
-          color: $white;
-        }
-        &:active {
-          transform: scale(0.97);
-        }
-        &.selected {
-          background: $light-grey;
-          color: $white;
-        }
-      }
-    }
-
-    button {
-      cursor: pointer;
-      background: $orange;
-      color: $white;
-      font-weight: 700;
-      border: none;
-      width: 100%;
-      padding: 1rem;
-      letter-spacing: 4px;
-      border-radius: 24px;
-
-      &:hover {
-        background: $white;
-        color: $orange;
-      }
-
-      &:active {
-        transform: scale(0.99)
-      }
+    .thank-you {
+      @include thank-you;
     }
   }
 }

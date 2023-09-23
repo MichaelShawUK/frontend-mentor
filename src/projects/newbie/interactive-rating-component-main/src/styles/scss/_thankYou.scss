@@ -1,0 +1,19 @@
+@mixin thank-you() {
+  text-align: center;
+
+    .user-rating {
+      font-weight: 400;
+      color: $orange;
+      background: $dark-blue;
+      text-align: center;
+      margin: 24px auto;
+      padding: 8px 14px;
+      width: max-content;
+      border-radius: 14px;
+    }
+
+    p {
+      color: $light-grey;
+      line-height: 24px;
+    }
+}

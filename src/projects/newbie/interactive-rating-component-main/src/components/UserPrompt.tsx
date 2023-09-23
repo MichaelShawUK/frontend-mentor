@@ -11,7 +11,7 @@ interface Props {
 
 function UserPrompt({ onSubmission, useRatingState }: Props) {
   return (
-    <>
+    <div className="user-prompt">
       <div className="circle">
         <img src={star}></img>
       </div>
@@ -22,7 +22,7 @@ function UserPrompt({ onSubmission, useRatingState }: Props) {
       </p>
       <Rating useRatingState={useRatingState} />
       <button onClick={onSubmission}>SUBMIT</button>
-    </>
+    </div>
   );
 }
 
