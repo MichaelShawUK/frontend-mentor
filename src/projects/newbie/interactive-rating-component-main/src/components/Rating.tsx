@@ -1,7 +1,12 @@
-import { useState } from "react";
+interface Props {
+  useRatingState: [
+    number | null,
+    React.Dispatch<React.SetStateAction<number | null>>
+  ];
+}
 
-function Rating() {
-  const [rating, setRating] = useState<number | null>(null);
+function Rating({ useRatingState }: Props) {
+  const [rating, setRating] = useRatingState;
 
   function ratingHandler(score: number) {
     if (score === rating) setRating(null);
@@ -19,7 +24,7 @@ function Rating() {
             className={className}
             onClick={() => ratingHandler(score)}
           >
-            <span>{score}</span>
+            <span className="baseline-correct">{score}</span>
           </div>
         );
       })}

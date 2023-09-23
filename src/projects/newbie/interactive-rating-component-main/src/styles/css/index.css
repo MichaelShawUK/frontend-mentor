@@ -16,6 +16,23 @@ body .app {
   padding: 2rem;
   border-radius: 2rem;
 }
+body .app .baseline-correct {
+  position: relative;
+  top: 2px;
+}
+body .app .thanks {
+  text-align: center;
+}
+body .app .thanks .user-rating {
+  font-weight: 400;
+  color: rgb(251, 116, 19);
+  background: rgb(37, 45, 55);
+  text-align: center;
+  margin: 24px auto;
+  padding: 8px 14px;
+  width: max-content;
+  border-radius: 14px;
+}
 body .app .circle {
   background: rgb(37, 45, 55);
   width: 50px;
@@ -42,8 +59,6 @@ body .app .rating .circle {
   vertical-align: text-top;
 }
 body .app .rating .circle span {
-  position: relative;
-  top: 2px;
   pointer-events: none;
 }
 body .app .rating .circle:hover {

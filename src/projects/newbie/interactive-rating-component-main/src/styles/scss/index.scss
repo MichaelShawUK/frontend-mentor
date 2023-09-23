@@ -21,6 +21,26 @@ body {
     padding: 2rem;
     border-radius: 2rem;
 
+    .baseline-correct {
+      position: relative;
+      top: 2px;
+    }
+
+    .thanks {
+      text-align: center;
+
+      .user-rating {
+        font-weight: 400;
+        color: $orange;
+        background: $dark-blue;
+        text-align: center;
+        margin: 24px auto;
+        padding: 8px 14px;
+        width: max-content;
+        border-radius: 14px;
+      }
+    }
+
     .circle {
       background: $dark-blue;
       width: 50px;
@@ -49,8 +69,6 @@ body {
         vertical-align: text-top;
 
         span {
-          position: relative;
-          top: 2px;
           pointer-events: none;
         }
         &:hover {
