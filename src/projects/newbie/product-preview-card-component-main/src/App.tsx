@@ -1,24 +1,20 @@
 import "./styles/css/index.css";
 import desktopImage from "../src/assets/images/image-product-desktop.jpg";
+import mobileImage from "../src/assets/images/image-product-mobile.jpg";
 import cartIcon from "../src/assets/images/icon-cart.svg";
+import useViewMode from "./hooks/useViewMode";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
+  const viewMode = useViewMode();
+
+  const productImage = viewMode === "MOBILE" ? mobileImage : desktopImage;
+
   return (
     <div className="app">
-      <img src={desktopImage}></img>
+      <img src={productImage}></img>
       <div className="information">
-        <div className="product-details">
-          <div className="category">PERFUME</div>
-          <h2 className="name">Gabrielle Essence Eau De Parfum</h2>
-          <p className="description">
-            A floral, solar and voluptuous interpretation composed by Oliver
-            Polge, Perfumer-Creator for the house of CHANEL.
-          </p>
-          <div className="price">
-            <p className="current-price">$149.99</p>
-            <p className="previous-price">$169.99</p>
-          </div>
-        </div>
+        <ProductDetails />
         <button>
           <i className="cart-icon">
             <img src={cartIcon}></img>

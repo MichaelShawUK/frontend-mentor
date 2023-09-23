@@ -88,5 +88,16 @@ body {
   width: 16px;
   margin-right: 10px;
 }
+@media (max-width: 600px) {
+  .app .information {
+    margin: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .app {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
+}
 
 /*# sourceMappingURL=index.css.map */
