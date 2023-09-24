@@ -71,7 +71,7 @@
         background: $bright-blue;
         color: white;
         border-radius: 10px;
-        box-shadow: 0 4px 8px $desaturated-blue;
+        box-shadow: 0 12px 10px $card-shadow;
 
         &:hover {
           background: $dark-blue;
@@ -90,5 +90,9 @@
         }
       }
     }
+  }
+
+  @media (max-width: 450px) {
+    padding: 15px 20px;
   }
 }

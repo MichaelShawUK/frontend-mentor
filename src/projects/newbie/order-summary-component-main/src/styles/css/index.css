@@ -26,6 +26,10 @@ body .app {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 12px 12px hsl(224, 23%, 85%);
+  margin: 10px;
+}
+body .app .hero {
+  width: 100%;
 }
 body .app .order-summary {
   padding: 30px 40px;
@@ -92,7 +96,7 @@ body .app .order-summary .order-actions button.confirm {
   background: hsl(245, 75%, 52%);
   color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 8px hsl(224, 23%, 55%);
+  box-shadow: 0 12px 10px hsl(224, 23%, 85%);
 }
 body .app .order-summary .order-actions button.confirm:hover {
   background: hsl(223, 47%, 23%);
@@ -106,6 +110,11 @@ body .app .order-summary .order-actions button.cancel {
 }
 body .app .order-summary .order-actions button.cancel:hover {
   color: hsl(223, 47%, 23%);
+}
+@media (max-width: 450px) {
+  body .app .order-summary {
+    padding: 15px 20px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

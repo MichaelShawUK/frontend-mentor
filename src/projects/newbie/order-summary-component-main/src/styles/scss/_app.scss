@@ -6,8 +6,15 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 12px 12px $card-shadow;
+  margin: 10px;
+
+  .hero {
+    width: 100%;
+  }
 
   .order-summary {
     @include order-summary;
   }
+
+
 }
