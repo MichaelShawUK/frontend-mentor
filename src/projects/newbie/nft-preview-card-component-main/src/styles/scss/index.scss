@@ -1,0 +1,20 @@
+@import "https://fonts.googleapis.com/css?family=Outfit";
+@import "colors";
+@import "app";
+
+body {
+  font: {
+    family: "Outfit";
+    size: 18px;
+  }
+  background: $main-bg;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .app {
+    @include app;
+  }
+}

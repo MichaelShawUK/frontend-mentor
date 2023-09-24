@@ -1,0 +1,105 @@
+@import "https://fonts.googleapis.com/css?family=Outfit";
+body {
+  font-family: "Outfit";
+  font-size: 18px;
+  background: hsl(217, 54%, 11%);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .app {
+  background: hsl(216, 50%, 16%);
+  width: 320px;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 20px 6px 20px RGB(12, 23, 41);
+}
+body .app .image-container {
+  position: relative;
+  cursor: pointer;
+}
+body .app .image-container .nft-image {
+  width: 100%;
+  border-radius: 8px;
+}
+body .app .image-container .overlay {
+  display: none;
+}
+body .app .image-container:hover .overlay {
+  display: block;
+  background: rgba(0, 255, 247, 0.3);
+  position: absolute;
+  top: 0;
+  height: 320px;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+body .app .nft-information {
+  color: hsl(215, 51%, 70%);
+}
+body .app .nft-information .name {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  width: max-content;
+  cursor: pointer;
+}
+body .app .nft-information .name:hover {
+  color: rgb(0, 255, 247);
+}
+body .app .nft-information .description {
+  font-weight: 300;
+  line-height: 30px;
+}
+body .app .nft-information .availability {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid hsl(215, 32%, 27%);
+  margin-bottom: 10px;
+}
+body .app .nft-information .availability .price {
+  color: rgb(0, 255, 247);
+  font-weight: 600;
+}
+body .app .nft-information .availability .price .icon {
+  position: relative;
+  top: 3px;
+}
+body .app .nft-information .availability .price .icon img {
+  width: 12px;
+}
+body .app .nft-information .availability .time-remaining .icon {
+  position: relative;
+  top: 3px;
+}
+body .app .nft-information .availability .icon {
+  margin-right: 10px;
+}
+body .app .nft-information .availability .icon img {
+  height: 20px;
+  width: 20px;
+}
+body .app .nft-information .creator {
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+}
+body .app .nft-information .creator .avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  outline: 1px solid hsl(0, 0%, 100%);
+  margin-right: 16px;
+}
+body .app .nft-information .creator .name {
+  font-weight: 300;
+  margin: 0;
+}
+
+/*# sourceMappingURL=index.css.map */
