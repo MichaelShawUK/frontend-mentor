@@ -1,0 +1,107 @@
+@import "https://fonts.googleapis.com/css?family=Inter:400";
+@import "https://fonts.googleapis.com/css?family=Inter:700";
+@import "https://fonts.googleapis.com/css?family=Lexend+Deca:400";
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background: hsl(233, 47%, 7%);
+  color: hsl(0, 0%, 100%);
+  container-type: inline-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.app .information {
+  background: hsl(244, 38%, 16%);
+  padding: 50px;
+  padding-right: 70px;
+}
+.app .information .headline {
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+.app .information .headline .highlight {
+  color: rgb(170, 92, 219);
+}
+.app .information .description {
+  color: hsla(0, 0%, 100%, 0.75);
+  font-size: 15px;
+  line-height: 22px;
+  margin-bottom: 60px;
+}
+.app .information .stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.app .information .stats .stat > p {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+.app .information .stats .stat > h6 {
+  font-family: "Lexend Deca";
+  font-weight: 400;
+  color: hsla(0, 0%, 100%, 0.6);
+  letter-spacing: 2px;
+}
+.app .image-container {
+  position: relative;
+}
+.app .image-container img {
+  width: 100%;
+  display: block;
+}
+.app .image-container .overlay {
+  position: absolute;
+  background: rgba(100, 4, 160, 0.6);
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@container (width < 1000px) {
+  .app {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 20px auto;
+    max-width: 450px;
+  }
+  .app .information {
+    padding: 34px;
+    text-align: center;
+  }
+  .app .information .headline {
+    font-size: 30px;
+  }
+  .app .information .description {
+    margin-bottom: 24px;
+  }
+  .app .information .stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+@media (width < 1000px) {
+  body {
+    display: block;
+    padding: 0 20px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

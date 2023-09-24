@@ -1,0 +1,65 @@
+@mixin app() {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  .information {
+    background: $card-bg;
+    padding: 50px;
+    padding-right: 70px;
+
+    .headline {
+      font-size: 36px;
+      margin-bottom: 24px;
+
+      .highlight {
+        color: $accent;
+      }
+    }
+
+    .description {
+      color: $main-para;
+      font-size: 15px;
+      line-height: 22px;
+      margin-bottom: 60px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      
+      .stat {
+        >p {
+          font-weight: 700;
+          font-size: 24px;
+          margin-bottom: 6px;
+        }
+        >h6 {
+          font-family: "Lexend Deca";
+          font-weight: 400;
+          color: $stat-heading;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+
+  .image-container {
+    position: relative;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      background: $overlay;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -2,10 +2,11 @@
 // import ResultsSummary from "./projects/newbie/results-summary-component-main/src/App";
 // import ProductPreviewCard from "./projects/newbie/product-preview-card-component-main/src/App";
 // import NFTPreviewCard from "./projects/newbie/nft-preview-card-component-main/src/App";
-import OrderSummary from "./projects/newbie/order-summary-component-main/src/App";
+// import OrderSummary from "./projects/newbie/order-summary-component-main/src/App";
+import StatsPreview from "./projects/newbie/stats-preview-card-component-main/src/App";
 
 function App() {
-  return <OrderSummary />;
+  return <StatsPreview />;
 }
 
 export default App;
