@@ -1,0 +1,94 @@
+@mixin order-summary() {
+  padding: 30px 40px;
+  text-align: center;
+
+  >h2 {
+    font-weight: 900;
+    margin-bottom: 14px;
+    color: $dark-blue;
+  }
+
+  .description {
+    color: $desaturated-blue;
+    margin: 0 30px;
+    margin-bottom: 20px;
+    line-height: 25px;
+  }
+
+  .item {
+    display: flex;
+    background: $very-pale-blue;
+    padding: 20px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+
+    .icon {
+      margin-right: 20px;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: auto;
+
+      .name {
+        font-weight: 700;
+        color: $dark-blue;
+      }
+      .price {
+        color: $desaturated-blue;
+      }
+    }
+
+    .change-btn {
+      cursor: pointer;
+      border: none;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration-line: underline;
+      background: transparent;
+      color: $bright-blue;
+
+      &:hover {
+        color: $desaturated-blue;
+      }
+    }
+  }
+
+  .order-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+      border: none;
+      padding: 16px;
+      font-weight: 700;
+      cursor: pointer;
+
+      &.confirm {
+        background: $bright-blue;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px $desaturated-blue;
+
+        &:hover {
+          background: $dark-blue;
+        }
+        &:active {
+          transform: scale(0.99);
+        }
+      }
+
+      &.cancel {
+        background: transparent;
+        color: $desaturated-blue;
+
+        &:hover {
+          color: $dark-blue;  
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "orderSummary";
+
+@mixin app() {
+  background: white;
+  max-width: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 12px $card-shadow;
+
+  .order-summary {
+    @include order-summary;
+  }
+}

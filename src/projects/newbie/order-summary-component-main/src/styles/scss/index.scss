@@ -1,0 +1,33 @@
+@import "https://fonts.googleapis.com/css?family=Red+Hat+Display:500";
+@import "https://fonts.googleapis.com/css?family=Red+Hat+Display:700";
+@import "https://fonts.googleapis.com/css?family=Red+Hat+Display:900";
+@import "colors";
+@import "app";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: {
+    family: "Red Hat Display";
+    size: 16px;
+    weight: 500;
+  }
+  background: {
+    attachment: fixed;
+    color: $pale-blue;
+    image: url("/src/projects/newbie/order-summary-component-main/src/assets/images/pattern-background-desktop.svg");
+    repeat: no-repeat;
+    size: 100%;
+  }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .app {
+    @include app;
+  }
+}

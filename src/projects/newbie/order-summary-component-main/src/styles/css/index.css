@@ -1,0 +1,111 @@
+@import "https://fonts.googleapis.com/css?family=Red+Hat+Display:500";
+@import "https://fonts.googleapis.com/css?family=Red+Hat+Display:700";
+@import "https://fonts.googleapis.com/css?family=Red+Hat+Display:900";
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Red Hat Display";
+  font-size: 16px;
+  font-weight: 500;
+  background-attachment: fixed;
+  background-color: hsl(225, 100%, 94%);
+  background-image: url("/src/projects/newbie/order-summary-component-main/src/assets/images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .app {
+  background: white;
+  max-width: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 12px hsl(224, 23%, 85%);
+}
+body .app .order-summary {
+  padding: 30px 40px;
+  text-align: center;
+}
+body .app .order-summary > h2 {
+  font-weight: 900;
+  margin-bottom: 14px;
+  color: hsl(223, 47%, 23%);
+}
+body .app .order-summary .description {
+  color: hsl(224, 23%, 55%);
+  margin: 0 30px;
+  margin-bottom: 20px;
+  line-height: 25px;
+}
+body .app .order-summary .item {
+  display: flex;
+  background: hsl(225, 100%, 98%);
+  padding: 20px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+body .app .order-summary .item .icon {
+  margin-right: 20px;
+}
+body .app .order-summary .item .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: auto;
+}
+body .app .order-summary .item .details .name {
+  font-weight: 700;
+  color: hsl(223, 47%, 23%);
+}
+body .app .order-summary .item .details .price {
+  color: hsl(224, 23%, 55%);
+}
+body .app .order-summary .item .change-btn {
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration-line: underline;
+  background: transparent;
+  color: hsl(245, 75%, 52%);
+}
+body .app .order-summary .item .change-btn:hover {
+  color: hsl(224, 23%, 55%);
+}
+body .app .order-summary .order-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .app .order-summary .order-actions button {
+  border: none;
+  padding: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+body .app .order-summary .order-actions button.confirm {
+  background: hsl(245, 75%, 52%);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px hsl(224, 23%, 55%);
+}
+body .app .order-summary .order-actions button.confirm:hover {
+  background: hsl(223, 47%, 23%);
+}
+body .app .order-summary .order-actions button.confirm:active {
+  transform: scale(0.99);
+}
+body .app .order-summary .order-actions button.cancel {
+  background: transparent;
+  color: hsl(224, 23%, 55%);
+}
+body .app .order-summary .order-actions button.cancel:hover {
+  color: hsl(223, 47%, 23%);
+}
+
+/*# sourceMappingURL=index.css.map */
