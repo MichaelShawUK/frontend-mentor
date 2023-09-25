@@ -1,0 +1,61 @@
+@mixin preview-card() {
+  max-width: 310px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+
+  .icon {
+    height: 40px;
+    width: 64px;
+    margin-bottom: 25px;
+  }
+
+  .title {
+    font-family: "Big Shoulders Display";
+    font-weight: 700;
+    font-size: 40px;
+    color: $light-gray;
+    margin-bottom: 25px;
+  }
+
+  .summary {
+    line-height: 24px;
+    margin-bottom: 70px;
+  }
+
+  .learn-more-btn {
+    background: $light-gray;
+    border: none;
+    padding: 15px 35px;
+    color: transparent;
+    font-family: "Lexend Deca";
+    width: max-content;
+    border-radius: 40px;
+    margin-top: auto;
+    cursor: pointer;
+  }
+
+  &.sedan {
+    @include customise-btn($orange);
+  }
+  &.suv {
+    @include customise-btn($cyan);
+  }
+  &.luxury {
+    @include customise-btn($dark-cyan);
+  }
+}
+
+@mixin customise-btn($color) {
+  background: $color;
+
+  .learn-more-btn {
+    color: $color;
+
+    &:hover {
+      background-color: $color;
+      color: $light-gray;
+      outline: 2px solid $light-gray;
+    }
+  }
+}

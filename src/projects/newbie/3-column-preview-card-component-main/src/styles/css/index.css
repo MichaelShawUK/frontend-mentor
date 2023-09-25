@@ -1,0 +1,109 @@
+@import "https://fonts.googleapis.com/css?family=Lexend+Deca:400";
+@import "https://fonts.googleapis.com/css?family=Big+Shoulders+Display:700";
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: hsla(0, 0%, 100%, 0.75);
+  font-size: 15px;
+  font-family: "Lexend Deca";
+}
+
+.app {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+}
+.app .preview-card {
+  max-width: 310px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+.app .preview-card .icon {
+  height: 40px;
+  width: 64px;
+  margin-bottom: 25px;
+}
+.app .preview-card .title {
+  font-family: "Big Shoulders Display";
+  font-weight: 700;
+  font-size: 40px;
+  color: hsl(0, 0%, 95%);
+  margin-bottom: 25px;
+}
+.app .preview-card .summary {
+  line-height: 24px;
+  margin-bottom: 70px;
+}
+.app .preview-card .learn-more-btn {
+  background: hsl(0, 0%, 95%);
+  border: none;
+  padding: 15px 35px;
+  color: transparent;
+  font-family: "Lexend Deca";
+  width: max-content;
+  border-radius: 40px;
+  margin-top: auto;
+  cursor: pointer;
+}
+.app .preview-card.sedan {
+  background: hsl(31, 77%, 52%);
+}
+.app .preview-card.sedan .learn-more-btn {
+  color: hsl(31, 77%, 52%);
+}
+.app .preview-card.sedan .learn-more-btn:hover {
+  background-color: hsl(31, 77%, 52%);
+  color: hsl(0, 0%, 95%);
+  outline: 2px solid hsl(0, 0%, 95%);
+}
+.app .preview-card.suv {
+  background: hsl(184, 100%, 22%);
+}
+.app .preview-card.suv .learn-more-btn {
+  color: hsl(184, 100%, 22%);
+}
+.app .preview-card.suv .learn-more-btn:hover {
+  background-color: hsl(184, 100%, 22%);
+  color: hsl(0, 0%, 95%);
+  outline: 2px solid hsl(0, 0%, 95%);
+}
+.app .preview-card.luxury {
+  background: hsl(179, 100%, 13%);
+}
+.app .preview-card.luxury .learn-more-btn {
+  color: hsl(179, 100%, 13%);
+}
+.app .preview-card.luxury .learn-more-btn:hover {
+  background-color: hsl(179, 100%, 13%);
+  color: hsl(0, 0%, 95%);
+  outline: 2px solid hsl(0, 0%, 95%);
+}
+
+@media (width < 750px) {
+  body {
+    display: block;
+    height: auto;
+  }
+  .app {
+    flex-direction: column;
+    width: 310px;
+    margin: 10px auto;
+  }
+  .app .preview-card {
+    padding: 38px;
+  }
+  .app .preview-card .summary {
+    margin-bottom: 10%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

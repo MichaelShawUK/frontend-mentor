@@ -3,10 +3,11 @@
 // import ProductPreviewCard from "./projects/newbie/product-preview-card-component-main/src/App";
 // import NFTPreviewCard from "./projects/newbie/nft-preview-card-component-main/src/App";
 // import OrderSummary from "./projects/newbie/order-summary-component-main/src/App";
-import StatsPreview from "./projects/newbie/stats-preview-card-component-main/src/App";
+// import StatsPreview from "./projects/newbie/stats-preview-card-component-main/src/App";
+import ThreeColumnPreviewCard from "./projects/newbie/3-column-preview-card-component-main/src/App";
 
 function App() {
-  return <StatsPreview />;
+  return <ThreeColumnPreviewCard />;
 }
 
 export default App;

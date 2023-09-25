@@ -1,0 +1,46 @@
+@import "https://fonts.googleapis.com/css?family=Lexend+Deca:400";
+@import "https://fonts.googleapis.com/css?family=Big+Shoulders+Display:700";
+@import "colors";
+@import "app";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: $transparent-white;
+
+  font : {
+    size: 15px;
+    family: "Lexend Deca";
+  }
+}
+
+.app {
+  @include app;
+}
+
+@media (width < 750px) {
+  body {
+    display: block;
+    height: auto;
+  }
+  .app {
+    flex-direction: column;
+    width: 310px;
+    margin: 10px auto;
+
+    .preview-card {
+      padding: 38px;
+
+      .summary {
+        margin-bottom: 10%;
+      }
+    }
+  }
+}
