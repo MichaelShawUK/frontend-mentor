@@ -1,0 +1,35 @@
+@import "https://fonts.googleapis.com/css?family=Kumbh+Sans:400";
+@import "https://fonts.googleapis.com/css?family=Kumbh+Sans:700";
+@import "colors";
+@import "app";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: {
+    family: "Kumbh Sans";
+    size: 18px;
+  }
+
+  color: $dark-blue;
+
+  background: url("/src/projects/newbie/profile-card-component-main/src/assets/images/bg-pattern-top.svg")
+      left -300px top -500px no-repeat,
+    url("/src/projects/newbie/profile-card-component-main/src/assets/images/bg-pattern-bottom.svg")
+      right -300px top 500px no-repeat;
+
+  background-color: $dark-cyan;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.app {
+  @include app;
+}
