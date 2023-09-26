@@ -1,0 +1,187 @@
+@import "https://fonts.googleapis.com/css?family=Manrope:500";
+@import "https://fonts.googleapis.com/css?family=Manrope:700";
+@import "colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: {
+    family: "Manrope";
+    size: 13px;
+    weight: 500;
+  }
+  color: $desaturated-dark-blue;
+  margin: 20px;
+  background-color: $light-grayish-blue;
+}
+
+.container {
+  container-type: inline-size;
+}
+
+@container (width <= 900px) {
+  .app {
+    max-width: 320px;
+
+    .image-container {
+      height: 210px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .article {
+    h2 {
+      font-size: 16px;
+    }
+  }
+}
+
+@container (width > 900px) {
+  .app {
+    display: flex;
+    width: 660px;
+    max-width: 800px;
+
+    .image-container {
+      padding-right: 220px;
+      width: 325px;
+      img {
+        height: 290px;
+      }
+    }
+  }
+
+  .article {
+    h2 {
+      font-size: 20px;
+    }
+  }
+}
+
+.app {
+  margin-inline: auto;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+
+  .image-container {
+    overflow: clip;
+    img {
+      display: block;
+    }
+  }
+}
+
+.article {
+  padding: 24px 32px 16px;
+  h2 {
+    color: $very-dark-grayish-blue;
+    margin-bottom: 16px;
+  }
+
+  > p {
+    margin-bottom: 24px;
+  }
+}
+
+$avatar-size: 40px;
+
+.article-data {
+  display: grid;
+  align-items: center;
+  column-gap: 14px;
+  grid-template-areas:
+    "avatar author share"
+    "avatar date share";
+
+  grid-template-columns: $avatar-size 1fr $avatar-size;
+  grid-template-rows: 1fr 1fr;
+
+  .avatar {
+    grid-area: avatar;
+    height: $avatar-size;
+    width: $avatar-size;
+    border-radius: 50%;
+  }
+  .author {
+    grid-area: author;
+    font-weight: 700;
+    color: $very-dark-grayish-blue;
+  }
+  .date {
+    grid-area: date;
+    color: $grayish-blue;
+  }
+  .social-media {
+    grid-area: share;
+    position: relative;
+
+    .share-icon {
+      background-color: $light-grayish-blue;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+
+.social-media {
+  position: relative;
+  .links {
+    @container (width <= 900px) {
+      display: none;
+    }
+
+    @container (width > 900px) {
+      display: flex;
+      position: absolute;
+      bottom: 50px;
+      right: -10px;
+      width: 220px;
+      justify-content: space-between;
+      border-radius: 12px;
+    }
+  }
+}
+
+.links {
+  @container (width > 900px) {
+    display: none;
+  }
+
+  @container (width <= 900px) {
+    max-width: 320px;
+  }
+
+  background-color: $very-dark-grayish-blue;
+  width: 100%;
+  color: $grayish-blue;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  position: absolute;
+  bottom: 0;
+  padding-inline: 32px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  letter-spacing: 3px;
+  gap: 12px;
+
+  img {
+    cursor: pointer;
+  }
+
+  .share-icon {
+    background-color: $desaturated-dark-blue;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: auto;
+  }
+}
