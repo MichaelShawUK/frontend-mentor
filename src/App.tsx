@@ -6,10 +6,11 @@
 // import StatsPreview from "./projects/newbie/stats-preview-card-component-main/src/App";
 // import ThreeColumnPreviewCard from "./projects/newbie/3-column-preview-card-component-main/src/App";
 // import ProfileCard from "./projects/newbie/profile-card-component-main/src/App";
-import FaqAccordion from "./projects/newbie/faq-accordion-card-main/src/App";
+// import FaqAccordion from "./projects/newbie/faq-accordion-card-main/src/App";
+import SocialProofSection from "./projects/newbie/social-proof-section-master/src/App";
 
 function App() {
-  return <FaqAccordion />;
+  return <SocialProofSection />;
 }
 
 export default App;
