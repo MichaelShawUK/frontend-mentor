@@ -1,0 +1,113 @@
+@import "https://fonts.googleapis.com/css?family=Kumbh+Sans";
+@import "https://fonts.googleapis.com/css?family=Kumbh+Sans:700";
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Kumbh Sans";
+  font-size: 12px;
+  color: hsl(240, 6%, 50%);
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  padding: 60px;
+  gap: 60px;
+  overflow: clip;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3333333333);
+}
+.app.mobile {
+  display: block;
+  padding: 60px 30px;
+  overflow: visible;
+}
+
+.illustration {
+  position: relative;
+  width: min-content;
+}
+.illustration.desktop {
+  position: relative;
+  margin-left: -140px;
+}
+.illustration.desktop .background {
+  position: absolute;
+  width: 100%;
+  top: -40px;
+}
+.illustration.desktop .box {
+  position: absolute;
+  left: -20px;
+  bottom: 35px;
+}
+.illustration.mobile {
+  margin: 0 auto;
+  position: relative;
+  top: -170px;
+  margin-bottom: -120px;
+}
+.illustration.mobile .woman {
+  width: 240px;
+}
+.illustration.mobile .background {
+  position: absolute;
+  bottom: -30px;
+}
+
+.faq {
+  width: 300px;
+}
+.faq.mobile h1 {
+  text-align: center;
+}
+.faq h1 {
+  color: hsl(238, 29%, 16%);
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+.faq .question {
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  margin-bottom: 14px;
+}
+.faq .question:last-of-type {
+  margin-bottom: 0;
+}
+.faq .question.active h3 {
+  font-weight: 700;
+}
+.faq .question.active h3::after {
+  transform: rotate(180deg);
+}
+.faq .question h3 {
+  cursor: pointer;
+  color: hsl(237, 12%, 33%);
+  font-weight: 400;
+  font-size: 14px;
+  position: relative;
+  margin-bottom: 14px;
+}
+.faq .question h3:hover {
+  color: hsl(14, 88%, 65%);
+}
+.faq .question h3::after {
+  margin-left: auto;
+  content: url("/src/projects/newbie/faq-accordion-card-main/src/assets/images/icon-arrow-down.svg");
+  position: absolute;
+  right: 0;
+  transition: transform ease 0.3s;
+}
+.faq .question p {
+  margin-bottom: 14px;
+  padding-right: 20px;
+}
+
+/*# sourceMappingURL=index.css.map */

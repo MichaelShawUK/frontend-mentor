@@ -1,0 +1,19 @@
+@import "illustration";
+
+@mixin app() {
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  padding: 60px;
+  gap: 60px;
+
+  overflow: clip;
+
+  box-shadow: 0 20px 25px #00000055;
+
+  &.mobile {
+    display: block;
+    padding: 60px 30px;
+    overflow: visible;
+  }
+}

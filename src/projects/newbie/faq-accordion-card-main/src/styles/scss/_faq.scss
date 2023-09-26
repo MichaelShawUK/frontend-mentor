@@ -1,0 +1,61 @@
+@mixin faq() {
+  width: 300px;
+
+  &.mobile {
+    h1 {
+      text-align: center;
+    }
+  }
+
+  h1 {
+    color: $text-primary-blue;
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .question {
+    border-bottom: 1px solid $divider-gray;
+    margin-bottom: 14px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &.active {
+      h3 {
+        font-weight: 700;
+
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    h3 {
+      cursor: pointer;
+      color: $text-neutral-very-dark-gray;
+      font-weight: 400;
+      font-size: 14px;
+      position: relative;
+      margin-bottom: 14px;
+
+      &:hover {
+        color: $text-primary-red;
+      }
+
+      &::after {
+        margin-left: auto;
+        content: url("/src/projects/newbie/faq-accordion-card-main/src/assets/images/icon-arrow-down.svg");
+        position: absolute;
+        right: 0;
+
+        transition: transform ease 0.3s;
+      }
+    }
+
+    p {
+      margin-bottom: 14px;
+      padding-right: 20px;
+    }
+  }
+}
