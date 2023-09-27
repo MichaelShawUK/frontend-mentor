@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "heading": "Supervisor",
+    "description": "Monitors activity to identify project roadblocks",
+    "icon": "/src/projects/newbie/four-card-feature-section-master/src/assets/images/icon-supervisor.svg",
+    "className": "supervisor"
+  },
+  {
+    "id": "2",
+    "heading": "Team Builder",
+    "description": "Scans our talent network to create the optimal team for your project",
+    "icon": "/src/projects/newbie/four-card-feature-section-master/src/assets/images/icon-team-builder.svg",
+    "className": "team-builder"
+  },
+  {
+    "id": "3",
+    "heading": "Karma",
+    "description": "Regularly evaluates our talent to ensure quality",
+    "icon": "/src/projects/newbie/four-card-feature-section-master/src/assets/images/icon-karma.svg",
+    "className": "karma"
+  },
+  {
+    "id": "4",
+    "heading": "Calculator",
+    "description": "Uses data from past projects to provide better delivery estimates",
+    "icon": "/src/projects/newbie/four-card-feature-section-master/src/assets/images/icon-calculator.svg",
+    "className": "calculator"
+  }
+]

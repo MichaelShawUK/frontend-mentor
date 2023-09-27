@@ -8,10 +8,11 @@
 // import ProfileCard from "./projects/newbie/profile-card-component-main/src/App";
 // import FaqAccordion from "./projects/newbie/faq-accordion-card-main/src/App";
 // import SocialProofSection from "./projects/newbie/social-proof-section-master/src/App";
-import ArticlePreview from "./projects/newbie/article-preview-component-master/src/App";
+// import ArticlePreview from "./projects/newbie/article-preview-component-master/src/App";
+import FourCardFeature from "./projects/newbie/four-card-feature-section-master/src/App";
 
 function App() {
-  return <ArticlePreview />;
+  return <FourCardFeature />;
 }
 
 export default App;

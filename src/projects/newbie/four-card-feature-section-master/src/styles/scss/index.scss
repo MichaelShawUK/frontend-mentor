@@ -1,0 +1,119 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:200";
+@import "https://fonts.googleapis.com/css?family=Poppins:400";
+@import "https://fonts.googleapis.com/css?family=Poppins:600";
+@import "colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: {
+    family: "Poppins";
+    size: 15px;
+  }
+
+  color: $grayish-blue;
+  padding: 20px;
+
+  background-color: $very-light-gray;
+}
+
+.container {
+  container-type: inline-size;
+}
+
+@container (width > 1000px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 200px);
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 20px;
+
+    .card {
+      margin-bottom: 0;
+    }
+  }
+
+  .card {
+    &.supervisor,
+    &.calculator {
+      grid-row: 1 / span 2;
+    }
+  }
+
+  .summary {
+    max-width: none;
+  }
+}
+
+.app {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.summary {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto 50px;
+
+  h1 {
+    font-weight: 200;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  h1,
+  h2 {
+    color: $very-dark-blue;
+  }
+}
+
+.app {
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px $grayish-blue;
+  position: relative;
+
+  h2 {
+    color: $very-dark-blue;
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+  padding: 24px;
+  width: 300px;
+  height: 200px;
+
+  .icon {
+    height: 52px;
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+  }
+
+  &.supervisor {
+    border-top: 3px solid $cyan;
+  }
+  &.team-builder {
+    border-top: 3px solid $red;
+  }
+  &.karma {
+    border-top: 3px solid $orange;
+  }
+  &.calculator {
+    border-top: 3px solid $blue;
+  }
+}
