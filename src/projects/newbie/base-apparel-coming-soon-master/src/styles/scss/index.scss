@@ -1,0 +1,184 @@
+@import "https://fonts.googleapis.com/css?family=Josefin+Sans:300";
+@import "https://fonts.googleapis.com/css?family=Josefin+Sans:400";
+@import "https://fonts.googleapis.com/css?family=Josefin+Sans:600";
+@import "colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: {
+    family: "Josefin Sans";
+    size: 16px;
+  }
+
+  color: $desaturated-red;
+
+  height: 100vh;
+}
+
+.regular {
+  font-weight: 300;
+}
+
+.dark {
+  color: $dark-grayish-red;
+}
+
+header {
+  grid-area: header;
+  width: 480px;
+  margin: 0 auto;
+  align-self: flex-end;
+  padding: 0 20px;
+}
+
+main {
+  align-self: center;
+  h1 {
+    font-size: 70px;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    margin-top: -140px;
+  }
+  p {
+    line-height: 2;
+    margin-bottom: 50px;
+  }
+  grid-area: main;
+  width: 480px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero {
+  grid-area: hero;
+  display: block;
+  justify-self: flex-end;
+  img {
+    height: 100%;
+    display: block;
+  }
+}
+
+.app {
+  display: grid;
+  grid-template-areas:
+    "header hero"
+    "main hero";
+  grid-template-rows: 100px 1fr;
+  height: 100vh;
+  background: url("/src/projects/newbie/base-apparel-coming-soon-master/src/assets/images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+form {
+  border: 1px solid $desaturated-red;
+  height: 60px;
+  position: relative;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+
+  &.error {
+    border: 2px solid $soft-red;
+
+    .error-icon {
+      visibility: visible;
+    }
+
+    .error-message {
+      visibility: visible;
+    }
+  }
+
+  input {
+    border: none;
+    background: transparent;
+    margin-left: 30px;
+    width: 50%;
+    padding: 20px 0px;
+
+    &::placeholder {
+      color: $desaturated-red;
+      font-family: "Josefin Sans";
+      font-weight: 300;
+      font-size: 16px;
+    }
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    background: $button-gradient;
+    border: none;
+    height: 100%;
+    width: 100px;
+    border-radius: 30px;
+    position: absolute;
+    right: 0;
+    transition: all ease-in-out 0.5s;
+
+    &:hover {
+      box-shadow: 0 10px 10px #00000055;
+      transform: scale(1.04);
+      opacity: 0.8;
+    }
+  }
+}
+
+.error-icon {
+  position: absolute;
+  right: 110px;
+  visibility: hidden;
+}
+
+.error-message {
+  color: $soft-red;
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  visibility: hidden;
+}
+
+.container {
+  container-type: inline-size;
+}
+
+@container (width < 768px) {
+  .app {
+    background-image: none;
+    background: $bg-gradient;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero {
+    img {
+      width: 100%;
+    }
+    margin-bottom: 50px;
+  }
+
+  header {
+    width: auto;
+    margin: 20px 0;
+    text-align: left;
+    align-self: flex-start;
+  }
+
+  main {
+    text-align: center;
+    h1 {
+      margin-top: 0;
+      font-size: 40px;
+    }
+    width: auto;
+  }
+}
