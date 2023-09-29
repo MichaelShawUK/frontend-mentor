@@ -1,0 +1,165 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:400";
+@import "https://fonts.googleapis.com/css?family=Poppins:500";
+@import "https://fonts.googleapis.com/css?family=Poppins:600";
+@import "https://fonts.googleapis.com/css?family=Poppins:700";
+@import "colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: {
+    family: "Poppins";
+    size: 16px;
+  }
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+  background: {
+    attachment: fixed;
+    image: url("/src/projects/newbie/intro-component-with-signup-form-master/src/assets/images/bg-intro-desktop.png");
+    color: $red;
+    repeat: no-repeat;
+    size: cover;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 0 10px;
+}
+
+.summary {
+  max-width: 500px;
+
+  h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    line-height: 60px;
+  }
+
+  p {
+    font-weight: 500;
+  }
+}
+
+.sign-up {
+  max-width: 500px;
+  min-width: 320px;
+  flex: 1;
+
+  form {
+    background-color: white;
+    padding: 10px;
+    display: grid;
+    padding: 40px;
+    gap: 20px;
+    border-radius: 6px;
+
+    input {
+      width: 100%;
+      border: 1px solid $grayish-blue;
+      padding: 16px;
+      border-radius: 6px;
+      font-weight: 700;
+
+      &::placeholder {
+        font-weight: 700;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      background-color: $green;
+      border: none;
+      color: white;
+      width: 100%;
+      padding: 16px;
+      border-radius: 6px;
+      font-weight: 600;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.offer,
+.sign-up > form,
+form > button {
+  box-shadow: 0 6px 2px #00000033;
+}
+
+.offer {
+  background-color: $blue;
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.terms {
+  color: $grayish-blue;
+  font-size: 11px;
+  text-align: center;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.red {
+  color: $red;
+}
+
+form > .field.error {
+  input {
+    border: 2px solid $red;
+  }
+  .error-icon {
+    visibility: visible;
+  }
+  .error-message {
+    display: block;
+  }
+}
+
+.field {
+  position: relative;
+}
+
+.error-icon {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.error-message {
+  font-style: italic;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: right;
+  padding-top: 6px;
+  display: none;
+}
+
+@media (width < 1000px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .summary {
+    text-align: center;
+    margin-top: 50px;
+
+    h1 {
+      font-size: 32px;
+    }
+  }
+}

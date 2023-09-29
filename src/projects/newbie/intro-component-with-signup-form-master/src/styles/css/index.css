@@ -1,0 +1,150 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:400";
+@import "https://fonts.googleapis.com/css?family=Poppins:500";
+@import "https://fonts.googleapis.com/css?family=Poppins:600";
+@import "https://fonts.googleapis.com/css?family=Poppins:700";
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins";
+  font-size: 16px;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-image: url("/src/projects/newbie/intro-component-with-signup-form-master/src/assets/images/bg-intro-desktop.png");
+  background-color: hsl(0, 100%, 74%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 0 10px;
+}
+
+.summary {
+  max-width: 500px;
+}
+.summary h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+  line-height: 60px;
+}
+.summary p {
+  font-weight: 500;
+}
+
+.sign-up {
+  max-width: 500px;
+  min-width: 320px;
+  flex: 1;
+}
+.sign-up form {
+  background-color: white;
+  padding: 10px;
+  display: grid;
+  padding: 40px;
+  gap: 20px;
+  border-radius: 6px;
+}
+.sign-up form input {
+  width: 100%;
+  border: 1px solid hsl(246, 25%, 77%);
+  padding: 16px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+.sign-up form input::placeholder {
+  font-weight: 700;
+}
+.sign-up form button {
+  cursor: pointer;
+  background-color: hsl(154, 59%, 51%);
+  border: none;
+  color: white;
+  width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.sign-up form button:hover {
+  opacity: 0.7;
+}
+
+.offer,
+.sign-up > form,
+form > button {
+  box-shadow: 0 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.offer {
+  background-color: hsl(248, 32%, 49%);
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.terms {
+  color: hsl(246, 25%, 77%);
+  font-size: 11px;
+  text-align: center;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.red {
+  color: hsl(0, 100%, 74%);
+}
+
+form > .field.error input {
+  border: 2px solid hsl(0, 100%, 74%);
+}
+form > .field.error .error-icon {
+  visibility: visible;
+}
+form > .field.error .error-message {
+  display: block;
+}
+
+.field {
+  position: relative;
+}
+
+.error-icon {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.error-message {
+  font-style: italic;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: right;
+  padding-top: 6px;
+  display: none;
+}
+
+@media (width < 1000px) {
+  .app {
+    flex-direction: column;
+  }
+  .summary {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .summary h1 {
+    font-size: 32px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -10,10 +10,11 @@
 // import SocialProofSection from "./projects/newbie/social-proof-section-master/src/App";
 // import ArticlePreview from "./projects/newbie/article-preview-component-master/src/App";
 // import FourCardFeature from "./projects/newbie/four-card-feature-section-master/src/App";
-import BaseApparel from "./projects/newbie/base-apparel-coming-soon-master/src/App";
+// import BaseApparel from "./projects/newbie/base-apparel-coming-soon-master/src/App";
+import IntroSignUpForm from "./projects/newbie/intro-component-with-signup-form-master/src/App";
 
 function App() {
-  return <BaseApparel />;
+  return <IntroSignUpForm />;
 }
 
 export default App;
