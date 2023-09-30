@@ -1,0 +1,123 @@
+@import "https://fonts.googleapis.com/css?family=Karla:400";
+@import "https://fonts.googleapis.com/css?family=Karla:700";
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Karla";
+  font-size: 16px;
+  background-color: hsl(204, 43%, 93%);
+  color: white;
+}
+
+h4 {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 4px;
+}
+
+section {
+  padding: 24px;
+}
+
+.app {
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.summary {
+  background-color: white;
+  color: hsl(218, 22%, 67%);
+  grid-area: summary;
+}
+.summary h2 {
+  color: hsl(179, 62%, 43%);
+  margin-bottom: 20px;
+}
+.summary h4 {
+  color: hsl(71, 73%, 54%);
+}
+.summary p {
+  line-height: 26px;
+  margin-bottom: 16px;
+}
+
+.subscription {
+  background-color: hsl(179, 62%, 43%);
+  grid-area: subscription;
+  display: grid;
+}
+.subscription button {
+  cursor: pointer;
+  background-color: hsl(71, 73%, 54%);
+  color: white;
+  width: 100%;
+  font-weight: 700;
+  border: none;
+  padding: 14px;
+  margin-top: 24px;
+  border-radius: 4px;
+  box-shadow: 0 6px 4px rgba(0, 0, 0, 0.2);
+  transition: transform ease-in-out 0.2s;
+}
+.subscription button:hover {
+  background-color: rgb(227, 184, 102);
+  transform: scale(1.02);
+}
+.subscription button:active {
+  background-color: rgb(227, 184, 102);
+  transform: scale(1);
+}
+
+.services {
+  background-color: hsl(179, 47%, 52%);
+  grid-area: services;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: hsl(204, 43%, 93%);
+  word-spacing: 4px;
+  margin-bottom: 10px;
+}
+.price .amount {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.container {
+  container-type: inline-size;
+  margin: 18px;
+}
+
+@container (width >= 640px) {
+  .app {
+    display: grid;
+    grid-template-areas: "summary summary" "subscription services";
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+  }
+  section {
+    padding: 40px;
+  }
+}
+@container (width < 640px) {
+  .app {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

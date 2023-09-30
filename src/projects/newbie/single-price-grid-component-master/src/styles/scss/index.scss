@@ -1,0 +1,139 @@
+@import "https://fonts.googleapis.com/css?family=Karla:400";
+@import "https://fonts.googleapis.com/css?family=Karla:700";
+@import "colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: {
+    family: "Karla";
+    size: 16px;
+  }
+
+  background-color: $light-gray;
+  color: white;
+}
+
+h4 {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 4px;
+}
+
+section {
+  padding: 24px;
+}
+
+.app {
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.summary {
+  background-color: white;
+  color: $grayish-blue;
+
+  grid-area: summary;
+
+  h2 {
+    color: $cyan;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    color: $bright-yellow;
+  }
+
+  p {
+    line-height: 26px;
+    margin-bottom: 16px;
+  }
+}
+
+.subscription {
+  background-color: $cyan;
+  grid-area: subscription;
+
+  display: grid;
+
+  button {
+    cursor: pointer;
+    background-color: $bright-yellow;
+    color: white;
+    width: 100%;
+    font-weight: 700;
+    border: none;
+    padding: 14px;
+    margin-top: 24px;
+    border-radius: 4px;
+    box-shadow: 0 6px 4px #00000033;
+    transition: transform ease-in-out 0.2s;
+
+    &:hover {
+      background-color: $orange;
+      transform: scale(1.02);
+    }
+    &:active {
+      background-color: $orange;
+      transform: scale(1);
+    }
+  }
+}
+
+.services {
+  background-color: $light-cyan;
+  grid-area: services;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $light-gray;
+  word-spacing: 4px;
+  margin-bottom: 10px;
+
+  .amount {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+
+.container {
+  container-type: inline-size;
+  margin: 18px;
+}
+
+@container (width >= 640px) {
+  .app {
+    display: grid;
+    grid-template-areas:
+      "summary summary"
+      "subscription services";
+
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+  }
+
+  section {
+    padding: 40px;
+  }
+}
+
+@container (width < 640px) {
+  .app {
+    display: block;
+  }
+}
