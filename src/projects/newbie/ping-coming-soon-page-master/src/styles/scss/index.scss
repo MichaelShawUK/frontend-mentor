@@ -1,0 +1,187 @@
+@import "https://fonts.googleapis.com/css?family=Libre+Franklin:300";
+@import "https://fonts.googleapis.com/css?family=Libre+Franklin:600";
+@import "https://fonts.googleapis.com/css?family=Libre+Franklin:700";
+@import "colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: {
+    family: "Libre Franklin";
+    size: 20px;
+    weight: 600;
+  }
+  color: $very-dark-blue;
+  text-align: center;
+}
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+header {
+  padding: 40px;
+}
+
+main {
+  h1 {
+    color: $gray;
+    font-weight: 300;
+    margin-bottom: 18px;
+  }
+
+  p {
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 10px;
+    grid-template-rows: 50px;
+
+    max-width: 800px;
+    margin: 0 auto 60px;
+
+    grid-template-areas:
+      "email-input submit-button"
+      "error-message error-message";
+
+    input {
+      border-radius: 30px;
+      border: 1px solid $pale-blue;
+      padding-inline: 30px;
+      font-size: 16px;
+
+      grid-area: email-input;
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 300;
+        color: $pale-blue;
+      }
+    }
+
+    button {
+      grid-area: submit-button;
+    }
+  }
+}
+
+footer {
+  font-weight: 300;
+  font-size: 14px;
+  color: $gray;
+}
+
+button {
+  cursor: pointer;
+  background-color: $blue;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 10px $pale-blue;
+  height: 50px;
+}
+
+.bold {
+  font-weight: 700;
+  color: $very-dark-blue;
+}
+
+.error-message {
+  color: $light-red;
+  font-style: italic;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 30px;
+  margin-bottom: 0;
+  display: none;
+
+  grid-area: error-message;
+}
+
+.dashboard {
+  width: 100%;
+}
+
+.social-media {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.social-icon {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #0001;
+
+  svg {
+    height: 16px;
+  }
+
+  &:hover {
+    background-color: $blue;
+    border: none;
+
+    svg > path {
+      fill: white;
+    }
+  }
+}
+
+.error {
+  input {
+    border: 2px solid $light-red;
+  }
+  .error-message {
+    display: block;
+  }
+}
+
+.container {
+  container-type: inline-size;
+}
+
+@container (width <= 468px) {
+  main {
+    form {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "email-input"
+        "error-message"
+        "submit-button";
+    }
+  }
+
+  .error-message {
+    text-align: center;
+  }
+}
+
+@media (width <= 488px) {
+  main {
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}

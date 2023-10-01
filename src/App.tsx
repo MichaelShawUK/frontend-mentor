@@ -12,10 +12,11 @@
 // import FourCardFeature from "./projects/newbie/four-card-feature-section-master/src/App";
 // import BaseApparel from "./projects/newbie/base-apparel-coming-soon-master/src/App";
 // import IntroSignUpForm from "./projects/newbie/intro-component-with-signup-form-master/src/App";
-import SinglePriceGrid from "./projects/newbie/single-price-grid-component-master/src/App";
+// import SinglePriceGrid from "./projects/newbie/single-price-grid-component-master/src/App";
+import Ping from "./projects/newbie/ping-coming-soon-page-master/src/App";
 
 function App() {
-  return <SinglePriceGrid />;
+  return <Ping />;
 }
 
 export default App;
