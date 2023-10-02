@@ -13,10 +13,11 @@
 // import BaseApparel from "./projects/newbie/base-apparel-coming-soon-master/src/App";
 // import IntroSignUpForm from "./projects/newbie/intro-component-with-signup-form-master/src/App";
 // import SinglePriceGrid from "./projects/newbie/single-price-grid-component-master/src/App";
-import Ping from "./projects/newbie/ping-coming-soon-page-master/src/App";
+// import Ping from "./projects/newbie/ping-coming-soon-page-master/src/App";
+import Huddle from "./projects/newbie/huddle-landing-page-with-single-introductory-section-master/src/App";
 
 function App() {
-  return <Ping />;
+  return <Huddle />;
 }
 
 export default App;

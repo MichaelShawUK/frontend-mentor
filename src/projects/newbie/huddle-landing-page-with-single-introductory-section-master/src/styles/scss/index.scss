@@ -1,0 +1,170 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:400";
+@import "https://fonts.googleapis.com/css?family=Poppins:600";
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400";
+@import "colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font: {
+    family: "Open Sans";
+    size: 20px;
+  }
+  color: white;
+
+  background: {
+    attachment: fixed;
+    color: $violet;
+    image: url("/src/projects/newbie/huddle-landing-page-with-single-introductory-section-master/src/assets/images/bg-desktop.svg");
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 400px;
+  gap: 60px;
+
+  section {
+    align-self: center;
+  }
+
+  h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  p {
+    margin-bottom: 24px;
+    line-height: 30px;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header {
+  margin-bottom: 60px;
+}
+
+button {
+  cursor: pointer;
+  background-color: white;
+  color: $violet;
+  border: none;
+  padding: 24px;
+  font-size: 20px;
+  box-shadow: 0 6px 6px #0003;
+  width: 300px;
+  border-radius: 50px;
+
+  &:hover {
+    background-color: $soft-magenta;
+    color: white;
+  }
+}
+
+.app {
+  padding: 60px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.illustration {
+  width: 100%;
+}
+
+.social-media {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+
+  li {
+    cursor: pointer;
+    border: 1px solid white;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    &:hover {
+      border-color: $soft-magenta;
+      svg > path {
+        fill: $soft-magenta;
+      }
+    }
+  }
+
+  svg {
+    height: 18px;
+  }
+}
+
+@media (width < 1200px) {
+  main {
+    section {
+      align-self: flex-start;
+    }
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 16px;
+      width: 180px;
+    }
+  }
+
+  .app {
+    padding: 30px;
+  }
+}
+
+@media (width < 850px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 60px;
+
+    button {
+      padding: 16px;
+      width: 240px;
+    }
+  }
+
+  footer {
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .app {
+    padding: 20px;
+  }
+}
