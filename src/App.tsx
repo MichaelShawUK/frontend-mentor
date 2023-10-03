@@ -14,10 +14,11 @@
 // import IntroSignUpForm from "./projects/newbie/intro-component-with-signup-form-master/src/App";
 // import SinglePriceGrid from "./projects/newbie/single-price-grid-component-master/src/App";
 // import Ping from "./projects/newbie/ping-coming-soon-page-master/src/App";
-import Huddle from "./projects/newbie/huddle-landing-page-with-single-introductory-section-master/src/App";
+// import Huddle from "./projects/newbie/huddle-landing-page-with-single-introductory-section-master/src/App";
+import NewsletterSignUp from "./projects/junior/newsletter-sign-up-with-success-message-main/src/App";
 
 function App() {
-  return <Huddle />;
+  return <NewsletterSignUp />;
 }
 
 export default App;

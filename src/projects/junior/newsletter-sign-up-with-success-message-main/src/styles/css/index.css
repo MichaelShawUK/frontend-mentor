@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/projects/junior/newsletter-sign-up-with-success-message-main/src/assets/fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/projects/junior/newsletter-sign-up-with-success-message-main/src/assets/fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto";
+  font-size: 16px;
+  background-color: hsl(235, 18%, 26%);
+  color: hsl(234, 29%, 20%);
+}
+
+.app {
+  background-color: hsl(0, 0%, 100%);
+}
+
+/*# sourceMappingURL=index.css.map */
