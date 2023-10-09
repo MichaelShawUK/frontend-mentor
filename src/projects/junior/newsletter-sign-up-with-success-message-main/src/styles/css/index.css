@@ -18,10 +18,34 @@ body {
   font-size: 16px;
   background-color: hsl(235, 18%, 26%);
   color: hsl(234, 29%, 20%);
+  height: 100vh;
+  padding: 20px;
 }
 
 .app {
   background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: max-content;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.sign-up, .illustration {
+  max-width: 400px;
+}
+
+.sign-up {
+  padding: 36px;
+}
+.sign-up h1 {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+
+.illustration img {
+  display: block;
 }
 
 /*# sourceMappingURL=index.css.map */

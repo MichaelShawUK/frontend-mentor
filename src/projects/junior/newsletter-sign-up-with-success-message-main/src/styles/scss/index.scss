@@ -24,8 +24,34 @@ body {
 
   background-color: $charcoal-grey;
   color: $dark-slate-grey;
+  height: 100vh;
+  padding: 20px;
 }
 
 .app {
   background-color: $white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: max-content;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.sign-up, .illustration {
+  max-width: 400px;
+}
+
+.sign-up {
+  padding: 36px;
+  h1 {
+    font-size: 44px;
+    margin-bottom: 20px;
+  }
+}
+
+.illustration {
+  img {
+    display: block;
+  }
 }
