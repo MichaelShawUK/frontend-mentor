@@ -22,6 +22,27 @@ body {
   padding: 20px;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-image: url("/src/projects/junior/newsletter-sign-up-with-success-message-main/src/assets/images/icon-list.svg");
+  background-repeat: no-repeat;
+  left: -30px;
+}
+
+li {
+  position: relative;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
 .app {
   background-color: hsl(0, 0%, 100%);
   display: grid;
@@ -37,10 +58,13 @@ body {
 }
 
 .sign-up {
-  padding: 36px;
+  padding: 20px;
 }
 .sign-up h1 {
   font-size: 44px;
+  margin-bottom: 20px;
+}
+.sign-up p {
   margin-bottom: 20px;
 }
 
