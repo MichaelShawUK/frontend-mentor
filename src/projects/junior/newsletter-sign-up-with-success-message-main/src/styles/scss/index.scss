@@ -25,12 +25,13 @@ body {
   background-color: $charcoal-grey;
   color: $dark-slate-grey;
   height: 100vh;
-  padding: 20px;
+  // padding: 20px;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+  margin-bottom: 36px;
 }
 
 li::before {
@@ -51,25 +52,46 @@ li {
   margin-bottom: 20px;
 }
 
+label {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+input {
+  padding: 16px;
+  border-radius: 6px;
+  border-style: solid;
+}
+
+button {
+  width: 100%;
+  background-color: $dark-slate-grey;
+  color: $white;
+  font-weight: bold;
+  border: none;
+  padding: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 .app {
   background-color: $white;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: max-content;
+  grid-template-columns: 5fr 4fr;
+  align-items: center;
+  width: 880px;
   margin: 0 auto;
   padding: 20px;
+  padding-left: 0;
   border-radius: 20px;
 }
 
-.sign-up, .illustration {
-  max-width: 400px;
-}
-
 .sign-up {
-  padding: 20px;
+  padding: 60px;
+
   h1 {
-    font-size: 44px;
-    margin-bottom: 20px;
+    font-size: 54px;
+    margin-bottom: 24px;
   }
 
   p {
@@ -77,8 +99,16 @@ li {
   }
 }
 
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 30px;
+}
+
 .illustration {
   img {
     display: block;
+    width: 100%;
   }
 }
