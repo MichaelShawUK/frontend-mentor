@@ -1,5 +1,6 @@
 import "./styles/css/index.css";
-import illustration from "./assets/images/illustration-sign-up-desktop.svg"
+import illustrationMobile from "./assets/images/illustration-sign-up-mobile.svg";
+import illustrationDesktop from "./assets/images/illustration-sign-up-desktop.svg";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           </form>
         </section>
         <section className="illustration">
-          <img src={illustration} />
+          <img className="desktop" src={illustrationDesktop} />
+          <img className="mobile" src={illustrationMobile} />
         </section>
       </article>
     </div>

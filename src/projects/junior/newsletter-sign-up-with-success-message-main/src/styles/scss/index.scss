@@ -79,7 +79,7 @@ button {
   display: grid;
   grid-template-columns: 5fr 4fr;
   align-items: center;
-  width: 880px;
+  max-width: 880px;
   margin: 0 auto;
   padding: 20px;
   padding-left: 0;
@@ -110,5 +110,43 @@ button {
   img {
     display: block;
     width: 100%;
+  }
+}
+
+.container {
+  container-type: inline-size;
+}
+
+.illustration {
+  .mobile {
+    display: none;
+  }
+}
+
+@container (width < 850px) {
+  .app {
+    // grid-template-columns: 1fr;
+    padding: 0;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .sign-up {
+    max-width: 375px;
+    padding: 30px 20px;
+
+    h1 {
+      font-size: 38px;
+    }
+  }
+
+  .illustration {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
   }
 }
