@@ -1,3 +1,30 @@
+.success {
+  background-color: hsl(0, 0%, 100%);
+  max-width: 460px;
+  padding: 30px 50px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.success img {
+  height: 50px;
+  margin-bottom: 20px;
+}
+.success h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.success p {
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+.success button {
+  margin-bottom: 30px;
+}
+
+.success-container {
+  container-type: inline-size;
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("/src/projects/junior/newsletter-sign-up-with-success-message-main/src/assets/fonts/Roboto-Regular.ttf");

@@ -1,0 +1,30 @@
+.success {
+  background-color: $white;
+  max-width: 460px;
+  padding: 30px 50px;
+  border-radius: 20px;
+  margin: 0 auto;
+
+  img {
+    height: 50px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+
+  button {
+    margin-bottom: 30px;
+  }
+}
+
+.success-container {
+  container-type: inline-size;
+}
