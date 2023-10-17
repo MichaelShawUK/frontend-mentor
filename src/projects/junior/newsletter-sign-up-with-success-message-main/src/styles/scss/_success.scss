@@ -28,3 +28,28 @@
 .success-container {
   container-type: inline-size;
 }
+
+@container (width < 400px) {
+  .success {
+    // background-color: palegreen;
+    border-radius: 0;
+    height: 100vh;
+    min-height: 600px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+
+    img {
+      align-self: flex-start;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    button {
+      margin-top: auto;
+      margin-bottom: 0;
+    }
+  }
+}

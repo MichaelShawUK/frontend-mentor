@@ -25,6 +25,26 @@
   container-type: inline-size;
 }
 
+@container (width < 400px) {
+  .success {
+    border-radius: 0;
+    height: 100vh;
+    min-height: 600px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .success img {
+    align-self: flex-start;
+  }
+  .success h1 {
+    font-size: 40px;
+  }
+  .success button {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+}
 @font-face {
   font-family: "Roboto";
   src: url("/src/projects/junior/newsletter-sign-up-with-success-message-main/src/assets/fonts/Roboto-Regular.ttf");
@@ -90,6 +110,13 @@ button {
   padding: 16px;
   border-radius: 6px;
   cursor: pointer;
+}
+button:hover {
+  background: linear-gradient(to right, hsl(4, 100%, 67%), hsl(19, 100%, 67%));
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3333333333);
+}
+button:active {
+  transform: scale(0.99);
 }
 
 .app {
