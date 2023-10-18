@@ -116,6 +116,23 @@ button {
   margin-bottom: 30px;
 }
 
+.label-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-message {
+  font-size: 12px;
+  font-weight: 700;
+  color: $tomato;
+}
+
+.input-error {
+  border: 1px solid $tomato;
+  background-color: #f002;
+  color: $tomato;
+}
+
 .illustration {
   img {
     display: block;

@@ -1,7 +1,30 @@
 import illustrationMobile from "../assets/images/illustration-sign-up-mobile.svg";
 import illustrationDesktop from "../assets/images/illustration-sign-up-desktop.svg";
+import { useState } from "react";
 
-function SignUp() {
+function SignUp({ onSubscribe }: { onSubscribe: () => void }) {
+  const [error, setError] = useState<string | null>(null);
+
+  function submitHandler(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const emailField = form[0] as HTMLInputElement;
+    const enteredEmail = emailField.value;
+
+    const emailRegex = new RegExp(/\w+[@]\w+[.]\w+/);
+
+    if (enteredEmail.trim().length === 0) {
+      setError("Enter email address");
+    } else if (!emailRegex.test(enteredEmail)) {
+      setError("Valid email required");
+    } else {
+      setError(null);
+      onSubscribe();
+    }
+  }
+
+  const inputClassName = error ? "input-error" : "";
+
   return (
     <div className="container">
       <article className="app">
@@ -13,10 +36,18 @@ function SignUp() {
             <li>Measuring to ensure updates are a success</li>
             <li>And much more!</li>
           </ul>
-          <form>
+          <form onSubmit={submitHandler}>
             <div className="field">
-              <label htmlFor="email">Email address</label>
-              <input type="text" id="email" placeholder="email@company.com" />
+              <div className="label-container">
+                <label htmlFor="email">Email address</label>
+                <span className="error-message">{error}</span>
+              </div>
+              <input
+                type="text"
+                id="email"
+                placeholder="email@company.com"
+                className={inputClassName}
+              />
             </div>
             <button>Subscribe to monthly newsletter</button>
           </form>

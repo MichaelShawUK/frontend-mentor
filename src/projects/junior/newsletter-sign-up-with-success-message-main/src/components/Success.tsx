@@ -1,6 +1,6 @@
 import iconSuccess from "../assets/images/icon-success.svg";
 
-function Success() {
+function Success({ resetSubscription }: { resetSubscription: () => void }) {
   return (
     <div className="success-container">
       <article className="success">
@@ -11,7 +11,7 @@ function Success() {
           Please open it and click the button inside to confirm your
           subscription.
         </p>
-        <button>Dismiss message</button>
+        <button onClick={resetSubscription}>Dismiss message</button>
       </article>
     </div>
   );

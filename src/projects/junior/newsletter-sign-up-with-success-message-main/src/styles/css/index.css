@@ -149,6 +149,23 @@ button:active {
   margin-bottom: 30px;
 }
 
+.label-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-message {
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(4, 100%, 67%);
+}
+
+.input-error {
+  border: 1px solid hsl(4, 100%, 67%);
+  background-color: rgba(255, 0, 0, 0.1333333333);
+  color: hsl(4, 100%, 67%);
+}
+
 .illustration img {
   display: block;
   width: 100%;

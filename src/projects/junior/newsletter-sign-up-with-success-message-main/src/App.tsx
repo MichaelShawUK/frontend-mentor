@@ -7,7 +7,14 @@ import { useState } from "react";
 function App() {
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  return isSubscribed ? <Success /> : <SignUp />;
+  const onSubscribe = () => setIsSubscribed(true);
+  const resetSubscription = () => setIsSubscribed(false);
+
+  return isSubscribed ? (
+    <Success resetSubscription={resetSubscription} />
+  ) : (
+    <SignUp onSubscribe={onSubscribe} />
+  );
 }
 
 export default App;
