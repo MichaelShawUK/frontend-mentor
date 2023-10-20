@@ -1,0 +1,121 @@
+@import "colors";
+@import "https://fonts.googleapis.com/css?family=Poppins:400i";
+@import "https://fonts.googleapis.com/css?family=Poppins:700";
+@import "https://fonts.googleapis.com/css?family=Poppins:800i";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: {
+    size: 32px;
+    family: "Poppins";
+    weight: 800;
+    style: italic;
+  }
+  color: $off-black;
+  background-color: $off-white;
+}
+
+label {
+  color: $smokey-grey;
+  font: {
+    weight: 700;
+    style: normal;
+    size: 10px;
+  }
+  letter-spacing: 3px;
+}
+
+input {
+  padding: 10px 14px;
+  border: 1px solid $light-grey;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+
+  &::placeholder {
+    color: $smokey-grey;
+    font: {
+      weight: 700;
+      size: 20px;
+    }
+  }
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: $purple;
+  padding: 10px;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $off-black;
+  }
+}
+
+.age-calculator {
+  background-color: $white;
+  margin: 10px auto;
+  padding: 40px 20px;
+  // width: max-content;
+  min-width: max-content;
+  border-radius: 20px;
+  border-bottom-right-radius: 120px;
+}
+
+.fields {
+  display: flex;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 85px;
+}
+
+.actions {
+  position: relative;
+  border-bottom: 1px solid $light-grey;
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+
+  button {
+    position: absolute;
+    top: -25px;
+
+    img {
+      width: 30px;
+    }
+  }
+}
+
+.results {
+  font-size: 50px;
+  span {
+    color: $purple;
+  }
+}
+
+.container {
+  container-type: inline-size;
+}
+
+@container (width > 400px) {
+  .age-calculator {
+    max-width: 450px;
+    padding: 30px;
+  }
+
+  .actions {
+    justify-content: flex-end;
+    margin: 25px 0;
+  }
+}

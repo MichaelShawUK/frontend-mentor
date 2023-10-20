@@ -15,10 +15,11 @@
 // import SinglePriceGrid from "./projects/newbie/single-price-grid-component-master/src/App";
 // import Ping from "./projects/newbie/ping-coming-soon-page-master/src/App";
 // import Huddle from "./projects/newbie/huddle-landing-page-with-single-introductory-section-master/src/App";
-import NewsletterSignUp from "./projects/junior/newsletter-sign-up-with-success-message-main/src/App";
+// import NewsletterSignUp from "./projects/junior/newsletter-sign-up-with-success-message-main/src/App";
+import AgeCalculator from "./projects/junior/age-calculator-app-main/src/App";
 
 function App() {
-  return <NewsletterSignUp />;
+  return <AgeCalculator />;
 }
 
 export default App;
