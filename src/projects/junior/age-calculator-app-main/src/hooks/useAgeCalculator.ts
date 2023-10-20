@@ -40,12 +40,18 @@ function validate(userInput: { day: string; month: string; year: string }) {
   if (userInput.month.trim().length === 0) error.month = ERROR.REQUIRED;
   if (userInput.year.trim().length === 0) error.year = ERROR.REQUIRED;
 
+  if (!Number.isInteger(+userInput.day)) error.day = ERROR.INVALID_DATE;
+  if (!Number.isInteger(+userInput.month)) error.month = ERROR.INVALID_MONTH;
+  if (!Number.isInteger(+userInput.year)) error.year = ERROR.INVALID_YEAR;
+
   if (+userInput.day < 1 || +userInput.day > 31) {
     error.day = ERROR.INVALID_DATE;
   }
   if (+userInput.month < 1 || +userInput.month > 12) {
     error.month = ERROR.INVALID_MONTH;
   }
+  if (+userInput.year < 10) error.year = ERROR.INVALID_YEAR;
+
   if (["4", "6", "9", "11"].includes(userInput.month)) {
     if (+userInput.day > 30) error.day = ERROR.INVALID_DATE;
   }
@@ -57,7 +63,8 @@ function validate(userInput: { day: string; month: string; year: string }) {
       error.day = ERROR.INVALID_DATE;
     }
   }
-  if (+userInput.year < 10) error.year = ERROR.INVALID_YEAR;
+
+  if (error.day || error.month || error.year) return error;
 
   const birthDate = new Date(
     +userInput.year,
@@ -65,6 +72,7 @@ function validate(userInput: { day: string; month: string; year: string }) {
     +userInput.day
   );
   const now = new Date();
+
   if (birthDate > now) {
     if (+userInput.year > now.getUTCFullYear()) {
       error.year = ERROR.FUTURE;

@@ -36,13 +36,13 @@ function AgeCalculator() {
         </form>
         <section className="results">
           <p>
-            <span>{age.years}</span> years
+            <span>{age.years}</span> {+age.years === 1 ? "year" : "years"}
           </p>
           <p>
-            <span>{age.months}</span> months
+            <span>{age.months}</span> {+age.months === 1 ? "month" : "months"}
           </p>
           <p>
-            <span>{age.days}</span> days
+            <span>{age.days}</span> {+age.days === 1 ? "day" : "days"}
           </p>
         </section>
       </article>
