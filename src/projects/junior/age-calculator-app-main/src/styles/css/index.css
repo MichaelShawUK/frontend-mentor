@@ -53,6 +53,7 @@ button:hover {
   margin: 10px auto;
   padding: 40px 20px;
   min-width: max-content;
+  max-width: 350px;
   border-radius: 20px;
   border-bottom-right-radius: 120px;
 }
@@ -62,17 +63,31 @@ button:hover {
   gap: 14px;
 }
 
+.error label,
+.error .error-message {
+  color: hsl(0, 100%, 67%);
+}
+.error input {
+  border-color: hsl(0, 100%, 67%);
+}
+
+.error-message {
+  font-size: 10px;
+  font-weight: 400;
+  font-style: italic;
+}
+
 .field {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  width: 85px;
+  gap: 5px;
+  max-width: 85px;
 }
 
 .actions {
   position: relative;
   border-bottom: 1px solid hsl(0, 0%, 86%);
-  margin: 50px 0;
+  margin: 40px 0;
   display: flex;
   justify-content: center;
 }
@@ -87,6 +102,9 @@ button:hover {
 .results {
   font-size: 50px;
 }
+.results p:not(:last-child) {
+  margin-bottom: -20px;
+}
 .results span {
   color: hsl(259, 100%, 65%);
 }
@@ -95,14 +113,20 @@ button:hover {
   container-type: inline-size;
 }
 
-@container (width > 400px) {
+@container (width > 520px) {
   .age-calculator {
-    max-width: 450px;
+    max-width: 520px;
     padding: 30px;
+  }
+  .field {
+    max-width: 120px;
   }
   .actions {
     justify-content: flex-end;
-    margin: 25px 0;
+    margin: 10px 0;
+  }
+  .results {
+    font-size: 72px;
   }
 }
 

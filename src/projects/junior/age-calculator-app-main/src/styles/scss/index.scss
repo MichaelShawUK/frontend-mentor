@@ -62,8 +62,8 @@ button {
   background-color: $white;
   margin: 10px auto;
   padding: 40px 20px;
-  // width: max-content;
   min-width: max-content;
+  max-width: 350px;
   border-radius: 20px;
   border-bottom-right-radius: 120px;
 }
@@ -73,17 +73,36 @@ button {
   gap: 14px;
 }
 
+.error {
+  label,
+  .error-message {
+    color: $light-red;
+  }
+
+  input {
+    border-color: $light-red;
+  }
+}
+
+.error-message {
+  font: {
+    size: 10px;
+    weight: 400;
+    style: italic;
+  }
+}
+
 .field {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  width: 85px;
+  gap: 5px;
+  max-width: 85px;
 }
 
 .actions {
   position: relative;
   border-bottom: 1px solid $light-grey;
-  margin: 50px 0;
+  margin: 40px 0;
   display: flex;
   justify-content: center;
 
@@ -99,6 +118,11 @@ button {
 
 .results {
   font-size: 50px;
+
+  p:not(:last-child) {
+    margin-bottom: -20px;
+  }
+
   span {
     color: $purple;
   }
@@ -108,14 +132,22 @@ button {
   container-type: inline-size;
 }
 
-@container (width > 400px) {
+@container (width > 520px) {
   .age-calculator {
-    max-width: 450px;
+    max-width: 520px;
     padding: 30px;
+  }
+
+  .field {
+    max-width: 120px;
   }
 
   .actions {
     justify-content: flex-end;
-    margin: 25px 0;
+    margin: 10px 0;
+  }
+
+  .results {
+    font-size: 72px;
   }
 }

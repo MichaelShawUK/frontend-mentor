@@ -8,12 +8,16 @@ function AgeCalculator() {
       <article className="age-calculator">
         <form>
           <div className="fields">
-            <InputField label="day" placeholder="DD" error="" />
+            <InputField
+              label="day"
+              placeholder="DD"
+              error="Must be a valid month"
+            />
             <InputField label="month" placeholder="MM" error="" />
             <InputField
               label="year"
               placeholder="YYYY"
-              error="This field cannot be empty"
+              error="This field is required"
             />
           </div>
           <div className="actions">
