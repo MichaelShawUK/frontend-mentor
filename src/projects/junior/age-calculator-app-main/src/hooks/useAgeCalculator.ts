@@ -85,8 +85,11 @@ interface IUserInput {
 }
 
 function useAgeCalculator() {
-  const [age, setAge] = useState({ years: "--", months: "--", days: "--" });
-  const [error, setError] = useState({ day: "", month: "", year: "" });
+  const noErrors = { day: "", month: "", year: "" };
+  const initialAge = { years: "--", months: "--", days: "--" };
+
+  const [age, setAge] = useState(initialAge);
+  const [error, setError] = useState(noErrors);
 
   function checkUserInput(userInput: IUserInput) {
     const birthDate = new Date(
@@ -98,7 +101,11 @@ function useAgeCalculator() {
     const validated = validate(userInput);
     if (!validated.day && !validated.month && !validated.year) {
       setAge(calculateAge(birthDate));
-    } else setError(validated);
+      setError(noErrors);
+    } else {
+      setError(validated);
+      setAge(initialAge);
+    }
   }
 
   return { age, error, checkUserInput };
