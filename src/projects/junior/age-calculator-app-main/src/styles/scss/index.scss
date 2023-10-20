@@ -71,6 +71,7 @@ button {
 .fields {
   display: flex;
   gap: 14px;
+  margin-bottom: 30px;
 }
 
 .error {
@@ -96,13 +97,13 @@ button {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  max-width: 85px;
+  max-width: 94px;
 }
 
 .actions {
   position: relative;
   border-bottom: 1px solid $light-grey;
-  margin: 40px 0;
+  margin: 50px 0;
   display: flex;
   justify-content: center;
 

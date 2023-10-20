@@ -1,6 +1,3 @@
-import arrowIcon from "./assets/images/icon-arrow.svg";
-import "./styles/css/index.css";
-import InputField from "./components/InputField";
 import { useState } from "react";
 
 function calculateAge(birthDate: Date) {
@@ -39,9 +36,6 @@ function validate(userInput: { day: string; month: string; year: string }) {
     FUTURE: "Must be in the past",
   };
 
-  const currentYear = new Date().getUTCFullYear();
-  console.log("current year: ", currentYear);
-
   if (userInput.day.trim().length === 0) error.day = ERROR.REQUIRED;
   if (userInput.month.trim().length === 0) error.month = ERROR.REQUIRED;
   if (userInput.year.trim().length === 0) error.year = ERROR.REQUIRED;
@@ -65,8 +59,6 @@ function validate(userInput: { day: string; month: string; year: string }) {
   }
   if (+userInput.year < 10) error.year = ERROR.INVALID_YEAR;
 
-  console.log(userInput.year, isLeapYear(+userInput.year));
-
   const birthDate = new Date(
     +userInput.year,
     +userInput.month - 1,
@@ -83,65 +75,33 @@ function validate(userInput: { day: string; month: string; year: string }) {
     }
   }
 
-  console.log(now.getUTCDate());
-
   return error;
 }
 
-function AgeCalculator() {
+interface IUserInput {
+  day: string;
+  month: string;
+  year: string;
+}
+
+function useAgeCalculator() {
   const [age, setAge] = useState({ years: "--", months: "--", days: "--" });
   const [error, setError] = useState({ day: "", month: "", year: "" });
 
-  function submitHandler(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const form = event.target as HTMLFormElement;
-
-    const userInput = {
-      day: (form[0] as HTMLInputElement).value,
-      month: (form[1] as HTMLInputElement).value,
-      year: (form[2] as HTMLInputElement).value,
-    };
-
+  function checkUserInput(userInput: IUserInput) {
     const birthDate = new Date(
       +userInput.year,
       +userInput.month - 1,
       +userInput.day
     );
 
-    setError(validate(userInput));
-
-    setAge(calculateAge(birthDate));
+    const validated = validate(userInput);
+    if (!validated.day && !validated.month && !validated.year) {
+      setAge(calculateAge(birthDate));
+    } else setError(validated);
   }
 
-  return (
-    <div className="container">
-      <article className="age-calculator">
-        <form onSubmit={submitHandler}>
-          <div className="fields">
-            <InputField label="day" placeholder="DD" error={error.day} />
-            <InputField label="month" placeholder="MM" error={error.month} />
-            <InputField label="year" placeholder="YYYY" error={error.year} />
-          </div>
-          <div className="actions">
-            <button>
-              <img src={arrowIcon} />
-            </button>
-          </div>
-        </form>
-        <section className="results">
-          <p>
-            <span>{age.years}</span> years
-          </p>
-          <p>
-            <span>{age.months}</span> months
-          </p>
-          <p>
-            <span>{age.days}</span> days
-          </p>
-        </section>
-      </article>
-    </div>
-  );
+  return { age, error, checkUserInput };
 }
 
-export default AgeCalculator;
+export default useAgeCalculator;
