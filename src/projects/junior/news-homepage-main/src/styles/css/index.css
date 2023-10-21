@@ -1,11 +1,8 @@
-@import "colors";
-
 @font-face {
   font-family: Inter;
   src: url("src/projects/junior/news-homepage-main/src/assets/fonts/Inter-VariableFont_slnt,wght.ttf");
   font-weight: 400 700 800;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -13,10 +10,10 @@
 }
 
 body {
-  font: {
-    size: 15px;
-    family: Inter;
-  }
-  background-color: $off-white;
-  color: $very-dark-blue;
+  font-size: 15px;
+  font-family: Inter;
+  background-color: hsl(36, 100%, 99%);
+  color: hsl(240, 100%, 5%);
 }
+
+/*# sourceMappingURL=index.css.map */
