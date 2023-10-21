@@ -16,10 +16,11 @@
 // import Ping from "./projects/newbie/ping-coming-soon-page-master/src/App";
 // import Huddle from "./projects/newbie/huddle-landing-page-with-single-introductory-section-master/src/App";
 // import NewsletterSignUp from "./projects/junior/newsletter-sign-up-with-success-message-main/src/App";
-import AgeCalculator from "./projects/junior/age-calculator-app-main/src/App";
+// import AgeCalculator from "./projects/junior/age-calculator-app-main/src/App";
+import NewsHomepage from "./projects/junior/news-homepage-main/src/App";
 
 function App() {
-  return <AgeCalculator />;
+  return <NewsHomepage />;
 }
 
 export default App;
