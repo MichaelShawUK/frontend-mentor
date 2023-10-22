@@ -9,9 +9,11 @@ function ArticlePreview({ image, rank, title, summary }: Props) {
   return (
     <div className="article-preview">
       <img src={image} />
-      <h2>{rank}</h2>
-      <h4>{title}</h4>
-      <p>{summary}</p>
+      <div className="text-wrapper">
+        <h2>{rank}</h2>
+        <h4>{title}</h4>
+        <p>{summary}</p>
+      </div>
     </div>
   );
 }

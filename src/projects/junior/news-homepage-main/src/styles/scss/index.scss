@@ -1,4 +1,5 @@
 @import "colors";
+@import "nav";
 
 @font-face {
   font-family: Inter;
@@ -19,4 +20,154 @@ body {
   }
   background-color: $off-white;
   color: $very-dark-blue;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "article aside"
+    "section section";
+
+  grid-template-columns: 1fr 350px;
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-grayish-blue;
+
+  &:hover {
+    color: $soft-red;
+  }
+}
+
+article {
+  grid-area: article;
+  display: grid;
+  grid-template-areas:
+    "image image"
+    "title summary"
+    "title button";
+
+  img {
+    grid-area: image;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 48px;
+    grid-area: title;
+  }
+
+  p {
+    grid-area: summary;
+    color: $dark-grayish-blue;
+    line-height: 1.5;
+  }
+
+  button {
+    grid-area: button;
+    width: max-content;
+  }
+}
+
+button {
+  background-color: $soft-red;
+  color: $off-white;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $very-dark-blue;
+  }
+}
+
+aside {
+  background-color: $very-dark-blue;
+  padding: 20px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  grid-area: aside;
+
+  h2 {
+    color: $soft-orange;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    color: $off-white;
+    cursor: pointer;
+    width: max-content;
+    font-size: 20px;
+    margin-bottom: 8px;
+
+    &:hover {
+      color: $soft-orange;
+    }
+  }
+  p {
+    color: $grayish-blue;
+  }
+}
+
+.sidebar-preview {
+  padding: 20px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $dark-grayish-blue;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.popular-articles {
+  display: flex;
+  grid-area: section;
+}
+
+.article-preview {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+
+  img {
+    width: 100%;
+  }
+
+  h2 {
+    color: $grayish-blue;
+    font-size: 36px;
+  }
+
+  h4 {
+    font-weight: 800;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover {
+      color: $soft-red;
+    }
+  }
+
+  p {
+    color: $dark-grayish-blue;
+  }
+
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
