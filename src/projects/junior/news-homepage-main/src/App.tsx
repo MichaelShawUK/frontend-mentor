@@ -19,7 +19,7 @@ function NewsHomepage() {
     <div className="news-homepage">
       <header>
         <img src={logo} />
-        <Nav />
+        <Nav viewMode={viewMode} />
       </header>
       <main>
         <article>

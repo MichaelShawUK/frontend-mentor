@@ -1,4 +1,11 @@
-function Nav() {
+import menuIcon from "../assets/images/icon-menu.svg";
+
+interface Props {
+  viewMode: "MOBILE" | "DESKTOP";
+}
+
+function Nav({ viewMode }: Props) {
+  if (viewMode === "MOBILE") return <img src={menuIcon} />;
   return (
     <nav>
       <ul>

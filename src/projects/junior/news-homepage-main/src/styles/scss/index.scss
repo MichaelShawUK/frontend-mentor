@@ -22,6 +22,11 @@ body {
   color: $very-dark-blue;
 }
 
+.news-homepage {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -58,6 +63,7 @@ article {
 
   img {
     grid-area: image;
+    width: 100%;
   }
 
   h1 {
@@ -95,9 +101,11 @@ button {
 aside {
   background-color: $very-dark-blue;
   padding: 20px;
-  padding-bottom: 30px;
   margin: 0 auto;
   grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   h2 {
     color: $soft-orange;
@@ -117,18 +125,13 @@ aside {
   }
   p {
     color: $grayish-blue;
+    padding-bottom: 20px;
   }
 }
 
 .sidebar-preview {
-  padding: 20px 0;
-
   &:not(:last-child) {
     border-bottom: 1px solid $dark-grayish-blue;
-  }
-
-  &:last-child {
-    padding-bottom: 0;
   }
 }
 

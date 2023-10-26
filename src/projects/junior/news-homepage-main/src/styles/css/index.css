@@ -22,6 +22,11 @@ body {
   color: hsl(240, 100%, 5%);
 }
 
+.news-homepage {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -51,6 +56,7 @@ article {
 }
 article img {
   grid-area: image;
+  width: 100%;
 }
 article h1 {
   font-weight: 800;
@@ -83,9 +89,11 @@ button:hover {
 aside {
   background-color: hsl(240, 100%, 5%);
   padding: 20px;
-  padding-bottom: 30px;
   margin: 0 auto;
   grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 aside h2 {
   color: hsl(35, 77%, 62%);
@@ -104,16 +112,11 @@ aside h4:hover {
 }
 aside p {
   color: hsl(233, 8%, 79%);
+  padding-bottom: 20px;
 }
 
-.sidebar-preview {
-  padding: 20px 0;
-}
 .sidebar-preview:not(:last-child) {
   border-bottom: 1px solid hsl(236, 13%, 42%);
-}
-.sidebar-preview:last-child {
-  padding-bottom: 0;
 }
 
 .popular-articles {
