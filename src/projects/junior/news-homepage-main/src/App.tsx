@@ -11,15 +11,26 @@ import useViewMode from "./hooks/useViewMode";
 import Nav from "./components/Nav";
 import SidebarPreview from "./components/SidebarPreview";
 import ArticlePreview from "./components/ArticlePreview";
+import MobileMenu from "./components/MobileMenu";
+
+import { useRef } from "react";
 
 function NewsHomepage() {
   const viewMode = useViewMode();
   const articleImg = viewMode === "MOBILE" ? web3Mobile : web3Desktop;
+
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  function openMobileMenu() {
+    const dialog = dialogRef.current;
+    if (dialog) dialog.showModal();
+  }
   return (
     <div className="news-homepage">
       <header>
         <img src={logo} />
-        <Nav viewMode={viewMode} />
+        <Nav viewMode={viewMode} onOpenMenu={openMobileMenu} />
+        <MobileMenu dialogElement={dialogRef} />
       </header>
       <main>
         <article>

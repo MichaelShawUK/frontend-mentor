@@ -121,6 +121,9 @@ aside p {
   padding-bottom: 20px;
 }
 
+.sidebar-preview {
+  padding: 10px 0;
+}
 .sidebar-preview:not(:last-child) {
   border-bottom: 1px solid hsl(236, 13%, 42%);
 }
@@ -159,6 +162,30 @@ aside p {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+dialog {
+  border: none;
+  width: 260px;
+  height: 100vh;
+  padding: 20px;
+  margin-left: auto;
+}
+dialog img {
+  margin-left: auto;
+  display: block;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+dialog nav > ul {
+  display: grid;
+}
+dialog nav > ul a {
+  color: hsl(240, 100%, 5%);
+}
+
+.mobile-menu-icon {
+  cursor: pointer;
 }
 
 @media (width < 1100px) {

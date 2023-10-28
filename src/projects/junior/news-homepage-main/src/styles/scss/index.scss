@@ -139,6 +139,7 @@ aside {
   &:not(:last-child) {
     border-bottom: 1px solid $dark-grayish-blue;
   }
+  padding: 10px 0;
 }
 
 .popular-articles {
@@ -181,6 +182,33 @@ aside {
     flex-direction: column;
     gap: 10px;
   }
+}
+
+dialog {
+  border: none;
+  width: 260px;
+  height: 100vh;
+  padding: 20px;
+  margin-left: auto;
+
+  img {
+    margin-left: auto;
+    display: block;
+    margin-bottom: 50px;
+    cursor: pointer;
+  }
+
+  nav > ul {
+    display: grid;
+
+    a {
+      color: $very-dark-blue;
+    }
+  }
+}
+
+.mobile-menu-icon {
+  cursor: pointer;
 }
 
 @media (width < 1100px) {

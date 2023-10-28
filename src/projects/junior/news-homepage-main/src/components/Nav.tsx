@@ -2,10 +2,14 @@ import menuIcon from "../assets/images/icon-menu.svg";
 
 interface Props {
   viewMode: "MOBILE" | "DESKTOP";
+  onOpenMenu: () => void;
 }
 
-function Nav({ viewMode }: Props) {
-  if (viewMode === "MOBILE") return <img src={menuIcon} />;
+function Nav({ viewMode, onOpenMenu }: Props) {
+  if (viewMode === "MOBILE")
+    return (
+      <img src={menuIcon} onClick={onOpenMenu} className="mobile-menu-icon" />
+    );
   return (
     <nav>
       <ul>
