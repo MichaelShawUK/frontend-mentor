@@ -38,8 +38,8 @@ main {
   display: grid;
   grid-template-areas: "article aside" "section section";
   grid-template-columns: 1fr 350px;
-  column-gap: 20px;
-  row-gap: 40px;
+  column-gap: 40px;
+  row-gap: 60px;
 }
 
 a {
@@ -53,6 +53,7 @@ a:hover {
 article {
   grid-area: article;
   display: grid;
+  gap: 20px 40px;
   grid-template-areas: "image image" "title summary" "title button";
 }
 article img {
@@ -61,17 +62,20 @@ article img {
 }
 article h1 {
   font-weight: 800;
-  font-size: 48px;
+  font-size: clamp(32px, 4vw, 48px);
   grid-area: title;
 }
 article p {
   grid-area: summary;
   color: hsl(236, 13%, 42%);
-  line-height: 1.5;
+  line-height: 2;
+  margin-right: 10px;
 }
 article button {
   grid-area: button;
   width: max-content;
+  height: 50px;
+  align-self: end;
 }
 
 button {

@@ -41,8 +41,8 @@ main {
     "section section";
 
   grid-template-columns: 1fr 350px;
-  column-gap: 20px;
-  row-gap: 40px;
+  column-gap: 40px;
+  row-gap: 60px;
 }
 
 a {
@@ -57,6 +57,7 @@ a {
 article {
   grid-area: article;
   display: grid;
+  gap: 20px 40px;
   grid-template-areas:
     "image image"
     "title summary"
@@ -69,19 +70,22 @@ article {
 
   h1 {
     font-weight: 800;
-    font-size: 48px;
+    font-size: clamp(32px, 4vw, 48px);
     grid-area: title;
   }
 
   p {
     grid-area: summary;
     color: $dark-grayish-blue;
-    line-height: 1.5;
+    line-height: 2;
+    margin-right: 10px;
   }
 
   button {
     grid-area: button;
     width: max-content;
+    height: 50px;
+    align-self: end;
   }
 }
 
