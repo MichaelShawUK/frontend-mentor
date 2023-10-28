@@ -25,6 +25,7 @@ body {
 .news-homepage {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 header {
@@ -38,7 +39,7 @@ main {
   display: grid;
   grid-template-areas: "article aside" "section section";
   grid-template-columns: 1fr 350px;
-  column-gap: 40px;
+  column-gap: 30px;
   row-gap: 60px;
 }
 
@@ -83,7 +84,7 @@ button {
   color: hsl(36, 100%, 99%);
   font-weight: 700;
   letter-spacing: 2px;
-  padding: 10px 25px;
+  padding: 10px 40px;
   border: none;
   cursor: pointer;
 }
@@ -127,12 +128,14 @@ aside p {
 .popular-articles {
   display: flex;
   grid-area: section;
+  gap: 10px;
 }
 
 .article-preview {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
+  align-items: center;
 }
 .article-preview img {
   width: 100%;
@@ -156,6 +159,22 @@ aside p {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+@media (width < 1100px) {
+  article {
+    grid-template-areas: "image" "title" "summary" "button";
+  }
+}
+@media (width < 768px) {
+  main {
+    grid-template-areas: "article" "aside" "section";
+    grid-template-columns: 1fr;
+  }
+  .popular-articles {
+    display: grid;
+    gap: 20px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
