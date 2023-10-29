@@ -1,0 +1,57 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: hsl(219, 12%, 42%);
+}
+header button:hover {
+  color: hsl(219, 85%, 26%);
+}
+
+.heading {
+  color: hsl(224, 21%, 14%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.badge {
+  background-color: hsl(219, 85%, 26%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 800;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("src/projects/junior/notifications-page-main/src/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
+  font-weight: 500 800;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-weight: 500;
+  color: hsl(219, 12%, 42%);
+  background-color: hsl(210, 60%, 98%);
+}
+
+.notifications-page {
+  background-color: hsl(0, 0%, 100%);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: $main-text;
+
+    &:hover {
+      color: $link;
+    }
+  }
+}
+
+.heading {
+  color: $name-text;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.badge {
+  background-color: $link;
+  color: $white;
+  font-weight: 800;
+  padding: 0 10px;
+  border-radius: 4px;
+}
