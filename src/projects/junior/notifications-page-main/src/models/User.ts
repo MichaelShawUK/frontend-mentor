@@ -11,7 +11,7 @@ export default class User {
   constructor(
     public first_name: string,
     public last_name: string,
-    public avatar: string | null = null
+    public avatar: string
   ) {}
 
   full_name() {
@@ -38,7 +38,7 @@ export default class User {
     return new PrivateMessage(this, content);
   }
 
-  comment(picture: string) {
-    return new PictureComment(this, picture);
+  comment(imagePath: string) {
+    return new PictureComment(this, imagePath);
   }
 }

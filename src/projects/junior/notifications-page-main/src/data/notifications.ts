@@ -1,5 +1,6 @@
 import users from "./users";
 import { NotificationType } from "../models/Notification";
+import chessImage from "../assets/images/image-chess.webp";
 
 const notifications: NotificationType[] = [];
 
@@ -10,9 +11,7 @@ notifications.push(
   users.rizky.privateMessage(
     "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game."
   ),
-  users.kimberly.comment(
-    "src/projects/junior/notifications-page-main/src/assets/images/image-chess.webp"
-  ),
+  users.kimberly.comment(chessImage),
   users.nathan.reactToPost("5 end-game strategies to increase your win rate"),
   users.anna.leaveGroup("Chess Club")
 );
