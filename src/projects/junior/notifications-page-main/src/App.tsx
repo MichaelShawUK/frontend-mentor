@@ -1,4 +1,7 @@
 import "./styles/css/index.css";
+import notifications from "./data/notifications";
+
+import Notification from "./components/Notification";
 
 function NotificationsPage() {
   return (
@@ -10,6 +13,11 @@ function NotificationsPage() {
         </div>
         <button>Mark all as read</button>
       </header>
+      <main>
+        {notifications.map((notification, index) => (
+          <Notification notification={notification} key={index} />
+        ))}
+      </main>
     </div>
   );
 }
