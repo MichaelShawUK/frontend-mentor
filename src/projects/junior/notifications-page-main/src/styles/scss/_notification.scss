@@ -8,7 +8,11 @@ $image-size: 44px;
     "avatar summary picture"
     "avatar private private";
   grid-template-columns: $image-size 1fr $image-size;
-  margin-bottom: 40px;
+  margin-bottom: 8px;
+  padding: 20px;
+  background-color: $body-background;
+  column-gap: 20px;
+  border-radius: 4px;
 }
 
 .avatar {
@@ -23,8 +27,59 @@ $image-size: 44px;
 .picture {
   grid-area: picture;
   height: $image-size;
+  cursor: pointer;
 }
 
 .private-message {
   grid-area: private;
+  margin-top: 10px;
+  padding: 20px;
+  border: 1px solid $hover-private-message;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-private-message;
+  }
+}
+
+.name {
+  color: $name-text;
+  font-weight: 800;
+  cursor: pointer;
+
+  &:hover {
+    color: $link;
+  }
+}
+
+.post-title {
+  font-weight: 800;
+  cursor: pointer;
+
+  &:hover {
+    color: $link;
+  }
+}
+
+.group {
+  font-weight: 800;
+  color: $link;
+  cursor: pointer;
+}
+
+.time {
+  color: $date;
+  margin-top: 4px;
+}
+
+.unread-badge::after {
+  display: inline-block;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: $red;
+  border-radius: 50%;
+  margin-left: 6px;
+  vertical-align: middle;
 }

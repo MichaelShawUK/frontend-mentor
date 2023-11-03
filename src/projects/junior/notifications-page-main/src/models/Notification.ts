@@ -1,11 +1,13 @@
 import User from "./User";
 
-export class Notification {
+export class Notification extends Object {
   constructor(
     public user: User,
     public created_at: Date = new Date(),
     public unread: boolean = true
-  ) {}
+  ) {
+    super();
+  }
 }
 
 export class PostReaction extends Notification {

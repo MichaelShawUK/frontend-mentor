@@ -26,6 +26,11 @@ body {
 
 .notifications-page {
   background-color: $background;
-  max-width: 700px;
+  max-width: 780px;
   margin: 0 auto;
+  padding: 30px;
+}
+
+header {
+  margin-bottom: 30px;
 }
