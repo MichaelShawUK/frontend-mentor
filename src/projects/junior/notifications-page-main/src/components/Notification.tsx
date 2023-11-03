@@ -29,17 +29,19 @@ function Notification({ notification }: Props) {
   return (
     <div className={className}>
       <img src={notification.user.avatar} className="avatar" />
-      <div className="summary">
-        <p className="message">
-          <span className="name">{notification.user.full_name()} </span>
-          {notification.message}
-          {postTitle && <span className="post-title"> {postTitle}</span>}
-          {group && <span className="group"> {group}</span>}
-          {notification.unread && <i className="unread-badge"></i>}
-        </p>
-        <p className="time">{notification.created_at.toDateString()}</p>
+      <div className="flex-wrapper">
+        <div className="summary">
+          <p className="message">
+            <span className="name">{notification.user.full_name()} </span>
+            {notification.message}
+            {postTitle && <span className="post-title"> {postTitle}</span>}
+            {group && <span className="group"> {group}</span>}
+            {notification.unread && <i className="unread-badge"></i>}
+          </p>
+          <p className="time">{notification.created_at.toDateString()}</p>
+        </div>
+        {picture && <img src={picture} className="picture" />}
       </div>
-      {picture && <img src={picture} className="picture" />}
       {privateMessage && <p className="private-message">{privateMessage}</p>}
     </div>
   );

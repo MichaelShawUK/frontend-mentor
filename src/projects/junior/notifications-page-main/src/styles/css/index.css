@@ -31,8 +31,9 @@ header button:hover {
 
 .notification {
   display: grid;
-  grid-template-areas: "avatar summary picture" "avatar summary picture" "avatar private private";
-  grid-template-columns: 44px 1fr 44px;
+  grid-template-columns: 44px 1fr;
+  grid-template-areas: "avatar wrapper" "avatar private";
+  column-gap: 20px;
   margin-bottom: 8px;
   padding: 20px;
   background-color: hsl(210, 60%, 98%);
@@ -44,16 +45,19 @@ header button:hover {
   height: 44px;
 }
 
+.flex-wrapper {
+  grid-area: wrapper;
+  display: flex;
+}
+
 .summary {
-  grid-area: summary;
-  margin-left: 20px;
+  flex: 1;
 }
 
 .picture {
-  grid-area: picture;
+  margin-left: 20px;
   height: 44px;
   cursor: pointer;
-  margin-left: 20px;
 }
 
 .private-message {
