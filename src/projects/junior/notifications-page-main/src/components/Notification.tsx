@@ -12,9 +12,9 @@ interface Props {
 }
 
 function Notification({ notification }: Props) {
-  let subject,
-    privateMessage,
-    picture = null;
+  let subject = null;
+  let picture = null;
+  let privateMessage = null;
 
   if (notification instanceof PostReaction) subject = notification.postTitle;
   if (notification instanceof JoinGroup) subject = notification.group;
@@ -25,14 +25,17 @@ function Notification({ notification }: Props) {
 
   return (
     <div className="notification">
-      <img src={notification.user.avatar} />
-      <p>{notification.user.full_name()}</p>
-      <p>{notification.message}</p>
-      {subject && <p>{subject}</p>}
-      {privateMessage && <p>{privateMessage}</p>}
-      {picture && <img src={picture} />}
-      <p>{notification.created_at.toDateString()}</p>
-      <hr></hr>
+      <img src={notification.user.avatar} className="avatar" />
+      <div className="summary">
+        <p className="message">
+          <span className="name">{notification.user.full_name()}</span>
+          {notification.message}
+          {subject && <span className="subject">{subject}</span>}
+        </p>
+        <p className="time">{notification.created_at.toDateString()}</p>
+      </div>
+      {picture && <img src={picture} className="picture" />}
+      {privateMessage && <p className="private-message">{privateMessage}</p>}
     </div>
   );
 }

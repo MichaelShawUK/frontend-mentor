@@ -29,6 +29,31 @@ header button:hover {
   border-radius: 4px;
 }
 
+.notification {
+  display: grid;
+  grid-template-areas: "avatar summary picture" "avatar summary picture" "avatar private private";
+  grid-template-columns: 44px 1fr 44px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  grid-area: avatar;
+  height: 44px;
+}
+
+.summary {
+  grid-area: summary;
+}
+
+.picture {
+  grid-area: picture;
+  height: 44px;
+}
+
+.private-message {
+  grid-area: private;
+}
+
 @font-face {
   font-family: "Plus Jakarta Sans";
   src: url("src/projects/junior/notifications-page-main/src/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");

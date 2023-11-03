@@ -1,0 +1,30 @@
+@import "colors";
+$image-size: 44px;
+
+.notification {
+  display: grid;
+  grid-template-areas:
+    "avatar summary picture"
+    "avatar summary picture"
+    "avatar private private";
+  grid-template-columns: $image-size 1fr $image-size;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  grid-area: avatar;
+  height: $image-size;
+}
+
+.summary {
+  grid-area: summary;
+}
+
+.picture {
+  grid-area: picture;
+  height: $image-size;
+}
+
+.private-message {
+  grid-area: private;
+}
