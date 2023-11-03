@@ -36,7 +36,6 @@ header button:hover {
   margin-bottom: 8px;
   padding: 20px;
   background-color: hsl(210, 60%, 98%);
-  column-gap: 20px;
   border-radius: 4px;
 }
 
@@ -47,12 +46,14 @@ header button:hover {
 
 .summary {
   grid-area: summary;
+  margin-left: 20px;
 }
 
 .picture {
   grid-area: picture;
   height: 44px;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .private-message {

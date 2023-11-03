@@ -24,8 +24,10 @@ function Notification({ notification }: Props) {
   if (notification instanceof PrivateMessage)
     privateMessage = notification.messageContent;
 
+  const className = `notification${notification.unread ? " unread" : ""}`;
+
   return (
-    <div className="notification">
+    <div className={className}>
       <img src={notification.user.avatar} className="avatar" />
       <div className="summary">
         <p className="message">
