@@ -1,4 +1,9 @@
 import User from "./User";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
+
+TimeAgo.addDefaultLocale(en);
+const timeAgo = new TimeAgo("en-GB");
 
 export class Notification extends Object {
   constructor(
@@ -7,6 +12,10 @@ export class Notification extends Object {
     public unread: boolean = true
   ) {
     super();
+  }
+
+  getRelativeTime(): string {
+    return timeAgo.format(this.created_at);
   }
 }
 
