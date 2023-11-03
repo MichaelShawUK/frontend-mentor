@@ -10,13 +10,21 @@ $image-size: 44px;
   column-gap: 20px;
   margin-bottom: 8px;
   padding: 20px;
-  background-color: $body-background;
+  background-color: $background;
   border-radius: 4px;
+
+  &.unread {
+    background-color: $body-background;
+  }
 }
 
 .avatar {
   grid-area: avatar;
   height: $image-size;
+}
+
+.message {
+  line-height: 1.3;
 }
 
 .flex-wrapper {
@@ -86,4 +94,15 @@ $image-size: 44px;
   border-radius: 50%;
   margin-left: 6px;
   vertical-align: middle;
+}
+
+@media (width < 768px) {
+  .notification {
+    padding: 14px;
+  }
+
+  .post-title {
+    font-weight: 500;
+    color: $name-text;
+  }
 }

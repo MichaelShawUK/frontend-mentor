@@ -29,8 +29,12 @@ body {
   max-width: 780px;
   margin: 0 auto;
   padding: 30px;
+  margin-top: 50px;
 }
 
-header {
-  margin-bottom: 30px;
+@media (width < 768px) {
+  .notifications-page {
+    margin-top: 0;
+    padding: 10px;
+  }
 }

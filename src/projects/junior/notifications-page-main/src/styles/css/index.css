@@ -1,6 +1,7 @@
 header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 header button {
   border: none;
@@ -29,6 +30,14 @@ header button:hover {
   border-radius: 4px;
 }
 
+@media (width < 768px) {
+  header {
+    margin: 10px 0 20px 0;
+  }
+  .heading h2 {
+    font-size: 20px;
+  }
+}
 .notification {
   display: grid;
   grid-template-columns: 44px 1fr;
@@ -36,13 +45,20 @@ header button:hover {
   column-gap: 20px;
   margin-bottom: 8px;
   padding: 20px;
-  background-color: hsl(210, 60%, 98%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 4px;
+}
+.notification.unread {
+  background-color: hsl(210, 60%, 98%);
 }
 
 .avatar {
   grid-area: avatar;
   height: 44px;
+}
+
+.message {
+  line-height: 1.3;
 }
 
 .flex-wrapper {
@@ -111,6 +127,15 @@ header button:hover {
   vertical-align: middle;
 }
 
+@media (width < 768px) {
+  .notification {
+    padding: 14px;
+  }
+  .post-title {
+    font-weight: 500;
+    color: hsl(224, 21%, 14%);
+  }
+}
 @font-face {
   font-family: "Plus Jakarta Sans";
   src: url("src/projects/junior/notifications-page-main/src/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
@@ -135,10 +160,14 @@ body {
   max-width: 780px;
   margin: 0 auto;
   padding: 30px;
+  margin-top: 50px;
 }
 
-header {
-  margin-bottom: 30px;
+@media (width < 768px) {
+  .notifications-page {
+    margin-top: 0;
+    padding: 10px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
