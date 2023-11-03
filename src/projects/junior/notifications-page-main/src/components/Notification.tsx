@@ -38,7 +38,7 @@ function Notification({ notification }: Props) {
             {group && <span className="group"> {group}</span>}
             {notification.unread && <i className="unread-badge"></i>}
           </p>
-          <p className="time">{notification.created_at.toDateString()}</p>
+          <p className="time">{notification.getRelativeTime()}</p>
         </div>
         {picture && <img src={picture} className="picture" />}
       </div>

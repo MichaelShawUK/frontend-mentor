@@ -21,7 +21,17 @@ kimberly.unread = false;
 nathan.unread = false;
 anna.unread = false;
 
-mark.created_at = new Date(Date.now() - 60 * 1000);
+const minute = 60 * 1000;
+const day = 24 * 60 * minute;
+const week = day * 7;
+
+mark.created_at = new Date(Date.now() - minute);
+angela.created_at = new Date(Date.now() - 5 * minute);
+jacob.created_at = new Date(Date.now() - day);
+rizky.created_at = new Date(Date.now() - 5 * day);
+kimberly.created_at = new Date(Date.now() - week);
+nathan.created_at = new Date(Date.now() - 2 * week);
+anna.created_at = new Date(Date.now() - 2 * week);
 
 notifications.push(mark, angela, jacob, rizky, kimberly, nathan, anna);
 
