@@ -49,6 +49,25 @@
   width: 20%;
 }
 
+.card-back {
+  background-image: url("src/projects/junior/interactive-card-details-form-main/src/assets/images/bg-card-back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 447/245;
+  max-width: 447px;
+  min-width: 300px;
+  color: hsl(0, 0%, 100%);
+}
+
+.cvc {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15%;
+  letter-spacing: 2px;
+}
+
 * {
   margin: 0;
   padding: 0;

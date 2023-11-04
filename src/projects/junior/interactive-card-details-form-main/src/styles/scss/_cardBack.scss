@@ -1,0 +1,20 @@
+.card-back {
+  background: {
+    image: url("src/projects/junior/interactive-card-details-form-main/src/assets/images/bg-card-back.png");
+    repeat: no-repeat;
+    size: cover;
+  }
+  aspect-ratio: 447 / 245;
+  max-width: 447px;
+  min-width: 300px;
+  color: $white;
+}
+
+.cvc {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15%;
+  letter-spacing: 2px;
+}

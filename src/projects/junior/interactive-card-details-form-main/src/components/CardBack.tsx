@@ -1,7 +1,9 @@
-import BgCardBack from "../assets/images/bg-card-back.png";
-
 function CardBack() {
-  return <img src={BgCardBack} />;
+  return (
+    <div className="card-back">
+      <p className="cvc">000</p>
+    </div>
+  );
 }
 
 export default CardBack;

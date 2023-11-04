@@ -5,7 +5,7 @@ function InteractiveCards() {
   return (
     <div className="interactive-cards">
       <CardFront />
-      {/* <CardBack /> */}
+      <CardBack />
     </div>
   );
 }
