@@ -5,21 +5,35 @@
   background-size: cover;
   aspect-ratio: 447/245;
   max-width: 447px;
+  min-width: 300px;
   position: relative;
   color: hsl(0, 0%, 100%);
+  container-type: size;
 }
 
 .wrapper {
-  padding: 5%;
+  padding: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .card-details {
   display: grid;
   grid-template-areas: "number number" "name expiry";
+  letter-spacing: 2px;
+  row-gap: 4cqw;
 }
 
 .card-number {
   grid-area: number;
+  font-size: 6.6cqw;
+}
+
+.name,
+.expiry {
+  font-size: 3.5cqw;
 }
 
 .name {
@@ -28,6 +42,7 @@
 
 .expiry {
   grid-area: expiry;
+  margin-left: auto;
 }
 
 .logo {
