@@ -34,16 +34,16 @@
   font-size: 6.6cqw;
 }
 
-.name,
-.expiry {
+.card-name,
+.card-expiry {
   font-size: 3.5cqw;
 }
 
-.name {
+.card-name {
   grid-area: name;
 }
 
-.expiry {
+.card-expiry {
   grid-area: expiry;
   margin-left: auto;
 }

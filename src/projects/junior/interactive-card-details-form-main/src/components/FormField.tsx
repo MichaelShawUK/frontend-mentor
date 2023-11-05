@@ -10,7 +10,7 @@ function FormField({ id, label, inputs }: Props) {
   inputs[0].id = id;
 
   return (
-    <div className="field">
+    <div className={`${id} field`}>
       <label htmlFor={id}>{label}</label>
       {inputs.map(({ id, name, type, placeholder }, index) => (
         <FormInput

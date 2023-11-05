@@ -31,16 +31,16 @@
   font-size: 6.6cqw;
 }
 
-.name,
-.expiry {
+.card-name,
+.card-expiry {
   font-size: 3.5cqw;
 }
 
-.name {
+.card-name {
   grid-area: name;
 }
 
-.expiry {
+.card-expiry {
   grid-area: expiry;
   margin-left: auto;
 }
@@ -59,7 +59,7 @@
   color: hsl(0, 0%, 100%);
 }
 
-.cvc {
+.cvc-strip {
   height: 100%;
   display: flex;
   align-items: center;
@@ -81,18 +81,44 @@
   margin-left: 20%;
 }
 
+form {
+  display: grid;
+  grid-template-areas: "name name " "number number" "expiry cvc" "button button";
+  grid-template-columns: 1fr 1fr;
+  max-width: 400px;
+  min-width: 320px;
+}
 form label {
   font-size: 14px;
   color: hsl(278, 68%, 11%);
   letter-spacing: 1px;
   display: block;
-  margin-bottom: 4px;
-  background: palegreen;
+  margin-bottom: 8px;
   width: max-content;
+}
+form button {
+  grid-area: button;
+  margin-top: 10px;
 }
 
 .field {
-  margin-bottom: 20px;
+  margin-bottom: 26px;
+}
+.field.name {
+  grid-area: name;
+}
+.field.number {
+  grid-area: number;
+}
+.field.expiry {
+  grid-area: expiry;
+}
+.field.expiry > input {
+  width: 40%;
+  margin-right: 10px;
+}
+.field.cvc {
+  grid-area: cvc;
 }
 
 input {
@@ -102,6 +128,7 @@ input {
   font-family: "Space Grotesk";
   font-size: 20px;
   outline: none;
+  width: 100%;
 }
 input:focus {
   border-top-color: hsl(249, 99%, 64%);
@@ -111,13 +138,15 @@ input:focus {
 }
 input::placeholder {
   font-family: "Space Grotesk";
+  color: rgba(0, 0, 0, 0.2666666667);
 }
 
 button {
   background-color: hsl(278, 68%, 11%);
   color: hsl(0, 0%, 100%);
   font-family: "Space Grotesk";
-  padding: 10px;
+  font-size: 20px;
+  padding: 14px;
   border-radius: 6px;
   border: none;
   cursor: pointer;

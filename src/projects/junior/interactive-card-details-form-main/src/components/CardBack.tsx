@@ -1,7 +1,7 @@
 function CardBack() {
   return (
     <div className="card-back">
-      <p className="cvc">000</p>
+      <p className="cvc-strip">000</p>
     </div>
   );
 }
