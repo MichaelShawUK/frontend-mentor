@@ -1,0 +1,13 @@
+.interactive-cards {
+  max-width: 550px;
+  min-width: 370px;
+  background-color: palegreen;
+
+  .card-front {
+    margin-right: 20%;
+    margin-bottom: 5%;
+  }
+  .card-back {
+    margin-left: 20%;
+  }
+}
