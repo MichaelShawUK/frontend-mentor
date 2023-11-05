@@ -81,6 +81,51 @@
   margin-left: 20%;
 }
 
+form label {
+  font-size: 14px;
+  color: hsl(278, 68%, 11%);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 4px;
+  background: palegreen;
+  width: max-content;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid hsl(270, 3%, 87%);
+  border-radius: 6px;
+  font-family: "Space Grotesk";
+  font-size: 20px;
+  outline: none;
+}
+input:focus {
+  border-top-color: hsl(249, 99%, 64%);
+  border-left-color: hsl(249, 99%, 64%);
+  border-right-color: hsl(278, 94%, 30%);
+  border-bottom-color: hsl(278, 94%, 30%);
+}
+input::placeholder {
+  font-family: "Space Grotesk";
+}
+
+button {
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  font-family: "Space Grotesk";
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
 * {
   margin: 0;
   padding: 0;

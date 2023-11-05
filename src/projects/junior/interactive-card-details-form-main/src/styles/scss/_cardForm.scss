@@ -1,0 +1,49 @@
+form {
+  label {
+    font-size: 14px;
+    color: $very-dark-violet;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+    background: palegreen;
+    width: max-content;
+  }
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid $light-grayish-violet;
+  border-radius: 6px;
+  font-family: "Space Grotesk";
+  font-size: 20px;
+  outline: none;
+
+  &:focus {
+    border-top-color: $light-border;
+    border-left-color: $light-border;
+    border-right-color: $dark-border;
+    border-bottom-color: $dark-border;
+  }
+
+  &::placeholder {
+    font-family: "Space Grotesk";
+  }
+}
+
+button {
+  background-color: $very-dark-violet;
+  color: $white;
+  font-family: "Space Grotesk";
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 6px #0006;
+  }
+}
