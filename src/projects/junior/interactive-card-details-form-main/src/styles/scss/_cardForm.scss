@@ -14,7 +14,7 @@ form {
     color: $very-dark-violet;
     letter-spacing: 1px;
     display: block;
-    margin-bottom: 8px;
+    padding-bottom: 8px;
     width: max-content;
   }
 
@@ -80,4 +80,14 @@ button {
   &:hover {
     box-shadow: 0 4px 6px #0006;
   }
+}
+
+.error {
+  color: $red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.input-error {
+  border-color: $red;
 }

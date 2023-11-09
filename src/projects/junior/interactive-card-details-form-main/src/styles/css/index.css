@@ -93,7 +93,7 @@ form label {
   color: hsl(278, 68%, 11%);
   letter-spacing: 1px;
   display: block;
-  margin-bottom: 8px;
+  padding-bottom: 8px;
   width: max-content;
 }
 form button {
@@ -153,6 +153,16 @@ button {
 }
 button:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.error {
+  color: hsl(0, 100%, 66%);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.input-error {
+  border-color: hsl(0, 100%, 66%);
 }
 
 * {
