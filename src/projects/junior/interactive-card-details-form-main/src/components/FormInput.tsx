@@ -1,6 +1,8 @@
 import Validation from "../models/Validation";
+// import { FormSubmissionContext } from "./CardForm";
+import { FormContext } from "./CardForm";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 export interface IFormInput {
   id?: string;
@@ -25,12 +27,16 @@ function FormInput({
   checkError,
 }: Props) {
   const [className, setClassName] = useState<string>();
+  // const formSubmitted = useContext(FormSubmissionContext);
+  const state = useContext(FormContext);
 
   function changeHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    validation.validate(event.target.value);
-    checkError();
-    if (validation.error) setClassName("input-error");
-    else setClassName(undefined);
+    if (state.formSubmitted) {
+      validation.validate(event.target.value);
+      checkError();
+      if (validation.error) setClassName("input-error");
+      else setClassName(undefined);
+    }
   }
 
   return (
