@@ -1,5 +1,6 @@
 import FormField from "./FormField";
 import { IFormInput } from "./FormInput";
+import Validation from "../models/Validation";
 
 function CardForm() {
   const nameInput: IFormInput = {
@@ -31,6 +32,12 @@ function CardForm() {
     placeholder: "e.g. 123",
     type: "text",
   };
+
+  const valid = new Validation();
+  valid.isNotEmpty().isNumber().isLessThan(1);
+  console.log(valid.error);
+  valid.validate("02");
+  console.log(valid.error);
 
   return (
     <form>
