@@ -1,8 +1,7 @@
 import Validation from "../models/Validation";
-// import { FormSubmissionContext } from "./CardForm";
 import { FormContext } from "./CardForm";
 
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 export interface IFormInput {
   id?: string;
@@ -10,11 +9,11 @@ export interface IFormInput {
   type: string;
   placeholder: string;
   validation: Validation;
+  value: string;
 }
 
 interface Props extends IFormInput {
   index: number;
-  checkError: () => void;
 }
 
 function FormInput({
@@ -24,24 +23,31 @@ function FormInput({
   type,
   placeholder,
   validation,
-  checkError,
+  value,
 }: Props) {
-  const [className, setClassName] = useState<string>();
-  // const formSubmitted = useContext(FormSubmissionContext);
-  const state = useContext(FormContext);
+  const { state, dispatch } = useContext(FormContext);
 
   function changeHandler(event: React.ChangeEvent<HTMLInputElement>) {
     if (state.formSubmitted) {
-      validation.validate(event.target.value);
-      checkError();
-      if (validation.error) setClassName("input-error");
-      else setClassName(undefined);
+      const error = validation.validate(event.target.value);
+
+      const formData = { ...state.enteredValues };
+      formData[name] = value;
+
+      const errors = { ...state.errors };
+      errors[name] = error ? error : "";
+
+      dispatch({
+        type: "user_input",
+        formData,
+        errors,
+      });
     }
   }
 
   return (
     <input
-      className={className}
+      className={state.errors[name] ? "input-error" : undefined}
       id={id}
       key={index}
       name={name}

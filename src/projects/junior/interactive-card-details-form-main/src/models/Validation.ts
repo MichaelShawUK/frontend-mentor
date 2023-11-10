@@ -1,69 +1,68 @@
 class Validation {
-  value = "";
-  error = "";
-  validateFns: Array<() => void> = [];
+  validateFns: Array<(value: string) => string | null> = [];
 
   isNotEmpty() {
-    this.validateFns.push(() => {
-      if (this.value.trim().length === 0) this.error = "Can't be blank";
-      else this.error = "";
+    this.validateFns.push((value) => {
+      if (value.trim().length === 0) return "Can't be blank";
+      else return null;
     });
     return this;
   }
 
   isAlpha() {
-    this.validateFns.push(() => {
+    this.validateFns.push((value) => {
       const alphaRegex = new RegExp(/^[A-Za-z ]*$/);
-      if (!alphaRegex.test(this.value.trim())) {
-        this.error = "Wrong format, letters only";
-      }
+      if (!alphaRegex.test(value.trim())) {
+        return "Wrong format, letters only";
+      } else return null;
     });
     return this;
   }
 
   isNumber() {
-    this.validateFns.push(() => {
+    this.validateFns.push((value) => {
       const numberRegex = new RegExp(/^\d[\d ]*$/);
-      if (!numberRegex.test(this.value.trim())) {
-        this.error = "Wrong format, numbers only";
-      }
+      if (!numberRegex.test(value.trim())) {
+        return "Wrong format, numbers only";
+      } else return null;
     });
     return this;
   }
 
   isLength(n: number) {
-    this.validateFns.push(() => {
-      const removeWhitespace = this.value.split(" ").join("");
+    this.validateFns.push((value) => {
+      const removeWhitespace = value.split(" ").join("");
       if (removeWhitespace.length !== n) {
-        this.error = `Must be ${n} characters`;
-      }
+        return `Must be ${n} characters`;
+      } else return null;
     });
     return this;
   }
 
   isGreaterThan(n: number) {
-    this.validateFns.push(() => {
-      if (parseInt(this.value.trim()) <= n) {
-        this.error = `Must be greater than ${n}`;
-      }
+    this.validateFns.push((value) => {
+      if (parseInt(value.trim()) <= n) {
+        return `Must be greater than ${n}`;
+      } else return null;
     });
     return this;
   }
 
   isLessThan(n: number) {
-    this.validateFns.push(() => {
-      if (parseInt(this.value.trim()) >= n) {
-        this.error = `Must be less than ${n}`;
-      }
+    this.validateFns.push((value) => {
+      if (parseInt(value.trim()) >= n) {
+        return `Must be less than ${n}`;
+      } else return null;
     });
     return this;
   }
 
   validate(value: string) {
-    this.value = value;
     for (let i = 0; i < this.validateFns.length; i++) {
-      this.validateFns[i].call(this);
-      if (this.error) break;
+      const error = this.validateFns[i](value);
+      if (error) {
+        return error;
+      }
     }
   }
 }

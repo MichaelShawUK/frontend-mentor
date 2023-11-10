@@ -1,6 +1,7 @@
 import FormInput, { IFormInput } from "./FormInput";
+import { FormContext } from "./CardForm";
 
-import { useState } from "react";
+import { useContext } from "react";
 
 interface Props {
   id: string;
@@ -9,34 +10,35 @@ interface Props {
 }
 
 function FormField({ id, label, inputs }: Props) {
-  inputs[0].id = id;
+  const { state } = useContext(FormContext);
 
-  const [error, setError] = useState("");
-
-  function onError() {
-    for (let i = 0; i < inputs.length; i++) {
-      if (inputs[i].validation.error) {
-        setError(inputs[i].validation.error);
-        break;
-      } else setError("");
+  let error = "";
+  for (let i = 0; i < inputs.length; i++) {
+    if (state.errors[inputs[i].name]) {
+      error = state.errors[inputs[i].name];
+      break;
     }
   }
+
+  inputs[0].id = id;
 
   return (
     <div className={`${id} field`}>
       <label htmlFor={id}>{label}</label>
-      {inputs.map(({ id, name, type, placeholder, validation }, index) => (
-        <FormInput
-          key={index}
-          index={index}
-          id={id}
-          name={name}
-          type={type}
-          placeholder={placeholder}
-          validation={validation}
-          checkError={onError}
-        />
-      ))}
+      {inputs.map(
+        ({ id, name, type, placeholder, validation, value }, index) => (
+          <FormInput
+            key={index}
+            index={index}
+            id={id}
+            name={name}
+            type={type}
+            placeholder={placeholder}
+            validation={validation}
+            value={value}
+          />
+        )
+      )}
       {error && <p className="error">{error}</p>}
     </div>
   );
