@@ -1,0 +1,26 @@
+.success {
+  text-align: center;
+  max-width: 400px;
+  min-width: 320px;
+  margin: 0 auto;
+  align-self: center;
+
+  img {
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $dark-grayish-violet;
+    margin-bottom: 40px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

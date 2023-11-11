@@ -4,6 +4,7 @@ import { createContext } from "react";
 
 export const initialState: IReducerState = {
   formSubmitted: false,
+  success: false,
   enteredValues: {
     name: "",
     number: "",

@@ -192,6 +192,29 @@ button:hover {
   border-color: hsl(0, 100%, 66%);
 }
 
+.success {
+  text-align: center;
+  max-width: 400px;
+  min-width: 320px;
+  margin: 0 auto;
+  align-self: center;
+}
+.success img {
+  margin-bottom: 30px;
+}
+.success h1 {
+  font-weight: 500;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+.success p {
+  color: hsl(279, 6%, 55%);
+  margin-bottom: 40px;
+}
+.success button {
+  width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
