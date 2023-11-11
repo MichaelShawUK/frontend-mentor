@@ -67,6 +67,10 @@
   justify-content: flex-end;
   padding: 15%;
   letter-spacing: 2px;
+  overflow: clip;
+}
+.cvc-strip.invalid {
+  color: hsl(0, 100%, 66%);
 }
 
 .interactive-cards {

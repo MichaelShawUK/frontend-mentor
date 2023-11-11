@@ -17,4 +17,9 @@
   justify-content: flex-end;
   padding: 15%;
   letter-spacing: 2px;
+  overflow: clip;
+
+  &.invalid {
+    color: $red;
+  }
 }
