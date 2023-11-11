@@ -16,33 +16,25 @@ interface Props extends IFormInput {
   index: number;
 }
 
-function FormInput({
-  id,
-  index,
-  name,
-  type,
-  placeholder,
-  validation,
-  value,
-}: Props) {
+function FormInput({ id, index, name, type, placeholder, validation }: Props) {
   const { state, dispatch } = useContext(AppContext);
 
   function changeHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    const error = validation.validate(event.target.value);
+
+    const formData = { ...state.enteredValues };
+    formData[name] = event.target.value;
+
+    const errors = { ...state.errors };
     if (state.formSubmitted) {
-      const error = validation.validate(event.target.value);
-
-      const formData = { ...state.enteredValues };
-      formData[name] = value;
-
-      const errors = { ...state.errors };
       errors[name] = error ? error : "";
-
-      dispatch({
-        type: "user_input",
-        formData,
-        errors,
-      });
     }
+
+    dispatch({
+      type: "user_input",
+      formData,
+      errors,
+    });
   }
 
   return (
