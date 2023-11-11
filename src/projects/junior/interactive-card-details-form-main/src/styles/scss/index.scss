@@ -18,3 +18,21 @@ body {
     weight: 500;
   }
 }
+
+.card-details-form {
+  display: flex;
+  max-width: 1920px;
+}
+
+.desktop-bg {
+  height: 100vh;
+  min-height: 900px;
+  display: block;
+  width: 25%;
+}
+
+.interactive-cards {
+  position: absolute;
+  align-self: center;
+  margin-left: 5%;
+}

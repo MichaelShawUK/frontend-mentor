@@ -71,7 +71,7 @@
 .interactive-cards {
   max-width: 550px;
   min-width: 370px;
-  background-color: palegreen;
+  width: 30vw;
 }
 .interactive-cards .card-front {
   margin-right: 20%;
@@ -87,6 +87,10 @@ form {
   grid-template-columns: 1fr 1fr;
   max-width: 400px;
   min-width: 320px;
+  height: min-content;
+  align-self: center;
+  margin: 0 auto;
+  padding: 10px;
 }
 form label {
   font-size: 14px;
@@ -175,6 +179,24 @@ body {
   font-family: "Space Grotesk";
   font-size: 18px;
   font-weight: 500;
+}
+
+.card-details-form {
+  display: flex;
+  max-width: 1920px;
+}
+
+.desktop-bg {
+  height: 100vh;
+  min-height: 900px;
+  display: block;
+  width: 25%;
+}
+
+.interactive-cards {
+  position: absolute;
+  align-self: center;
+  margin-left: 5%;
 }
 
 /*# sourceMappingURL=index.css.map */
