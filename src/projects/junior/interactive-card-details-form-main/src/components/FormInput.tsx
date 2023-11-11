@@ -1,5 +1,5 @@
 import Validation from "../models/Validation";
-import { FormContext } from "./CardForm";
+import AppContext from "../state/context";
 
 import { useContext } from "react";
 
@@ -25,7 +25,7 @@ function FormInput({
   validation,
   value,
 }: Props) {
-  const { state, dispatch } = useContext(FormContext);
+  const { state, dispatch } = useContext(AppContext);
 
   function changeHandler(event: React.ChangeEvent<HTMLInputElement>) {
     if (state.formSubmitted) {

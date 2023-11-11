@@ -1,5 +1,5 @@
 import FormInput, { IFormInput } from "./FormInput";
-import { FormContext } from "./CardForm";
+import AppContext from "../state/context";
 
 import { useContext } from "react";
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 function FormField({ id, label, inputs }: Props) {
-  const { state } = useContext(FormContext);
+  const { state } = useContext(AppContext);
 
   let error = "";
   for (let i = 0; i < inputs.length; i++) {

@@ -1,73 +1,16 @@
 import FormField from "./FormField";
 import { IFormInput } from "./FormInput";
 import Validation from "../models/Validation";
+import AppContext from "../state/context";
 
-import { createContext, useReducer } from "react";
+import { useContext } from "react";
 
-export const FormSubmissionContext = createContext(false);
-
-interface IFormData {
+export interface IFormData {
   [key: string]: string;
 }
 
-interface IReducerState {
-  formSubmitted: boolean;
-  enteredValues: IFormData;
-  errors: IFormData;
-}
-
-interface IReducerAction {
-  type: string;
-  formData: IFormData;
-  errors: IFormData;
-}
-
-function reducer(state: IReducerState, action: IReducerAction) {
-  switch (action.type) {
-    case "submit_form": {
-      return {
-        formSubmitted: true,
-        enteredValues: action.formData,
-        errors: action.errors,
-      };
-    }
-    case "user_input": {
-      return {
-        formSubmitted: state.formSubmitted,
-        enteredValues: action.formData,
-        errors: action.errors,
-      };
-    }
-    default:
-      return state;
-  }
-}
-
-const initialState: IReducerState = {
-  formSubmitted: false,
-  enteredValues: {
-    name: "",
-    number: "",
-    month: "",
-    year: "",
-    cvc: "",
-  },
-  errors: {
-    name: "",
-    number: "",
-    month: "",
-    year: "",
-    cvc: "",
-  },
-};
-
-export const FormContext = createContext<{
-  state: IReducerState;
-  dispatch: React.Dispatch<IReducerAction>;
-}>({ state: initialState, dispatch: () => null });
-
 function CardForm() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { state, dispatch } = useContext(AppContext);
 
   const nameInput: IFormInput = {
     name: "name",
@@ -134,19 +77,17 @@ function CardForm() {
   }
 
   return (
-    <FormContext.Provider value={{ state, dispatch }}>
-      <form onSubmit={submitHandler}>
-        <FormField id="name" label="CARDHOLDER NAME" inputs={[nameInput]} />
-        <FormField id="number" label="CARD NUMBER" inputs={[numberInput]} />
-        <FormField
-          id="expiry"
-          label="EXP. DATE (MM/YY)"
-          inputs={[monthInput, yearInput]}
-        />
-        <FormField id="cvc" label="CVC" inputs={[cvcInput]} />
-        <button>Confirm</button>
-      </form>
-    </FormContext.Provider>
+    <form onSubmit={submitHandler}>
+      <FormField id="name" label="CARDHOLDER NAME" inputs={[nameInput]} />
+      <FormField id="number" label="CARD NUMBER" inputs={[numberInput]} />
+      <FormField
+        id="expiry"
+        label="EXP. DATE (MM/YY)"
+        inputs={[monthInput, yearInput]}
+      />
+      <FormField id="cvc" label="CVC" inputs={[cvcInput]} />
+      <button>Confirm</button>
+    </form>
   );
 }
 
