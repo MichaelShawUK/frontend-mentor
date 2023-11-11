@@ -13,8 +13,6 @@ import { useReducer } from "react";
 function CardDetailsForm() {
   const [state, dispatch] = useReducer(reducerFn, initialState);
 
-  console.log(state.success);
-
   const background =
     useViewMode() === "MOBILE" ? (
       <img src={mobileBg} className="mobile-bg" />
