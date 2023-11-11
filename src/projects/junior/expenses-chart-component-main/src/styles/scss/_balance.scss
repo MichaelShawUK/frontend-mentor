@@ -1,11 +1,12 @@
 .balance {
   background-color: $soft-red;
   color: $very-pale-orange;
-  padding: 16px;
+  padding: 16px 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
+  margin-bottom: 16px;
 
   h6 {
     font-weight: 400;

@@ -1,0 +1,27 @@
+.total {
+  font-size: 14px;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid $cream;
+
+  .summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .amount {
+    color: $dark-brown;
+    font-weight: 700;
+    font-size: 34px;
+  }
+}
+
+.monthly-comparison {
+  text-align: right;
+
+  .change {
+    color: $dark-brown;
+    font-weight: 700;
+  }
+}

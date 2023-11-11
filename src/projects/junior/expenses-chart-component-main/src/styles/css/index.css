@@ -3,11 +3,12 @@
 .balance {
   background-color: hsl(10, 79%, 65%);
   color: hsl(33, 100%, 98%);
-  padding: 16px;
+  padding: 16px 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
+  margin-bottom: 16px;
 }
 .balance h6 {
   font-weight: 400;
@@ -15,6 +16,40 @@
 }
 .balance .logo {
   height: 30px;
+}
+
+.chart {
+  background-color: hsl(33, 100%, 98%);
+  padding: 22px;
+  border-radius: 10px;
+}
+.chart h3 {
+  color: hsl(25, 47%, 15%);
+}
+
+.total {
+  font-size: 14px;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid hsl(27, 66%, 92%);
+}
+.total .summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.total .amount {
+  color: hsl(25, 47%, 15%);
+  font-weight: 700;
+  font-size: 34px;
+}
+
+.monthly-comparison {
+  text-align: right;
+}
+.monthly-comparison .change {
+  color: hsl(25, 47%, 15%);
+  font-weight: 700;
 }
 
 * {
