@@ -31,8 +31,13 @@ body {
   width: 25%;
 }
 
-.interactive-cards {
-  position: absolute;
-  align-self: center;
-  margin-left: 5%;
+.mobile-bg {
+  max-height: 240px;
+  margin-bottom: 100px;
+}
+
+@media (width < 1020px) {
+  .card-details-form {
+    flex-direction: column;
+  }
 }

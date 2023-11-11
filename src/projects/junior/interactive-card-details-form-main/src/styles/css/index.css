@@ -77,13 +77,31 @@
   max-width: 550px;
   min-width: 370px;
   width: 30vw;
+  position: absolute;
+  align-self: center;
+  margin-left: 5%;
 }
-.interactive-cards .card-front {
+.interactive-cards.desktop .card-front {
   margin-right: 20%;
   margin-bottom: 5%;
 }
-.interactive-cards .card-back {
+.interactive-cards.desktop .card-back {
   margin-left: 20%;
+}
+.interactive-cards.mobile {
+  margin-left: 0;
+  height: 300px;
+  min-width: 340px;
+}
+.interactive-cards.mobile .card-front {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+.interactive-cards.mobile .card-back {
+  position: absolute;
+  right: 0;
+  top: 43px;
 }
 
 form {
@@ -198,10 +216,15 @@ body {
   width: 25%;
 }
 
-.interactive-cards {
-  position: absolute;
-  align-self: center;
-  margin-left: 5%;
+.mobile-bg {
+  max-height: 240px;
+  margin-bottom: 100px;
+}
+
+@media (width < 1020px) {
+  .card-details-form {
+    flex-direction: column;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
