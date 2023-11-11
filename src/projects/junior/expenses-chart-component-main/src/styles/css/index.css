@@ -1,5 +1,22 @@
 @import "https://fonts.googleapis.com/css?family=DM+Sans";
 @import "https://fonts.googleapis.com/css?family=DM+Sans:700";
+.balance {
+  background-color: hsl(10, 79%, 65%);
+  color: hsl(33, 100%, 98%);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+.balance h6 {
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.balance .logo {
+  height: 30px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +29,12 @@ body {
   font-family: "DM Sans";
   color: hsl(28, 10%, 53%);
   background-color: hsl(27, 66%, 92%);
+}
+
+.expenses-chart {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */
