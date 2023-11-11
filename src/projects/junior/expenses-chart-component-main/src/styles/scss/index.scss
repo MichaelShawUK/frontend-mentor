@@ -1,0 +1,20 @@
+@import "colors";
+@import "https://fonts.googleapis.com/css?family=DM+Sans";
+@import "https://fonts.googleapis.com/css?family=DM+Sans:700";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: {
+    size: 18px;
+    weight: 400;
+    family: "DM Sans";
+  }
+
+  color: $medium-brown;
+  background-color: $cream;
+}

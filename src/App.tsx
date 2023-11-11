@@ -19,10 +19,11 @@
 // import AgeCalculator from "./projects/junior/age-calculator-app-main/src/App";
 // import NewsHomepage from "./projects/junior/news-homepage-main/src/App";
 // import NotificationsPage from "./projects/junior/notifications-page-main/src/App";
-import CardDetailsForm from "./projects/junior/interactive-card-details-form-main/src/App";
+// import CardDetailsForm from "./projects/junior/interactive-card-details-form-main/src/App";
+import ExpensesChart from "./projects/junior/expenses-chart-component-main/src/App";
 
 function App() {
-  return <CardDetailsForm />;
+  return <ExpensesChart />;
 }
 
 export default App;

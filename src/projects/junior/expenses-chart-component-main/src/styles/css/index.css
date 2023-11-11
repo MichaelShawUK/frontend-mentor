@@ -1,0 +1,17 @@
+@import "https://fonts.googleapis.com/css?family=DM+Sans";
+@import "https://fonts.googleapis.com/css?family=DM+Sans:700";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "DM Sans";
+  color: hsl(28, 10%, 53%);
+  background-color: hsl(27, 66%, 92%);
+}
+
+/*# sourceMappingURL=index.css.map */
