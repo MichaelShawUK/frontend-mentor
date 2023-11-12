@@ -25,6 +25,14 @@
 }
 .chart h3 {
   color: hsl(25, 47%, 15%);
+  margin-bottom: 10px;
+}
+
+.data-points {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2px;
 }
 
 .total {
@@ -52,6 +60,48 @@
   font-weight: 700;
 }
 
+.data-point {
+  text-align: center;
+}
+.data-point.selected .bar {
+  background-color: hsl(186, 34%, 60%);
+}
+.data-point.selected .bar:hover {
+  background-color: #92c4c9;
+}
+.data-point.selected .amount {
+  visibility: visible;
+}
+.data-point.mouse-over .amount {
+  visibility: visible;
+}
+.data-point .amount {
+  background-color: hsl(25, 47%, 15%);
+  color: hsl(33, 100%, 98%);
+  font-weight: 700;
+  font-size: 11px;
+  padding: 4px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  visibility: hidden;
+}
+
+.bar {
+  background-color: hsl(10, 79%, 65%);
+  border-radius: 3px;
+  margin: 0 auto;
+  width: 30px;
+  cursor: pointer;
+}
+.bar:hover {
+  background-color: #f0927f;
+}
+
+.day {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -67,7 +117,7 @@ body {
 }
 
 .expenses-chart {
-  max-width: 400px;
+  width: 375px;
   margin: 20px auto;
   padding: 10px;
 }

@@ -4,6 +4,7 @@
 @import "balance";
 @import "chart";
 @import "total";
+@import "dataPoint";
 
 * {
   margin: 0;
@@ -23,7 +24,7 @@ body {
 }
 
 .expenses-chart {
-  max-width: 400px;
+  width: 375px;
   margin: 20px auto;
   padding: 10px;
 }

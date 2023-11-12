@@ -5,5 +5,13 @@
 
   h3 {
     color: $dark-brown;
+    margin-bottom: 10px;
   }
+}
+
+.data-points {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2px;
 }

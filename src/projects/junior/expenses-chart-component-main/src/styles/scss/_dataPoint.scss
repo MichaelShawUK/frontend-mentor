@@ -1,0 +1,53 @@
+@use "sass:color";
+
+.data-point {
+  text-align: center;
+
+  &.selected {
+    .bar {
+      background-color: $cyan;
+
+      &:hover {
+        background-color: color.scale($cyan, $lightness: 20%);
+      }
+    }
+
+    .amount {
+      visibility: visible;
+    }
+  }
+
+  &.mouse-over {
+    .amount {
+      visibility: visible;
+    }
+  }
+
+  .amount {
+    background-color: $dark-brown;
+    color: $very-pale-orange;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 4px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    visibility: hidden;
+  }
+}
+
+.bar {
+  background-color: $soft-red;
+  border-radius: 3px;
+  margin: 0 auto;
+  width: 30px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: color.scale($soft-red, $lightness: 20%);
+  }
+}
+
+.day {
+  font-size: 12px;
+  margin-top: 4px;
+}
