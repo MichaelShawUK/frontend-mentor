@@ -20,10 +20,11 @@
 // import NewsHomepage from "./projects/junior/news-homepage-main/src/App";
 // import NotificationsPage from "./projects/junior/notifications-page-main/src/App";
 // import CardDetailsForm from "./projects/junior/interactive-card-details-form-main/src/App";
-import ExpensesChart from "./projects/junior/expenses-chart-component-main/src/App";
+// import ExpensesChart from "./projects/junior/expenses-chart-component-main/src/App";
+import DropdownNav from "./projects/junior/intro-section-with-dropdown-navigation-main/src/App";
 
 function App() {
-  return <ExpensesChart />;
+  return <DropdownNav />;
 }
 
 export default App;
