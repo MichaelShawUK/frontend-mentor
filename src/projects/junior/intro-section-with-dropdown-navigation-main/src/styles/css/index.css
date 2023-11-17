@@ -1,6 +1,18 @@
 @import "https://fonts.googleapis.com/css?family=Epilogue:500";
 @import "https://fonts.googleapis.com/css?family=Epilogue:700";
+.dropdown button {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.dropdown button:hover {
+  color: hsl(0, 0%, 8%);
+}
 .dropdown .links {
+  display: none;
   position: fixed;
   margin-top: 5px;
   padding: 26px;
@@ -21,6 +33,9 @@
 }
 .dropdown .links a:hover {
   color: hsl(0, 0%, 8%);
+}
+.dropdown.show .links {
+  display: block;
 }
 
 * {

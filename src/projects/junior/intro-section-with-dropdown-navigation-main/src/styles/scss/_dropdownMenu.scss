@@ -1,6 +1,19 @@
 .dropdown {
+  button {
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
   .links {
-    // display: block;
+    display: none;
     position: fixed;
     margin-top: 5px;
     padding: 26px;
@@ -24,6 +37,12 @@
       &:hover {
         color: $black;
       }
+    }
+  }
+
+  &.show {
+    .links {
+      display: block;
     }
   }
 }
