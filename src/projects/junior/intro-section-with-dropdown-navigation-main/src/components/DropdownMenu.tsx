@@ -1,6 +1,6 @@
-import { Ilink } from "../App";
-import UpSvg from "./upSvg";
-import DownSvg from "./downSvg";
+import { Ilink } from "./DropdownNav";
+import UpSvg from "./UpSvg";
+import DownSvg from "./DownSvg";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 
