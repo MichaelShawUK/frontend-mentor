@@ -1,0 +1,28 @@
+.dropdown-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 26px;
+  flex: 1;
+}
+
+.navigation {
+  display: flex;
+  gap: 26px;
+}
+
+.account-actions {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.register-btn {
+  padding: 10px 16px;
+  border: 1px solid $gray;
+  border-radius: 10px;
+
+  &:hover {
+    border-color: $black;
+  }
+}

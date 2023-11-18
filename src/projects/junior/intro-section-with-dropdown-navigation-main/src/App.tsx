@@ -1,8 +1,12 @@
 import "./styles/css/index.css";
-import DropdownNav from "./components/DropdownNav";
+import Header from "./components/Header";
 
 function SnapPage() {
-  return <DropdownNav />;
+  return (
+    <div className="snap-page">
+      <Header />
+    </div>
+  );
 }
 
 export default SnapPage;

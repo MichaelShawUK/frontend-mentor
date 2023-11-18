@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  align-items: center;
+  margin: 12px 26px;
+
+  .home-logo {
+    margin-right: 44px;
+    display: inline-block;
+
+    img {
+      display: block;
+    }
+  }
+}

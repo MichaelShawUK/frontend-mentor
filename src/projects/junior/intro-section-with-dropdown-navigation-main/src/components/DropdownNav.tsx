@@ -51,10 +51,18 @@ const companyLinks: Ilink[] = [
 function DropdownNav() {
   return (
     <nav className="dropdown-nav">
-      <DropdownMenu category="Features" links={featuresLinks} />
-      <DropdownMenu category="Company" links={companyLinks} />
-      <p>Content</p>
-      <p>More Content</p>
+      <div className="navigation">
+        <DropdownMenu category="Features" links={featuresLinks} />
+        <DropdownMenu category="Company" links={companyLinks} />
+        <a href="#">Careers</a>
+        <a href="#">About</a>
+      </div>
+      <div className="account-actions">
+        <a href="#">Login</a>
+        <a href="#" className="register-btn">
+          Register
+        </a>
+      </div>
     </nav>
   );
 }
