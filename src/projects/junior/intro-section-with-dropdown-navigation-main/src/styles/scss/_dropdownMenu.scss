@@ -46,3 +46,27 @@
     }
   }
 }
+
+.btn-wrapper {
+  display: flex;
+  width: min-content;
+  cursor: pointer;
+
+  &:hover {
+    button {
+      color: $black;
+    }
+
+    .arrow-svg {
+      path {
+        stroke: $black;
+      }
+    }
+  }
+}
+
+.arrow-svg {
+  vertical-align: middle;
+  padding-left: 6px;
+  pointer-events: none;
+}

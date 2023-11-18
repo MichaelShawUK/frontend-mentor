@@ -1,13 +1,18 @@
-import todoIcon from "../assets/images/icon-todo.svg";
-import calendarIcon from "../assets/images/icon-calendar.svg";
-import reminderIcon from "../assets/images/icon-reminders.svg";
-import planningIcon from "../assets/images/icon-planning.svg";
+import { Ilink } from "../App";
+import UpSvg from "./upSvg";
+import DownSvg from "./downSvg";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 
-function DropdownMenu() {
+interface Props {
+  category: string;
+  links: Ilink[];
+}
+
+function DropdownMenu({ category, links }: Props) {
   const [showMenu, setShowMenu] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const arrowRef = useRef<HTMLDivElement>(null);
 
   function clickHandler(event: UIEvent) {
     if (showMenu) {
@@ -16,11 +21,13 @@ function DropdownMenu() {
     if (event.target === buttonRef.current && !showMenu) {
       setShowMenu(true);
     }
+    if (event.target === arrowRef.current && !showMenu) {
+      setShowMenu(true);
+    }
   }
   const cacheClickHandler = useCallback(clickHandler, [showMenu]);
 
   useEffect(() => {
-    console.log("useEffect");
     window.addEventListener("click", cacheClickHandler);
 
     return () => {
@@ -32,33 +39,20 @@ function DropdownMenu() {
 
   return (
     <div className={className}>
-      <button ref={buttonRef}>Features</button>
+      <div className="btn-wrapper">
+        <button ref={buttonRef}>{category}</button>
+        {showMenu ? <UpSvg ref={arrowRef} /> : <DownSvg ref={arrowRef} />}
+      </div>
       <div className="links">
         <ul>
-          <li>
-            <a href="#">
-              <img src={todoIcon} />
-              Todo List
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src={calendarIcon} />
-              Calendar
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src={reminderIcon} />
-              Reminders
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src={planningIcon} />
-              Planning
-            </a>
-          </li>
+          {links.map((link, index) => (
+            <li key={index}>
+              <a href={link.href}>
+                {link.icon && <img src={link.icon} />}
+                {link.text}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

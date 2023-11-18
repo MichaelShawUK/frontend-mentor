@@ -38,6 +38,24 @@
   display: block;
 }
 
+.btn-wrapper {
+  display: flex;
+  width: min-content;
+  cursor: pointer;
+}
+.btn-wrapper:hover button {
+  color: hsl(0, 0%, 8%);
+}
+.btn-wrapper:hover .arrow-svg path {
+  stroke: hsl(0, 0%, 8%);
+}
+
+.arrow-svg {
+  vertical-align: middle;
+  padding-left: 6px;
+  pointer-events: none;
+}
+
 * {
   margin: 0;
   padding: 0;
