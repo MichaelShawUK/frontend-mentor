@@ -15,6 +15,44 @@ header .home-logo img {
 
 main {
   display: flex;
+  gap: 150px;
+  justify-content: center;
+  margin-top: 100px;
+  padding: 0 40px;
+}
+main h1 {
+  color: hsl(0, 0%, 8%);
+  font-size: 82px;
+  margin-bottom: 40px;
+}
+main p {
+  line-height: 1.7;
+  margin-right: 70px;
+  margin-bottom: 40px;
+}
+main button {
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 98%);
+  padding: 16px;
+  font-weight: 700;
+  border-radius: 6px;
+  margin-bottom: 100px;
+}
+main button:hover {
+  color: hsl(0, 0%, 98%);
+}
+main .hero {
+  max-height: 700px;
+}
+
+.clients {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.summary {
+  align-self: center;
+  max-width: 550px;
 }
 
 .dropdown-nav {

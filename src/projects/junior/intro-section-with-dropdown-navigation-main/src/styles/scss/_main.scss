@@ -1,3 +1,46 @@
 main {
   display: flex;
+  gap: 150px;
+  justify-content: center;
+  margin-top: 100px;
+  padding: 0 40px;
+
+  h1 {
+    color: $black;
+    font-size: 82px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    line-height: 1.7;
+    margin-right: 70px;
+    margin-bottom: 40px;
+  }
+
+  button {
+    background-color: $black;
+    color: $white;
+    padding: 16px;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-bottom: 100px;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .hero {
+    max-height: 700px;
+  }
+}
+
+.clients {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.summary {
+  align-self: center;
+  max-width: 550px;
 }

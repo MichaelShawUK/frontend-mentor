@@ -14,14 +14,14 @@ function Main() {
           create team rituals, and watch productivity soar.
         </p>
         <button>Learn more</button>
-        <section>
+        <section className="clients">
           <img src={databiz} />
           <img src={audiophile} />
           <img src={meet} />
           <img src={maker} />
         </section>
       </div>
-      <img src={desktopHero} />
+      <img src={desktopHero} className="hero" />
     </main>
   );
 }
