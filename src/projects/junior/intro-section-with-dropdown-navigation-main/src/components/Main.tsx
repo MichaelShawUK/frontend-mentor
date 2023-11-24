@@ -3,8 +3,14 @@ import audiophile from "../assets/images/client-audiophile.svg";
 import meet from "../assets/images/client-meet.svg";
 import maker from "../assets/images/client-maker.svg";
 import desktopHero from "../assets/images/image-hero-desktop.png";
+import mobileHero from "../assets/images/image-hero-mobile.png";
+import ViewModeContext from "../context/ViewModeContext";
+import { useContext } from "react";
 
 function Main() {
+  const viewMode = useContext(ViewModeContext);
+
+  const hero = viewMode === "MOBILE" ? mobileHero : desktopHero;
   return (
     <main>
       <div className="summary">
@@ -15,14 +21,22 @@ function Main() {
         </p>
         <button>Learn more</button>
         <section className="clients">
-          <img src={databiz} />
-          <img src={audiophile} />
-          <img src={meet} />
-          <img src={maker} />
+          <a href="">
+            <img src={databiz} />
+          </a>
+          <a href="">
+            <img src={audiophile} />
+          </a>
+          <a href="">
+            <img src={meet} />
+          </a>
+          <a href="">
+            <img src={maker} />
+          </a>
         </section>
       </div>
       <div className="hero">
-        <img src={desktopHero} />
+        <img src={hero} />
       </div>
     </main>
   );

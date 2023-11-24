@@ -62,11 +62,13 @@ main .hero img {
 
 .clients {
   display: flex;
-  align-items: baseline;
-  gap: 30px 10px;
+  align-items: center;
+  gap: 30px;
   justify-content: space-between;
-  flex-wrap: wrap;
   margin-right: 50px;
+}
+.clients img {
+  width: 100%;
 }
 
 .summary {
@@ -75,6 +77,30 @@ main .hero img {
   flex-shrink: 5;
 }
 
+@media (width <= 768px) {
+  main {
+    flex-direction: column-reverse;
+    margin: 20px 0 0 0;
+  }
+  main h1 {
+    margin-bottom: 20px;
+  }
+  main p {
+    margin: 0 14px;
+    margin-bottom: 20px;
+  }
+  main button {
+    margin-bottom: 40px;
+  }
+  .summary {
+    max-width: none;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .clients {
+    margin: 0 14px;
+  }
+}
 .dropdown-nav {
   display: flex;
   justify-content: space-between;
