@@ -13,6 +13,11 @@ header .home-logo img {
   display: block;
 }
 
+.mobile-menu-btn {
+  cursor: pointer;
+  margin-left: auto;
+}
+
 main {
   display: flex;
   gap: 3vw;
