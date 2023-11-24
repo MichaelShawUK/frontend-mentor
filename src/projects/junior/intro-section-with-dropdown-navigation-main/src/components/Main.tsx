@@ -21,7 +21,9 @@ function Main() {
           <img src={maker} />
         </section>
       </div>
-      <img src={desktopHero} className="hero" />
+      <div className="hero">
+        <img src={desktopHero} />
+      </div>
     </main>
   );
 }
