@@ -24,7 +24,6 @@ function Header() {
       <DropdownNav mode="desktop" />
     );
 
-  console.log(showMobileMenu);
   return (
     <header>
       <a href="#" className="home-logo">
