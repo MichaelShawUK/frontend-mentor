@@ -196,16 +196,21 @@ main .hero img {
   text-align: left;
   position: absolute;
   top: 0;
+  bottom: 0;
   margin-left: auto;
-  min-height: 560px;
-  height: 100vh;
+  height: auto;
   padding: 20px;
+  border: none;
 }
 .mobile-menu .close-btn {
   margin-left: auto;
   display: block;
   cursor: pointer;
   margin-bottom: 30px;
+}
+
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.4666666667);
 }
 
 * {

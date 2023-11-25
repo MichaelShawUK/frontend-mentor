@@ -1,10 +1,20 @@
 import DropdownNav from "./DropdownNav";
 import closeIcon from "../assets/images/icon-close-menu.svg";
+import { useRef } from "react";
 
-function MobileMenu() {
+function MobileMenu({ show, onClose }: { show: boolean; onClose: () => void }) {
+  const modalRef = useRef<HTMLDialogElement>(null);
+
+  if (modalRef.current && show) {
+    modalRef.current.showModal();
+  }
+  if (modalRef.current && !show) {
+    modalRef.current.close();
+  }
+
   return (
-    <dialog open className="mobile-menu">
-      <img src={closeIcon} className="close-btn" />
+    <dialog className="mobile-menu" ref={modalRef}>
+      <img src={closeIcon} className="close-btn" onClick={onClose} />
       <DropdownNav mode="mobile" />
     </dialog>
   );

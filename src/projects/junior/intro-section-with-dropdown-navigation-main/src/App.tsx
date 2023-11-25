@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import useViewMode from "./hooks/useViewMode";
 import ViewModeContext from "./context/ViewModeContext";
-import MobileMenu from "./components/MobileMenu";
 
 function SnapPage() {
   const viewMode = useViewMode();
@@ -14,7 +13,6 @@ function SnapPage() {
         <Header />
         <Main />
       </div>
-      <MobileMenu />
     </ViewModeContext.Provider>
   );
 }

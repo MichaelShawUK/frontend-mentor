@@ -4,10 +4,11 @@
   text-align: left;
   position: absolute;
   top: 0;
+  bottom: 0;
   margin-left: auto;
-  min-height: 560px;
-  height: 100vh;
+  height: auto;
   padding: 20px;
+  border: none;
 
   .close-btn {
     margin-left: auto;
@@ -15,4 +16,8 @@
     cursor: pointer;
     margin-bottom: 30px;
   }
+}
+
+::backdrop {
+  background-color: #0007;
 }
