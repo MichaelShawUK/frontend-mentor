@@ -48,9 +48,9 @@ const companyLinks: Ilink[] = [
   },
 ];
 
-function DropdownNav() {
+function DropdownNav({ mode }: { mode: string }) {
   return (
-    <nav className="dropdown-nav">
+    <nav className={`dropdown-nav ${mode}`}>
       <div className="navigation">
         <DropdownMenu category="Features" links={featuresLinks} />
         <DropdownMenu category="Company" links={companyLinks} />

@@ -108,6 +108,28 @@ main .hero img {
   gap: 26px;
   flex: 1;
 }
+.dropdown-nav.mobile {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.dropdown-nav.mobile .navigation {
+  flex-direction: column;
+}
+.dropdown-nav.mobile .links {
+  display: none;
+  position: relative;
+  box-shadow: none;
+  background-color: inherit;
+}
+.dropdown-nav.mobile .account-actions {
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+.dropdown-nav.mobile .account-actions .register-btn {
+  width: 100%;
+  text-align: center;
+}
 
 .navigation {
   display: flex;
@@ -166,6 +188,24 @@ main .hero img {
   vertical-align: middle;
   padding-left: 6px;
   pointer-events: none;
+}
+
+.mobile-menu {
+  width: 260px;
+  color: hsl(0, 0%, 41%);
+  text-align: left;
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  min-height: 560px;
+  height: 100vh;
+  padding: 20px;
+}
+.mobile-menu .close-btn {
+  margin-left: auto;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 30px;
 }
 
 * {

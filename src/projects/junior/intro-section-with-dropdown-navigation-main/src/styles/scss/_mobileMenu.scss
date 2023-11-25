@@ -1,0 +1,18 @@
+.mobile-menu {
+  width: 260px;
+  color: $gray;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  min-height: 560px;
+  height: 100vh;
+  padding: 20px;
+
+  .close-btn {
+    margin-left: auto;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+}

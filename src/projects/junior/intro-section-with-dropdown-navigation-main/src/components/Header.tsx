@@ -7,7 +7,8 @@ import { useContext } from "react";
 function Header() {
   const viewMode = useContext(ViewModeContext);
 
-  const menu = viewMode === "MOBILE" ? <MobileMenuIcon /> : <DropdownNav />;
+  const menu =
+    viewMode === "MOBILE" ? <MobileMenuIcon /> : <DropdownNav mode="desktop" />;
 
   return (
     <header>
