@@ -1,6 +1,4 @@
 @import "https://fonts.googleapis.com/css?family=Manrope:800";
-@import "colors";
-
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +6,11 @@
 }
 
 body {
-  background-color: $dark-blue;
-  color: $light-cyan;
-  font: {
-    family: "Manrope";
-    size: 28px;
-    weight: 800;
-  }
+  background-color: hsl(218, 23%, 16%);
+  color: hsl(193, 38%, 86%);
+  font-family: "Manrope";
+  font-size: 28px;
+  font-weight: 800;
 }
 
 .flex-wrapper {
@@ -25,5 +21,7 @@ body {
 }
 
 .advice-generator {
-  background-color: $dark-grayish-blue;
+  background-color: hsl(217, 19%, 24%);
 }
+
+/*# sourceMappingURL=index.css.map */

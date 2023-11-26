@@ -21,10 +21,11 @@
 // import NotificationsPage from "./projects/junior/notifications-page-main/src/App";
 // import CardDetailsForm from "./projects/junior/interactive-card-details-form-main/src/App";
 // import ExpensesChart from "./projects/junior/expenses-chart-component-main/src/App";
-import DropdownNav from "./projects/junior/intro-section-with-dropdown-navigation-main/src/App";
+// import DropdownNav from "./projects/junior/intro-section-with-dropdown-navigation-main/src/App";
+import AdviceGenerator from "./projects/junior/advice-generator-app-main/src/App";
 
 function App() {
-  return <DropdownNav />;
+  return <AdviceGenerator />;
 }
 
 export default App;
