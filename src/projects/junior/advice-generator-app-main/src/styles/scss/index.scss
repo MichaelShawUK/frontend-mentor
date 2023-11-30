@@ -27,3 +27,19 @@ body {
 .advice-generator {
   background-color: $dark-grayish-blue;
 }
+
+.dice-btn {
+  border: none;
+  background-color: $neon-green;
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  img {
+    display: block;
+  }
+
+  &:hover {
+    box-shadow: 0 0 20px $neon-green;
+  }
+}

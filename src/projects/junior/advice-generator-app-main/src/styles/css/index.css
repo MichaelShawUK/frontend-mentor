@@ -24,4 +24,18 @@ body {
   background-color: hsl(217, 19%, 24%);
 }
 
+.dice-btn {
+  border: none;
+  background-color: hsl(150, 100%, 66%);
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dice-btn img {
+  display: block;
+}
+.dice-btn:hover {
+  box-shadow: 0 0 20px hsl(150, 100%, 66%);
+}
+
 /*# sourceMappingURL=index.css.map */
