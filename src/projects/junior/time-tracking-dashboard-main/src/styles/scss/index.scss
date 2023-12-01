@@ -1,0 +1,93 @@
+@use "sass:color";
+@import "https://fonts.googleapis.com/css?family=Rubik:300";
+@import "https://fonts.googleapis.com/css?family=Rubik:400";
+@import "https://fonts.googleapis.com/css?family=Rubik:500";
+@import "colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $very-dark-blue;
+  color: #fff;
+  font: {
+    family: "Rubik";
+    size: 18px;
+  }
+  // padding-top: 50px;
+}
+
+.tracking {
+  // margin: 40px;
+  position: relative;
+  width: 260px;
+
+  &:hover {
+    cursor: pointer;
+    .card {
+      background-color: color.scale($dark-blue, $lightness: 10%);
+    }
+  }
+  .background {
+    background-color: $work;
+    border-radius: 14px;
+    position: relative;
+    height: 100px;
+    overflow: clip;
+
+    img {
+      position: absolute;
+      right: 20px;
+      top: -10px;
+    }
+  }
+}
+
+.card {
+  background-color: $dark-blue;
+  border-radius: 14px;
+  padding: 30px;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+
+  display: grid;
+  grid-template-areas:
+    "category ellipsis"
+    "time time"
+    "previous previous";
+
+  h6 {
+    grid-area: category;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .time {
+    grid-area: time;
+    font-size: 54px;
+    font-weight: 300;
+    margin: 14px 0 8px;
+  }
+  .previous {
+    grid-area: previous;
+    font-size: 14px;
+    color: $pale-blue;
+  }
+}
+
+.ellipsis {
+  width: min-content;
+  grid-area: ellipsis;
+  justify-self: flex-end;
+
+  &:hover {
+    transform: scale(1.1);
+
+    path {
+      fill: #fff;
+    }
+  }
+}

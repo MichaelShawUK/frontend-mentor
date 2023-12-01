@@ -1,0 +1,79 @@
+@import "https://fonts.googleapis.com/css?family=Rubik:300";
+@import "https://fonts.googleapis.com/css?family=Rubik:400";
+@import "https://fonts.googleapis.com/css?family=Rubik:500";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(226, 43%, 10%);
+  color: #fff;
+  font-family: "Rubik";
+  font-size: 18px;
+}
+
+.tracking {
+  position: relative;
+  width: 260px;
+}
+.tracking:hover {
+  cursor: pointer;
+}
+.tracking:hover .card {
+  background-color: #272c68;
+}
+.tracking .background {
+  background-color: hsl(15, 100%, 70%);
+  border-radius: 14px;
+  position: relative;
+  height: 100px;
+  overflow: clip;
+}
+.tracking .background img {
+  position: absolute;
+  right: 20px;
+  top: -10px;
+}
+
+.card {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 14px;
+  padding: 30px;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "category ellipsis" "time time" "previous previous";
+}
+.card h6 {
+  grid-area: category;
+  font-weight: 500;
+  font-size: 18px;
+}
+.card .time {
+  grid-area: time;
+  font-size: 54px;
+  font-weight: 300;
+  margin: 14px 0 8px;
+}
+.card .previous {
+  grid-area: previous;
+  font-size: 14px;
+  color: hsl(236, 100%, 87%);
+}
+
+.ellipsis {
+  width: min-content;
+  grid-area: ellipsis;
+  justify-self: flex-end;
+}
+.ellipsis:hover {
+  transform: scale(1.1);
+}
+.ellipsis:hover path {
+  fill: #fff;
+}
+
+/*# sourceMappingURL=index.css.map */

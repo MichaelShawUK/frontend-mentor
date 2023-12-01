@@ -22,10 +22,11 @@
 // import CardDetailsForm from "./projects/junior/interactive-card-details-form-main/src/App";
 // import ExpensesChart from "./projects/junior/expenses-chart-component-main/src/App";
 // import DropdownNav from "./projects/junior/intro-section-with-dropdown-navigation-main/src/App";
-import AdviceGenerator from "./projects/junior/advice-generator-app-main/src/App";
+// import AdviceGenerator from "./projects/junior/advice-generator-app-main/src/App";
+import TimeTrackingDashboard from "./projects/junior/time-tracking-dashboard-main/src/App";
 
 function App() {
-  return <AdviceGenerator />;
+  return <TimeTrackingDashboard />;
 }
 
 export default App;
