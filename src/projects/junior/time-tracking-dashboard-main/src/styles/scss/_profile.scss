@@ -1,0 +1,48 @@
+.profile {
+  background-color: $dark-blue;
+  border-radius: $border-radius;
+  width: 300px;
+  // padding: 50px;
+  // padding-bottom: 30px;
+
+  ul {
+    color: $pale-blue;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style-type: none;
+    padding: 30px;
+
+    li {
+      cursor: pointer;
+      width: min-content;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.avatar {
+  background-color: $blue;
+  border-radius: $border-radius;
+  padding: 30px;
+
+  img {
+    border-radius: 50%;
+    outline: 3px solid #fff;
+    width: 80px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 14px;
+  }
+}
+
+.report-name {
+  font-size: 32px;
+  font-weight: 300;
+  display: block;
+}

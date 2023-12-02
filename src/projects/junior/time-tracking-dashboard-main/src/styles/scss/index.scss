@@ -3,6 +3,8 @@
 @import "https://fonts.googleapis.com/css?family=Rubik:400";
 @import "https://fonts.googleapis.com/css?family=Rubik:500";
 @import "colors";
+@import "sizes";
+@import "profile";
 
 * {
   margin: 0;
@@ -12,18 +14,21 @@
 
 body {
   background-color: $very-dark-blue;
+  background-color: palegreen;
   color: #fff;
   font: {
     family: "Rubik";
     size: 18px;
   }
   // padding-top: 50px;
+  // padding: 20px;
 }
 
 .tracking {
   // margin: 40px;
   position: relative;
-  width: 260px;
+  width: 300px;
+  margin-bottom: -30px;
 
   &:hover {
     cursor: pointer;
@@ -33,9 +38,9 @@ body {
   }
   .background {
     background-color: $work;
-    border-radius: 14px;
+    border-radius: $border-radius;
     position: relative;
-    height: 100px;
+    height: 80px;
     overflow: clip;
 
     img {
@@ -48,10 +53,10 @@ body {
 
 .card {
   background-color: $dark-blue;
-  border-radius: 14px;
+  border-radius: $border-radius;
   padding: 30px;
-  position: absolute;
-  top: 45px;
+  position: relative;
+  top: -30px;
   width: 100%;
 
   display: grid;
