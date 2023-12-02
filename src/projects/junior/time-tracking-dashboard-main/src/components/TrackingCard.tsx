@@ -4,9 +4,9 @@ import Ellipsis from "./Ellipsis";
 function TrackingCard() {
   return (
     <div className="tracking">
-      <div className="background">
-        <img src={workSvg} />
-      </div>
+      {/* <div className="background"> */}
+      <img src={workSvg} />
+      {/* </div> */}
       <div className="card">
         <h6>Work</h6>
         <Ellipsis />

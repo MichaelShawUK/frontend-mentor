@@ -20,33 +20,27 @@ body {
     family: "Rubik";
     size: 18px;
   }
-  // padding-top: 50px;
-  // padding: 20px;
+  padding: 20px;
 }
 
 .tracking {
-  // margin: 40px;
-  position: relative;
   width: 300px;
-  margin-bottom: -30px;
+  background-color: $work;
+  border-radius: $border-radius;
+  overflow: clip;
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+    position: relative;
+    top: -10px;
+  }
 
   &:hover {
     cursor: pointer;
     .card {
       background-color: color.scale($dark-blue, $lightness: 10%);
-    }
-  }
-  .background {
-    background-color: $work;
-    border-radius: $border-radius;
-    position: relative;
-    height: 80px;
-    overflow: clip;
-
-    img {
-      position: absolute;
-      right: 20px;
-      top: -10px;
     }
   }
 }
@@ -56,7 +50,7 @@ body {
   border-radius: $border-radius;
   padding: 30px;
   position: relative;
-  top: -30px;
+  margin-top: -30px;
   width: 100%;
 
   display: grid;

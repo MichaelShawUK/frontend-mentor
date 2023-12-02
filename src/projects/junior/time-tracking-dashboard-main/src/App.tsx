@@ -5,8 +5,8 @@ import TrackingCard from "./components/TrackingCard";
 function TimeTrackingDashboard() {
   return (
     <div className="time-tracking-dashboard">
-      <ProfileCard />
       <TrackingCard />
+      <ProfileCard />
       <TrackingCard />
       {/* <TrackingCard /> */}
     </div>

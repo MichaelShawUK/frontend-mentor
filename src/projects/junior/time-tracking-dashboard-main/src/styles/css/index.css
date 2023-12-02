@@ -55,12 +55,21 @@ body {
   color: #fff;
   font-family: "Rubik";
   font-size: 18px;
+  padding: 20px;
 }
 
 .tracking {
-  position: relative;
   width: 300px;
-  margin-bottom: -30px;
+  background-color: hsl(15, 100%, 70%);
+  border-radius: 18px;
+  overflow: clip;
+}
+.tracking img {
+  display: block;
+  margin-left: auto;
+  margin-right: 20px;
+  position: relative;
+  top: -10px;
 }
 .tracking:hover {
   cursor: pointer;
@@ -68,25 +77,13 @@ body {
 .tracking:hover .card {
   background-color: #272c68;
 }
-.tracking .background {
-  background-color: hsl(15, 100%, 70%);
-  border-radius: 18px;
-  position: relative;
-  height: 80px;
-  overflow: clip;
-}
-.tracking .background img {
-  position: absolute;
-  right: 20px;
-  top: -10px;
-}
 
 .card {
   background-color: hsl(235, 46%, 20%);
   border-radius: 18px;
   padding: 30px;
   position: relative;
-  top: -30px;
+  margin-top: -30px;
   width: 100%;
   display: grid;
   grid-template-areas: "category ellipsis" "time time" "previous previous";
