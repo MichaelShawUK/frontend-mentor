@@ -14,7 +14,7 @@
 
 body {
   background-color: $very-dark-blue;
-  background-color: palegreen;
+  // background-color: palegreen;
   color: #fff;
   font: {
     family: "Rubik";
@@ -23,18 +23,34 @@ body {
   padding: 20px;
 }
 
+.time-tracking-dashboard {
+  display: grid;
+  grid-template-areas:
+    "profile work play study"
+    "profile exercise social self-care";
+
+  align-items: stretch;
+  gap: 20px;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
 .tracking {
   width: 300px;
-  background-color: $work;
   border-radius: $border-radius;
   overflow: clip;
+  display: grid;
+
+  .header {
+    height: 80px;
+    margin-bottom: -30px;
+  }
 
   img {
     display: block;
     margin-left: auto;
     margin-right: 20px;
     position: relative;
-    top: -10px;
   }
 
   &:hover {
@@ -50,7 +66,6 @@ body {
   border-radius: $border-radius;
   padding: 30px;
   position: relative;
-  margin-top: -30px;
   width: 100%;
 
   display: grid;
@@ -89,4 +104,29 @@ body {
       fill: #fff;
     }
   }
+}
+
+.work {
+  grid-area: work;
+  background-color: $work;
+}
+.study {
+  grid-area: study;
+  background-color: $study;
+}
+.play {
+  grid-area: play;
+  background-color: $play;
+}
+.exercise {
+  grid-area: exercise;
+  background-color: $exercise;
+}
+.social {
+  grid-area: social;
+  background-color: $social;
+}
+.self-care {
+  grid-area: self-care;
+  background-color: $self-care;
 }
