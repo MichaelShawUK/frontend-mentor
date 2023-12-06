@@ -14,7 +14,6 @@
 
 body {
   background-color: $very-dark-blue;
-  // background-color: palegreen;
   color: #fff;
   font: {
     family: "Rubik";
@@ -25,18 +24,22 @@ body {
 
 .time-tracking-dashboard {
   display: grid;
-  grid-template-areas:
-    "profile work play study"
-    "profile exercise social self-care";
-
-  align-items: stretch;
+  grid-template-areas: "profile tracking-cards";
+  grid-template-columns: 300px 1fr;
   gap: 20px;
   max-width: 1260px;
   margin: 0 auto;
 }
 
+.tracking-cards {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
 .tracking {
-  width: 300px;
   border-radius: $border-radius;
   overflow: clip;
   display: grid;
@@ -107,26 +110,55 @@ body {
 }
 
 .work {
-  grid-area: work;
   background-color: $work;
 }
 .study {
-  grid-area: study;
   background-color: $study;
 }
 .play {
-  grid-area: play;
   background-color: $play;
 }
 .exercise {
-  grid-area: exercise;
   background-color: $exercise;
 }
 .social {
-  grid-area: social;
   background-color: $social;
 }
 .self-care {
-  grid-area: self-care;
   background-color: $self-care;
+}
+
+@media (width < 1300px) {
+  .time-tracking-dashboard {
+    grid-template-areas:
+      "profile"
+      "tracking-cards";
+
+    grid-template-columns: none;
+  }
+
+  .tracking-cards {
+    justify-content: space-evenly;
+  }
+
+  .tracking {
+    .header {
+      height: 70px;
+    }
+  }
+
+  .card {
+    grid-template-areas:
+      "category ellipsis"
+      "time previous";
+
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 20px;
+
+    .time {
+      margin: 10px 0 0;
+      font-size: 32px;
+    }
+  }
 }

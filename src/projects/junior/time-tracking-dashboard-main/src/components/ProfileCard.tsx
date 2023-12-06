@@ -14,7 +14,7 @@ function ProfileCard({
       <div className="avatar">
         <img src={avatar} />
         <p>
-          Report for <span className="report-name">Jeremey Robson</span>
+          Report for <span className="report-name">Jeremy Robson</span>
         </p>
       </div>
       <ul>

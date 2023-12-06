@@ -27,21 +27,25 @@ function TrackingCard({
   const timeframe = useContext(TimeframeContext);
   let currentTime: number;
   let previousTime: number;
+  let pastTimeframe: string;
 
   switch (timeframe) {
     case "DAILY": {
       currentTime = data.timeframes.daily.current;
       previousTime = data.timeframes.daily.previous;
+      pastTimeframe = "Yesterday";
       break;
     }
     case "WEEKLY": {
       currentTime = data.timeframes.weekly.current;
       previousTime = data.timeframes.weekly.previous;
+      pastTimeframe = "Last Week";
       break;
     }
     case "MONTHLY": {
       currentTime = data.timeframes.monthly.current;
       previousTime = data.timeframes.monthly.previous;
+      pastTimeframe = "Last Month";
       break;
     }
   }
@@ -57,7 +61,7 @@ function TrackingCard({
         <p className="time">{`${currentTime}${
           currentTime === 1 ? "hr" : "hrs"
         }`}</p>
-        <p className="previous">{`Last Week - ${previousTime}${
+        <p className="previous">{`${pastTimeframe} - ${previousTime}${
           currentTime === 1 ? "hr" : "hrs"
         }`}</p>
       </div>
