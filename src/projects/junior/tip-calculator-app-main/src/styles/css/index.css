@@ -1,4 +1,80 @@
 @import "https://fonts.googleapis.com/css?family=Space+Mono:700";
+.calculator {
+  background-color: hsl(0, 0%, 100%);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 20px;
+}
+.calculator form {
+  max-width: 500px;
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  border: none;
+}
+fieldset input {
+  display: none;
+}
+fieldset label {
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  min-width: 130px;
+  padding-block: 4px;
+  flex: 1;
+}
+fieldset label:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.field label {
+  display: block;
+  width: max-content;
+}
+.field input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 8px 20px 8px 40px;
+  text-align: right;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 4px;
+  font-family: "Space Mono";
+  font-size: 24px;
+}
+.field input:focus {
+  outline: 2px solid hsl(172, 67%, 45%);
+}
+
+legend,
+.field > label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.field,
+fieldset {
+  margin-bottom: 30px;
+}
+
+.icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.icon-wrapper .icon {
+  position: absolute;
+  left: 20px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +91,12 @@ body {
 
 header {
   text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

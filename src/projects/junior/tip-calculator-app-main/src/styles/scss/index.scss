@@ -1,5 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Space+Mono:700";
 @import "colors";
+@import "calculator";
 
 * {
   margin: 0;
@@ -19,4 +20,10 @@ body {
 
 header {
   text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
