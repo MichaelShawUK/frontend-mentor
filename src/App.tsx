@@ -23,10 +23,11 @@
 // import ExpensesChart from "./projects/junior/expenses-chart-component-main/src/App";
 // import DropdownNav from "./projects/junior/intro-section-with-dropdown-navigation-main/src/App";
 // import AdviceGenerator from "./projects/junior/advice-generator-app-main/src/App";
-import TimeTrackingDashboard from "./projects/junior/time-tracking-dashboard-main/src/App";
+// import TimeTrackingDashboard from "./projects/junior/time-tracking-dashboard-main/src/App";
+import TipCalculator from "./projects/junior/tip-calculator-app-main/src/App";
 
 function App() {
-  return <TimeTrackingDashboard />;
+  return <TipCalculator />;
 }
 
 export default App;
