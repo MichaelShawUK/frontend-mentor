@@ -30,7 +30,9 @@ function TipCalculator() {
             <input type="radio" id="25" name="tip" value="25" />
             <label htmlFor="50">50%</label>
             <input type="radio" id="50" name="tip" value="50" />
-            <label htmlFor="custom">Custom</label>
+            <label htmlFor="custom" className="custom">
+              Custom
+            </label>
             <input type="radio" id="custom" name="tip" value="custom" />
           </fieldset>
           <div className="field">

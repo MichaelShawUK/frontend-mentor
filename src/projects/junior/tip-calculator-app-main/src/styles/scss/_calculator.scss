@@ -84,3 +84,14 @@ fieldset {
     left: 20px;
   }
 }
+
+.custom {
+  background-color: $very-light-grayish-cyan;
+  // background-color: red;
+  color: $dark-grayish-cyan;
+
+  &:hover {
+    background-color: $very-light-grayish-cyan;
+    outline: 2px solid $strong-cyan;
+  }
+}
