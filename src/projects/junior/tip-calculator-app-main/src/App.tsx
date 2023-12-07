@@ -1,3 +1,5 @@
+import "../src/styles/css/index.css";
+
 function TipCalculator() {
   return (
     <div className="tip-calculator">
