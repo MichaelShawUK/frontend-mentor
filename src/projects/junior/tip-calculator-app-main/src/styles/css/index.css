@@ -9,6 +9,12 @@ body {
   font-size: 24px;
   font-family: "Space Mono";
   font-weight: 700;
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(186, 14%, 43%);
+}
+
+header {
+  text-align: center;
 }
 
 /*# sourceMappingURL=index.css.map */
