@@ -35,8 +35,11 @@ function TipCalculator() {
             </label>
             <input type="radio" id="custom" name="tip" value="custom" />
           </fieldset>
-          <div className="field">
-            <label htmlFor="people">Number of People</label>
+          <div className="field error">
+            <div className="flex-container">
+              <label htmlFor="people">Number of People</label>
+              <p className="error-message">Can't be zero</p>
+            </div>
             <div className="icon-wrapper">
               <img src={personIcon} className="icon" />
               <input type="number" id="people" name="people" />
