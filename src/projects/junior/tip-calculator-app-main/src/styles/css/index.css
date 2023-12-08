@@ -1,10 +1,13 @@
 @import "https://fonts.googleapis.com/css?family=Space+Mono:700";
 .calculator {
   background-color: hsl(0, 0%, 100%);
-  max-width: 1200px;
   margin: 0 auto;
   padding: 30px;
   border-radius: 20px;
+  display: grid;
+  grid-template-columns: minmax(300px, 500px) minmax(300px, 500px);
+  gap: 50px;
+  max-width: 1110px;
 }
 .calculator form {
   max-width: 500px;
@@ -30,7 +33,7 @@ fieldset label {
   flex: 1;
 }
 fieldset label:hover {
-  background-color: hsl(172, 67%, 45%);
+  background-color: #8ae8db;
   color: hsl(183, 100%, 15%);
 }
 
@@ -84,6 +87,66 @@ fieldset {
   outline: 2px solid hsl(172, 67%, 45%);
 }
 
+@media (width <= 800px) {
+  .calculator {
+    grid-template-columns: minmax(300px, 500px);
+    align-items: center;
+    gap: 0;
+    padding: 20px;
+    max-width: 540px;
+  }
+}
+.output {
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 10px;
+  flex: 1;
+  max-width: 500px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.output button {
+  margin-top: auto;
+  padding: 10px;
+  font-family: "Space Mono";
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 6px;
+  border: none;
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+.output button:hover {
+  background-color: #8ae8db;
+}
+
+.calculation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  color: hsl(0, 0%, 100%);
+  font-size: 18px;
+}
+.category span {
+  color: hsl(184, 14%, 56%);
+  display: block;
+  font-size: 16px;
+}
+
+.result {
+  color: hsl(172, 67%, 45%);
+  font-size: 36px;
+}
+
+@media (width <= 800px) {
+  .output {
+    padding: 30px;
+  }
+}
 * {
   margin: 0;
   padding: 0;

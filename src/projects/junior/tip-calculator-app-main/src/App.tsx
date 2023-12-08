@@ -42,9 +42,23 @@ function TipCalculator() {
               <input type="number" id="people" name="people" />
             </div>
           </div>
-          <button>HO</button>
+          {/* <button>HO</button> */}
         </form>
-        <div className="output"></div>
+        <div className="output">
+          <div className="calculation">
+            <p className="category">
+              Tip Amount<span>/ person</span>
+            </p>
+            <p className="result">$4.27</p>
+          </div>
+          <div className="calculation">
+            <p className="category">
+              Total<span>/ person</span>
+            </p>
+            <p className="result">$32.79</p>
+          </div>
+          <button>RESET</button>
+        </div>
       </main>
     </div>
   );

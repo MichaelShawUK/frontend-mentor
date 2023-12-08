@@ -1,0 +1,58 @@
+@use "sass:color";
+
+.output {
+  background-color: $very-dark-cyan;
+  border-radius: 10px;
+  flex: 1;
+  max-width: 500px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  button {
+    margin-top: auto;
+    padding: 10px;
+    font: {
+      family: "Space Mono";
+      weight: 700;
+      size: 20px;
+    }
+    border-radius: 6px;
+    border: none;
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
+    cursor: pointer;
+
+    &:hover {
+      background-color: color.scale($strong-cyan, $lightness: 50%);
+    }
+  }
+}
+
+.calculation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  color: $white;
+  font-size: 18px;
+
+  span {
+    color: $grayish-cyan;
+    display: block;
+    font-size: 16px;
+  }
+}
+
+.result {
+  color: $strong-cyan;
+  font-size: 36px;
+}
+
+@media (width <= 800px) {
+  .output {
+    padding: 30px;
+  }
+}
