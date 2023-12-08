@@ -16,13 +16,16 @@
   }
 }
 
-fieldset {
-  display: flex;
-  flex-wrap: wrap;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, (minmax(130px, 1fr)));
   gap: 14px;
+}
+
+fieldset {
   border: none;
 
-  input {
+  input[type="radio"] {
     display: none;
   }
 
@@ -40,13 +43,18 @@ fieldset {
       background-color: color.scale($strong-cyan, $lightness: 50%);
       color: $very-dark-cyan;
     }
+
+    &:active {
+      background-color: $strong-cyan;
+      color: $very-dark-cyan;
+      transform: scale(0.98);
+    }
   }
 }
 
 .field {
   label {
     display: block;
-    width: max-content;
   }
   input {
     width: 100%;
@@ -73,7 +81,6 @@ legend,
 .field label {
   font-size: 18px;
   margin-bottom: 10px;
-  // display: inline;
 }
 
 .field,
@@ -89,6 +96,7 @@ fieldset {
   .icon {
     position: absolute;
     left: 20px;
+    pointer-events: none;
   }
 }
 
@@ -102,10 +110,15 @@ fieldset {
   }
 }
 
+.error-message {
+  display: none;
+}
+
 .error {
   .error-message {
     color: $red;
     font-size: 18px;
+    display: block;
   }
 
   input {
@@ -118,6 +131,36 @@ fieldset {
   flex-wrap: wrap;
   justify-content: space-between;
   column-gap: 20px;
+}
+
+.selected {
+  background-color: $strong-cyan;
+  color: $very-dark-cyan;
+
+  &:hover {
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
+  }
+}
+
+.custom-amount {
+  outline: 2px solid $strong-cyan;
+  text-align: right;
+  color: $very-dark-cyan;
+  background-color: $very-light-grayish-cyan;
+  border-radius: 4px;
+  flex: 1;
+  display: block;
+  min-width: 130px;
+
+  font: {
+    family: "Space Mono";
+    weight: 700;
+    size: 24px;
+  }
+
+  border: none;
+  padding: 4px 20px;
 }
 
 @media (width <= 800px) {

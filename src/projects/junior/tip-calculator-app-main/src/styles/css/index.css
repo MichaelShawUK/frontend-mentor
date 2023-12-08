@@ -14,13 +14,16 @@
   max-width: 500px;
 }
 
-fieldset {
-  display: flex;
-  flex-wrap: wrap;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 14px;
+}
+
+fieldset {
   border: none;
 }
-fieldset input {
+fieldset input[type=radio] {
   display: none;
 }
 fieldset label {
@@ -37,10 +40,14 @@ fieldset label:hover {
   background-color: #8ae8db;
   color: hsl(183, 100%, 15%);
 }
+fieldset label:active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  transform: scale(0.98);
+}
 
 .field label {
   display: block;
-  width: max-content;
 }
 .field input {
   width: 100%;
@@ -77,6 +84,7 @@ fieldset {
 .icon-wrapper .icon {
   position: absolute;
   left: 20px;
+  pointer-events: none;
 }
 
 .custom {
@@ -88,9 +96,14 @@ fieldset {
   outline: 2px solid hsl(172, 67%, 45%);
 }
 
+.error-message {
+  display: none;
+}
+
 .error .error-message {
   color: hsl(0, 64%, 57%);
   font-size: 18px;
+  display: block;
 }
 .error input {
   outline: 2px solid hsl(0, 64%, 57%);
@@ -101,6 +114,31 @@ fieldset {
   flex-wrap: wrap;
   justify-content: space-between;
   column-gap: 20px;
+}
+
+.selected {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.selected:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.custom-amount {
+  outline: 2px solid hsl(172, 67%, 45%);
+  text-align: right;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 4px;
+  flex: 1;
+  display: block;
+  min-width: 130px;
+  font-family: "Space Mono";
+  font-weight: 700;
+  font-size: 24px;
+  border: none;
+  padding: 4px 20px;
 }
 
 @media (width <= 800px) {
@@ -128,6 +166,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  overflow: clip;
 }
 .output button {
   margin-top: auto;
@@ -143,6 +182,9 @@ fieldset {
 }
 .output button:hover {
   background-color: #8ae8db;
+}
+.output button:active {
+  transform: scale(0.98);
 }
 
 .calculation {
