@@ -1,0 +1,35 @@
+// header {
+// height: calc(160 / 288 * 100vw);
+// background-image: url("src/projects/junior/sunnyside-agency-landing-page-main/src/assets/images/desktop/image-header.jpg");
+// background-size: contain;
+// }
+
+// @media (width <= 768px) {
+// header {
+// height: calc(1076 / 750 * 100vw);
+// height: calc(1076 / 750 * 100%);
+// background-image: url("src/projects/junior/sunnyside-agency-landing-page-main/src/assets/images/mobile/image-header.jpg");
+// }
+
+//   position: relative;
+
+//   .background {
+//     position: absolute;
+//     width: 100%;
+//     z-index: -1;
+//   }
+// }
+
+.header-wrapper {
+  position: relative;
+
+  .background {
+    width: 100%;
+    z-index: -1;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+  }
+}

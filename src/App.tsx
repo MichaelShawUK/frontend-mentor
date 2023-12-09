@@ -24,10 +24,11 @@
 // import DropdownNav from "./projects/junior/intro-section-with-dropdown-navigation-main/src/App";
 // import AdviceGenerator from "./projects/junior/advice-generator-app-main/src/App";
 // import TimeTrackingDashboard from "./projects/junior/time-tracking-dashboard-main/src/App";
-import TipCalculator from "./projects/junior/tip-calculator-app-main/src/App";
+// import TipCalculator from "./projects/junior/tip-calculator-app-main/src/App";
+import SunnysideAgency from "./projects/junior/sunnyside-agency-landing-page-main/src/App";
 
 function App() {
-  return <TipCalculator />;
+  return <SunnysideAgency />;
 }
 
 export default App;

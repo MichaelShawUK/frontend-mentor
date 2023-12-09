@@ -1,3 +1,28 @@
+@import "https://fonts.googleapis.com/css?family=Barlow:600";
+@import "https://fonts.googleapis.com/css?family=Fraunces:700";
+@import "https://fonts.googleapis.com/css?family=Fraunces:900";
+.header-wrapper {
+  position: relative;
+}
+.header-wrapper .background {
+  width: 100%;
+  z-index: -1;
+}
+.header-wrapper header {
+  position: absolute;
+  top: 0;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow";
+  font-weight: 600;
+  font-size: 18px;
+}
 
 /*# sourceMappingURL=index.css.map */
