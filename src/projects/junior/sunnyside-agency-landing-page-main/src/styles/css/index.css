@@ -21,6 +21,23 @@
   padding: 30px;
 }
 
+h1 {
+  font-family: "Fraunces";
+  font-weight: 900;
+  font-size: clamp(36px, 10vw, 54px);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  letter-spacing: clamp(4px, 1vw, 12px);
+  margin-top: 10vw;
+  padding-inline: 30px;
+  cursor: default;
+}
+
+.down-arrow {
+  display: block;
+  margin: clamp(70px, 8vw, 150px) auto 0;
+}
+
 nav ul {
   display: flex;
   list-style: none;

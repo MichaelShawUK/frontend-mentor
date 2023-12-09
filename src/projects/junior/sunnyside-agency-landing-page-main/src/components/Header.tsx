@@ -3,6 +3,7 @@ import ViewMode from "../context/ViewMode";
 import images from "../data/images";
 import MobileMenu from "./MobileMenu";
 import Nav from "./Nav";
+import downArrow from "../assets/images/icon-arrow-down.svg";
 
 import { useContext } from "react";
 
@@ -21,6 +22,8 @@ function Header() {
           <img src={logo} />
           {menu}
         </div>
+        <h1>WE ARE CREATIVES</h1>
+        <img src={downArrow} className="down-arrow" />
       </header>
     </div>
   );
