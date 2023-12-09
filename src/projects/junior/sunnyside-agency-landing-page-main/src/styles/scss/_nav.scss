@@ -1,0 +1,73 @@
+nav {
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $white;
+
+    &:hover {
+      color: $very-dark-desaturated-blue;
+    }
+  }
+}
+
+.contact-link {
+  padding: 14px 20px;
+  color: $very-dark-desaturated-blue;
+  background-color: $white;
+  border-radius: 28px;
+  font: {
+    family: "Fraunces";
+    weight: 700;
+    size: 14px;
+  }
+
+  &:hover {
+    background-color: #fff5;
+    color: $white;
+  }
+}
+
+.mobile-menu {
+  dialog {
+    width: 100%;
+    border: none;
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    cursor: default;
+  }
+
+  nav {
+    padding: 40px;
+    ul {
+      flex-direction: column;
+      text-align: center;
+
+      li:last-child {
+        margin-block: 10px;
+      }
+    }
+
+    a {
+      color: $dark-grayish-blue;
+
+      &:hover {
+        color: $very-dark-desaturated-blue;
+      }
+    }
+  }
+
+  .contact-link {
+    background-color: $yellow;
+    color: $very-dark-desaturated-blue;
+
+    &:hover {
+      background-color: $soft-red;
+    }
+  }
+}

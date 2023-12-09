@@ -1,0 +1,9 @@
+.mobile-menu {
+  cursor: pointer;
+
+  &:hover {
+    path {
+      fill: rgb(183, 234, 250);
+    }
+  }
+}

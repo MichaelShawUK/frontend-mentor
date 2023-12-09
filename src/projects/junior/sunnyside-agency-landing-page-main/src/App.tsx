@@ -11,7 +11,7 @@ function SunnysideAgency() {
     <ViewMode.Provider value={viewMode}>
       <div className="sunnyside">
         <Header />
-        <p>Next content</p>
+        <p style={{ backgroundColor: "red" }}>Next content</p>
       </div>
     </ViewMode.Provider>
   );

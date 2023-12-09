@@ -7,10 +7,84 @@
 .header-wrapper .background {
   width: 100%;
   z-index: -1;
+  display: block;
 }
 .header-wrapper header {
   position: absolute;
   top: 0;
+  width: 100%;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+nav a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+nav a:hover {
+  color: hsl(212, 27%, 19%);
+}
+
+.contact-link {
+  padding: 14px 20px;
+  color: hsl(212, 27%, 19%);
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 28px;
+  font-family: "Fraunces";
+  font-weight: 700;
+  font-size: 14px;
+}
+.contact-link:hover {
+  background-color: rgba(255, 255, 255, 0.3333333333);
+  color: hsl(0, 0%, 100%);
+}
+
+.mobile-menu dialog {
+  width: 100%;
+  border: none;
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  cursor: default;
+}
+.mobile-menu nav {
+  padding: 40px;
+}
+.mobile-menu nav ul {
+  flex-direction: column;
+  text-align: center;
+}
+.mobile-menu nav ul li:last-child {
+  margin-block: 10px;
+}
+.mobile-menu nav a {
+  color: hsl(232, 10%, 55%);
+}
+.mobile-menu nav a:hover {
+  color: hsl(212, 27%, 19%);
+}
+.mobile-menu .contact-link {
+  background-color: hsl(51, 100%, 49%);
+  color: hsl(212, 27%, 19%);
+}
+.mobile-menu .contact-link:hover {
+  background-color: hsl(7, 99%, 70%);
+}
+
+.mobile-menu {
+  cursor: pointer;
+}
+.mobile-menu:hover path {
+  fill: rgb(183, 234, 250);
 }
 
 * {
