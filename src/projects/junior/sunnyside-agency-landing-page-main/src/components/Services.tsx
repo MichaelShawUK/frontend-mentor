@@ -33,6 +33,27 @@ function Services() {
           <a href="#">LEARN MORE</a>
         </div>
       </div>
+      <div className="graphic-design">
+        <img src={images[device].graphicDesign} />
+        <div className="summary">
+          <h4>Graphic Design</h4>
+          <p>
+            Great design makes you memorable. We deliver artwork that
+            underscores your brand message and captues potential clients'
+            attention.
+          </p>
+        </div>
+      </div>
+      <div className="photography">
+        <img src={images[device].photography} />
+        <div className="summary">
+          <h4>Photography</h4>
+          <p>
+            Increase your credibility by getting the most stunning high-quality
+            photos that improve your business image.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

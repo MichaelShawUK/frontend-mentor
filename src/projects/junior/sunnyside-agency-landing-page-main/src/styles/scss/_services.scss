@@ -27,10 +27,13 @@
 
   &.desktop {
     text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     .transform {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-column: 1 / -1;
 
       img {
         grid-column: 2;
@@ -44,6 +47,7 @@
     .stand-out {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-column: 1 / -1;
 
       img {
         grid-column: 1;
@@ -135,6 +139,29 @@
       &::after {
         background-color: $yellow;
       }
+    }
+  }
+}
+
+.graphic-design,
+.photography {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  img {
+    display: block;
+  }
+
+  .summary {
+    position: absolute;
+    bottom: 100px;
+    background-color: yellow;
+    text-align: center;
+
+    h4 {
+      font-family: "Fraunces";
+      font-weight: 900;
     }
   }
 }

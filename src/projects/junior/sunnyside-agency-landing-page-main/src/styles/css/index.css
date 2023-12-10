@@ -121,10 +121,13 @@ nav a:hover {
 }
 .services.desktop {
   text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .services.desktop .transform {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column: 1/-1;
 }
 .services.desktop .transform img {
   grid-column: 2;
@@ -136,6 +139,7 @@ nav a:hover {
 .services.desktop .stand-out {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column: 1/-1;
 }
 .services.desktop .stand-out img {
   grid-column: 1;
@@ -205,6 +209,29 @@ nav a:hover {
 }
 .services a:hover::after {
   background-color: hsl(51, 100%, 49%);
+}
+
+.graphic-design,
+.photography {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.graphic-design img,
+.photography img {
+  display: block;
+}
+.graphic-design .summary,
+.photography .summary {
+  position: absolute;
+  bottom: 100px;
+  background-color: yellow;
+  text-align: center;
+}
+.graphic-design .summary h4,
+.photography .summary h4 {
+  font-family: "Fraunces";
+  font-weight: 900;
 }
 
 * {
