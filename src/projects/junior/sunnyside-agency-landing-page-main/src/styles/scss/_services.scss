@@ -1,0 +1,140 @@
+@use "sass:color";
+
+@mixin link-highlight($color) {
+  a {
+    &::after {
+      background-color: color.scale($color, $lightness: 50%);
+    }
+
+    &:hover {
+      &::after {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+.services {
+  text-align: center;
+
+  .transform {
+    @include link-highlight($yellow);
+  }
+
+  .stand-out {
+    @include link-highlight($soft-red);
+  }
+
+  &.desktop {
+    text-align: left;
+
+    .transform {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      img {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .summary {
+        grid-column: 1;
+      }
+    }
+
+    .stand-out {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      img {
+        grid-column: 1;
+      }
+      .summary {
+        grid-column: 2;
+      }
+    }
+
+    .summary {
+      margin: 0 clamp(10px, 6vw, 150px);
+    }
+
+    h3 {
+      font-size: 4vw;
+      font-size: clamp(30px, 4vw, 72px);
+    }
+
+    p {
+      font-size: 2vw;
+      font-size: clamp(16px, 2vw, 22px);
+    }
+
+    a {
+      margin: 0;
+      font-size: clamp(14px, 2vw, 22px);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    // margin: 60px 10px;
+    // margin: 60px 60px;
+    margin: 60px 10vw;
+  }
+
+  h3 {
+    color: $very-dark-desaturated-blue;
+    font: {
+      family: "Fraunces";
+      weight: 900;
+      size: 32px;
+    }
+  }
+
+  p {
+    color: $dark-grayish-blue;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    font: {
+      family: "Fraunces";
+      size: 14px;
+    }
+    color: inherit;
+    position: relative;
+    // width: max-content;
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    letter-spacing: 1px;
+
+    &::after {
+      display: block;
+      height: 12px;
+      width: 100%;
+      content: "";
+      // background-color: color.scale($yellow, $lightness: 50%);
+      position: absolute;
+      border-radius: 6px;
+      padding-inline: 10px;
+      left: -10px;
+      bottom: -4px;
+      z-index: -1;
+    }
+
+    &:hover {
+      &::after {
+        background-color: $yellow;
+      }
+    }
+  }
+}

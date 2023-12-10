@@ -24,7 +24,7 @@
 h1 {
   font-family: "Fraunces";
   font-weight: 900;
-  font-size: clamp(36px, 10vw, 54px);
+  font-size: clamp(36px, 10vw, 52px);
   color: hsl(0, 0%, 100%);
   text-align: center;
   letter-spacing: clamp(4px, 1vw, 12px);
@@ -102,6 +102,109 @@ nav a:hover {
 }
 .mobile-menu:hover path {
   fill: rgb(183, 234, 250);
+}
+
+.services {
+  text-align: center;
+}
+.services .transform a::after {
+  background-color: #ffeb7d;
+}
+.services .transform a:hover::after {
+  background-color: hsl(51, 100%, 49%);
+}
+.services .stand-out a::after {
+  background-color: #ffbcb3;
+}
+.services .stand-out a:hover::after {
+  background-color: hsl(7, 99%, 70%);
+}
+.services.desktop {
+  text-align: left;
+}
+.services.desktop .transform {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.services.desktop .transform img {
+  grid-column: 2;
+  grid-row: 1;
+}
+.services.desktop .transform .summary {
+  grid-column: 1;
+}
+.services.desktop .stand-out {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.services.desktop .stand-out img {
+  grid-column: 1;
+}
+.services.desktop .stand-out .summary {
+  grid-column: 2;
+}
+.services.desktop .summary {
+  margin: 0 clamp(10px, 6vw, 150px);
+}
+.services.desktop h3 {
+  font-size: 4vw;
+  font-size: clamp(30px, 4vw, 72px);
+}
+.services.desktop p {
+  font-size: 2vw;
+  font-size: clamp(16px, 2vw, 22px);
+}
+.services.desktop a {
+  margin: 0;
+  font-size: clamp(14px, 2vw, 22px);
+}
+.services img {
+  width: 100%;
+}
+.services .summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  margin: 60px 10vw;
+}
+.services h3 {
+  color: hsl(212, 27%, 19%);
+  font-family: "Fraunces";
+  font-weight: 900;
+  font-size: 32px;
+}
+.services p {
+  color: hsl(232, 10%, 55%);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.services a {
+  text-decoration: none;
+  font-family: "Fraunces";
+  font-size: 14px;
+  color: inherit;
+  position: relative;
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+  letter-spacing: 1px;
+}
+.services a::after {
+  display: block;
+  height: 12px;
+  width: 100%;
+  content: "";
+  position: absolute;
+  border-radius: 6px;
+  padding-inline: 10px;
+  left: -10px;
+  bottom: -4px;
+  z-index: -1;
+}
+.services a:hover::after {
+  background-color: hsl(51, 100%, 49%);
 }
 
 * {
