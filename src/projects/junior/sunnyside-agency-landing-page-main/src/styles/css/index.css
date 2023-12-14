@@ -224,14 +224,55 @@ nav a:hover {
 .graphic-design .summary,
 .photography .summary {
   position: absolute;
-  bottom: 100px;
-  background-color: yellow;
   text-align: center;
 }
 .graphic-design .summary h4,
 .photography .summary h4 {
   font-family: "Fraunces";
   font-weight: 900;
+}
+
+.photography .summary h4,
+.photography .summary p {
+  color: hsl(198, 62%, 26%);
+}
+
+.graphic-design .summary h4,
+.graphic-design .summary p {
+  color: hsl(167, 40%, 24%);
+}
+
+.services.mobile .photography,
+.services.mobile .graphic-design {
+  display: flex;
+  align-items: flex-end;
+}
+.services.mobile .photography .summary,
+.services.mobile .graphic-design .summary {
+  margin-bottom: 18vw;
+  margin-inline: 4vw;
+}
+.services.mobile .photography h4,
+.services.mobile .graphic-design h4 {
+  font-size: clamp(28px, 8vw, 58px);
+}
+.services.mobile .photography p,
+.services.mobile .graphic-design p {
+  font-size: clamp(16px, 4vw, 30px);
+}
+
+.services.desktop .photography .summary,
+.services.desktop .graphic-design .summary {
+  margin-top: 23vw;
+  gap: 2vw;
+}
+.services.desktop .photography h4,
+.services.desktop .graphic-design h4 {
+  font-size: clamp(18px, 2vw, 40px);
+}
+.services.desktop .photography p,
+.services.desktop .graphic-design p {
+  font-size: 1.7vw;
 }
 
 * {
