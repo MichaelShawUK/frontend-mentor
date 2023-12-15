@@ -1,3 +1,5 @@
+@use "sass:color";
+
 nav {
   ul {
     display: flex;
@@ -67,7 +69,7 @@ nav {
     color: $very-dark-desaturated-blue;
 
     &:hover {
-      background-color: $soft-red;
+      background-color: color.scale($yellow, $lightness: 50%);
     }
   }
 }

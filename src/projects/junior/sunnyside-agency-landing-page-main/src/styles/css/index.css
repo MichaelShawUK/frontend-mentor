@@ -95,7 +95,7 @@ nav a:hover {
   color: hsl(212, 27%, 19%);
 }
 .mobile-menu .contact-link:hover {
-  background-color: hsl(7, 99%, 70%);
+  background-color: #ffeb7d;
 }
 
 .mobile-menu {
