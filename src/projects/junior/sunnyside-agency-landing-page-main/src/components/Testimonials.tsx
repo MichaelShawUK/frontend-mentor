@@ -9,21 +9,17 @@ function Testimonials() {
   return (
     <div className={`testimonials ${viewMode}`}>
       <h2>CLIENT TESTIMONIALS</h2>
-      {testimonials.map((testimonial) => (
-        <Testimonial
-          key={testimonial.id}
-          name={testimonial.name}
-          title={testimonial.title}
-          comment={testimonial.comment}
-          avatar={testimonial.avatar}
-        />
-      ))}
-      {/* <Testimonial
-        name={testimonials[0].name}
-        title={testimonials[0].title}
-        comment={testimonials[0].comment}
-        avatar={testimonials[0].avatar}
-      /> */}
+      <div className="flex-wrapper">
+        {testimonials.map((testimonial) => (
+          <Testimonial
+            key={testimonial.id}
+            name={testimonial.name}
+            title={testimonial.title}
+            comment={testimonial.comment}
+            avatar={testimonial.avatar}
+          />
+        ))}
+      </div>
     </div>
   );
 }

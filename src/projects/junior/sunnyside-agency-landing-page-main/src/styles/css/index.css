@@ -312,6 +312,39 @@ nav a:hover {
 .testimonials.mobile .customer-title {
   font-size: clamp(16px, 4.3vw, 30px);
 }
+.testimonials.desktop {
+  padding-block: clamp(100px, 13vw, 250px);
+  padding-inline: 10px;
+}
+.testimonials.desktop .flex-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: clamp(20px, 2.6vw, 60px);
+}
+.testimonials.desktop .testimonial {
+  max-width: 455px;
+}
+.testimonials.desktop h2 {
+  font-size: clamp(16px, 2.1vw, 32px);
+  letter-spacing: clamp(4px, 0.5vw, 8px);
+}
+.testimonials.desktop .avatar {
+  width: clamp(50px, 6.5vw, 100px);
+  margin-top: clamp(50px, 6.5vw, 100px);
+  margin-bottom: clamp(30px, 3.9vw, 60px);
+}
+.testimonials.desktop .comment {
+  font-size: clamp(12px, 1.6vw, 24px);
+  line-height: clamp(22px, 2.9vw, 44px);
+  margin-bottom: clamp(30px, 3.9vw, 60px);
+}
+.testimonials.desktop .customer-name {
+  font-size: clamp(12px, 1.6vw, 24px);
+  margin-bottom: clamp(8px, 1vw, 15px);
+}
+.testimonials.desktop .customer-title {
+  font-size: clamp(12px, 1.6vw, 24px);
+}
 .testimonials h2 {
   font-family: "Fraunces";
   font-weight: 900;
