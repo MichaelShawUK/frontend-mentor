@@ -1,0 +1,41 @@
+nav {
+  font: {
+    family: "Ubuntu";
+    weight: 400;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: initial;
+  }
+}
+
+.mobile {
+  header {
+    nav {
+      color: red;
+    }
+  }
+  footer {
+    nav {
+      color: yellow;
+    }
+  }
+}
+
+.desktop {
+  header {
+    nav {
+      color: green;
+    }
+  }
+  footer {
+    nav {
+      color: indigo;
+    }
+  }
+}
