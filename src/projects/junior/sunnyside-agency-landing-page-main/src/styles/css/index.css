@@ -364,6 +364,23 @@ nav a:hover {
   font-weight: 900;
 }
 
+.gallery img {
+  display: block;
+}
+.gallery.desktop {
+  display: flex;
+}
+.gallery.desktop img {
+  width: 25%;
+}
+.gallery.mobile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.gallery.mobile img {
+  width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;

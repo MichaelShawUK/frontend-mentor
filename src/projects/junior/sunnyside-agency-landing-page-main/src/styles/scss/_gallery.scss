@@ -1,0 +1,22 @@
+.gallery {
+  img {
+    display: block;
+  }
+
+  &.desktop {
+    display: flex;
+
+    img {
+      width: 25%;
+    }
+  }
+
+  &.mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    img {
+      width: 100%;
+    }
+  }
+}
