@@ -1,0 +1,43 @@
+footer {
+  background-color: $footer-background;
+  text-align: center;
+  padding-block: 50px;
+
+  nav ul li:last-child {
+    display: none;
+  }
+
+  nav {
+    color: $footer;
+    margin-top: 30px;
+
+    ul {
+      justify-content: center;
+      gap: 50px;
+
+      li a {
+        color: $footer;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 70px;
+
+    svg {
+      cursor: pointer;
+      &:hover {
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+}

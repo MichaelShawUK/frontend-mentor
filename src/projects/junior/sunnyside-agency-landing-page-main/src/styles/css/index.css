@@ -152,17 +152,13 @@ nav a:hover {
   margin: 0 clamp(10px, 6vw, 150px);
 }
 .services.desktop h3 {
-  font-size: 4vw;
   font-size: clamp(30px, 4vw, 72px);
 }
 .services.desktop p {
-  font-size: 2vw;
-  font-size: clamp(14px, 2vw, 22px);
   font-size: clamp(13px, 1.7vw, 34px);
 }
 .services.desktop a {
   margin: 0;
-  font-size: clamp(14px, 2vw, 22px);
   font-size: clamp(13px, 1.7vw, 34px);
 }
 .services img {
@@ -172,8 +168,6 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px;
-  gap: 14px;
   gap: clamp(16px, 2vw, 38px);
   margin: 60px 10vw;
 }
@@ -379,6 +373,41 @@ nav a:hover {
 }
 .gallery.mobile img {
   width: 100%;
+}
+
+footer {
+  background-color: #92d2c6;
+  text-align: center;
+  padding-block: 50px;
+}
+footer nav ul li:last-child {
+  display: none;
+}
+footer nav {
+  color: hsl(168, 34%, 41%);
+  margin-top: 30px;
+}
+footer nav ul {
+  justify-content: center;
+  gap: 50px;
+}
+footer nav ul li a {
+  color: hsl(168, 34%, 41%);
+}
+footer nav ul li a:hover {
+  color: hsl(0, 0%, 100%);
+}
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 70px;
+}
+footer .socials svg {
+  cursor: pointer;
+}
+footer .socials svg:hover path {
+  fill: hsl(0, 0%, 100%);
 }
 
 * {

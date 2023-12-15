@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import Gallery from "./components/Gallery";
+import Footer from "./components/Footer";
 import useViewMode from "./hooks/useViewMode";
 import ViewMode from "./context/ViewMode";
 
@@ -17,7 +18,7 @@ function SunnysideAgency() {
         <Services />
         <Testimonials />
         <Gallery />
-        <p style={{ backgroundColor: "red" }}>Next content</p>
+        <Footer />
       </div>
     </ViewMode.Provider>
   );
