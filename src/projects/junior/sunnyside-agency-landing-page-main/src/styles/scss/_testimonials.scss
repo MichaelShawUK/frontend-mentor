@@ -1,0 +1,74 @@
+.testimonials {
+  text-align: center;
+
+  &.mobile {
+    padding-top: clamp(50px, 13vw, 100px);
+    padding-bottom: clamp(70px, 18vw, 140px);
+    padding-inline: clamp(20px, 5.3vw, 40px);
+
+    .testimonial {
+      margin-bottom: clamp(10px, 2.7vw, 20px);
+    }
+
+    h2 {
+      font: {
+        size: clamp(16px, 3.5vw, 32px);
+      }
+      letter-spacing: clamp(5px, 1.3vw, 10px);
+    }
+
+    .avatar {
+      width: clamp(70px, 18vw, 120px);
+      margin-top: clamp(60px, 16vw, 120px);
+      margin-bottom: clamp(30px, 8vw, 60px);
+    }
+
+    .comment {
+      font: {
+        size: clamp(16px, 4.8vw, 38px);
+      }
+      margin-bottom: clamp(25px, 6.7vw, 50px);
+      line-height: clamp(27px, 7.2vw, 54px);
+    }
+
+    .customer-name {
+      font: {
+        size: clamp(16px, 4.8vw, 38px);
+      }
+      margin-bottom: clamp(10px, 2.7vw, 20px);
+    }
+
+    .customer-title {
+      font: {
+        size: clamp(16px, 4.3vw, 30px);
+      }
+    }
+  }
+
+  h2 {
+    font: {
+      family: "Fraunces";
+      weight: 900;
+    }
+    color: $grayish-blue;
+  }
+
+  .avatar {
+    border-radius: 50%;
+  }
+
+  .comment {
+    color: $very-dark-grayish-blue;
+  }
+
+  .customer-title {
+    color: $grayish-blue;
+  }
+
+  .customer-name {
+    font: {
+      family: "Fraunces";
+      weight: 900;
+    }
+  }
+}
