@@ -25,10 +25,11 @@
 // import AdviceGenerator from "./projects/junior/advice-generator-app-main/src/App";
 // import TimeTrackingDashboard from "./projects/junior/time-tracking-dashboard-main/src/App";
 // import TipCalculator from "./projects/junior/tip-calculator-app-main/src/App";
-import SunnysideAgency from "./projects/junior/sunnyside-agency-landing-page-main/src/App";
+// import SunnysideAgency from "./projects/junior/sunnyside-agency-landing-page-main/src/App";
+import Blogr from "./projects/junior/blogr-landing-page-main/src/App";
 
 function App() {
-  return <SunnysideAgency />;
+  return <Blogr />;
 }
 
 export default App;
