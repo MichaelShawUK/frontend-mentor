@@ -1,6 +1,7 @@
 import "./styles/css/index.css";
 
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 import useViewMode from "./hooks/useViewMode";
 
@@ -14,11 +15,9 @@ function Blogr() {
       <header>
         <Nav />
       </header>
-      <h2>FOOTER</h2>
-      <footer>
-        <Nav />
-      </footer>
+
       <h1>BLOGR</h1>
+      <Footer />
     </div>
   );
 }

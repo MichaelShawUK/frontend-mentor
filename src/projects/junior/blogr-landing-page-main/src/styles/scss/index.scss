@@ -6,6 +6,7 @@
 
 @import "colors";
 @import "nav";
+@import "footer";
 
 * {
   margin: 0;
@@ -21,4 +22,9 @@ body {
   }
 
   color: $body-copy;
+}
+
+.blogr {
+  max-width: 1920px;
+  margin: 0 auto;
 }
