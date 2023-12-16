@@ -1,14 +1,20 @@
-function categoryHandler(event: React.MouseEvent) {
-  console.log((event.target as HTMLParagraphElement).parentElement);
-  const parent = (event.target as HTMLParagraphElement).parentElement;
-  parent?.classList.toggle("selected");
-}
+import { useState } from "react";
 
 function Nav() {
+  const [selected, setSelected] = useState<string | null>(null);
+
+  function categoryHandler(event: React.MouseEvent) {
+    const category = (event.target as HTMLParagraphElement).textContent;
+    if (category === selected) setSelected(null);
+    else setSelected(category);
+  }
+
+  console.log(selected);
+
   return (
     <nav>
       <ul>
-        <li>
+        <li className={selected === "Product" ? "selected" : undefined}>
           <p onClick={categoryHandler}>Product</p>
           <ul>
             <li>
@@ -28,7 +34,7 @@ function Nav() {
             </li>
           </ul>
         </li>
-        <li>
+        <li className={selected === "Company" ? "selected" : undefined}>
           <p onClick={categoryHandler}>Company</p>
           <ul>
             <li>
@@ -45,7 +51,7 @@ function Nav() {
             </li>
           </ul>
         </li>
-        <li>
+        <li className={selected === "Connect" ? "selected" : undefined}>
           <p onClick={categoryHandler}>Connect</p>
           <ul>
             <li>
