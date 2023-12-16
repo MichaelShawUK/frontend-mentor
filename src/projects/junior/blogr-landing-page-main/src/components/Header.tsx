@@ -1,16 +1,19 @@
 import logo from "../assets/images/logo.svg";
 
-import Nav from "./Nav";
-import AccountActions from "./AccountActions";
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
+
+import ViewModeContext from "../context/ViewMode";
+import { useContext } from "react";
 
 function Header() {
+  const device = useContext(ViewModeContext);
+  const Menu = device === "mobile" ? <MobileMenu /> : <DesktopMenu />;
+
   return (
     <header>
       <img src={logo} />
-      <div className="nav-wrapper">
-        <Nav />
-        <AccountActions />
-      </div>
+      {Menu}
     </header>
   );
 }

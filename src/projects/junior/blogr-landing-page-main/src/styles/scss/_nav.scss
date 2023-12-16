@@ -73,12 +73,12 @@ nav {
 
     &.selected ul {
       visibility: visible;
-      animation: 0.3s ease-in expand;
+      animation: 0.2s ease-in expand;
       transform-origin: top;
 
       li {
         opacity: 0;
-        animation: 0.2s ease-in 0.3s forwards fadeIn;
+        animation: 0.2s ease-in 0.2s forwards fadeIn;
       }
     }
 
