@@ -5,6 +5,35 @@
 @import "https://fonts.googleapis.com/css?family=Ubuntu:700";
 header {
   background-color: hsl(13, 100%, 72%);
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 30px;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-btn {
+  padding: 0;
+  width: max-content;
+  background-color: transparent;
+  color: #fff;
+  opacity: 0.75;
+}
+.login-btn:hover {
+  opacity: 1;
+}
+
+.account-actions {
+  display: flex;
+  gap: 30px;
 }
 
 nav {
@@ -80,7 +109,7 @@ nav a {
 .desktop header nav > ul > li ul li:last-child {
   margin-bottom: 0;
 }
-.desktop header nav > ul > li ul li:hover {
+.desktop header nav > ul > li ul li a:hover {
   font-weight: 700;
 }
 
@@ -150,6 +179,34 @@ body {
 .blogr {
   max-width: 1920px;
   margin: 0 auto;
+}
+
+button {
+  font-family: "Ubuntu";
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  width: 120px;
+  border-radius: 38px;
+  border: none;
+}
+button.primary {
+  background-color: #fff;
+  color: hsl(356, 100%, 66%);
+}
+button.primary:hover {
+  background-color: hsl(355, 100%, 74%);
+  color: #fff;
+}
+button.secondary {
+  background-color: transparent;
+  color: #fff;
+  outline: 1px solid #fff;
+}
+button.secondary:hover {
+  background-color: #fff;
+  color: hsl(356, 100%, 66%);
 }
 
 /*# sourceMappingURL=index.css.map */

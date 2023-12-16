@@ -29,3 +29,38 @@ body {
   max-width: 1920px;
   margin: 0 auto;
 }
+
+button {
+  font: {
+    family: "Ubuntu";
+    weight: 700;
+    size: 16px;
+  }
+
+  padding: 10px;
+  cursor: pointer;
+  width: 120px;
+  border-radius: 38px;
+  border: none;
+
+  &.primary {
+    background-color: #fff;
+    color: $cta-text;
+
+    &:hover {
+      background-color: $cta-hover-background;
+      color: #fff;
+    }
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: #fff;
+    outline: 1px solid #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: $cta-text;
+    }
+  }
+}

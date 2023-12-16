@@ -1,8 +1,8 @@
 function AccountActions() {
   return (
     <div className="account-actions">
-      <button>Login</button>
-      <button>Sign Up</button>
+      <button className="login-btn">Login</button>
+      <button className="primary">Sign Up</button>
     </div>
   );
 }
