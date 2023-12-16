@@ -3,6 +3,10 @@
 @import "https://fonts.googleapis.com/css?family=Ubuntu:400";
 @import "https://fonts.googleapis.com/css?family=Ubuntu:500";
 @import "https://fonts.googleapis.com/css?family=Ubuntu:700";
+header {
+  background-color: hsl(13, 100%, 72%);
+}
+
 nav {
   font-family: "Ubuntu";
   font-weight: 400;
@@ -22,11 +26,62 @@ nav a {
   color: yellow;
 }
 
-.desktop header nav {
-  color: green;
+.desktop header nav > ul {
+  display: flex;
+  gap: 40px;
 }
-.desktop footer nav {
-  color: indigo;
+.desktop header p {
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+  opacity: 0.75;
+  cursor: pointer;
+}
+.desktop header p:hover {
+  color: hsl(0, 0%, 100%);
+  text-decoration: underline 2px;
+  opacity: 1;
+}
+.desktop header p::after {
+  content: url("src/projects/junior/blogr-landing-page-main/src/assets/images/icon-arrow-light.svg");
+  margin-left: 4px;
+  position: relative;
+  bottom: 2px;
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+.desktop header nav li.selected p {
+  color: hsl(0, 0%, 100%);
+  text-decoration: underline 2px;
+  opacity: 1;
+}
+.desktop header nav li.selected p::after {
+  transform: rotate(180deg);
+  top: 2px;
+}
+.desktop header nav > ul > li {
+  position: relative;
+}
+.desktop header nav > ul > li.selected ul {
+  visibility: visible;
+}
+.desktop header nav > ul > li ul {
+  visibility: hidden;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  position: absolute;
+  top: 40px;
+  left: -20px;
+  width: 150px;
+}
+.desktop header nav > ul > li ul li {
+  margin-bottom: 10px;
+}
+.desktop header nav > ul > li ul li:last-child {
+  margin-bottom: 0;
+}
+.desktop header nav > ul > li ul li:hover {
+  font-weight: 700;
 }
 
 footer {

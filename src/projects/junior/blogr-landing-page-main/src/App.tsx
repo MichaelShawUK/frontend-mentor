@@ -1,6 +1,6 @@
 import "./styles/css/index.css";
 
-import Nav from "./components/Nav";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import useViewMode from "./hooks/useViewMode";
@@ -10,13 +10,7 @@ function Blogr() {
 
   return (
     <div className={`blogr ${device}`}>
-      {/* <Nav /> */}
-      <h2>HEADER</h2>
-      <header>
-        <Nav />
-      </header>
-
-      <h1>BLOGR</h1>
+      <Header />
       <Footer />
     </div>
   );

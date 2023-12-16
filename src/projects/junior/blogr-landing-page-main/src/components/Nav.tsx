@@ -1,9 +1,15 @@
+function categoryHandler(event: React.MouseEvent) {
+  console.log((event.target as HTMLParagraphElement).parentElement);
+  const parent = (event.target as HTMLParagraphElement).parentElement;
+  parent?.classList.toggle("selected");
+}
+
 function Nav() {
   return (
     <nav>
       <ul>
         <li>
-          <p>Product</p>
+          <p onClick={categoryHandler}>Product</p>
           <ul>
             <li>
               <a href="#Overview">Overview</a>
@@ -23,7 +29,7 @@ function Nav() {
           </ul>
         </li>
         <li>
-          <p>Company</p>
+          <p onClick={categoryHandler}>Company</p>
           <ul>
             <li>
               <a href="#About">About</a>
@@ -40,7 +46,7 @@ function Nav() {
           </ul>
         </li>
         <li>
-          <p>Connect</p>
+          <p onClick={categoryHandler}>Connect</p>
           <ul>
             <li>
               <a href="#Contact">Contact</a>

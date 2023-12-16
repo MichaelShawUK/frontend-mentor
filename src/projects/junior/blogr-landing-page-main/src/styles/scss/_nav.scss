@@ -28,14 +28,74 @@ nav {
 }
 
 .desktop {
-  header {
-    nav {
-      color: green;
+  header nav > ul {
+    display: flex;
+    gap: 40px;
+  }
+
+  header p {
+    font-weight: 700;
+    color: $text;
+    opacity: 0.75;
+    cursor: pointer;
+
+    &:hover {
+      color: $text;
+      text-decoration: underline 2px;
+      opacity: 1;
+    }
+
+    &::after {
+      content: url("src/projects/junior/blogr-landing-page-main/src/assets/images/icon-arrow-light.svg");
+      margin-left: 4px;
+      position: relative;
+      bottom: 2px;
+      vertical-align: text-bottom;
+      display: inline-block;
     }
   }
-  footer {
-    nav {
-      color: indigo;
+
+  header nav li.selected {
+    p {
+      color: $text;
+      text-decoration: underline 2px;
+      opacity: 1;
+
+      &::after {
+        transform: rotate(180deg);
+        top: 2px;
+      }
+    }
+  }
+
+  header nav > ul > li {
+    position: relative;
+
+    &.selected ul {
+      visibility: visible;
+    }
+
+    ul {
+      visibility: hidden;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      position: absolute;
+      top: 40px;
+      left: -20px;
+      width: 150px;
+
+      li {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          font-weight: 700;
+        }
+      }
     }
   }
 }
