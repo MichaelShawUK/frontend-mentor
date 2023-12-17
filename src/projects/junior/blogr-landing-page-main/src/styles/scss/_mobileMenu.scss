@@ -9,7 +9,7 @@
 
   .modal {
     position: absolute;
-    top: 80px;
+    top: 100px;
     left: 5vw;
     background-color: #fff;
     width: 90vw;
@@ -19,6 +19,7 @@
     border-radius: 4px;
     animation: 0.2s ease-in expand;
     transform-origin: top;
+    box-shadow: 0 0 10px #4449;
   }
 
   .modal p {

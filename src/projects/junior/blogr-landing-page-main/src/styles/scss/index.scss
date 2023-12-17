@@ -9,6 +9,7 @@
 @import "nav";
 @import "accountActions";
 @import "mobileMenu";
+@import "cta";
 @import "footer";
 
 * {
@@ -39,9 +40,9 @@ button {
     size: 16px;
   }
 
-  padding: 10px;
+  padding: 14px;
   cursor: pointer;
-  width: 120px;
+  width: 140px;
   border-radius: 38px;
   border: none;
 

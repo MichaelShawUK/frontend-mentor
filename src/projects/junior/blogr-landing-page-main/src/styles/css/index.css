@@ -4,7 +4,6 @@
 @import "https://fonts.googleapis.com/css?family=Ubuntu:500";
 @import "https://fonts.googleapis.com/css?family=Ubuntu:700";
 header {
-  background-color: hsl(13, 100%, 72%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,6 +11,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding-inline: 30px;
+  padding-block: 40px;
 }
 
 .nav-wrapper {
@@ -93,6 +93,7 @@ nav a {
   top: 40px;
   left: -20px;
   width: 150px;
+  box-shadow: 0 0 10px rgba(68, 68, 68, 0.6);
 }
 .desktop header nav > ul > li ul li {
   margin-bottom: 10px;
@@ -144,7 +145,7 @@ nav a {
 }
 .mobile-menu .modal {
   position: absolute;
-  top: 80px;
+  top: 100px;
   left: 5vw;
   background-color: #fff;
   width: 90vw;
@@ -154,6 +155,7 @@ nav a {
   border-radius: 4px;
   animation: 0.2s ease-in expand;
   transform-origin: top;
+  box-shadow: 0 0 10px rgba(68, 68, 68, 0.6);
 }
 .mobile-menu .modal p {
   font-weight: 500;
@@ -251,6 +253,55 @@ nav a {
     opacity: 1;
   }
 }
+.cta-wrapper {
+  background: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  border-bottom-left-radius: 100px;
+}
+
+.cta {
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 40px;
+  padding-bottom: 140px;
+}
+.cta h1 {
+  font-weight: 600;
+}
+.cta p {
+  font-size: clamp(16px, 2.1vw, 22px);
+  margin-bottom: clamp(30px, 3.9vw, 48px);
+}
+.cta .actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.desktop .cta h1 {
+  font-size: clamp(42px, 5vw, 62px);
+  margin-bottom: clamp(10px, 1.3vw, 16px);
+}
+.desktop .cta p {
+  font-size: clamp(16px, 2.1vw, 22px);
+  margin-bottom: clamp(30px, 3.9vw, 48px);
+}
+
+.mobile .cta h1 {
+  letter-spacing: -2px;
+  font-size: clamp(36px, 10.05vw, 78px);
+  margin-bottom: 14px;
+  margin-bottom: 3.7vw;
+  margin-bottom: clamp(14px, 3.7vw, 28px);
+}
+.mobile .cta p {
+  font-size: clamp(18px, 5vw, 38px);
+  margin-bottom: 50px;
+  margin-bottom: clamp(50px, 13.3vw, 100px);
+}
+
 footer {
   background-color: hsl(240, 10%, 16%);
   border-top-right-radius: 100px;
@@ -323,9 +374,9 @@ button {
   font-family: "Ubuntu";
   font-weight: 700;
   font-size: 16px;
-  padding: 10px;
+  padding: 14px;
   cursor: pointer;
-  width: 120px;
+  width: 140px;
   border-radius: 38px;
   border: none;
 }

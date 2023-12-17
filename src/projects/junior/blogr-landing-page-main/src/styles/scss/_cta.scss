@@ -1,0 +1,59 @@
+.cta-wrapper {
+  background: linear-gradient(90deg, $intro-gradient1, $intro-gradient2);
+  border-bottom-left-radius: 100px;
+}
+
+.cta {
+  text-align: center;
+  color: $text;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 40px;
+  padding-bottom: 140px;
+
+  h1 {
+    font-weight: 600;
+    // font-size: clamp(42px, 5vw, 62px);
+    // margin-bottom: clamp(10px, 1.3vw, 16px);
+  }
+
+  p {
+    font-size: clamp(16px, 2.1vw, 22px);
+    margin-bottom: clamp(30px, 3.9vw, 48px);
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+.desktop .cta {
+  h1 {
+    font-size: clamp(42px, 5vw, 62px);
+    margin-bottom: clamp(10px, 1.3vw, 16px);
+  }
+
+  p {
+    font-size: clamp(16px, 2.1vw, 22px);
+    margin-bottom: clamp(30px, 3.9vw, 48px);
+  }
+}
+
+.mobile .cta {
+  h1 {
+    letter-spacing: -2px;
+    font-size: clamp(36px, 10.05vw, 78px);
+    margin-bottom: 14px;
+    margin-bottom: 3.7vw;
+    margin-bottom: clamp(14px, 3.7vw, 28px);
+  }
+
+  p {
+    font-size: clamp(18px, 5vw, 38px);
+    margin-bottom: 50px;
+    margin-bottom: clamp(50px, 13.3vw, 100px);
+  }
+}
