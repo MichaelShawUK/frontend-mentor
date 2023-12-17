@@ -21,6 +21,12 @@ header {
   align-items: center;
 }
 
+.mobile header .logo {
+  height: 30px;
+  height: 5.2vw;
+  height: clamp(30px, 5.2vw, 40px);
+}
+
 nav {
   font-family: "Ubuntu";
   font-weight: 400;
@@ -139,6 +145,7 @@ nav a {
 
 .mobile-menu .icon {
   cursor: pointer;
+  display: block;
 }
 .mobile-menu .icon:hover {
   opacity: 0.75;

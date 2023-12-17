@@ -15,3 +15,9 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
+.mobile header .logo {
+  height: 30px;
+  height: 5.2vw;
+  height: clamp(30px, 5.2vw, 40px);
+}

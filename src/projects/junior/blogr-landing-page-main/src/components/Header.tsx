@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <header>
-      <img src={logo} />
+      <img src={logo} className="logo" />
       {Menu}
     </header>
   );
