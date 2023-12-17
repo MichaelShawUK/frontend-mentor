@@ -1,6 +1,7 @@
 import "./styles/css/index.css";
 
 import CallToAction from "./components/CallToAction";
+import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 import ViewModeContext from "./context/ViewMode";
@@ -13,6 +14,7 @@ function Blogr() {
     <ViewModeContext.Provider value={device}>
       <div className={`blogr ${device}`}>
         <CallToAction />
+        <Main />
         <Footer />
       </div>
     </ViewModeContext.Provider>

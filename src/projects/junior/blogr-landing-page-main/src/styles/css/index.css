@@ -19,6 +19,7 @@ header {
   flex: 1;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
 }
 
 .mobile header .logo {
@@ -39,13 +40,6 @@ nav a {
   color: initial;
 }
 
-.mobile header nav {
-  color: red;
-}
-.mobile footer nav {
-  color: yellow;
-}
-
 .desktop header nav > ul {
   display: flex;
   gap: 40px;
@@ -55,6 +49,7 @@ nav a {
   color: hsl(0, 0%, 100%);
   opacity: 0.75;
   cursor: pointer;
+  width: max-content;
 }
 .desktop header p:hover {
   color: hsl(0, 0%, 100%);
@@ -313,6 +308,89 @@ nav a {
   margin-bottom: clamp(50px, 13.3vw, 100px);
 }
 
+main {
+  overflow: clip;
+}
+main h2,
+main h3 {
+  color: hsl(208, 49%, 24%);
+}
+main p {
+  line-height: 30px;
+  font-size: 18px;
+}
+main .infrastructure {
+  color: #fff;
+}
+main .infrastructure h2 {
+  color: #fff;
+}
+main .editor,
+main .infrastructure,
+main .tools {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+main .infrastructure-wrapper {
+  background: linear-gradient(90deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+}
+
+.desktop main h2 {
+  font-size: clamp(32px, 4.2vw, 46px);
+  letter-spacing: -1px;
+}
+.desktop main h3 {
+  font-size: 24px;
+  margin-bottom: 34px;
+}
+.desktop main p {
+  margin-bottom: 70px;
+}
+.desktop main {
+  padding-top: 140px;
+}
+.desktop main .main-title {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.desktop main .editor,
+.desktop main .infrastructure,
+.desktop main .tools {
+  padding-inline: 30px;
+}
+.desktop main .editor {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "text illustration";
+  gap: 20px;
+}
+.desktop main .editor .text {
+  grid-area: text;
+}
+.desktop main .editor .illustration {
+  grid-area: illustration;
+  margin-top: -240px;
+  margin-left: 100px;
+  display: block;
+}
+
+.mobile main {
+  text-align: center;
+}
+
+@media (width > 768px) and (width < 1200px) {
+  .desktop main .editor {
+    display: block;
+  }
+  .desktop main .editor .illustration {
+    float: left;
+    margin: 0;
+    width: 40%;
+    max-width: 350px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+}
 footer {
   background-color: hsl(240, 10%, 16%);
   border-top-right-radius: 100px;

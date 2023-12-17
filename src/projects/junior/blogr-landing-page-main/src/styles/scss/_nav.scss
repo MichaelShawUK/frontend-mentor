@@ -14,19 +14,6 @@ nav {
   }
 }
 
-.mobile {
-  header {
-    nav {
-      color: red;
-    }
-  }
-  footer {
-    nav {
-      color: yellow;
-    }
-  }
-}
-
 .desktop {
   header nav > ul {
     display: flex;
@@ -38,6 +25,7 @@ nav {
     color: $text;
     opacity: 0.75;
     cursor: pointer;
+    width: max-content;
 
     &:hover {
       color: $text;

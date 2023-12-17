@@ -10,6 +10,7 @@
 @import "accountActions";
 @import "mobileMenu";
 @import "cta";
+@import "main";
 @import "footer";
 
 * {
@@ -24,7 +25,6 @@ body {
     family: "Overpass";
     weight: 300;
   }
-
   color: $body-copy;
 }
 
