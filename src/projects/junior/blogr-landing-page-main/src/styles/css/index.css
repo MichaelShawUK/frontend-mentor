@@ -254,8 +254,8 @@ nav a {
   }
 }
 .cta-wrapper {
-  background: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
   border-bottom-left-radius: 100px;
+  background: center left 30% no-repeat url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-intro-desktop.svg"), linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
 }
 
 .cta {
@@ -292,13 +292,10 @@ nav a {
 .mobile .cta h1 {
   letter-spacing: -2px;
   font-size: clamp(36px, 10.05vw, 78px);
-  margin-bottom: 14px;
-  margin-bottom: 3.7vw;
   margin-bottom: clamp(14px, 3.7vw, 28px);
 }
 .mobile .cta p {
   font-size: clamp(18px, 5vw, 38px);
-  margin-bottom: 50px;
   margin-bottom: clamp(50px, 13.3vw, 100px);
 }
 
