@@ -255,7 +255,14 @@ nav a {
 }
 .cta-wrapper {
   border-bottom-left-radius: 100px;
+}
+
+.desktop .cta-wrapper {
   background: center left 30% no-repeat url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-intro-desktop.svg"), linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+}
+
+.mobile .cta-wrapper {
+  background: top 35% left 35% no-repeat url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-intro-mobile.svg"), linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
 }
 
 .cta {

@@ -1,8 +1,17 @@
 .cta-wrapper {
   border-bottom-left-radius: 100px;
+}
+
+.desktop .cta-wrapper {
   background: center left 30% no-repeat
       url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-intro-desktop.svg"),
     linear-gradient(90deg, $intro-gradient1, $intro-gradient2);
+}
+
+.mobile .cta-wrapper {
+  background: top 35% left 35% no-repeat
+      url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-intro-mobile.svg"),
+    linear-gradient($intro-gradient1, $intro-gradient2);
 }
 
 .cta {
