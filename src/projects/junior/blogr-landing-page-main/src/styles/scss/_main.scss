@@ -134,8 +134,8 @@ main {
     }
 
     p {
-      padding-inline: 20px;
       margin-bottom: 50px;
+      padding-inline: 20px;
     }
   }
 
@@ -148,6 +148,38 @@ main {
     display: block;
     width: 100%;
     margin-bottom: 50px;
+  }
+
+  .infrastructure-wrapper {
+    background: top -260px center/600px no-repeat url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-circles.svg"),
+      linear-gradient($body-gradient1, $body-gradient2);
+    margin-top: 240px;
+    margin-bottom: 60px;
+  }
+
+  .infrastructure {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      padding-top: 200px;
+      padding-inline: 20px;
+    }
+
+    img {
+      display: block;
+      width: 375px;
+      position: absolute;
+      top: -180px;
+    }
+  }
+
+  .infrastructure-text {
+    // padding-inline: 20px;
+    padding-bottom: 60px;
   }
 }
 

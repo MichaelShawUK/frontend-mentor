@@ -412,8 +412,8 @@ main .infrastructure-wrapper {
   margin-bottom: 20px;
 }
 .mobile main p {
-  padding-inline: 20px;
   margin-bottom: 50px;
+  padding-inline: 20px;
 }
 .mobile .main-title {
   font-size: clamp(24px, 6.4vw, 48px);
@@ -423,6 +423,31 @@ main .infrastructure-wrapper {
   display: block;
   width: 100%;
   margin-bottom: 50px;
+}
+.mobile .infrastructure-wrapper {
+  background: top -260px center/600px no-repeat url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-circles.svg"), linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  margin-top: 240px;
+  margin-bottom: 60px;
+}
+.mobile .infrastructure {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.mobile .infrastructure h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  padding-top: 200px;
+  padding-inline: 20px;
+}
+.mobile .infrastructure img {
+  display: block;
+  width: 375px;
+  position: absolute;
+  top: -180px;
+}
+.mobile .infrastructure-text {
+  padding-bottom: 60px;
 }
 
 @media (width > 768px) and (width < 1200px) {
