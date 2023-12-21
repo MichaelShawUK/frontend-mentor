@@ -14,3 +14,7 @@
     opacity: 1;
   }
 }
+
+.desktop .account-actions .primary {
+  width: clamp(86px, 11.2vw, 140px);
+}

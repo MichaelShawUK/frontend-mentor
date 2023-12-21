@@ -157,8 +157,12 @@ main {
 
   .illustration {
     display: block;
-    width: 100%;
+    width: 332px;
     margin-bottom: 50px;
+  }
+
+  .editor .illustration {
+    margin-inline: auto;
   }
 
   .infrastructure-wrapper {
@@ -189,8 +193,16 @@ main {
   }
 
   .infrastructure-text {
-    // padding-inline: 20px;
     padding-bottom: 60px;
+  }
+
+  .tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 460px;
+    }
   }
 }
 
@@ -219,7 +231,7 @@ main {
         .illustration {
           float: right;
           margin: 0;
-          // width: 70%;
+          width: 40%;
           max-width: 350px;
           padding: {
             left: 20px;

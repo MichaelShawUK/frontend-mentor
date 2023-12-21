@@ -19,7 +19,7 @@ header {
   flex: 1;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 .mobile header .logo {
@@ -136,6 +136,10 @@ nav a {
 }
 .login-btn:hover {
   opacity: 1;
+}
+
+.desktop .account-actions .primary {
+  width: clamp(86px, 11.2vw, 140px);
 }
 
 .mobile-menu .icon {
@@ -437,8 +441,11 @@ main .infrastructure-wrapper {
 }
 .mobile .illustration {
   display: block;
-  width: 100%;
+  width: 332px;
   margin-bottom: 50px;
+}
+.mobile .editor .illustration {
+  margin-inline: auto;
 }
 .mobile .infrastructure-wrapper {
   background: top -260px center/600px no-repeat url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-circles.svg"), linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
@@ -465,6 +472,14 @@ main .infrastructure-wrapper {
 .mobile .infrastructure-text {
   padding-bottom: 60px;
 }
+.mobile .tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mobile .tools img {
+  width: 460px;
+}
 
 @media (width > 768px) and (width < 1200px) {
   .desktop main .editor {
@@ -485,6 +500,7 @@ main .infrastructure-wrapper {
   .desktop main .tools .illustration {
     float: right;
     margin: 0;
+    width: 40%;
     max-width: 350px;
     padding-left: 20px;
     padding-bottom: 20px;
