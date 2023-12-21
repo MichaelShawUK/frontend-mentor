@@ -56,20 +56,22 @@ function Main() {
           src={device === "mobile" ? laptopMobile : laptopDesktop}
           className="illustration"
         />
-        <h3>Free, open, simple</h3>
-        <p>
-          Blogr is a free and open source application backed by a large
-          community of helpful developers. It supports features such as code
-          syntax highlighting, RSS feeds, social media integration, third-party
-          commenting tools, and works seamlessly with Google Analytics. The
-          architecture is clean and relatively easy to learn.
-        </p>
-        <h3>Poweful tooling</h3>
-        <p>
-          Batteries included. We built a simple and straightforward CLI tool
-          that makes customization and development a breeze, but capable of
-          producing even the most complicated sites.
-        </p>
+        <div className="text">
+          <h3>Free, open, simple</h3>
+          <p>
+            Blogr is a free and open source application backed by a large
+            community of helpful developers. It supports features such as code
+            syntax highlighting, RSS feeds, social media integration,
+            third-party commenting tools, and works seamlessly with Google
+            Analytics. The architecture is clean and relatively easy to learn.
+          </p>
+          <h3>Poweful tooling</h3>
+          <p>
+            Batteries included. We built a simple and straightforward CLI tool
+            that makes customization and development a breeze, but capable of
+            producing even the most complicated sites.
+          </p>
+        </div>
       </div>
     </main>
   );

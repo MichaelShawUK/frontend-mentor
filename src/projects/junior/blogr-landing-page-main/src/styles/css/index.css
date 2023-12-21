@@ -375,6 +375,22 @@ main .infrastructure-wrapper {
   margin-left: 100px;
   display: block;
 }
+.desktop .tools {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "illustration text";
+  margin-bottom: 60px;
+  margin-top: 280px;
+}
+.desktop .tools .text {
+  grid-area: text;
+}
+.desktop .tools .illustration {
+  grid-area: illustration;
+  margin-top: -200px;
+  display: block;
+  justify-self: flex-end;
+}
 .desktop .infrastructure-wrapper {
   background: left -220px top -550px no-repeat url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-circles.svg"), linear-gradient(90deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
   margin-bottom: 100px;
@@ -397,7 +413,7 @@ main .infrastructure-wrapper {
   font-size: 40px;
 }
 .desktop .infrastructure-text {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .mobile main {
@@ -416,7 +432,7 @@ main .infrastructure-wrapper {
   padding-inline: 20px;
 }
 .mobile .main-title {
-  font-size: clamp(24px, 6.4vw, 48px);
+  font-size: clamp(28px, 6.4vw, 48px);
   margin-bottom: 50px;
 }
 .mobile .illustration {
@@ -462,8 +478,19 @@ main .infrastructure-wrapper {
     padding-right: 20px;
     padding-bottom: 20px;
   }
+  .desktop main .tools {
+    display: block;
+    margin-top: 0;
+  }
+  .desktop main .tools .illustration {
+    float: right;
+    margin: 0;
+    max-width: 350px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
   .desktop .infrastructure-wrapper {
-    margin-block: 100px;
+    margin-block: 120px;
   }
 }
 footer {
