@@ -1,13 +1,23 @@
 import editorDesktop from "../assets/images/illustration-editor-desktop.svg";
+import editorMobile from "../assets/images/illustration-editor-mobile.svg";
 import phones from "../assets/images/illustration-phones.svg";
 import laptopDesktop from "../assets/images/illustration-laptop-desktop.svg";
+import laptopMobile from "../assets/images/illustration-laptop-mobile.svg";
+
+import ViewModeContext from "../context/ViewMode";
+import { useContext } from "react";
 
 function Main() {
+  const device = useContext(ViewModeContext);
+
   return (
     <main>
       <h2 className="main-title">Designed for the future</h2>
       <div className="editor">
-        <img src={editorDesktop} className="illustration" />
+        <img
+          src={device === "mobile" ? editorMobile : editorDesktop}
+          className="illustration"
+        />
         <div className="text">
           <h3>Introducing an extensible editor</h3>
           <p>
@@ -40,7 +50,10 @@ function Main() {
         </div>
       </div>
       <div className="tools">
-        <img src={laptopDesktop} />
+        <img
+          src={device === "mobile" ? laptopMobile : laptopDesktop}
+          className="illustration"
+        />
         <h3>Free, open, simple</h3>
         <p>
           Blogr is a free and open source application backed by a large
