@@ -30,7 +30,12 @@ main {
   }
 
   .infrastructure-wrapper {
-    background: linear-gradient(90deg, $body-gradient1, $body-gradient2);
+    // background: linear-gradient(90deg, $body-gradient1, $body-gradient2);
+    // background: center left 30% no-repeat
+    //     url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-circles.svg"),
+    //   linear-gradient(90deg, $body-gradient1, $body-gradient2);
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
   }
 }
 
@@ -69,6 +74,7 @@ main {
       grid-template-columns: 50% 50%;
       grid-template-areas: "text illustration";
       gap: 20px;
+      margin-bottom: 60px;
 
       .text {
         grid-area: text;
@@ -78,10 +84,39 @@ main {
         margin-top: -240px;
         margin-left: 100px;
         display: block;
-        // position: absolute;
-        // width: 100%;
       }
     }
+  }
+
+  .infrastructure-wrapper {
+    background: left -220px top -550px no-repeat
+        url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-circles.svg"),
+      linear-gradient(90deg, $body-gradient1, $body-gradient2);
+    margin-bottom: 100px;
+  }
+
+  .infrastructure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    img {
+      margin-left: -40px;
+      display: block;
+      width: 100%;
+      padding-top: 40px;
+      margin-top: -110px;
+      margin-bottom: -110px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 40px;
+    }
+  }
+
+  .infrastructure-text {
+    margin-top: 30px;
   }
 }
 
@@ -93,7 +128,7 @@ main {
 
     h3 {
       font-size: clamp(24px, 6.4vw, 48px);
-      font-size: 24px;
+      font-size: 28px;
       padding-inline: 50px;
       margin-bottom: 20px;
     }
@@ -133,6 +168,10 @@ main {
           }
         }
       }
+    }
+
+    .infrastructure-wrapper {
+      margin-block: 100px;
     }
   }
 }

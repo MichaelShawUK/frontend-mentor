@@ -332,7 +332,8 @@ main .tools {
   margin: 0 auto;
 }
 main .infrastructure-wrapper {
-  background: linear-gradient(90deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
 }
 
 .desktop main h2 {
@@ -363,6 +364,7 @@ main .infrastructure-wrapper {
   grid-template-columns: 50% 50%;
   grid-template-areas: "text illustration";
   gap: 20px;
+  margin-bottom: 60px;
 }
 .desktop main .editor .text {
   grid-area: text;
@@ -373,6 +375,30 @@ main .infrastructure-wrapper {
   margin-left: 100px;
   display: block;
 }
+.desktop .infrastructure-wrapper {
+  background: left -220px top -550px no-repeat url("src/projects/junior/blogr-landing-page-main/src/assets/images/bg-pattern-circles.svg"), linear-gradient(90deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  margin-bottom: 100px;
+}
+.desktop .infrastructure {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.desktop .infrastructure img {
+  margin-left: -40px;
+  display: block;
+  width: 100%;
+  padding-top: 40px;
+  margin-top: -110px;
+  margin-bottom: -110px;
+}
+.desktop .infrastructure h2 {
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+.desktop .infrastructure-text {
+  margin-top: 30px;
+}
 
 .mobile main {
   text-align: center;
@@ -381,7 +407,7 @@ main .infrastructure-wrapper {
 }
 .mobile main h3 {
   font-size: clamp(24px, 6.4vw, 48px);
-  font-size: 24px;
+  font-size: 28px;
   padding-inline: 50px;
   margin-bottom: 20px;
 }
@@ -410,6 +436,9 @@ main .infrastructure-wrapper {
     max-width: 350px;
     padding-right: 20px;
     padding-bottom: 20px;
+  }
+  .desktop .infrastructure-wrapper {
+    margin-block: 100px;
   }
 }
 footer {

@@ -40,13 +40,15 @@ function Main() {
       <div className="infrastructure-wrapper">
         <div className="infrastructure">
           <img src={phones} />
-          <h2>State of the Art Infrastructure</h2>
-          <p>
-            With reliability and speed in mind, worldwide data centers provide
-            the backbone for ultra-fast connectivity. This ensures your site
-            will load instantly, no matter where you readers are, keeping your
-            site competitive.
-          </p>
+          <div className="infrastructure-text">
+            <h2>State of the Art Infrastructure</h2>
+            <p>
+              With reliability and speed in mind, worldwide data centers provide
+              the backbone for ultra-fast connectivity. This ensures your site
+              will load instantly, no matter where you readers are, keeping your
+              site competitive.
+            </p>
+          </div>
         </div>
       </div>
       <div className="tools">
