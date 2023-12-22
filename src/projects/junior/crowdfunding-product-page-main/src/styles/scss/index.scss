@@ -1,0 +1,19 @@
+@import "https://fonts.googleapis.com/css?family=Commissioner:400";
+@import "https://fonts.googleapis.com/css?family=Commissioner:500";
+@import "https://fonts.googleapis.com/css?family=Commissioner:700";
+@import "colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: {
+    family: "Commissioner";
+    weight: 400;
+    size: 16px;
+  }
+  color: $dark-gray;
+}

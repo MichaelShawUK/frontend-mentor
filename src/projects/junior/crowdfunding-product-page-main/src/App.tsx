@@ -1,3 +1,5 @@
+import "./styles/css/index.css";
+
 function Crowdfunding() {
   return (
     <div className="crowdfunding">
