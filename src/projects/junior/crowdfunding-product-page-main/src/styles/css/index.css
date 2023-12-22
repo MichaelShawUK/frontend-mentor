@@ -89,6 +89,79 @@ nav a {
     opacity: 1;
   }
 }
+main {
+  text-align: center;
+  max-width: 768px;
+  margin-inline: auto;
+}
+
+.desktop main {
+  margin-top: clamp(60px, (27.7777777778vw - 70px) * 0.75, 350px);
+}
+
+.mobile main {
+  margin-top: clamp(150px, (80vw - 50px) * 0.7666666667, 300px);
+}
+
+.summary {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.0666666667);
+}
+.summary h1 {
+  font-size: 28px;
+  margin-top: 30px;
+  margin-bottom: 14px;
+}
+.summary .description {
+  margin-bottom: 30px;
+  line-height: 24px;
+}
+.summary .mastercraft-logo {
+  margin-top: -28px;
+}
+.summary .actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desktop .summary {
+  padding: 0 50px 50px;
+}
+
+.mobile .summary {
+  padding: 0 20px 30px;
+}
+.mobile .summary h1 {
+  font-size: 22px;
+  margin-top: 20px;
+}
+.mobile .summary .description {
+  font-size: 14px;
+}
+
+.bookmark {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: hsl(0, 0%, 48%);
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 28px;
+  background-color: rgba(0, 0, 0, 0.0666666667);
+}
+.bookmark img {
+  display: block;
+}
+.bookmark p {
+  padding-left: 18px;
+  padding-right: 24px;
+}
+.bookmark:hover {
+  opacity: 0.8;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -100,6 +173,29 @@ body {
   font-weight: 400;
   font-size: 16px;
   color: hsl(0, 0%, 48%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(0, 0%, 0%);
+}
+
+button.primary {
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  padding: 18px 34px;
+  border-radius: 28px;
+  cursor: pointer;
+}
+button.primary:hover {
+  background-color: hsl(176, 72%, 28%);
 }
 
 .crowdfund {

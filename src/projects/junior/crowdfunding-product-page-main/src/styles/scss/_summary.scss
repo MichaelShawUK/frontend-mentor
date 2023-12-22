@@ -1,0 +1,69 @@
+@use "colors" as c;
+
+.summary {
+  background-color: c.$white;
+  border-radius: 8px;
+  border: 1px solid #0001;
+
+  h1 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 14px;
+  }
+
+  .description {
+    margin-bottom: 30px;
+    line-height: 24px;
+  }
+
+  .mastercraft-logo {
+    margin-top: -28px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.desktop .summary {
+  padding: 0 50px 50px;
+}
+
+.mobile .summary {
+  padding: 0 20px 30px;
+
+  h1 {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+.bookmark {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: c.$dark-gray;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 28px;
+  background-color: #0001;
+
+  img {
+    display: block;
+  }
+
+  p {
+    padding-left: 18px;
+    padding-right: 24px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

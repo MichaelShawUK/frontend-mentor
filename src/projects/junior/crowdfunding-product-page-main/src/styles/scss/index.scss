@@ -2,6 +2,8 @@
 @use "header";
 @use "nav";
 @use "mobileMenu";
+@use "main";
+@use "summary";
 @import "https://fonts.googleapis.com/css?family=Commissioner:400";
 @import "https://fonts.googleapis.com/css?family=Commissioner:500";
 @import "https://fonts.googleapis.com/css?family=Commissioner:700";
@@ -19,6 +21,30 @@ body {
     size: 16px;
   }
   color: c.$dark-gray;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: c.$black;
+}
+
+button.primary {
+  background-color: c.$moderate-cyan;
+  color: c.$white;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  padding: 18px 34px;
+  border-radius: 28px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: c.$dark-cyan;
+  }
 }
 
 .crowdfund {
