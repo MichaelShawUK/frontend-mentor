@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.mobile header {
+  padding-top: 30px;
+}
+
+.desktop header {
+  padding-top: 50px;
+}

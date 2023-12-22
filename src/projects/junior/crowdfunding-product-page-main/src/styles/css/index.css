@@ -1,6 +1,51 @@
 @import "https://fonts.googleapis.com/css?family=Commissioner:400";
 @import "https://fonts.googleapis.com/css?family=Commissioner:500";
 @import "https://fonts.googleapis.com/css?family=Commissioner:700";
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.mobile header {
+  padding-top: 30px;
+}
+
+.desktop header {
+  padding-top: 50px;
+}
+
+nav {
+  font-weight: 500;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav a {
+  text-decoration: none;
+}
+
+.desktop nav ul {
+  gap: 30px;
+}
+.desktop nav a {
+  color: #fff;
+}
+
+.mobile nav ul {
+  flex-direction: column;
+}
+.mobile nav a {
+  color: hsl(0, 0%, 0%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +57,20 @@ body {
   font-weight: 400;
   font-size: 16px;
   color: hsl(0, 0%, 48%);
+}
+
+.crowdfund {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+.crowdfund.desktop {
+  background: #fafafa no-repeat top center/100% url("src/projects/junior/crowdfunding-product-page-main/src/assets/images/image-hero-desktop.jpg");
+}
+
+.crowdfund.mobile {
+  background: #fafafa no-repeat top center/100% url("src/projects/junior/crowdfunding-product-page-main/src/assets/images/image-hero-mobile.jpg");
 }
 
 /*# sourceMappingURL=index.css.map */

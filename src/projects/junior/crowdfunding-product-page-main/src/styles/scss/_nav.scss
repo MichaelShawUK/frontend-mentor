@@ -1,0 +1,34 @@
+@use "colors" as c;
+
+nav {
+  font-weight: 500;
+
+  ul {
+    list-style: none;
+    display: flex;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.desktop nav {
+  ul {
+    gap: 30px;
+  }
+
+  a {
+    color: c.$white;
+  }
+}
+
+.mobile nav {
+  ul {
+    flex-direction: column;
+  }
+
+  a {
+    color: c.$black;
+  }
+}

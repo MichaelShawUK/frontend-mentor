@@ -1,11 +1,21 @@
 import "./styles/css/index.css";
+import useDeviceMode from "./hooks/useDeviceMode";
+import DeviceContext from "./context/DeviceContext";
 
-function Crowdfunding() {
+import Header from "./components/Header";
+
+function Crowdfund() {
+  const device = useDeviceMode(768);
+
   return (
-    <div className="crowdfunding">
-      <h1>CROWDFUNDING</h1>
-    </div>
+    <DeviceContext.Provider value={device}>
+      <div className={`crowdfund ${device}`}>
+        <Header />
+        <h1>CROWDFUNDING</h1>
+        <p style={{ height: "90vh" }}>{device}</p>
+      </div>
+    </DeviceContext.Provider>
   );
 }
 
-export default Crowdfunding;
+export default Crowdfund;
