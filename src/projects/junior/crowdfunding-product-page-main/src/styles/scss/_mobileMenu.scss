@@ -1,0 +1,48 @@
+.mobile-menu {
+  border: none;
+  margin: 50px auto 0;
+  max-width: unset;
+  max-height: unset;
+  width: 320px;
+  border-radius: 8px;
+  font-size: 18px;
+  align-self: start;
+  transform-origin: top;
+  animation: expand ease-in 0.2s;
+
+  nav {
+    opacity: 0;
+    animation: fadeIn 0.2s ease-in 0.2s forwards;
+  }
+
+  li {
+    border-bottom: 1px solid #0001;
+  }
+
+  a {
+    display: block;
+    padding: 20px;
+
+    &:hover {
+      background-color: #0001;
+    }
+  }
+}
+
+@keyframes expand {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

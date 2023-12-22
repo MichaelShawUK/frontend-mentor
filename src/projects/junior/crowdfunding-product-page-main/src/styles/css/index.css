@@ -9,7 +9,7 @@ header {
   margin: 0 auto;
 }
 
-.hamburger {
+.icon {
   cursor: pointer;
 }
 
@@ -46,6 +46,49 @@ nav a {
   color: hsl(0, 0%, 0%);
 }
 
+.mobile-menu {
+  border: none;
+  margin: 50px auto 0;
+  max-width: unset;
+  max-height: unset;
+  width: 320px;
+  border-radius: 8px;
+  font-size: 18px;
+  align-self: start;
+  transform-origin: top;
+  animation: expand ease-in 0.2s;
+}
+.mobile-menu nav {
+  opacity: 0;
+  animation: fadeIn 0.2s ease-in 0.2s forwards;
+}
+.mobile-menu li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0666666667);
+}
+.mobile-menu a {
+  display: block;
+  padding: 20px;
+}
+.mobile-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.0666666667);
+}
+
+@keyframes expand {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
