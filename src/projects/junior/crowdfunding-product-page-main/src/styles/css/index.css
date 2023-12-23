@@ -1,6 +1,6 @@
-@import "https://fonts.googleapis.com/css?family=Commissioner:400";
-@import "https://fonts.googleapis.com/css?family=Commissioner:500";
-@import "https://fonts.googleapis.com/css?family=Commissioner:700";
+@import url("https://fonts.googleapis.com/css?family=Commissioner:400");
+@import url("https://fonts.googleapis.com/css?family=Commissioner:500");
+@import url("https://fonts.googleapis.com/css?family=Commissioner:700");
 header {
   display: flex;
   justify-content: space-between;
@@ -112,6 +112,8 @@ main {
   text-align: center;
   max-width: 768px;
   margin-inline: auto;
+  display: grid;
+  gap: 30px;
 }
 
 .desktop main {
@@ -120,6 +122,46 @@ main {
 
 .mobile main {
   margin-top: clamp(150px, (80vw - 50px) * 0.7666666667, 300px);
+}
+
+.metrics {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.0666666667);
+}
+.metrics ul {
+  list-style: none;
+}
+.metrics .value {
+  display: block;
+  font-weight: 700;
+  font-size: 36px;
+  color: hsl(0, 0%, 0%);
+  margin-bottom: 10px;
+}
+.metrics li {
+  margin-bottom: 20px;
+}
+.metrics li::after {
+  content: "";
+  width: 100px;
+  height: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto;
+}
+.metrics li:last-child::after {
+  display: none;
+}
+
+.desktop .metrics {
+  padding: 50px;
+  text-align: left;
+}
+.desktop .metrics ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
 }
 
 .summary {

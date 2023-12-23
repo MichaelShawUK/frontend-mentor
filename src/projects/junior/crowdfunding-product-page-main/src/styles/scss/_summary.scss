@@ -1,9 +1,11 @@
 @use "colors" as c;
+@use "main";
 
 .summary {
-  background-color: c.$white;
-  border-radius: 8px;
-  border: 1px solid #0001;
+  // background-color: c.$white;
+  // border-radius: 8px;
+  // border: 1px solid #0001;
+  @include main.card;
 
   h1 {
     font-size: 28px;

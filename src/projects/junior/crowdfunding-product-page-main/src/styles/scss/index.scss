@@ -3,10 +3,16 @@
 @use "nav";
 @use "mobileMenu";
 @use "main";
+@use "metrics";
 @use "summary";
-@import "https://fonts.googleapis.com/css?family=Commissioner:400";
-@import "https://fonts.googleapis.com/css?family=Commissioner:500";
-@import "https://fonts.googleapis.com/css?family=Commissioner:700";
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Commissioner");
+@include google-font("Commissioner", 500);
+@include google-font("Commissioner", 700);
 
 * {
   margin: 0;

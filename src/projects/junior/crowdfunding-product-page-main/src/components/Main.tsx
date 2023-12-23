@@ -1,4 +1,5 @@
 import Summary from "./Summary";
+import Metrics from "./Metrics";
 
 function Main() {
   return (
@@ -7,6 +8,7 @@ function Main() {
         title="Mastercraft Bamboo Monitor Riser"
         description="A beautiful & handcrafted monitor stand to reduce neck and eye strain."
       />
+      <Metrics />
     </main>
   );
 }

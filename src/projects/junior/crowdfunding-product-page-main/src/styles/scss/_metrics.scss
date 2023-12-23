@@ -1,0 +1,50 @@
+@use "colors" as c;
+@use "main";
+
+.metrics {
+  @include main.card;
+
+  ul {
+    list-style: none;
+  }
+
+  .value {
+    display: block;
+    font: {
+      weight: 700;
+      size: 36px;
+    }
+    color: c.$black;
+    margin-bottom: 10px;
+  }
+
+  li {
+    margin-bottom: 20px;
+  }
+
+  li::after {
+    content: "";
+    width: 100px;
+    height: 24px;
+    border-bottom: 1px solid #0003;
+    display: block;
+    margin: 0 auto;
+  }
+
+  li:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.desktop .metrics {
+  padding: 50px;
+  text-align: left;
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+  }
+}
