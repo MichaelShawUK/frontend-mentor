@@ -17,3 +17,9 @@ header {
 .desktop header {
   padding-top: 50px;
 }
+
+header.hidden {
+  & > img {
+    visibility: hidden;
+  }
+}

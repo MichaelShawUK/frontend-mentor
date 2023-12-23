@@ -1,6 +1,5 @@
 import logo from "../assets/images/logo.svg";
 import hamburger from "../assets/images/icon-hamburger.svg";
-import closeIcon from "../assets/images/icon-close-menu.svg";
 import Nav from "./Nav";
 import MobileMenu from "./MobileMenu";
 import DeviceContext from "../context/DeviceContext";
@@ -14,19 +13,21 @@ function Header() {
   const closeMenu = () => setOpenMobileMenu(false);
 
   const Hamburger = <img src={hamburger} className="icon" onClick={openMenu} />;
-  const CloseIcon = (
-    <img src={closeIcon} className="icon" onClick={closeMenu} />
-  );
-  const Icon = openMobileMenu ? CloseIcon : Hamburger;
 
   const device = useContext(DeviceContext);
-  const Menu = device === "mobile" ? Icon : <Nav />;
+  const Menu = device === "mobile" ? Hamburger : <Nav />;
 
   return (
-    <header>
+    <header className={openMobileMenu ? "hidden" : undefined}>
       <img src={logo} />
       {Menu}
-      {device === "mobile" && <MobileMenu isOpen={openMobileMenu} />}
+      {device === "mobile" && (
+        <MobileMenu
+          isOpen={openMobileMenu}
+          onClose={closeMenu}
+          setMenuIsOpen={setOpenMobileMenu}
+        />
+      )}
     </header>
   );
 }

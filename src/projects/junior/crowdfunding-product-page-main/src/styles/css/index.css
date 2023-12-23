@@ -21,6 +21,10 @@ header {
   padding-top: 50px;
 }
 
+header.hidden > img {
+  visibility: hidden;
+}
+
 nav {
   font-weight: 500;
 }
@@ -48,19 +52,28 @@ nav a {
 
 .mobile-menu {
   border: none;
-  margin: 50px auto 0;
+  margin: 0 auto 0;
   max-width: unset;
   max-height: unset;
-  width: 320px;
-  border-radius: 8px;
+  width: 100%;
   font-size: 18px;
   align-self: start;
-  transform-origin: top;
-  animation: expand ease-in 0.2s;
+  background-color: transparent;
+}
+.mobile-menu::backdrop {
+  background-color: rgba(0, 0, 0, 0.4666666667);
 }
 .mobile-menu nav {
-  opacity: 0;
+  animation: expand ease-in 0.2s;
+  transform-origin: top;
+  border-radius: 8px;
+  background-color: #fff;
+  width: 320px;
+  margin: 50px auto 0;
+}
+.mobile-menu ul {
   animation: fadeIn 0.2s ease-in 0.2s forwards;
+  opacity: 0;
 }
 .mobile-menu li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.0666666667);
@@ -71,6 +84,12 @@ nav a {
 }
 .mobile-menu a:hover {
   background-color: rgba(0, 0, 0, 0.0666666667);
+}
+.mobile-menu .menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 20px 0;
 }
 
 @keyframes expand {

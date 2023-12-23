@@ -1,18 +1,29 @@
 .mobile-menu {
   border: none;
-  margin: 50px auto 0;
+  margin: 0 auto 0;
   max-width: unset;
   max-height: unset;
-  width: 320px;
-  border-radius: 8px;
+  width: 100%;
   font-size: 18px;
   align-self: start;
-  transform-origin: top;
-  animation: expand ease-in 0.2s;
+  background-color: transparent;
+
+  &::backdrop {
+    background-color: #0007;
+  }
 
   nav {
-    opacity: 0;
+    animation: expand ease-in 0.2s;
+    transform-origin: top;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 320px;
+    margin: 50px auto 0;
+  }
+
+  ul {
     animation: fadeIn 0.2s ease-in 0.2s forwards;
+    opacity: 0;
   }
 
   li {
@@ -26,6 +37,13 @@
     &:hover {
       background-color: #0001;
     }
+  }
+
+  .menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px 0;
   }
 }
 
