@@ -185,7 +185,30 @@ main {
 .bookmark:hover {
   opacity: 0.8;
 }
+.bookmark.selected {
+  color: hsl(176, 72%, 28%);
+}
+.bookmark.selected path {
+  fill: #fff;
+}
+.bookmark.selected circle {
+  fill: hsl(176, 72%, 28%);
+}
+.bookmark.selected svg {
+  animation: pulse ease-in 0.2s;
+}
 
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .metrics {
   background-color: #fff;
   border-radius: 8px;
@@ -277,7 +300,7 @@ main {
 
 .reward {
   text-align: left;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1333333333);
   border-radius: 8px;
 }
 .reward.disabled {

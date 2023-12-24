@@ -1,10 +1,6 @@
-@use "colors" as c;
 @use "main";
 
 .summary {
-  // background-color: c.$white;
-  // border-radius: 8px;
-  // border: 1px solid #0001;
   @include main.card;
 
   h1 {
@@ -44,30 +40,5 @@
 
   .description {
     font-size: 16px;
-  }
-}
-
-.bookmark {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  color: c.$dark-gray;
-  font-weight: 700;
-  font-size: 14px;
-  border: none;
-  border-radius: 28px;
-  background-color: #0001;
-
-  img {
-    display: block;
-  }
-
-  p {
-    padding-left: 18px;
-    padding-right: 24px;
-  }
-
-  &:hover {
-    opacity: 0.8;
   }
 }

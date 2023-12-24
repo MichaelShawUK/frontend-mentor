@@ -1,0 +1,53 @@
+@use "colors" as c;
+
+.bookmark {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: c.$dark-gray;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  border-radius: 28px;
+  background-color: #0001;
+
+  img {
+    display: block;
+  }
+
+  p {
+    padding-left: 18px;
+    padding-right: 24px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.selected {
+    path {
+      fill: #fff;
+    }
+    circle {
+      fill: c.$dark-cyan;
+    }
+
+    color: c.$dark-cyan;
+
+    svg {
+      animation: pulse ease-in 0.2s;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
