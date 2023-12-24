@@ -1,17 +1,5 @@
 @use "colors" as c;
 
-$y-header-desktop: 70px;
-$y-header-mobile: 50px;
-$y-hero-desktop: calc((100vw / 1440) * 400);
-$y-hero-mobile: calc((100vw / 750) * 600);
-$y-ratio-mobile: calc(460 / 600);
-$y-ratio-desktop: calc(300 / 400);
-
-$margin-top-mobile: calc(($y-hero-mobile - $y-header-mobile) * $y-ratio-mobile);
-$margin-top-desktop: calc(
-  ($y-hero-desktop - $y-header-desktop) * $y-ratio-desktop
-);
-
 @function main-margin-top($device) {
   $ratio: 0.75;
   $dimensions: (
@@ -50,11 +38,11 @@ main {
 }
 
 .mobile main {
-  margin-top: clamp(150px, main-margin-top("mobile"), 300px);
+  margin-top: clamp(150px, main-margin-top("mobile"), 450px);
 }
 
 @mixin card {
   background-color: c.$white;
   border-radius: 8px;
-  border: 1px solid #0001;
+  border: 1px solid #000f;
 }

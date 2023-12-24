@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 
 function Crowdfund() {
-  const device = useDeviceMode(550);
+  const device = useDeviceMode(768);
 
   return (
     <DeviceContext.Provider value={device}>

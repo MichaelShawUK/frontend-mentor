@@ -1,3 +1,5 @@
+import ProgressBar from "./ProgressBar";
+
 function Metrics() {
   return (
     <div className="metrics">
@@ -12,6 +14,7 @@ function Metrics() {
           <span className="value">56</span> days left
         </li>
       </ul>
+      <ProgressBar progress={70} />
     </div>
   );
 }

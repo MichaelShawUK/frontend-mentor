@@ -4,6 +4,7 @@
 @use "mobileMenu";
 @use "main";
 @use "metrics";
+@use "progressBar";
 @use "summary";
 
 @mixin google-font($family, $weight: 400) {

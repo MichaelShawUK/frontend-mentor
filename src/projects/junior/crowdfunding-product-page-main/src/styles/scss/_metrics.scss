@@ -3,6 +3,7 @@
 
 .metrics {
   @include main.card;
+  padding: 40px 20px;
 
   ul {
     list-style: none;
@@ -40,11 +41,22 @@
 
 .desktop .metrics {
   padding: 50px;
-  text-align: left;
 
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
+  }
+
+  li {
+    border-right: 1px solid #0003;
+  }
+
+  li:last-child {
+    border-right: none;
+  }
+
+  li::after {
+    display: none;
   }
 }

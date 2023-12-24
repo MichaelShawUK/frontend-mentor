@@ -121,13 +121,14 @@ main {
 }
 
 .mobile main {
-  margin-top: clamp(150px, 60vw - 50px, 300px);
+  margin-top: clamp(150px, 60vw - 50px, 450px);
 }
 
 .metrics {
   background-color: #fff;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.0666666667);
+  border: 1px solid black;
+  padding: 40px 20px;
 }
 .metrics ul {
   list-style: none;
@@ -156,18 +157,41 @@ main {
 
 .desktop .metrics {
   padding: 50px;
-  text-align: left;
 }
 .desktop .metrics ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
 }
+.desktop .metrics li {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+.desktop .metrics li:last-child {
+  border-right: none;
+}
+.desktop .metrics li::after {
+  display: none;
+}
+
+.progress-bar,
+.progress {
+  height: 14px;
+  border-radius: 7px;
+}
+
+.progress-bar {
+  background-color: rgba(0, 0, 0, 0.0666666667);
+  margin-top: 30px;
+}
+
+.progress {
+  background-color: hsl(176, 50%, 47%);
+}
 
 .summary {
   background-color: #fff;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.0666666667);
+  border: 1px solid black;
 }
 .summary h1 {
   font-size: 28px;
@@ -183,7 +207,9 @@ main {
 }
 .summary .actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .desktop .summary {
@@ -198,7 +224,7 @@ main {
   margin-top: 20px;
 }
 .mobile .summary .description {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .bookmark {

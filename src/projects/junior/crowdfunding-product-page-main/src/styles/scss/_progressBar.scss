@@ -1,0 +1,16 @@
+@use "colors" as c;
+
+.progress-bar,
+.progress {
+  height: 14px;
+  border-radius: 7px;
+}
+
+.progress-bar {
+  background-color: #0001;
+  margin-top: 30px;
+}
+
+.progress {
+  background-color: c.$moderate-cyan;
+}
