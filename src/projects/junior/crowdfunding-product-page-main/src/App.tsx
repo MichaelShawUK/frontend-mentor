@@ -13,8 +13,6 @@ function Crowdfund() {
       <div className={`crowdfund ${device}`}>
         <Header />
         <Main />
-        <h1>CROWDFUNDING</h1>
-        <p style={{ height: "90vh" }}>{device}</p>
       </div>
     </DeviceContext.Provider>
   );

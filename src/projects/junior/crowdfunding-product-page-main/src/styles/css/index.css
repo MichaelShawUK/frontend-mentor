@@ -112,6 +112,7 @@ main {
   text-align: center;
   max-width: 768px;
   margin-inline: auto;
+  margin-bottom: 50px;
   display: grid;
   gap: 30px;
 }
@@ -124,10 +125,71 @@ main {
   margin-top: clamp(150px, 60vw - 50px, 450px);
 }
 
+.summary {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.0666666667);
+}
+.summary h1 {
+  font-size: 28px;
+  margin-top: 30px;
+  margin-bottom: 14px;
+}
+.summary .description {
+  margin-bottom: 30px;
+  line-height: 24px;
+}
+.summary .mastercraft-logo {
+  margin-top: -28px;
+}
+.summary .actions {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.desktop .summary {
+  padding: 0 50px 50px;
+}
+
+.mobile .summary {
+  padding: 0 20px 30px;
+}
+.mobile .summary h1 {
+  font-size: 22px;
+  margin-top: 20px;
+}
+.mobile .summary .description {
+  font-size: 16px;
+}
+
+.bookmark {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: hsl(0, 0%, 48%);
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  border-radius: 28px;
+  background-color: rgba(0, 0, 0, 0.0666666667);
+}
+.bookmark img {
+  display: block;
+}
+.bookmark p {
+  padding-left: 18px;
+  padding-right: 24px;
+}
+.bookmark:hover {
+  opacity: 0.8;
+}
+
 .metrics {
   background-color: #fff;
   border-radius: 8px;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.0666666667);
   padding: 40px 20px;
 }
 .metrics ul {
@@ -188,65 +250,107 @@ main {
   background-color: hsl(176, 50%, 47%);
 }
 
-.summary {
+.rewards {
   background-color: #fff;
   border-radius: 8px;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.0666666667);
 }
-.summary h1 {
-  font-size: 28px;
-  margin-top: 30px;
-  margin-bottom: 14px;
+
+.desktop .rewards {
+  padding: 50px;
 }
-.summary .description {
-  margin-bottom: 30px;
-  line-height: 24px;
+
+.mobile .rewards {
+  padding: 40px 20px;
 }
-.summary .mastercraft-logo {
-  margin-top: -28px;
+
+.about {
+  text-align: left;
+  padding-bottom: 16px;
 }
-.summary .actions {
+.about > * {
+  margin-bottom: 26px;
+}
+.about h3 {
+  font-size: 20px;
+}
+
+.reward {
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+.reward.disabled {
+  opacity: 0.5;
+}
+.reward.disabled button:disabled {
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: not-allowed;
+}
+.reward h3 {
+  grid-area: title;
+}
+.reward .minimum {
+  color: hsl(176, 50%, 47%);
+  font-weight: 500;
+  grid-area: minimum;
+}
+.reward .description {
+  grid-area: description;
+}
+.reward .remaining {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
+  grid-area: remaining;
 }
-
-.desktop .summary {
-  padding: 0 50px 50px;
+.reward button {
+  grid-area: button;
 }
-
-.mobile .summary {
-  padding: 0 20px 30px;
-}
-.mobile .summary h1 {
-  font-size: 22px;
-  margin-top: 20px;
-}
-.mobile .summary .description {
-  font-size: 16px;
-}
-
-.bookmark {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  color: hsl(0, 0%, 48%);
+.reward .remaining span {
   font-weight: 700;
+  font-size: 32px;
+  color: hsl(0, 0%, 0%);
+}
+
+.desktop .reward {
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-areas: "title minimum" "description description" "remaining button";
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 30px;
+}
+.desktop .reward:last-child {
+  margin-bottom: 0;
+}
+.desktop .reward .minimum {
+  text-align: right;
+}
+.desktop .reward button {
+  width: max-content;
+  justify-self: flex-end;
+}
+.desktop .reward h3 {
+  font-size: 18px;
+}
+
+.mobile .reward {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.mobile .reward:last-child {
+  margin-bottom: 0;
+}
+.mobile .reward h3 {
   font-size: 16px;
-  border: none;
-  border-radius: 28px;
-  background-color: rgba(0, 0, 0, 0.0666666667);
 }
-.bookmark img {
-  display: block;
+.mobile .reward .minimum {
+  margin-bottom: 20px;
 }
-.bookmark p {
-  padding-left: 18px;
-  padding-right: 24px;
-}
-.bookmark:hover {
-  opacity: 0.8;
+.mobile .reward .description,
+.mobile .reward .remaining {
+  margin-bottom: 30px;
 }
 
 * {
@@ -260,6 +364,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   color: hsl(0, 0%, 48%);
+  line-height: 30px;
 }
 
 h1,
@@ -275,7 +380,7 @@ button.primary {
   background-color: hsl(176, 50%, 47%);
   color: #fff;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   padding: 18px 34px;
   border-radius: 28px;
@@ -297,6 +402,10 @@ button.primary:hover {
 
 .crowdfund.mobile {
   background: #fafafa no-repeat top center/100% url("src/projects/junior/crowdfunding-product-page-main/src/assets/images/image-hero-mobile.jpg");
+}
+
+.mobile {
+  line-height: 26px;
 }
 
 /*# sourceMappingURL=index.css.map */

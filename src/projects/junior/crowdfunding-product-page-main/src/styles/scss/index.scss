@@ -3,9 +3,12 @@
 @use "nav";
 @use "mobileMenu";
 @use "main";
+@use "summary";
 @use "metrics";
 @use "progressBar";
-@use "summary";
+@use "rewards";
+@use "about";
+@use "reward";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -28,6 +31,7 @@ body {
     size: 16px;
   }
   color: c.$dark-gray;
+  line-height: 30px;
 }
 
 h1,
@@ -43,7 +47,7 @@ button.primary {
   background-color: c.$moderate-cyan;
   color: c.$white;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   padding: 18px 34px;
   border-radius: 28px;
@@ -69,3 +73,8 @@ button.primary {
 
 @include background("desktop");
 @include background("mobile");
+
+.mobile {
+  line-height: 26px;
+  // font-size: 14px;
+}

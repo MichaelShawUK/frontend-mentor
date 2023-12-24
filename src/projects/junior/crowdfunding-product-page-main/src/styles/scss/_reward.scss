@@ -1,0 +1,101 @@
+@use "colors" as c;
+
+.reward {
+  text-align: left;
+  border: 1px solid #0003;
+  border-radius: 8px;
+
+  &.disabled {
+    opacity: 0.5;
+
+    button:disabled {
+      background-color: #0006;
+      cursor: not-allowed;
+    }
+  }
+
+  h3 {
+    grid-area: title;
+  }
+
+  .minimum {
+    color: c.$moderate-cyan;
+    font-weight: 500;
+    grid-area: minimum;
+  }
+
+  .description {
+    grid-area: description;
+  }
+
+  .remaining {
+    display: flex;
+    gap: 10px;
+    grid-area: remaining;
+  }
+
+  button {
+    grid-area: button;
+  }
+
+  .remaining span {
+    font: {
+      weight: 700;
+      size: 32px;
+    }
+    color: c.$black;
+  }
+}
+
+.desktop .reward {
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-areas:
+    "title minimum"
+    "description description"
+    "remaining button";
+
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .minimum {
+    text-align: right;
+  }
+
+  button {
+    width: max-content;
+    justify-self: flex-end;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+.mobile .reward {
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .minimum {
+    margin-bottom: 20px;
+  }
+
+  .description,
+  .remaining {
+    margin-bottom: 30px;
+  }
+}

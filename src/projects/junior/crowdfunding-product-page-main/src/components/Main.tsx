@@ -1,5 +1,6 @@
 import Summary from "./Summary";
 import Metrics from "./Metrics";
+import Rewards from "./Rewards";
 
 function Main() {
   return (
@@ -9,6 +10,7 @@ function Main() {
         description="A beautifully handcrafted monitor stand to reduce neck and eye strain."
       />
       <Metrics />
+      <Rewards />
     </main>
   );
 }

@@ -1,0 +1,13 @@
+@use "main";
+
+.rewards {
+  @include main.card;
+}
+
+.desktop .rewards {
+  padding: 50px;
+}
+
+.mobile .rewards {
+  padding: 40px 20px;
+}
