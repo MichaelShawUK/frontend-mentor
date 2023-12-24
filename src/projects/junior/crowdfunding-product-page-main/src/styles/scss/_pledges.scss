@@ -4,7 +4,7 @@
 .pledges {
   text-align: left;
   @include main.card;
-  margin: 0 auto;
+  margin-inline: auto;
   width: auto;
   max-width: 768px;
   color: c.$dark-gray;

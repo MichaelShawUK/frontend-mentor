@@ -4,13 +4,13 @@ import Nav from "./Nav";
 import MobileMenu from "./MobileMenu";
 import DeviceContext from "../context/DeviceContext";
 
-import { useContext, useState } from "react";
+import { useContext, useState, useCallback } from "react";
 
 function Header() {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
   const openMenu = () => setOpenMobileMenu(true);
-  const closeMenu = () => setOpenMobileMenu(false);
+  const closeMenu = useCallback(() => setOpenMobileMenu(false), []);
 
   const Hamburger = <img src={hamburger} className="icon" onClick={openMenu} />;
 
@@ -22,11 +22,7 @@ function Header() {
       <img src={logo} />
       {Menu}
       {device === "mobile" && (
-        <MobileMenu
-          isOpen={openMobileMenu}
-          onClose={closeMenu}
-          setMenuIsOpen={setOpenMobileMenu}
-        />
+        <MobileMenu isOpen={openMobileMenu} onClose={closeMenu} />
       )}
     </header>
   );

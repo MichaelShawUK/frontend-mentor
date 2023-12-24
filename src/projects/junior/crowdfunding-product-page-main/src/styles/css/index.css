@@ -381,7 +381,7 @@ main {
   background-color: #fff;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.0666666667);
-  margin: 0 auto;
+  margin-inline: auto;
   width: auto;
   max-width: 768px;
   color: hsl(0, 0%, 48%);
