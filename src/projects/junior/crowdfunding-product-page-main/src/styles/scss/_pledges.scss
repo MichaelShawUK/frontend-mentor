@@ -1,0 +1,36 @@
+@use "colors" as c;
+@use "main";
+
+.pledges {
+  text-align: left;
+  @include main.card;
+  margin: 0 auto;
+  width: auto;
+  max-width: 768px;
+  color: c.$dark-gray;
+  border: 1px solid #0001;
+  margin-top: main.main-margin-top("desktop") -70;
+  margin-top: main.main-margin-top("desktop");
+  margin-top: 50px;
+
+  .close {
+    display: block;
+    margin-left: auto;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    &:hover {
+      path {
+        opacity: 1;
+      }
+    }
+  }
+
+  &::backdrop {
+    background-color: #0009;
+  }
+}
+
+.desktop .pledges {
+  padding: 50px;
+}

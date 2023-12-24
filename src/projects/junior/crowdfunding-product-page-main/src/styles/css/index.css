@@ -376,6 +376,38 @@ main {
   margin-bottom: 30px;
 }
 
+.pledges {
+  text-align: left;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.0666666667);
+  margin: 0 auto;
+  width: auto;
+  max-width: 768px;
+  color: hsl(0, 0%, 48%);
+  border: 1px solid rgba(0, 0, 0, 0.0666666667);
+  margin-top: calc(20.8333333333vw - 70px) -70;
+  margin-top: calc(20.8333333333vw - 70px);
+  margin-top: 50px;
+}
+.pledges .close {
+  display: block;
+  margin-left: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.pledges .close:hover path {
+  opacity: 1;
+}
+.pledges::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.desktop .pledges {
+  padding: 50px;
+}
+
 * {
   margin: 0;
   padding: 0;

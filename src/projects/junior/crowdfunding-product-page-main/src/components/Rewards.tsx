@@ -15,7 +15,7 @@ const rewards = [
     title: "Black Edition Stand",
     minimum: 75,
     description:
-      "You get a Black Special Edition computer stand and a personal thank you. You'll be added to our Backer member list. Shippign is included.",
+      "You get a Black Special Edition computer stand and a personal thank you. You'll be added to our Backer member list. Shipping is included.",
     remaining: 64,
   },
   {

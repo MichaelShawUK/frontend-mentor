@@ -4,16 +4,19 @@ import Bookmark from "./Bookmark";
 interface Props {
   title: string;
   description: string;
+  openModal: () => void;
 }
 
-function Summary({ title, description }: Props) {
+function Summary({ title, description, openModal }: Props) {
   return (
     <div className="summary">
       <img src={mastercraftLogo} className="mastercraft-logo" />
       <h1>{title}</h1>
       <p className="description">{description}</p>
       <div className="actions">
-        <button className="primary">Back this project</button>
+        <button className="primary" onClick={openModal}>
+          Back this project
+        </button>
         <Bookmark />
       </div>
     </div>

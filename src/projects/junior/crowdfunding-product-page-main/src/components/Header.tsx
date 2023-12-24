@@ -5,10 +5,8 @@ import MobileMenu from "./MobileMenu";
 import DeviceContext from "../context/DeviceContext";
 
 import { useContext, useState } from "react";
-import { createPortal } from "react-dom";
 
 function Header() {
-  const appElement = document.querySelector(".crowdfund")!;
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
   const openMenu = () => setOpenMobileMenu(true);
@@ -23,15 +21,13 @@ function Header() {
     <header className={openMobileMenu ? "hidden" : undefined}>
       <img src={logo} />
       {Menu}
-      {device === "mobile" &&
-        createPortal(
-          <MobileMenu
-            isOpen={openMobileMenu}
-            onClose={closeMenu}
-            setMenuIsOpen={setOpenMobileMenu}
-          />,
-          appElement
-        )}
+      {device === "mobile" && (
+        <MobileMenu
+          isOpen={openMobileMenu}
+          onClose={closeMenu}
+          setMenuIsOpen={setOpenMobileMenu}
+        />
+      )}
     </header>
   );
 }
