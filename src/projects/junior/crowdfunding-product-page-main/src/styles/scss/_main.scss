@@ -12,6 +12,30 @@ $margin-top-desktop: calc(
   ($y-hero-desktop - $y-header-desktop) * $y-ratio-desktop
 );
 
+@function main-margin-top($device) {
+  $ratio: 0.75;
+  $dimensions: (
+    "mobile": (
+      "header": 50px,
+      "hero-x": 750,
+      "hero-y": 600,
+    ),
+    "desktop": (
+      "header": 70px,
+      "hero-x": 1440,
+      "hero-y": 400,
+    ),
+  );
+
+  $sizes: map-get($dimensions, $device);
+
+  $display-height: calc(
+    100vw * map-get($sizes, "hero-y") / map-get($sizes, "hero-x")
+  );
+
+  @return calc(($display-height * $ratio) - map-get($sizes, "header"));
+}
+
 main {
   text-align: center;
   max-width: 768px;
@@ -22,11 +46,11 @@ main {
 }
 
 .desktop main {
-  margin-top: clamp(60px, $margin-top-desktop, 350px);
+  margin-top: clamp(60px, main-margin-top("desktop"), 350px);
 }
 
 .mobile main {
-  margin-top: clamp(150px, $margin-top-mobile, 300px);
+  margin-top: clamp(150px, main-margin-top("mobile"), 300px);
 }
 
 @mixin card {

@@ -117,11 +117,11 @@ main {
 }
 
 .desktop main {
-  margin-top: clamp(60px, (27.7777777778vw - 70px) * 0.75, 350px);
+  margin-top: clamp(60px, 20.8333333333vw - 70px, 350px);
 }
 
 .mobile main {
-  margin-top: clamp(150px, (80vw - 50px) * 0.7666666667, 300px);
+  margin-top: clamp(150px, 60vw - 50px, 300px);
 }
 
 .metrics {

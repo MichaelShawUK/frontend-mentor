@@ -6,7 +6,7 @@ function Main() {
     <main>
       <Summary
         title="Mastercraft Bamboo Monitor Riser"
-        description="A beautiful & handcrafted monitor stand to reduce neck and eye strain."
+        description="A beautifully handcrafted monitor stand to reduce neck and eye strain."
       />
       <Metrics />
     </main>
