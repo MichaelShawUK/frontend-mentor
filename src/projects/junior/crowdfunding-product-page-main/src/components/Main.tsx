@@ -17,7 +17,7 @@ function Main() {
         openModal={openModal}
       />
       <Metrics />
-      <Rewards />
+      <Rewards openModal={openModal} />
       <Pledges show={showModal} onClose={closeModal} />
     </main>
   );
