@@ -464,7 +464,6 @@ main {
 .pledge {
   border: 1px solid rgba(0, 0, 0, 0.1333333333);
   border-radius: 8px;
-  padding: 20px;
   cursor: pointer;
   display: grid;
   align-items: center;
@@ -472,6 +471,13 @@ main {
 .pledge.selected {
   border: none;
   outline: 2px solid hsl(176, 50%, 47%);
+  cursor: default;
+}
+.pledge.selected:hover h3 {
+  color: initial;
+}
+.pledge.selected:hover .radio {
+  border-color: rgba(0, 0, 0, 0.1333333333);
 }
 .pledge.selected .minimum {
   font-weight: 700;
@@ -507,21 +513,103 @@ main {
   font-size: 18px;
   margin-right: 6px;
 }
+.pledge form {
+  grid-area: form;
+  display: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1333333333);
+  align-items: center;
+}
+.pledge form.error input {
+  border: 1px solid #f76262;
+  background-color: #ffdddd;
+}
+.pledge form.error .error-message {
+  display: block;
+}
+.pledge form label {
+  grid-area: label;
+}
+.pledge form .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.pledge form .input-wrapper::before {
+  content: "$";
+  position: absolute;
+  color: hsl(0, 0%, 48%);
+  left: 30px;
+  cursor: text;
+  font-size: 16px;
+}
+.pledge form input {
+  grid-area: input;
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1333333333);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Commissioner";
+  color: hsl(0, 0%, 0%);
+  padding-left: 50px;
+  padding-right: 10px;
+}
+.pledge form button {
+  grid-area: button;
+  padding: 16px 0;
+}
+.pledge form .error-message {
+  grid-area: error;
+  color: #f76262;
+  display: none;
+}
+.pledge form input,
+.pledge form button {
+  width: 116px;
+}
 
 .mobile .pledge {
   margin-bottom: 20px;
   padding: 30px 20px;
-  grid-template-areas: "radio title" "radio minimum" "description description" "remaining remaining";
+  grid-template-areas: "radio title" "radio minimum" "description description" "remaining remaining" "form form";
   grid-template-columns: max-content 1fr;
   column-gap: 16px;
   align-items: center;
 }
+.mobile .pledge.selected form {
+  display: flex;
+}
+.mobile .pledge form {
+  text-align: center;
+  margin-inline: -20px;
+  padding-inline: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 20px;
+}
+.mobile .pledge form label {
+  margin-bottom: 16px;
+  width: 100%;
+}
+.mobile .pledge form input {
+  justify-self: flex-end;
+}
+.mobile .pledge form .input-wrapper,
+.mobile .pledge form button {
+  margin-bottom: 16px;
+}
+.mobile .pledge form .error-message {
+  width: 100%;
+}
 .mobile .pledge .remaining {
   font-size: 16px;
+  margin-top: 20px;
 }
 .mobile .pledge .description {
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 .mobile .pledge .radio {
   grid-row: 1/span 2;
@@ -530,10 +618,28 @@ main {
 .desktop .pledge {
   margin-bottom: 30px;
   padding: 30px;
-  grid-template-areas: "radio title minimum remaining" ". description description description";
+  grid-template-areas: "radio title minimum remaining" ". description description description" "form form form form";
   grid-template-columns: max-content max-content 1fr max-content;
   column-gap: 30px;
-  row-gap: 16px;
+}
+.desktop .pledge.selected form {
+  display: grid;
+}
+.desktop .pledge .description {
+  margin-top: 16px;
+}
+.desktop .pledge form {
+  grid-template-areas: "label input button" "error error error";
+  grid-template-columns: 1fr min-content min-content;
+  margin-inline: -30px;
+  padding-inline: 30px;
+  padding-top: 20px;
+  margin-top: 36px;
+  column-gap: 20px;
+}
+.desktop .pledge form .error-message {
+  text-align: right;
+  margin-top: 16px;
 }
 
 .radio {

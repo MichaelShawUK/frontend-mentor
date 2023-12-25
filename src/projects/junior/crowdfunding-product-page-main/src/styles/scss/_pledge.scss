@@ -3,7 +3,7 @@
 .pledge {
   border: 1px solid #0002;
   border-radius: 8px;
-  padding: 20px;
+  // padding: 20px;
   cursor: pointer;
   display: grid;
   align-items: center;
@@ -11,10 +11,25 @@
   &.selected {
     border: none;
     outline: 2px solid c.$moderate-cyan;
+    cursor: default;
+
+    &:hover {
+      h3 {
+        color: initial;
+      }
+
+      .radio {
+        border-color: #0002;
+      }
+    }
 
     .minimum {
       font-weight: 700;
     }
+
+    // form {
+    //   display: grid;
+    // }
   }
 
   &.disabled {
@@ -57,6 +72,74 @@
     font-size: 18px;
     margin-right: 6px;
   }
+
+  form {
+    grid-area: form;
+    display: none;
+    border-top: 1px solid #0002;
+    align-items: center;
+    // cursor: default;
+
+    &.error {
+      input {
+        border: 1px solid c.$error;
+        background-color: c.$error-background;
+      }
+
+      .error-message {
+        display: block;
+      }
+    }
+
+    label {
+      grid-area: label;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-wrapper::before {
+      content: "$";
+      position: absolute;
+      color: c.$dark-gray;
+      left: 30px;
+      cursor: text;
+      font-size: 16px;
+    }
+
+    input {
+      grid-area: input;
+      height: 48px;
+      border-radius: 24px;
+      border: 1px solid #0002;
+      // text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: "Commissioner";
+      color: c.$black;
+      padding-left: 50px;
+      padding-right: 10px;
+    }
+    button {
+      grid-area: button;
+      // max-width: 120px;
+      padding: 16px 0;
+    }
+    .error-message {
+      grid-area: error;
+      color: c.$error;
+      display: none;
+    }
+
+    input,
+    button {
+      width: 116px;
+      // flex-shrink: 0;
+    }
+  }
 }
 
 .mobile .pledge {
@@ -67,19 +150,58 @@
     "radio title"
     "radio minimum"
     "description description"
-    "remaining remaining";
+    "remaining remaining"
+    "form form";
 
   grid-template-columns: max-content 1fr;
   column-gap: 16px;
   align-items: center;
 
+  &.selected {
+    form {
+      display: flex;
+    }
+  }
+
+  form {
+    text-align: center;
+    margin-inline: -20px;
+    padding-inline: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
+
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+
+    label {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+
+    input {
+      justify-self: flex-end;
+    }
+
+    .input-wrapper,
+    button {
+      margin-bottom: 16px;
+    }
+
+    .error-message {
+      width: 100%;
+    }
+  }
+
   .remaining {
     font-size: 16px;
+    margin-top: 20px;
   }
 
   .description {
     margin-top: 20px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
   }
 
   .radio {
@@ -93,9 +215,37 @@
 
   grid-template-areas:
     "radio title minimum remaining"
-    ". description description description";
+    ". description description description"
+    "form form form form";
 
   grid-template-columns: max-content max-content 1fr max-content;
   column-gap: 30px;
-  row-gap: 16px;
+  // row-gap: 16px;
+
+  &.selected {
+    form {
+      display: grid;
+    }
+  }
+
+  .description {
+    margin-top: 16px;
+  }
+
+  form {
+    grid-template-areas:
+      "label input button"
+      "error error error";
+    grid-template-columns: 1fr min-content min-content;
+    margin-inline: -30px;
+    padding-inline: 30px;
+    padding-top: 20px;
+    margin-top: 36px;
+    column-gap: 20px;
+
+    .error-message {
+      text-align: right;
+      margin-top: 16px;
+    }
+  }
 }
