@@ -23,8 +23,7 @@
     border: 1px solid #0001;
 
     & > * {
-      opacity: 0;
-      animation: fadeIn 0.2s ease-in 0.3s forwards;
+      animation: fadeIn 0.2s ease-in 0.3s backwards;
     }
   }
 

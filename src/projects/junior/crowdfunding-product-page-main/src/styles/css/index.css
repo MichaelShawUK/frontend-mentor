@@ -399,8 +399,7 @@ main {
   border: 1px solid rgba(0, 0, 0, 0.0666666667);
 }
 .pledges .margin-wrapper > * {
-  opacity: 0;
-  animation: fadeIn 0.2s ease-in 0.3s forwards;
+  animation: fadeIn 0.2s ease-in 0.3s backwards;
 }
 .pledges .close {
   display: block;
