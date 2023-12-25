@@ -1,0 +1,25 @@
+@use "colors" as c;
+
+.radio {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #0002;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: "radio";
+
+  .switch {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+}
+
+.selected .radio {
+  .switch {
+    background-color: c.$moderate-cyan;
+  }
+}

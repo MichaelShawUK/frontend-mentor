@@ -1,7 +1,7 @@
 import About from "./About";
 import Reward from "./Reward";
 
-const rewards = [
+export const rewards = [
   {
     id: 1,
     title: "Bamboo Stand",

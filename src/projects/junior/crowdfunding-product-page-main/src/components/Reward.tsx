@@ -1,9 +1,9 @@
-interface RewardType {
+export interface RewardType {
   id: number;
   title: string;
-  minimum: number;
+  minimum: number | null;
   description: string;
-  remaining: number;
+  remaining: number | null;
 }
 
 function Reward({ reward }: { reward: RewardType }) {

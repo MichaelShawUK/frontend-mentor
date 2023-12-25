@@ -378,23 +378,34 @@ main {
 
 .pledges {
   text-align: left;
+  margin-inline: auto;
+  color: hsl(0, 0%, 48%);
+  margin-top: calc(20.8333333333vw - 70px);
+  margin-top: 50px;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  overflow: visible;
+  animation: expand 0.3s ease-in;
+  transform-origin: top;
+}
+.pledges .margin-wrapper {
+  position: relative;
   background-color: #fff;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.0666666667);
-  margin-inline: auto;
-  width: auto;
   max-width: 768px;
-  color: hsl(0, 0%, 48%);
   border: 1px solid rgba(0, 0, 0, 0.0666666667);
-  margin-top: calc(20.8333333333vw - 70px) -70;
-  margin-top: calc(20.8333333333vw - 70px);
-  margin-top: 50px;
+}
+.pledges .margin-wrapper > * {
+  opacity: 0;
+  animation: fadeIn 0.2s ease-in 0.3s forwards;
 }
 .pledges .close {
   display: block;
   margin-left: auto;
   position: absolute;
-  top: 20px;
   right: 20px;
 }
 .pledges .close:hover path {
@@ -404,8 +415,149 @@ main {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.desktop .pledges {
+.desktop .pledges .margin-wrapper {
   padding: 50px;
+}
+.desktop .pledges .margin-wrapper > p {
+  margin-bottom: 30px;
+}
+.desktop .pledges h2 {
+  margin-bottom: 16px;
+}
+.desktop .pledges .close {
+  top: 20px;
+}
+
+.mobile .pledges {
+  font-size: 14px;
+  line-height: 24px;
+}
+.mobile .pledges .margin-wrapper {
+  padding: 30px 20px;
+}
+.mobile .pledges .margin-wrapper > p {
+  margin-bottom: 20px;
+}
+.mobile .pledges h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.mobile .pledges .close {
+  top: 30px;
+}
+
+@keyframes expand {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.pledge {
+  border: 1px solid rgba(0, 0, 0, 0.1333333333);
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  display: grid;
+  align-items: center;
+}
+.pledge.selected {
+  border: none;
+  outline: 2px solid hsl(176, 50%, 47%);
+}
+.pledge.selected .minimum {
+  font-weight: 700;
+}
+.pledge.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.pledge.disabled:hover {
+  background-color: initial;
+}
+.pledge:hover {
+  background-color: #efefef;
+}
+.pledge:hover .radio {
+  background-color: #fff;
+}
+.pledge h3 {
+  font-size: 16px;
+  grid-area: title;
+}
+.pledge .minimum {
+  color: hsl(176, 50%, 47%);
+  font-weight: 500;
+  grid-area: minimum;
+}
+.pledge .description {
+  grid-area: description;
+}
+.pledge .remaining {
+  grid-area: remaining;
+}
+.pledge .remaining span {
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.mobile .pledge {
+  margin-bottom: 20px;
+  padding: 30px 20px;
+  grid-template-areas: "radio title" "radio minimum" "description description" "remaining remaining";
+  grid-template-columns: max-content 1fr;
+  column-gap: 16px;
+  align-items: center;
+}
+.mobile .pledge .remaining {
+  font-size: 16px;
+}
+.mobile .pledge .description {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.mobile .pledge .radio {
+  grid-row: 1/span 2;
+}
+
+.desktop .pledge {
+  margin-bottom: 30px;
+  padding: 30px;
+  grid-template-areas: "radio title minimum remaining" ". description description description";
+  grid-template-columns: max-content max-content 1fr max-content;
+  column-gap: 30px;
+  row-gap: 16px;
+}
+
+.radio {
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1333333333);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: "radio";
+}
+.radio .switch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.selected .radio .switch {
+  background-color: hsl(176, 50%, 47%);
 }
 
 * {

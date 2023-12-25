@@ -3,21 +3,35 @@
 
 .pledges {
   text-align: left;
-  @include main.card;
   margin-inline: auto;
-  width: auto;
-  max-width: 768px;
   color: c.$dark-gray;
-  border: 1px solid #0001;
-  margin-top: main.main-margin-top("desktop") -70;
   margin-top: main.main-margin-top("desktop");
   margin-top: 50px;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  overflow: visible;
+  animation: expand 0.3s ease-in;
+  transform-origin: top;
+
+  .margin-wrapper {
+    position: relative;
+    @include main.card;
+    max-width: 768px;
+    border: 1px solid #0001;
+
+    & > * {
+      opacity: 0;
+      animation: fadeIn 0.2s ease-in 0.3s forwards;
+    }
+  }
 
   .close {
     display: block;
     margin-left: auto;
     position: absolute;
-    top: 20px;
     right: 20px;
     &:hover {
       path {
@@ -32,5 +46,59 @@
 }
 
 .desktop .pledges {
-  padding: 50px;
+  .margin-wrapper {
+    padding: 50px;
+
+    & > p {
+      margin-bottom: 30px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  .close {
+    top: 20px;
+  }
+}
+
+.mobile .pledges {
+  font-size: 14px;
+  line-height: 24px;
+
+  .margin-wrapper {
+    padding: 30px 20px;
+
+    & > p {
+      margin-bottom: 20px;
+    }
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .close {
+    top: 30px;
+  }
+}
+
+@keyframes expand {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
