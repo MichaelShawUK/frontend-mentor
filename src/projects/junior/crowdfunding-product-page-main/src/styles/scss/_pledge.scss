@@ -19,18 +19,16 @@
 
   &.disabled {
     opacity: 0.5;
-    cursor: not-allowed;
-
-    &:hover {
-      background-color: initial;
-    }
+    pointer-events: none;
   }
 
   &:hover {
-    background-color: #efefef;
+    h3 {
+      color: c.$moderate-cyan;
+    }
 
     .radio {
-      background-color: #fff;
+      border-color: c.$moderate-cyan;
     }
   }
 

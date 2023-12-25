@@ -478,16 +478,13 @@ main {
 }
 .pledge.disabled {
   opacity: 0.5;
-  cursor: not-allowed;
+  pointer-events: none;
 }
-.pledge.disabled:hover {
-  background-color: initial;
-}
-.pledge:hover {
-  background-color: #efefef;
+.pledge:hover h3 {
+  color: hsl(176, 50%, 47%);
 }
 .pledge:hover .radio {
-  background-color: #fff;
+  border-color: hsl(176, 50%, 47%);
 }
 .pledge h3 {
   font-size: 16px;
