@@ -15,6 +15,7 @@ function Pledge({
 }) {
   const dispatch: AppDispatch = useDispatch();
   const hasError = useAppSelector((state) => state.modal.hasError);
+  const pledgeAmount = useAppSelector((state) => state.modal.pledgeAmount);
 
   function submitHandler(event: React.FormEvent) {
     event.preventDefault();
@@ -57,6 +58,7 @@ function Pledge({
             name="pledge"
             id={`pledge${pledge.id}`}
             onChange={inputHandler}
+            value={pledgeAmount}
           />
         </div>
         <button className="primary">Continue</button>

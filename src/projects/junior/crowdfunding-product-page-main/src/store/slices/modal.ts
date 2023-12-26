@@ -1,5 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+function isValidInput(value: string, minimum: number) {
+  return !isNaN(+value) && +value >= minimum;
+}
+
 interface ModalState {
   isOpen: boolean;
   selectedReward: number | null;
@@ -25,8 +29,11 @@ const modalSlice = createSlice({
       state.isOpen = false;
     },
     selectReward: (state, action: PayloadAction<number | null>) => {
-      state.selectedReward = action.payload;
-      state.hasError = false;
+      if (state.selectedReward !== action.payload) {
+        state.selectedReward = action.payload;
+        state.pledgeAmount = "";
+        state.hasError = false;
+      }
     },
     onChange: (
       state,
@@ -35,21 +42,18 @@ const modalSlice = createSlice({
       const { value, minimum } = action.payload;
       state.pledgeAmount = value;
 
-      if (!isNaN(+value) && +value >= minimum && state.hasError) {
+      if (isValidInput(value, minimum) && state.hasError)
         state.hasError = false;
-      }
     },
     onSubmit: (
       state,
       action: PayloadAction<{ value: string; minimum: number }>
     ) => {
       const { value, minimum } = action.payload;
+      console.log("value: ", value, "\nminimum: ", minimum);
+      console.log("Is Valid input: ", isValidInput(value, minimum));
 
-      if ((isNaN(+value) || +value < minimum) && !state.hasError) {
-        state.hasError = true;
-      } else {
-        console.log("Success");
-      }
+      if (!isValidInput(value, minimum)) state.hasError = true;
     },
   },
 });
