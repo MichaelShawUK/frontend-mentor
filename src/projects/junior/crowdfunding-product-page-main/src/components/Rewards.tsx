@@ -28,12 +28,12 @@ export const rewards = [
   },
 ];
 
-function Rewards({ openModal }: { openModal: () => void }) {
+function Rewards() {
   return (
     <div className="rewards">
       <About />
       {rewards.map((reward) => (
-        <Reward key={reward.id} reward={reward} openModal={openModal} />
+        <Reward key={reward.id} reward={reward} />
       ))}
     </div>
   );

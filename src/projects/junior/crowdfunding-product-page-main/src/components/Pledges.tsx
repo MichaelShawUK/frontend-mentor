@@ -4,10 +4,10 @@ import { rewards } from "./Rewards";
 import { RewardType } from "./Reward";
 import Pledge from "./Pledge";
 
-interface Props {
-  show: boolean;
-  onClose: () => void;
-}
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store/store";
+import { closeModal } from "../store/slices/modal";
+import { useAppSelector } from "../hooks/useRedux";
 
 const emptyPledge: RewardType = {
   id: 0,
@@ -18,24 +18,32 @@ const emptyPledge: RewardType = {
   remaining: null,
 };
 
-function Pledges({ show, onClose }: Props) {
+function Pledges() {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
-  if (show && dialogRef.current) dialogRef.current.showModal();
+  const isModalOpen = useAppSelector((state) => state.modal.isOpen);
 
-  const closeModal = useCallback(() => {
-    if (dialogRef.current) dialogRef.current.close();
-    onClose();
-  }, [onClose]);
+  const dispatch: AppDispatch = useDispatch();
+
+  const close = useCallback(() => {
+    dispatch(closeModal());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isModalOpen && dialogRef.current) dialogRef.current.showModal();
+    if (!isModalOpen && dialogRef.current) dialogRef.current.close();
+  }, [isModalOpen]);
 
   useEffect(() => {
     const modal = dialogRef.current;
-    modal?.addEventListener("close", closeModal);
+
+    modal?.addEventListener("close", close);
 
     return () => {
-      modal?.removeEventListener("close", closeModal);
+      modal?.removeEventListener("close", close);
+      close();
     };
-  }, [closeModal]);
+  }, [close]);
 
   return (
     <dialog ref={dialogRef} className="pledges">
@@ -45,7 +53,7 @@ function Pledges({ show, onClose }: Props) {
           height="15"
           xmlns="http://www.w3.org/2000/svg"
           className="close icon"
-          onClick={closeModal}
+          onClick={close}
         >
           <path
             d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"

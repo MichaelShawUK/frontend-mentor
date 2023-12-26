@@ -1,3 +1,7 @@
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store/store";
+import { openModal } from "../store/slices/modal";
+
 export interface RewardType {
   id: number;
   title: string;
@@ -6,13 +10,9 @@ export interface RewardType {
   remaining: number | null;
 }
 
-function Reward({
-  reward,
-  openModal,
-}: {
-  reward: RewardType;
-  openModal: () => void;
-}) {
+function Reward({ reward }: { reward: RewardType }) {
+  const dispatch: AppDispatch = useDispatch();
+
   return (
     <div className={`${reward.remaining === 0 ? "reward disabled" : "reward"}`}>
       <h3>{reward.title}</h3>
@@ -24,7 +24,7 @@ function Reward({
       <button
         className="primary"
         disabled={reward.remaining === 0}
-        onClick={openModal}
+        onClick={() => dispatch(openModal())}
       >
         Select Reward
       </button>
