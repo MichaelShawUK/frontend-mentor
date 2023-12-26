@@ -4,26 +4,41 @@ import Nav from "./Nav";
 import MobileMenu from "./MobileMenu";
 import DeviceContext from "../context/DeviceContext";
 
-import { useContext, useState, useCallback } from "react";
+import { useContext } from "react";
+
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store/store";
+import { openMenu } from "../store/slices/mobileMenu";
+import { useAppSelector } from "../hooks/useRedux";
 
 function Header() {
-  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  // const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
-  const openMenu = () => setOpenMobileMenu(true);
-  const closeMenu = useCallback(() => setOpenMobileMenu(false), []);
+  // const openMenu = () => setOpenMobileMenu(true);
+  // const closeMenu = useCallback(() => setOpenMobileMenu(false), []);
 
-  const Hamburger = <img src={hamburger} className="icon" onClick={openMenu} />;
+  const dispatch: AppDispatch = useDispatch();
+
+  const isMobMenuOpen = useAppSelector((state) => state.mobileMenu.isOpen);
+
+  // console.log(isMobMenuOpen);
+
+  const Hamburger = (
+    <img
+      src={hamburger}
+      className="icon"
+      onClick={() => dispatch(openMenu())}
+    />
+  );
 
   const device = useContext(DeviceContext);
   const Menu = device === "mobile" ? Hamburger : <Nav />;
 
   return (
-    <header className={openMobileMenu ? "hidden" : undefined}>
+    <header className={isMobMenuOpen ? "hidden" : undefined}>
       <img src={logo} />
       {Menu}
-      {device === "mobile" && (
-        <MobileMenu isOpen={openMobileMenu} onClose={closeMenu} />
-      )}
+      {device === "mobile" && <MobileMenu />}
     </header>
   );
 }

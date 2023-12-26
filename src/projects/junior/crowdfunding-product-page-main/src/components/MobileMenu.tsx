@@ -3,43 +3,40 @@ import { useRef, useEffect, useCallback } from "react";
 import logo from "../assets/images/logo.svg";
 import closeIcon from "../assets/images/icon-close-menu.svg";
 
-interface Props {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store/store";
+import { closeMenu } from "../store/slices/mobileMenu";
+import { useAppSelector } from "../hooks/useRedux";
 
-function MobileMenu({ isOpen, onClose }: Props) {
+function MobileMenu() {
   const menuRef = useRef<HTMLDialogElement>(null);
 
-  const closeMenu = useCallback(() => {
-    if (menuRef.current) menuRef.current.close();
-    onClose();
-  }, [onClose]);
+  const dispatch: AppDispatch = useDispatch();
+  const close = useCallback(() => dispatch(closeMenu()), [dispatch]);
+
+  const isMobMenuOpen = useAppSelector((state) => state.mobileMenu.isOpen);
+
+  useEffect(() => {
+    if (!isMobMenuOpen && menuRef.current) menuRef.current.close();
+    if (isMobMenuOpen && menuRef.current) menuRef.current.showModal();
+  }, [isMobMenuOpen]);
 
   useEffect(() => {
     const menu = menuRef.current;
 
-    menu?.addEventListener("close", closeMenu);
+    menu?.addEventListener("close", close);
 
     return () => {
-      menu?.removeEventListener("close", closeMenu);
-      closeMenu();
+      menu?.removeEventListener("close", close);
+      close();
     };
-  }, [closeMenu]);
-
-  if (menuRef.current && !isOpen) {
-    menuRef.current.close();
-  }
-
-  if (menuRef.current && isOpen) {
-    menuRef.current.showModal();
-  }
+  }, [close]);
 
   return (
     <dialog className="mobile-menu" ref={menuRef}>
       <div className="menu-header">
         <img src={logo} />
-        <img src={closeIcon} className="icon" onClick={onClose} />
+        <img src={closeIcon} className="icon" onClick={close} />
       </div>
       <Nav />
     </dialog>
