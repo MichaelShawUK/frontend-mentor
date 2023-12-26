@@ -64,3 +64,9 @@
     opacity: 1;
   }
 }
+
+@media (width <= 320px) {
+  .mobile-menu nav {
+    border-radius: 0;
+  }
+}
