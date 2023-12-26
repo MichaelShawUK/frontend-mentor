@@ -9,6 +9,7 @@ interface ModalState {
   selectedReward: number | null;
   pledgeAmount: string;
   hasError: boolean;
+  isComplete: boolean;
 }
 
 const initialState: ModalState = {
@@ -16,6 +17,7 @@ const initialState: ModalState = {
   selectedReward: null,
   pledgeAmount: "",
   hasError: false,
+  isComplete: false,
 };
 
 const modalSlice = createSlice({
@@ -54,10 +56,21 @@ const modalSlice = createSlice({
       console.log("Is Valid input: ", isValidInput(value, minimum));
 
       if (!isValidInput(value, minimum)) state.hasError = true;
+      else state.isComplete = true;
+    },
+    closeSuccess: (state) => {
+      state.isComplete = false;
+      modalSlice.caseReducers.closeModal(state);
     },
   },
 });
 
-export const { openModal, closeModal, selectReward, onChange, onSubmit } =
-  modalSlice.actions;
+export const {
+  openModal,
+  closeModal,
+  selectReward,
+  onChange,
+  onSubmit,
+  closeSuccess,
+} = modalSlice.actions;
 export default modalSlice.reducer;

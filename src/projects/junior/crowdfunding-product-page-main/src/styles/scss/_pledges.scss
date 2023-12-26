@@ -16,6 +16,20 @@
   animation: expand 0.3s ease-in;
   transform-origin: top;
 
+  &.success {
+    text-align: center;
+    margin-top: clamp(50px, 25vh, 500px);
+    position: fixed;
+
+    .margin-wrapper {
+      max-width: 540px;
+
+      & > * {
+        animation: none;
+      }
+    }
+  }
+
   .margin-wrapper {
     position: relative;
     @include main.card;
@@ -45,6 +59,22 @@
 }
 
 .desktop .pledges {
+  &.success {
+    .margin-wrapper {
+      padding-top: 40px;
+    }
+
+    img {
+      width: 80px;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
   .margin-wrapper {
     padding: 50px;
 
@@ -65,6 +95,25 @@
 .mobile .pledges {
   font-size: 14px;
   line-height: 24px;
+
+  &.success {
+    img {
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      padding-inline: 4px;
+      margin-top: 24px;
+    }
+    button {
+      margin-top: 10px;
+      padding-block: 16px;
+    }
+  }
 
   .margin-wrapper {
     padding: 30px 20px;

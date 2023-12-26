@@ -1,0 +1,10 @@
+@use "main";
+
+.success {
+  margin: 0 auto;
+  padding-inline: 20px;
+
+  .margin-wrapper {
+    @use main.card();
+  }
+}

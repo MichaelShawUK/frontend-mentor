@@ -390,6 +390,17 @@ main {
   animation: expand 0.3s ease-in;
   transform-origin: top;
 }
+.pledges.success {
+  text-align: center;
+  margin-top: clamp(50px, 25vh, 500px);
+  position: fixed;
+}
+.pledges.success .margin-wrapper {
+  max-width: 540px;
+}
+.pledges.success .margin-wrapper > * {
+  animation: none;
+}
 .pledges .margin-wrapper {
   position: relative;
   background-color: #fff;
@@ -414,6 +425,17 @@ main {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.desktop .pledges.success .margin-wrapper {
+  padding-top: 40px;
+}
+.desktop .pledges.success img {
+  width: 80px;
+  margin-bottom: 30px;
+}
+.desktop .pledges.success h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
 .desktop .pledges .margin-wrapper {
   padding: 50px;
 }
@@ -430,6 +452,20 @@ main {
 .mobile .pledges {
   font-size: 14px;
   line-height: 24px;
+}
+.mobile .pledges.success img {
+  margin-bottom: 16px;
+}
+.mobile .pledges.success h3 {
+  font-size: 20px;
+}
+.mobile .pledges.success p {
+  padding-inline: 4px;
+  margin-top: 24px;
+}
+.mobile .pledges.success button {
+  margin-top: 10px;
+  padding-block: 16px;
 }
 .mobile .pledges .margin-wrapper {
   padding: 30px 20px;

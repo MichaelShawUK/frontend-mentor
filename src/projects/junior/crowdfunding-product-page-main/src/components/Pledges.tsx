@@ -3,6 +3,7 @@ import { useRef, useEffect, useCallback } from "react";
 import { rewards } from "./Rewards";
 import { RewardType } from "./Reward";
 import Pledge from "./Pledge";
+import Success from "./Success";
 
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store/store";
@@ -23,6 +24,7 @@ function Pledges() {
 
   const isModalOpen = useAppSelector((state) => state.modal.isOpen);
   const selectedReward = useAppSelector((state) => state.modal.selectedReward);
+  const isComplete = useAppSelector((state) => state.modal.isComplete);
 
   const dispatch: AppDispatch = useDispatch();
 
@@ -48,38 +50,47 @@ function Pledges() {
   }, [close]);
 
   return (
-    <dialog ref={dialogRef} className="pledges">
+    <dialog
+      ref={dialogRef}
+      className={`pledges ${isComplete ? "success" : ""}`}
+    >
       <div className="margin-wrapper">
-        <svg
-          width="15"
-          height="15"
-          xmlns="http://www.w3.org/2000/svg"
-          className="close icon"
-          onClick={close}
-        >
-          <path
-            d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
-            fill="#000"
-            fillRule="evenodd"
-            opacity=".4"
-          />
-        </svg>
-        <h2>Back this project</h2>
-        <p>
-          Want to support us in bringing Mastercraft Bamboo Monior Riser out in
-          the world?
-        </p>
-        <Pledge
-          pledge={emptyPledge}
-          selected={selectedReward === emptyPledge.id}
-        />
-        {rewards.map((pledge) => (
-          <Pledge
-            pledge={pledge}
-            key={pledge.id}
-            selected={selectedReward === pledge.id}
-          />
-        ))}
+        {isComplete ? (
+          <Success />
+        ) : (
+          <>
+            <svg
+              width="15"
+              height="15"
+              xmlns="http://www.w3.org/2000/svg"
+              className="close icon"
+              onClick={close}
+            >
+              <path
+                d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+                fill="#000"
+                fillRule="evenodd"
+                opacity=".4"
+              />
+            </svg>
+            <h2>Back this project</h2>
+            <p>
+              Want to support us in bringing Mastercraft Bamboo Monior Riser out
+              in the world?
+            </p>
+            <Pledge
+              pledge={emptyPledge}
+              selected={selectedReward === emptyPledge.id}
+            />
+            {rewards.map((pledge) => (
+              <Pledge
+                pledge={pledge}
+                key={pledge.id}
+                selected={selectedReward === pledge.id}
+              />
+            ))}
+          </>
+        )}
       </div>
     </dialog>
   );
