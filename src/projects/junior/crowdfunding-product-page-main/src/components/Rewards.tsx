@@ -10,6 +10,7 @@ function Rewards() {
     <div className="rewards">
       <About />
       {rewards.map((reward) => {
+        if (reward.id === 0) return;
         let remaining: number | null = null;
 
         const match = remainingRewards.find(

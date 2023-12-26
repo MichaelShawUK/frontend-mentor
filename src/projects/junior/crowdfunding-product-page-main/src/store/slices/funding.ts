@@ -45,10 +45,17 @@ const fundingSlice = createSlice({
       if (action.payload.id === 0) state.totalBackers++;
       else {
         const index = state.rewards.findIndex((reward) => {
-          reward.id === action.payload.id;
+          return reward.id === action.payload.id;
         });
-        const reward = state.rewards[index];
-        if (reward && reward.remaining) reward.remaining--;
+        const remaining = state.rewards[index].remaining;
+        if (remaining) {
+          state.rewards[index] = {
+            id: action.payload.id,
+            remaining: remaining - 1,
+          };
+        } else {
+          state.rewards[index] = { id: action.payload.id, remaining: null };
+        }
         if (action.payload.amount) state.totalRaised += action.payload.amount;
         state.totalBackers++;
       }

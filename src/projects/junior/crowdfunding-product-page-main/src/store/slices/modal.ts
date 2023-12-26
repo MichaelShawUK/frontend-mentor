@@ -49,16 +49,19 @@ const modalSlice = createSlice({
     },
     onSubmit: (
       state,
-      action: PayloadAction<{ value: string; minimum: number }>
+      action: PayloadAction<{ id: number; value: string; minimum: number }>
     ) => {
       const { value, minimum } = action.payload;
       console.log("value: ", value, "\nminimum: ", minimum);
       console.log("Is Valid input: ", isValidInput(value, minimum));
 
       if (!isValidInput(value, minimum)) state.hasError = true;
-      else state.isComplete = true;
+      else {
+        state.isComplete = true;
+      }
     },
     closeSuccess: (state) => {
+      console.log(state.selectedReward);
       state.isComplete = false;
       modalSlice.caseReducers.closeModal(state);
     },

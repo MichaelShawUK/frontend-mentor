@@ -24,8 +24,9 @@ function Pledge({
     const form = event.target as HTMLFormElement;
     const input = form[0] as HTMLInputElement;
     const value = input.value;
+    console.log("ID: ", pledge.id);
 
-    dispatch(onSubmit({ value, minimum: pledge.minimum }));
+    dispatch(onSubmit({ id: pledge.id, value, minimum: pledge.minimum }));
   }
 
   function inputHandler(event: React.ChangeEvent) {

@@ -28,7 +28,7 @@ function Reward({
         <p className="minimum">Pledge ${reward.minimum} or more</p>
       )}
       <p className="description">{reward.description}</p>
-      {!!remaining && (
+      {remaining !== null && (
         <p className="remaining">
           <span>{remaining}</span> left
         </p>

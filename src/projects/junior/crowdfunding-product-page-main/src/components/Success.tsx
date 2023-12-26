@@ -3,9 +3,18 @@ import checkIcon from "../assets/images/icon-check.svg";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store/store";
 import { closeSuccess } from "../store/slices/modal";
+import { addPledge } from "../store/slices/funding";
+import { useAppSelector } from "../hooks/useRedux";
 
 function Success() {
   const dispatch: AppDispatch = useDispatch();
+
+  const pledge = useAppSelector((state) => state.modal);
+  const rewardId = pledge.selectedReward || 0;
+  const amount = +pledge.pledgeAmount;
+
+  // dispatch(addPledge({ id: rewardId, amount }));
+
   return (
     <>
       <img src={checkIcon} />
@@ -15,7 +24,14 @@ function Success() {
         Monitor Riser worldwide. You will get an email once our campaign is
         completed.
       </p>
-      <button className="primary" onClick={() => dispatch(closeSuccess())}>
+      <button
+        className="primary"
+        onClick={() => {
+          dispatch(addPledge({ id: rewardId, amount }));
+
+          dispatch(closeSuccess());
+        }}
+      >
         Got it!
       </button>
     </>
