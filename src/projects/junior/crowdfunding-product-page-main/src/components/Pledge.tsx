@@ -3,7 +3,8 @@ import Radio from "./Radio";
 
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store/store";
-import { selectReward } from "../store/slices/modal";
+import { selectReward, onChange, onSubmit } from "../store/slices/modal";
+import { useAppSelector } from "../hooks/useRedux";
 
 function Pledge({
   pledge,
@@ -13,6 +14,22 @@ function Pledge({
   selected: boolean;
 }) {
   const dispatch: AppDispatch = useDispatch();
+  const hasError = useAppSelector((state) => state.modal.hasError);
+
+  function submitHandler(event: React.FormEvent) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const input = form[0] as HTMLInputElement;
+    const value = input.value;
+
+    dispatch(onSubmit({ value, minimum: pledge.minimum }));
+  }
+
+  function inputHandler(event: React.ChangeEvent) {
+    const input = event.target as HTMLInputElement;
+    const value = input.value;
+    dispatch(onChange({ value, minimum: pledge.minimum }));
+  }
 
   return (
     <div
@@ -23,7 +40,7 @@ function Pledge({
     >
       <Radio />
       <h3>{pledge.title}</h3>
-      {pledge.minimum && (
+      {pledge.minimum !== 0 && (
         <p className="minimum">Pledge ${pledge.minimum} or more</p>
       )}
       <p className="description">{pledge.description}</p>
@@ -32,10 +49,15 @@ function Pledge({
           <span>{pledge.remaining}</span> left
         </p>
       )}
-      <form>
+      <form onSubmit={submitHandler} className={`${hasError ? "error" : ""}`}>
         <label htmlFor={`pledge${pledge.id}`}>Enter your pledge</label>
         <div className="input-wrapper">
-          <input type="number" name="pledge" id={`pledge${pledge.id}`} />
+          <input
+            type="number"
+            name="pledge"
+            id={`pledge${pledge.id}`}
+            onChange={inputHandler}
+          />
         </div>
         <button className="primary">Continue</button>
         <p className="error-message">Please enter ${pledge.minimum} or more</p>

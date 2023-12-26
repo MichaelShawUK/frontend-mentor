@@ -5,7 +5,7 @@ import { openModal, selectReward } from "../store/slices/modal";
 export interface RewardType {
   id: number;
   title: string;
-  minimum: number | null;
+  minimum: number;
   description: string;
   remaining: number | null;
 }

@@ -12,7 +12,7 @@ import { useAppSelector } from "../hooks/useRedux";
 const emptyPledge: RewardType = {
   id: 0,
   title: "Pledge with no reward",
-  minimum: null,
+  minimum: 0,
   description:
     "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
   remaining: null,
