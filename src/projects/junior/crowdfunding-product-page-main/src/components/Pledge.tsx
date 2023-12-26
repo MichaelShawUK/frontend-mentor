@@ -1,4 +1,4 @@
-import { RewardType } from "./Reward";
+import { RewardType } from "../data/rewards";
 import Radio from "./Radio";
 
 import { useDispatch } from "react-redux";
@@ -9,9 +9,11 @@ import { useAppSelector } from "../hooks/useRedux";
 function Pledge({
   pledge,
   selected,
+  remaining,
 }: {
   pledge: RewardType;
   selected: boolean;
+  remaining: number | null;
 }) {
   const dispatch: AppDispatch = useDispatch();
   const hasError = useAppSelector((state) => state.modal.hasError);
@@ -35,7 +37,7 @@ function Pledge({
   return (
     <div
       className={`pledge ${selected ? "selected" : ""} ${
-        pledge.remaining === 0 ? "disabled" : ""
+        remaining === 0 ? "disabled" : ""
       } ${pledge.id === 0 ? "empty" : ""}`}
       onClick={() => dispatch(selectReward(pledge.id))}
     >
@@ -45,9 +47,9 @@ function Pledge({
         <p className="minimum">Pledge ${pledge.minimum} or more</p>
       )}
       <p className="description">{pledge.description}</p>
-      {pledge.remaining !== null && (
+      {remaining !== null && (
         <p className="remaining">
-          <span>{pledge.remaining}</span> left
+          <span>{remaining}</span> left
         </p>
       )}
       <form onSubmit={submitHandler} className={`${hasError ? "error" : ""}`}>

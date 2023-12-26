@@ -1,7 +1,6 @@
 import { useRef, useEffect, useCallback } from "react";
 
-import { rewards } from "./Rewards";
-import { RewardType } from "./Reward";
+import rewards from "../data/rewards";
 import Pledge from "./Pledge";
 import Success from "./Success";
 
@@ -10,17 +9,10 @@ import { AppDispatch } from "../store/store";
 import { closeModal, selectReward } from "../store/slices/modal";
 import { useAppSelector } from "../hooks/useRedux";
 
-const emptyPledge: RewardType = {
-  id: 0,
-  title: "Pledge with no reward",
-  minimum: 0,
-  description:
-    "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
-  remaining: null,
-};
-
 function Pledges() {
   const dialogRef = useRef<HTMLDialogElement>(null);
+
+  const remainingRewards = useAppSelector((state) => state.funding.rewards);
 
   const isModalOpen = useAppSelector((state) => state.modal.isOpen);
   const selectedReward = useAppSelector((state) => state.modal.selectedReward);
@@ -78,17 +70,24 @@ function Pledges() {
               Want to support us in bringing Mastercraft Bamboo Monior Riser out
               in the world?
             </p>
-            <Pledge
-              pledge={emptyPledge}
-              selected={selectedReward === emptyPledge.id}
-            />
-            {rewards.map((pledge) => (
-              <Pledge
-                pledge={pledge}
-                key={pledge.id}
-                selected={selectedReward === pledge.id}
-              />
-            ))}
+            {rewards.map((pledge) => {
+              let remaining: number | null = null;
+
+              const match = remainingRewards.find(
+                (element) => element.id === pledge.id
+              );
+
+              if (match) remaining = match.remaining;
+
+              return (
+                <Pledge
+                  key={pledge.id}
+                  pledge={pledge}
+                  selected={selectedReward === pledge.id}
+                  remaining={remaining}
+                />
+              );
+            })}
           </>
         )}
       </div>

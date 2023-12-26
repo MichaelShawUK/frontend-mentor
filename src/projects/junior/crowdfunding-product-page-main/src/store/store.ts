@@ -3,6 +3,7 @@ import bookmarkReducer from "./slices/bookmark";
 import deviceReducer from "./slices/device";
 import mobileMenuReducer from "./slices/mobileMenu";
 import modalReducer from "./slices/modal";
+import fundingReducer from "./slices/funding";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     device: deviceReducer,
     mobileMenu: mobileMenuReducer,
     modal: modalReducer,
+    funding: fundingReducer,
   },
 });
 
