@@ -20,7 +20,7 @@ const modalSlice = createSlice({
     closeModal: (state) => {
       state.isOpen = false;
     },
-    selectReward: (state, action: PayloadAction<number>) => {
+    selectReward: (state, action: PayloadAction<number | null>) => {
       state.selectedReward = action.payload;
     },
   },

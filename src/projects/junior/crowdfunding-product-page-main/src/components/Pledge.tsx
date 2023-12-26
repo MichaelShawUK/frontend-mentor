@@ -1,9 +1,26 @@
 import { RewardType } from "./Reward";
 import Radio from "./Radio";
 
-function Pledge({ pledge }: { pledge: RewardType }) {
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store/store";
+import { selectReward } from "../store/slices/modal";
+
+function Pledge({
+  pledge,
+  selected,
+}: {
+  pledge: RewardType;
+  selected: boolean;
+}) {
+  const dispatch: AppDispatch = useDispatch();
+
   return (
-    <div className={`pledge ${pledge.remaining === 0 ? "disabled" : ""}`}>
+    <div
+      className={`pledge ${selected ? "selected" : ""} ${
+        pledge.remaining === 0 ? "disabled" : ""
+      } ${pledge.id === 0 ? "empty" : ""}`}
+      onClick={() => dispatch(selectReward(pledge.id))}
+    >
       <Radio />
       <h3>{pledge.title}</h3>
       {pledge.minimum && (

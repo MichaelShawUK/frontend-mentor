@@ -163,6 +163,21 @@
     }
   }
 
+  &.empty {
+    form {
+      label,
+      input,
+      .input-wrapper,
+      .error-message {
+        display: none;
+      }
+
+      button {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   form {
     text-align: center;
     margin-inline: -20px;
@@ -225,6 +240,17 @@
   &.selected {
     form {
       display: grid;
+    }
+  }
+
+  &.empty {
+    form {
+      label,
+      input,
+      .input-wrapper,
+      .error-message {
+        visibility: hidden;
+      }
     }
   }
 

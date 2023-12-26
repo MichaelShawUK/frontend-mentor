@@ -579,6 +579,15 @@ main {
 .mobile .pledge.selected form {
   display: flex;
 }
+.mobile .pledge.empty form label,
+.mobile .pledge.empty form input,
+.mobile .pledge.empty form .input-wrapper,
+.mobile .pledge.empty form .error-message {
+  display: none;
+}
+.mobile .pledge.empty form button {
+  margin-bottom: 0;
+}
 .mobile .pledge form {
   text-align: center;
   margin-inline: -20px;
@@ -624,6 +633,12 @@ main {
 }
 .desktop .pledge.selected form {
   display: grid;
+}
+.desktop .pledge.empty form label,
+.desktop .pledge.empty form input,
+.desktop .pledge.empty form .input-wrapper,
+.desktop .pledge.empty form .error-message {
+  visibility: hidden;
 }
 .desktop .pledge .description {
   margin-top: 16px;

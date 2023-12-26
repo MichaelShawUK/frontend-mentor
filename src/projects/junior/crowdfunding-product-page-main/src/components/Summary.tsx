@@ -3,7 +3,7 @@ import Bookmark from "./Bookmark";
 
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store/store";
-import { openModal } from "../store/slices/modal";
+import { openModal, selectReward } from "../store/slices/modal";
 
 interface Props {
   title: string;
@@ -19,7 +19,13 @@ function Summary({ title, description }: Props) {
       <h1>{title}</h1>
       <p className="description">{description}</p>
       <div className="actions">
-        <button className="primary" onClick={() => dispatch(openModal())}>
+        <button
+          className="primary"
+          onClick={() => {
+            dispatch(openModal());
+            dispatch(selectReward(null));
+          }}
+        >
           Back this project
         </button>
         <Bookmark />

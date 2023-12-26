@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store/store";
-import { openModal } from "../store/slices/modal";
+import { openModal, selectReward } from "../store/slices/modal";
 
 export interface RewardType {
   id: number;
@@ -24,7 +24,10 @@ function Reward({ reward }: { reward: RewardType }) {
       <button
         className="primary"
         disabled={reward.remaining === 0}
-        onClick={() => dispatch(openModal())}
+        onClick={() => {
+          dispatch(openModal());
+          dispatch(selectReward(reward.id));
+        }}
       >
         Select Reward
       </button>

@@ -6,7 +6,7 @@ import Pledge from "./Pledge";
 
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store/store";
-import { closeModal } from "../store/slices/modal";
+import { closeModal, selectReward } from "../store/slices/modal";
 import { useAppSelector } from "../hooks/useRedux";
 
 const emptyPledge: RewardType = {
@@ -22,11 +22,13 @@ function Pledges() {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const isModalOpen = useAppSelector((state) => state.modal.isOpen);
+  const selectedReward = useAppSelector((state) => state.modal.selectedReward);
 
   const dispatch: AppDispatch = useDispatch();
 
   const close = useCallback(() => {
     dispatch(closeModal());
+    dispatch(selectReward(null));
   }, [dispatch]);
 
   useEffect(() => {
@@ -67,9 +69,16 @@ function Pledges() {
           Want to support us in bringing Mastercraft Bamboo Monior Riser out in
           the world?
         </p>
-        <Pledge pledge={emptyPledge} />
+        <Pledge
+          pledge={emptyPledge}
+          selected={selectedReward === emptyPledge.id}
+        />
         {rewards.map((pledge) => (
-          <Pledge pledge={pledge} key={pledge.id} />
+          <Pledge
+            pledge={pledge}
+            key={pledge.id}
+            selected={selectedReward === pledge.id}
+          />
         ))}
       </div>
     </dialog>
