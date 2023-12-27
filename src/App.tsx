@@ -27,10 +27,11 @@
 // import TipCalculator from "./projects/junior/tip-calculator-app-main/src/App";
 // import SunnysideAgency from "./projects/junior/sunnyside-agency-landing-page-main/src/App";
 // import Crowdfunding from "./projects/junior/blogr-landing-page-main/src/App";
-import Crowdfund from "./projects/junior/crowdfunding-product-page-main/src/App";
+// import Crowdfund from "./projects/junior/crowdfunding-product-page-main/src/App";
+import InteractivePricing from "./projects/junior/interactive-pricing-component-main/src/App";
 
 function App() {
-  return <Crowdfund />;
+  return <InteractivePricing />;
 }
 
 export default App;
