@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Manrope:600");
+@import url("https://fonts.googleapis.com/css?family=Manrope:800");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Manrope";
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,3 +1,5 @@
+import "./styles/css/index.css";
+
 function InteractivePricing() {
   return (
     <div className="interactive-pricing">
