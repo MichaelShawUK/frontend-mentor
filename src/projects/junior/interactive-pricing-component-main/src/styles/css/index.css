@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Manrope:600");
 @import url("https://fonts.googleapis.com/css?family=Manrope:800");
+.outline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 6px;
+  row-gap: 4px;
+  padding-block: 60px;
+  background: url("src/projects/junior/interactive-pricing-component-main/src/assets/images/pattern-circles.svg") center no-repeat;
+}
+.outline h1 {
+  color: hsl(227, 35%, 25%);
+  width: 100%;
+  font-size: clamp(16px, 5.3vw, 29px);
+  margin-bottom: 6px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +26,16 @@ body {
   font-size: 15px;
   font-family: "Manrope";
   font-weight: 600;
+  color: hsl(225, 20%, 60%);
+}
+
+.interactive-pricing {
+  background: hsl(230, 100%, 99%) url("src/projects/junior/interactive-pricing-component-main/src/assets/images/bg-pattern.svg") top left/1440px 50% no-repeat;
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=index.css.map */

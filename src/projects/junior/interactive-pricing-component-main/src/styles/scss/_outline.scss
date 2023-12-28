@@ -1,0 +1,20 @@
+@use "colors" as color;
+
+.outline {
+  h1 {
+    color: color.$strong-text;
+    width: 100%;
+    font-size: clamp(16px, 5.3vw, 29px);
+    margin-bottom: 6px;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 6px;
+  row-gap: 4px;
+  padding-block: 60px;
+
+  background: url("src/projects/junior/interactive-pricing-component-main/src/assets/images/pattern-circles.svg")
+    center no-repeat;
+}

@@ -1,9 +1,11 @@
 import "./styles/css/index.css";
 
+import Outline from "./components/Outline";
+
 function InteractivePricing() {
   return (
     <div className="interactive-pricing">
-      <h1>INTERACTIVE PRICING</h1>
+      <Outline />
     </div>
   );
 }
