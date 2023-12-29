@@ -28,50 +28,31 @@ function Slider() {
   }, []);
 
   const dragHandler = useCallback(
-    (event: DragEvent) => {
-      // X co-ordinate defaults to 0 on last drag event
-      if (event.screenX === 0) return;
+    (event: DragEvent | TouchEvent) => {
+      let x2 = 0;
 
-      if (event.clientX <= barOrigin) {
+      if (event instanceof DragEvent) {
+        if (event.screenX === 0) return;
+        x2 = event.clientX;
+      }
+
+      if (event instanceof TouchEvent) {
+        x2 = event.touches[0]!.clientX;
+      }
+
+      if (x2 <= barOrigin) {
         setOffsetPercentage(0);
         setX1(barOrigin);
         return;
       }
 
-      if (event.clientX >= barOrigin + width) {
+      if (x2 >= barOrigin + width) {
         setOffsetPercentage(100);
         setX1(barOrigin + width);
         return;
       }
 
-      const deltaX = event.clientX - x1;
-      setX1((previous) => previous + deltaX);
-
-      setOffsetPercentage((previous) => {
-        const percentage = previous + (deltaX * 100) / width;
-        if (percentage < 0) return 0;
-        if (percentage > 100) return 100;
-        return percentage;
-      });
-    },
-    [barOrigin, width, x1]
-  );
-
-  const touchMoveHandler = useCallback(
-    (event: TouchEvent) => {
-      if (event.touches[0]!.clientX <= barOrigin) {
-        setOffsetPercentage(0);
-        setX1(barOrigin);
-        return;
-      }
-
-      if (event.touches[0]!.clientX >= barOrigin + width) {
-        setOffsetPercentage(100);
-        setX1(barOrigin + width);
-        return;
-      }
-
-      const deltaX = event.touches[0]!.clientX - x1;
+      const deltaX = x2 - x1;
       setX1((previous) => previous + deltaX);
 
       setOffsetPercentage((previous) => {
@@ -91,44 +72,41 @@ function Slider() {
       slider.addEventListener("drag", dragHandler);
       slider.addEventListener("dragend", dragEndHandler);
 
-      slider.addEventListener("touchstart", touchStartHandler);
-      slider.addEventListener("touchmove", touchMoveHandler);
-      slider.addEventListener("touchend", touchEndHandler);
+      slider.addEventListener("touchstart", dragStartHandler);
+      slider.addEventListener("touchmove", dragHandler);
+      slider.addEventListener("touchend", dragEndHandler);
 
       return () => {
-        slider.removeEventListener("drag", dragHandler);
         slider.removeEventListener("dragstart", dragStartHandler);
+        slider.removeEventListener("drag", dragHandler);
         slider.removeEventListener("dragend", dragEndHandler);
 
-        slider.removeEventListener("touchstart", touchStartHandler);
-        slider.removeEventListener("touchmove", touchMoveHandler);
-        slider.removeEventListener("touchend", touchEndHandler);
+        slider.removeEventListener("touchstart", dragStartHandler);
+        slider.removeEventListener("touchmove", dragHandler);
+        slider.removeEventListener("touchend", dragEndHandler);
       };
     }
-  }, [dragHandler, touchMoveHandler]);
+  }, [dragHandler]);
 
-  function dragStartHandler(event: DragEvent) {
-    event.dataTransfer?.setDragImage(new Image(), 0, 0);
-    setX1(event.clientX);
-    if (draggableRef.current) {
-      draggableRef.current.classList.add("selected");
+  function dragStartHandler(event: DragEvent | TouchEvent) {
+    let x2 = 0;
+
+    if (event instanceof DragEvent) {
+      event.dataTransfer?.setDragImage(new Image(), 0, 0);
+      x2 = event.clientX;
     }
-  }
 
-  function touchStartHandler(event: TouchEvent) {
-    setX1(event.touches[0]!.clientX);
+    if (event instanceof TouchEvent) {
+      x2 = event.touches[0]!.clientX;
+    }
+
+    setX1(x2);
     if (draggableRef.current) {
       draggableRef.current.classList.add("selected");
     }
   }
 
   function dragEndHandler() {
-    if (draggableRef.current) {
-      draggableRef.current.classList.remove("selected");
-    }
-  }
-
-  function touchEndHandler() {
     if (draggableRef.current) {
       draggableRef.current.classList.remove("selected");
     }
