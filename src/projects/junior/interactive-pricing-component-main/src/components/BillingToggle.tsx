@@ -12,7 +12,8 @@ function BillingToggle({
         <input type="checkbox" onChange={onToggle} checked={isDiscounted} />
       </label>
       <p className="yearly">
-        Yearly Billing<span>25% discount</span>
+        Yearly Billing<span className="desktop">25% discount</span>
+        <span className="mobile">-25%</span>
       </p>
     </div>
   );

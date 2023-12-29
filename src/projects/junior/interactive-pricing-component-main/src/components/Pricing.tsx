@@ -3,6 +3,29 @@ import BillingToggle from "./BillingToggle";
 
 import { useState } from "react";
 
+const prices = [
+  {
+    pageviews: "10K",
+    monthlyPrice: 8,
+  },
+  {
+    pageviews: "50K",
+    monthlyPrice: 12,
+  },
+  {
+    pageviews: "100K",
+    monthlyPrice: 16,
+  },
+  {
+    pageviews: "500K",
+    monthlyPrice: 24,
+  },
+  {
+    pageviews: "1M",
+    monthlyPrice: 36,
+  },
+];
+
 function Pricing() {
   const [isDiscounted, setIsDiscounted] = useState(false);
   const toggleDiscount = () => setIsDiscounted((previous) => !previous);
@@ -10,15 +33,23 @@ function Pricing() {
   const [sliderPosition, setSliderPosition] = useState(50);
   const onSlide = setSliderPosition;
 
-  console.log(sliderPosition);
+  const index = Math.min(
+    Math.floor(prices.length * (sliderPosition / 100)),
+    prices.length - 1
+  );
+  const monthlyPrice = prices[index].monthlyPrice;
+  const pageviews = prices[index].pageviews;
+  const annualPrice = monthlyPrice * 12 * 0.75;
 
   return (
     <div className="pricing">
-      <p className="traffic">100K PAGEVIEWS</p>
-      <p className="price">
-        <span>$16.00</span>/month
-      </p>
+      <p className="traffic">{pageviews} PAGEVIEWS</p>
       <Slider position={sliderPosition} setPosition={onSlide} />
+
+      <p className="price">
+        <span>${isDiscounted ? annualPrice : monthlyPrice}.00</span> /
+        {isDiscounted ? " year" : " month"}
+      </p>
       <BillingToggle onToggle={toggleDiscount} isDiscounted={isDiscounted} />
       <hr />
       <div className="features">

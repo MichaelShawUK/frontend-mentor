@@ -53,4 +53,23 @@
     border: 0;
     border-top: 1px solid #0001;
   }
+
+  .traffic {
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  .price span {
+    font-weight: 800;
+    font-size: 30px;
+    color: c.$strong-text;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+  }
 }

@@ -11,12 +11,6 @@
     border-radius: 6px;
     display: flex;
     position: relative;
-    background: linear-gradient(to right, red 100px, green 100px 100%);
-
-    .droppable {
-      width: 100%;
-      outline: 1px solid red;
-    }
 
     .draggable {
       position: absolute;

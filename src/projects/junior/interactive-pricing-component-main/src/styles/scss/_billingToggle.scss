@@ -36,7 +36,7 @@ $size: toggle-size(42px, 22px);
     position: relative;
 
     &:hover {
-      background-color: c.$soft-cyan;
+      background-color: c.$strong-cyan;
     }
 
     &::before {
@@ -59,7 +59,7 @@ $size: toggle-size(42px, 22px);
   }
 
   label:has(input:checked) {
-    background-color: c.$strong-cyan;
+    background-color: c.$soft-cyan;
 
     &::before {
       transform: translateX(map-get($size, "translateX"));
@@ -67,7 +67,7 @@ $size: toggle-size(42px, 22px);
 
     &:hover {
       &::before {
-        background-color: c.$soft-cyan;
+        background-color: c.$strong-cyan;
       }
     }
   }
@@ -80,7 +80,8 @@ $size: toggle-size(42px, 22px);
     padding: 4px 8px;
     border-radius: 13px;
     margin-left: 10px;
-    position: absolute;
+    text-wrap: nowrap;
+    margin-right: -50px;
   }
 
   .monthly {
@@ -88,9 +89,42 @@ $size: toggle-size(42px, 22px);
   }
   .yearly {
     text-align: left;
+    display: flex;
+    position: relative;
+    align-items: center;
   }
 
   p {
     font-size: clamp(11px, 3.5vw, 15px);
+    text-wrap: nowrap;
+  }
+
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: inline;
+  }
+}
+
+@media (width <= 500px) {
+  .billing-toggle {
+    span {
+      margin-left: 6px;
+    }
+
+    .mobile {
+      display: inline;
+    }
+
+    .desktop {
+      display: none;
+    }
+  }
+}
+
+@media (width < 375px) {
+  .billing-toggle span {
+    transform: translateY(-14px) translateX(-20px) rotate(10deg);
   }
 }

@@ -123,7 +123,7 @@ function Slider({
         className="bar"
         ref={sliderBarRef}
         style={{
-          background: `linear-gradient(to right, #10d5c2 ${position}%, #eaeefb ${position}% 100%)`,
+          background: `linear-gradient(to right, #a5f3eb ${position}%, #eaeefb ${position}% 100%)`,
         }}
       >
         <div
@@ -136,11 +136,6 @@ function Slider({
         >
           <img src={sliderIcon} className="switch" />
         </div>
-        <div className="droppable"></div>
-        <div className="droppable"></div>
-        <div className="droppable"></div>
-        <div className="droppable"></div>
-        <div className="droppable"></div>
       </div>
     </div>
   );
