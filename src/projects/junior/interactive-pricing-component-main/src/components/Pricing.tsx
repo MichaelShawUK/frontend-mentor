@@ -52,14 +52,14 @@ function Pricing() {
       </p>
       <BillingToggle onToggle={toggleDiscount} isDiscounted={isDiscounted} />
       <hr />
-      <div className="features">
-        <ul>
-          <li>Unlimited websites</li>
-          <li>100% data ownership</li>
-          <li>Email reports</li>
-        </ul>
-        <button>Start my trial</button>
-      </div>
+      {/* <div className="features"> */}
+      <ul className="features">
+        <li>Unlimited websites</li>
+        <li>100% data ownership</li>
+        <li>Email reports</li>
+      </ul>
+      <button>Start my trial</button>
+      {/* </div> */}
     </div>
   );
 }

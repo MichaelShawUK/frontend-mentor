@@ -24,7 +24,7 @@ $size: toggle-size(42px, 22px);
   grid-template-columns: 1fr max-content 1fr;
   align-items: center;
   gap: 12px;
-  margin-block: 30px;
+  margin-top: 16px;
 
   label {
     background-color: c.$toggle-bg;
@@ -109,6 +109,8 @@ $size: toggle-size(42px, 22px);
 
 @media (width <= 500px) {
   .billing-toggle {
+    margin-top: 30px;
+
     span {
       margin-left: 6px;
     }

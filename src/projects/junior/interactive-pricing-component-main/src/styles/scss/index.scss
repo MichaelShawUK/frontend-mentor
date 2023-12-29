@@ -1,4 +1,4 @@
-@use "colors" as color;
+@use "colors" as c;
 @use "outline";
 @use "pricing";
 @use "slider";
@@ -24,11 +24,13 @@ body {
     weight: 600;
   }
 
-  color: color.$text;
+  background-color: c.$main-bg;
+
+  color: c.$text;
 }
 
 .interactive-pricing {
-  background: color.$main-bg
+  background: c.$main-bg
     url("src/projects/junior/interactive-pricing-component-main/src/assets/images/bg-pattern.svg")
     top left/1440px 50% no-repeat;
 
@@ -36,18 +38,4 @@ body {
   margin: 0 auto;
   text-align: center;
   padding: 20px;
-
-  height: 100vh;
-}
-
-@media (width <= 500px) {
-  .billing-toggle {
-    .mobile {
-      display: inline;
-    }
-
-    .desktop {
-      display: none;
-    }
-  }
 }
