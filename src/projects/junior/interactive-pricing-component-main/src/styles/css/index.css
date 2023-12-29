@@ -69,12 +69,14 @@
 .billing-toggle {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  gap: 20px;
 }
 .billing-toggle label {
   background-color: hsl(223, 50%, 87%);
-  width: 60px;
-  height: 30px;
-  border-radius: 15px;
+  width: 42px;
+  height: 24px;
+  border-radius: 12px;
   cursor: pointer;
   position: relative;
 }
@@ -83,21 +85,28 @@
 }
 .billing-toggle label::before {
   content: "";
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
   display: block;
   background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
   visibility: visible;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 4px;
+  left: 4px;
+  transition: 0.2s ease-in-out;
 }
 .billing-toggle input {
   visibility: hidden;
 }
-.billing-toggle input:checked {
-  visibility: visible;
+.billing-toggle label:has(input:checked) {
+  background-color: hsl(174, 86%, 45%);
+}
+.billing-toggle label:has(input:checked)::before {
+  transform: translateX(18px);
+}
+.billing-toggle label:has(input:checked):hover::before {
+  background-color: hsl(174, 77%, 80%);
 }
 .billing-toggle span {
   color: hsl(15, 100%, 70%);
@@ -108,6 +117,12 @@
   border-radius: 13px;
   margin-left: 10px;
   position: absolute;
+}
+.billing-toggle .monthly {
+  text-align: right;
+}
+.billing-toggle .yearly {
+  text-align: left;
 }
 
 * {

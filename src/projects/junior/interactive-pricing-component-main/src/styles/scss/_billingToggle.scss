@@ -1,14 +1,40 @@
 @use "colors" as c;
+@use "sass:math";
+
+@function toggle-size($width, $height) {
+  $border-gap: math.floor(math.div($width, 10));
+  $border-radius: math.div($height, 2);
+  $switch-size: $height - ($border-gap * 2);
+  $translateX: $width - $switch-size - ($border-gap * 2);
+  @return (
+    "width": $width,
+    "height": $height,
+    "border-gap": $border-gap,
+    "border-radius": $border-radius,
+    "switch-size": $switch-size,
+    "translateX": $translateX
+  );
+}
+// $size: toggle-size(120px, 60px);
+// $size: toggle-size(55px, 30px);
+$size: toggle-size(42px, 24px);
+
+@debug (math.floor(math.div(60px, 10)));
+
+@debug $size;
+@debug map-get($size, "width");
 
 .billing-toggle {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  gap: 20px;
 
   label {
     background-color: c.$toggle-bg;
-    width: 60px;
-    height: 30px;
-    border-radius: 15px;
+    width: map-get($size, "width");
+    height: map-get($size, "height");
+    border-radius: map-get($size, "border-radius");
     cursor: pointer;
 
     position: relative;
@@ -19,37 +45,34 @@
 
     &::before {
       content: "";
-      height: 20px;
-      width: 20px;
+      height: map-get($size, "switch-size");
+      width: map-get($size, "switch-size");
       display: block;
       background-color: c.$white;
       border-radius: 50%;
       visibility: visible;
       position: absolute;
-      top: 5px;
-      left: 5px;
+      top: map-get($size, "border-gap");
+      left: map-get($size, "border-gap");
+      transition: 0.2s ease-in-out;
     }
   }
 
   input {
     visibility: hidden;
-    // position: relative;
+  }
 
-    // &::before {
-    //   content: "";
-    //   height: 22px;
-    //   width: 22px;
-    //   display: block;
-    //   background-color: c.$white;
-    //   border-radius: 50%;
-    //   visibility: visible;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    // }
+  label:has(input:checked) {
+    background-color: c.$strong-cyan;
 
-    &:checked {
-      visibility: visible;
+    &::before {
+      transform: translateX(map-get($size, "translateX"));
+    }
+
+    &:hover {
+      &::before {
+        background-color: c.$soft-cyan;
+      }
     }
   }
 
@@ -62,5 +85,12 @@
     border-radius: 13px;
     margin-left: 10px;
     position: absolute;
+  }
+
+  .monthly {
+    text-align: right;
+  }
+  .yearly {
+    text-align: left;
   }
 }

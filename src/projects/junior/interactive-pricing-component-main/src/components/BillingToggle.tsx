@@ -1,11 +1,11 @@
 function BillingToggle() {
   return (
     <div className="billing-toggle">
-      <p>Monthly Billing</p>
+      <p className="monthly">Monthly Billing</p>
       <label>
-        <input type="radio" />
+        <input type="checkbox" />
       </label>
-      <p>
+      <p className="yearly">
         Yearly Billing<span>25% discount</span>
       </p>
     </div>
