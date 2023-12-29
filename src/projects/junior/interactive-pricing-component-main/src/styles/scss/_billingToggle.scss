@@ -1,0 +1,66 @@
+@use "colors" as c;
+
+.billing-toggle {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+
+  label {
+    background-color: c.$toggle-bg;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+
+    position: relative;
+
+    &:hover {
+      background-color: c.$soft-cyan;
+    }
+
+    &::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      display: block;
+      background-color: c.$white;
+      border-radius: 50%;
+      visibility: visible;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+  }
+
+  input {
+    visibility: hidden;
+    // position: relative;
+
+    // &::before {
+    //   content: "";
+    //   height: 22px;
+    //   width: 22px;
+    //   display: block;
+    //   background-color: c.$white;
+    //   border-radius: 50%;
+    //   visibility: visible;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    // }
+
+    &:checked {
+      visibility: visible;
+    }
+  }
+
+  span {
+    color: c.$light-red-text;
+    background-color: c.$light-red-bg;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 13px;
+    margin-left: 10px;
+    position: absolute;
+  }
+}

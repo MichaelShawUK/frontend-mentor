@@ -66,6 +66,50 @@
   pointer-events: none;
 }
 
+.billing-toggle {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+}
+.billing-toggle label {
+  background-color: hsl(223, 50%, 87%);
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.billing-toggle label:hover {
+  background-color: hsl(174, 77%, 80%);
+}
+.billing-toggle label::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  display: block;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  visibility: visible;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.billing-toggle input {
+  visibility: hidden;
+}
+.billing-toggle input:checked {
+  visibility: visible;
+}
+.billing-toggle span {
+  color: hsl(15, 100%, 70%);
+  background-color: hsl(14, 92%, 95%);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 13px;
+  margin-left: 10px;
+  position: absolute;
+}
+
 * {
   margin: 0;
   padding: 0;
