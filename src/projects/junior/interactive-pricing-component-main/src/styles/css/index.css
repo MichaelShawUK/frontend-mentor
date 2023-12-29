@@ -54,8 +54,9 @@
 .slider .bar .draggable:hover {
   background-color: #48f1e0;
 }
-.slider .bar .draggable:hover:active {
-  background-color: rgb(51, 194, 158);
+.slider .bar .draggable.selected {
+  background-color: #33c29e;
+  box-shadow: 0 20px 30px #33c29e;
 }
 .slider .bar .draggable img {
   height: 16px;

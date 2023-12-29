@@ -62,10 +62,12 @@ function Slider() {
     if (slider) {
       slider.addEventListener("dragstart", dragStartHandler);
       slider.addEventListener("drag", dragHandler);
+      slider.addEventListener("dragend", dragEndHandler);
 
       return () => {
         slider.removeEventListener("drag", dragHandler);
         slider.removeEventListener("dragstart", dragStartHandler);
+        slider.removeEventListener("dragend", dragEndHandler);
       };
     }
   }, [dragHandler]);
@@ -73,6 +75,15 @@ function Slider() {
   function dragStartHandler(event: DragEvent) {
     event.dataTransfer?.setDragImage(new Image(), 0, 0);
     setX1(event.clientX);
+    if (draggableRef.current) {
+      draggableRef.current.classList.add("selected");
+    }
+  }
+
+  function dragEndHandler() {
+    if (draggableRef.current) {
+      draggableRef.current.classList.remove("selected");
+    }
   }
 
   return (

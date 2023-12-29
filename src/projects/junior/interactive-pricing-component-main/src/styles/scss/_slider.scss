@@ -32,9 +32,14 @@
 
       &:hover {
         background-color: color.scale(c.$strong-cyan, $lightness: 30%);
-        &:active {
-          background-color: rgb(51, 194, 158);
-        }
+        // &:active {
+        //   background-color: rgb(51, 194, 158);
+        // }
+      }
+
+      &.selected {
+        background-color: #33c29e;
+        box-shadow: 0 20px 30px #33c29e;
       }
 
       img {
