@@ -1,8 +1,56 @@
-@use "colors" as color;
+@use "colors" as c;
 
 .pricing {
-  background-color: color.$white;
+  background-color: c.$white;
   max-width: 600px;
   margin: 0 auto;
-  padding: 50px;
+  padding: clamp(22px, 5.3vw, 50px);
+
+  ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    text-align: left;
+  }
+
+  li:before {
+    content: url("src/projects/junior/interactive-pricing-component-main/src/assets/images/icon-check.svg");
+    margin-right: 16px;
+  }
+
+  button {
+    background-color: c.$strong-text;
+    color: c.$cta-text;
+    border: none;
+    font-weight: 800;
+    font-size: 15px;
+    height: 44px;
+    width: 180px;
+    border-radius: 22px;
+    cursor: pointer;
+
+    &:hover {
+      color: c.$white;
+    }
+  }
+
+  .features {
+    // border-top: 1px solid #0001;
+    // margin-inline: clamp(-50px, -5.3vw, -22px);
+    // padding-inline: clamp(22px, 5.3vw, 50px);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 140px;
+
+    // padding: 50px;
+  }
+
+  hr {
+    margin-inline: clamp(-50px, -5.3vw, -22px);
+    border: 0;
+    border-top: 1px solid #0001;
+  }
 }

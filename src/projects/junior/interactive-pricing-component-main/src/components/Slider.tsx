@@ -2,11 +2,16 @@ import sliderIcon from "../assets/images/icon-slider.svg";
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-function Slider() {
+function Slider({
+  position,
+  setPosition,
+}: {
+  position: number;
+  setPosition: React.Dispatch<React.SetStateAction<number>>;
+}) {
   const [width, setWidth] = useState(500);
   const [barOrigin, setBarOrigin] = useState(0);
   const [x1, setX1] = useState(0);
-  const [offsetPercentage, setOffsetPercentage] = useState(50);
 
   const draggableRef = useRef<HTMLDivElement>(null);
   const sliderBarRef = useRef<HTMLDivElement>(null);
@@ -41,13 +46,13 @@ function Slider() {
       }
 
       if (x2 <= barOrigin) {
-        setOffsetPercentage(0);
+        setPosition(0);
         setX1(barOrigin);
         return;
       }
 
       if (x2 >= barOrigin + width) {
-        setOffsetPercentage(100);
+        setPosition(100);
         setX1(barOrigin + width);
         return;
       }
@@ -55,14 +60,14 @@ function Slider() {
       const deltaX = x2 - x1;
       setX1((previous) => previous + deltaX);
 
-      setOffsetPercentage((previous) => {
-        const percentage = previous + (deltaX * 100) / width;
+      setPosition((previous) => {
+        const percentage = Math.round(previous + (deltaX * 100) / width);
         if (percentage < 0) return 0;
         if (percentage > 100) return 100;
         return percentage;
       });
     },
-    [barOrigin, width, x1]
+    [barOrigin, setPosition, width, x1]
   );
 
   useEffect(() => {
@@ -118,7 +123,7 @@ function Slider() {
         className="bar"
         ref={sliderBarRef}
         style={{
-          background: `linear-gradient(to right, #10d5c2 ${offsetPercentage}%, #eaeefb ${offsetPercentage}% 100%)`,
+          background: `linear-gradient(to right, #10d5c2 ${position}%, #eaeefb ${position}% 100%)`,
         }}
       >
         <div
@@ -126,9 +131,7 @@ function Slider() {
           className="draggable"
           ref={draggableRef}
           style={{
-            left: `clamp(-25px, calc(${offsetPercentage}% - 25px), ${
-              width - 25
-            }px)`,
+            left: `clamp(-20px, calc(${position}% - 20px), ${width - 20}px)`,
           }}
         >
           <img src={sliderIcon} className="switch" />

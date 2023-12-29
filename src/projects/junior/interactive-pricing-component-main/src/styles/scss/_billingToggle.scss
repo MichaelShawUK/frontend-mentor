@@ -6,6 +6,7 @@
   $border-radius: math.div($height, 2);
   $switch-size: $height - ($border-gap * 2);
   $translateX: $width - $switch-size - ($border-gap * 2);
+
   @return (
     "width": $width,
     "height": $height,
@@ -15,20 +16,15 @@
     "translateX": $translateX
   );
 }
-// $size: toggle-size(120px, 60px);
-// $size: toggle-size(55px, 30px);
-$size: toggle-size(42px, 24px);
 
-@debug (math.floor(math.div(60px, 10)));
-
-@debug $size;
-@debug map-get($size, "width");
+$size: toggle-size(42px, 22px);
 
 .billing-toggle {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
+  margin-block: 30px;
 
   label {
     background-color: c.$toggle-bg;
@@ -92,5 +88,9 @@ $size: toggle-size(42px, 24px);
   }
   .yearly {
     text-align: left;
+  }
+
+  p {
+    font-size: clamp(11px, 3.5vw, 15px);
   }
 }
