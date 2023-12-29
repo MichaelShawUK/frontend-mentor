@@ -1,5 +1,7 @@
 @use "colors" as color;
 @use "outline";
+@use "pricing";
+@use "slider";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
