@@ -57,6 +57,33 @@ function Slider() {
     [barOrigin, width, x1]
   );
 
+  const touchMoveHandler = useCallback(
+    (event: TouchEvent) => {
+      if (event.touches[0]!.clientX <= barOrigin) {
+        setOffsetPercentage(0);
+        setX1(barOrigin);
+        return;
+      }
+
+      if (event.touches[0]!.clientX >= barOrigin + width) {
+        setOffsetPercentage(100);
+        setX1(barOrigin + width);
+        return;
+      }
+
+      const deltaX = event.touches[0]!.clientX - x1;
+      setX1((previous) => previous + deltaX);
+
+      setOffsetPercentage((previous) => {
+        const percentage = previous + (deltaX * 100) / width;
+        if (percentage < 0) return 0;
+        if (percentage > 100) return 100;
+        return percentage;
+      });
+    },
+    [barOrigin, width, x1]
+  );
+
   useEffect(() => {
     const slider = draggableRef.current;
     if (slider) {
@@ -64,13 +91,21 @@ function Slider() {
       slider.addEventListener("drag", dragHandler);
       slider.addEventListener("dragend", dragEndHandler);
 
+      slider.addEventListener("touchstart", touchStartHandler);
+      slider.addEventListener("touchmove", touchMoveHandler);
+      slider.addEventListener("touchend", touchEndHandler);
+
       return () => {
         slider.removeEventListener("drag", dragHandler);
         slider.removeEventListener("dragstart", dragStartHandler);
         slider.removeEventListener("dragend", dragEndHandler);
+
+        slider.removeEventListener("touchstart", touchStartHandler);
+        slider.removeEventListener("touchmove", touchMoveHandler);
+        slider.removeEventListener("touchend", touchEndHandler);
       };
     }
-  }, [dragHandler]);
+  }, [dragHandler, touchMoveHandler]);
 
   function dragStartHandler(event: DragEvent) {
     event.dataTransfer?.setDragImage(new Image(), 0, 0);
@@ -80,7 +115,20 @@ function Slider() {
     }
   }
 
+  function touchStartHandler(event: TouchEvent) {
+    setX1(event.touches[0]!.clientX);
+    if (draggableRef.current) {
+      draggableRef.current.classList.add("selected");
+    }
+  }
+
   function dragEndHandler() {
+    if (draggableRef.current) {
+      draggableRef.current.classList.remove("selected");
+    }
+  }
+
+  function touchEndHandler() {
     if (draggableRef.current) {
       draggableRef.current.classList.remove("selected");
     }
