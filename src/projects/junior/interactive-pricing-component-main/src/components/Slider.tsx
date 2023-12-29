@@ -29,23 +29,22 @@ function Slider() {
 
   const dragHandler = useCallback(
     (event: DragEvent) => {
+      // X co-ordinate defaults to 0 on last drag event
       if (event.screenX === 0) return;
 
-      if (event.screenX <= barOrigin) {
+      if (event.clientX <= barOrigin) {
         setOffsetPercentage(0);
         setX1(barOrigin);
         return;
       }
 
-      if (event.screenX >= barOrigin + width) {
-        console.log(event.screenX);
-        console.log(barOrigin + width);
+      if (event.clientX >= barOrigin + width) {
         setOffsetPercentage(100);
         setX1(barOrigin + width);
         return;
       }
 
-      const deltaX = event.screenX - x1;
+      const deltaX = event.clientX - x1;
       setX1((previous) => previous + deltaX);
 
       setOffsetPercentage((previous) => {
@@ -73,7 +72,7 @@ function Slider() {
 
   function dragStartHandler(event: DragEvent) {
     event.dataTransfer?.setDragImage(new Image(), 0, 0);
-    setX1(event.screenX);
+    setX1(event.clientX);
   }
 
   return (
