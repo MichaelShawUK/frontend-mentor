@@ -31,6 +31,7 @@
     border: clamp(2px, 0.2vw, 4px) solid c.$white;
     padding: clamp(8px, 2.4vw, 34px);
     font-size: clamp(16px, 5vw, 72px);
+    margin-left: max(calc(-0.38 * 100vw + 489px), 0px);
   }
 }
 

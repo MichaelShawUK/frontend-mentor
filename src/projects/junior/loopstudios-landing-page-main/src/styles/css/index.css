@@ -119,6 +119,7 @@ nav ul {
   border: clamp(2px, 0.2vw, 4px) solid hsl(0, 0%, 100%);
   padding: clamp(8px, 2.4vw, 34px);
   font-size: clamp(16px, 5vw, 72px);
+  margin-left: max(-38vw + 489px, 0px);
 }
 
 .mobile .hero {
