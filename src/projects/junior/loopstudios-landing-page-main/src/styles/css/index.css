@@ -59,6 +59,7 @@ nav ul {
   max-width: none;
   max-height: none;
   border: none;
+  animation: fadeIn 0.2s ease-in;
 }
 .mobile-menu .header {
   display: flex;
@@ -66,7 +67,30 @@ nav ul {
   align-items: center;
   margin-bottom: 150px;
 }
+.mobile-menu li:nth-child(1) {
+  animation: fadeIn 0.2s ease-in-out 0.2s both;
+}
+.mobile-menu li:nth-child(2) {
+  animation: fadeIn 0.2s ease-in-out 0.3s both;
+}
+.mobile-menu li:nth-child(3) {
+  animation: fadeIn 0.2s ease-in-out 0.4s both;
+}
+.mobile-menu li:nth-child(4) {
+  animation: fadeIn 0.2s ease-in-out 0.5s both;
+}
+.mobile-menu li:nth-child(5) {
+  animation: fadeIn 0.2s ease-in-out 0.6s both;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
