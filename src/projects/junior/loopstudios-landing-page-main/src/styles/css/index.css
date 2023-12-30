@@ -35,7 +35,7 @@ nav ul {
   width: 26px;
   position: absolute;
   border-bottom: 2px solid hsl(0, 0%, 100%);
-  bottom: -12px;
+  bottom: -10px;
 }
 
 .mobile nav {
@@ -94,7 +94,6 @@ nav ul {
   display: flex;
   color: hsl(0, 0%, 100%);
   font-family: "Josefin Sans";
-  height: calc(45.1vw - clamp(65px, 8.2vw, 90px));
   display: flex;
   align-items: center;
 }
@@ -110,10 +109,25 @@ nav ul {
 }
 .hero h1 {
   font-weight: 400;
+}
+
+.desktop .hero {
+  height: clamp(1px, 45.1vw - clamp(65px, 8.2vw, 90px), 776px);
+}
+.desktop .hero h1 {
   width: clamp(1px, 44.3vw, 640px);
   border: clamp(2px, 0.2vw, 4px) solid hsl(0, 0%, 100%);
   padding: clamp(8px, 2.4vw, 34px);
   font-size: clamp(16px, 5vw, 72px);
+}
+
+.mobile .hero {
+  height: calc(173.3vw - 65px);
+}
+.mobile .hero h1 {
+  border: 2px solid hsl(0, 0%, 100%);
+  padding: 6.9vw;
+  font-size: 10.7vw;
 }
 
 * {

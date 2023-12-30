@@ -1,13 +1,9 @@
 @use "colors" as c;
 
-// 1440 x 650
-
 .hero {
   display: flex;
   color: c.$white;
   font-family: "Josefin Sans";
-  // border: 1px solid rgb(9, 255, 0);
-  height: calc(45.1vw - clamp(65px, 8.2vw, 90px));
   display: flex;
   align-items: center;
 
@@ -24,9 +20,26 @@
 
   h1 {
     font-weight: 400;
+  }
+}
+
+.desktop .hero {
+  height: clamp(1px, calc(45.1vw - clamp(65px, 8.2vw, 90px)), 776px);
+
+  h1 {
     width: clamp(1px, 44.3vw, 640px);
     border: clamp(2px, 0.2vw, 4px) solid c.$white;
     padding: clamp(8px, 2.4vw, 34px);
     font-size: clamp(16px, 5vw, 72px);
+  }
+}
+
+.mobile .hero {
+  height: calc(173.3vw - 65px);
+
+  h1 {
+    border: 2px solid c.$white;
+    padding: 6.9vw;
+    font-size: 10.7vw;
   }
 }
