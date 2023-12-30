@@ -1,0 +1,26 @@
+@use "colors" as c;
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Alata");
+@include google-font("Josefin Sans", 300);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+}
+
+.loopstudios {
+  font: {
+    family: "Alata";
+    size: 15px;
+  }
+  color: c.$dark-gray;
+}

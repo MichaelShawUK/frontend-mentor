@@ -28,10 +28,11 @@
 // import SunnysideAgency from "./projects/junior/sunnyside-agency-landing-page-main/src/App";
 // import Crowdfunding from "./projects/junior/blogr-landing-page-main/src/App";
 // import Crowdfund from "./projects/junior/crowdfunding-product-page-main/src/App";
-import InteractivePricing from "./projects/junior/interactive-pricing-component-main/src/App";
+// import InteractivePricing from "./projects/junior/interactive-pricing-component-main/src/App";
+import Loopstudios from "./projects/junior/loopstudios-landing-page-main/src/App";
 
 function App() {
-  return <InteractivePricing />;
+  return <Loopstudios />;
 }
 
 export default App;

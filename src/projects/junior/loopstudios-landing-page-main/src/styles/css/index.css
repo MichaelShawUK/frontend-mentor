@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Alata:400");
+@import url("https://fonts.googleapis.com/css?family=Josefin Sans:300");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+}
+
+.loopstudios {
+  font-family: "Alata";
+  font-size: 15px;
+  color: hsl(0, 0%, 55%);
+}
+
+/*# sourceMappingURL=index.css.map */
