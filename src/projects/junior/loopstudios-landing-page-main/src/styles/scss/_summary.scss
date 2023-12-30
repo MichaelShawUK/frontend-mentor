@@ -1,0 +1,74 @@
+@use "colors" as c;
+
+$padding: 100px;
+
+.summary {
+  position: relative;
+  // width: 100%;
+  // height: max(calc(928px - 0.3 * 100vw), 500px);
+  overflow: hidden;
+
+  img {
+    display: block;
+  }
+
+  div {
+    background-color: c.$white;
+  }
+
+  h2 {
+    font-family: "Josefin Sans";
+    color: c.$black;
+    font-weight: 300;
+  }
+
+  p {
+    color: c.$very-dark-gray;
+    line-height: 1.8;
+  }
+}
+
+.desktop .summary {
+  height: max(calc(928px - 0.3 * 100vw), 500px);
+
+  div {
+    position: absolute;
+    padding-top: $padding;
+    padding-left: $padding;
+    right: 0;
+    bottom: 0;
+    width: calc(450px + $padding);
+  }
+
+  h2 {
+    font-size: 46px;
+    margin-bottom: 24px;
+  }
+}
+
+.mobile .summary {
+  img {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 44px;
+    display: block;
+    margin-inline: auto;
+  }
+
+  div {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    padding-inline: 20px;
+  }
+}

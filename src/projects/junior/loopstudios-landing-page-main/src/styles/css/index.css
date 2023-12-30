@@ -104,7 +104,7 @@ nav ul {
   right: 0;
   margin-inline: auto;
   z-index: -1;
-  width: 100vw;
+  width: 100%;
   max-width: 1920px;
 }
 .hero h1 {
@@ -128,6 +128,72 @@ nav ul {
   border: 2px solid hsl(0, 0%, 100%);
   padding: 6.9vw;
   font-size: 10.7vw;
+}
+
+.desktop main {
+  margin-top: 8.3vw;
+}
+
+.mobile main {
+  margin-top: 80px;
+}
+
+.summary {
+  position: relative;
+  overflow: hidden;
+}
+.summary img {
+  display: block;
+}
+.summary div {
+  background-color: hsl(0, 0%, 100%);
+}
+.summary h2 {
+  font-family: "Josefin Sans";
+  color: hsl(0, 0%, 0%);
+  font-weight: 300;
+}
+.summary p {
+  color: hsl(0, 0%, 41%);
+  line-height: 1.8;
+}
+
+.desktop .summary {
+  height: max(928px - 30vw, 500px);
+}
+.desktop .summary div {
+  position: absolute;
+  padding-top: 100px;
+  padding-left: 100px;
+  right: 0;
+  bottom: 0;
+  width: 550px;
+}
+.desktop .summary h2 {
+  font-size: 46px;
+  margin-bottom: 24px;
+}
+
+.mobile .summary img {
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 44px;
+  display: block;
+  margin-inline: auto;
+}
+.mobile .summary div {
+  position: relative;
+  text-align: center;
+  padding: 0;
+  max-width: 620px;
+  margin-inline: auto;
+}
+.mobile .summary h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.mobile .summary p {
+  padding-inline: 20px;
 }
 
 * {
