@@ -1,4 +1,6 @@
 @use "colors" as c;
+@use "header";
+@use "nav";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -15,12 +17,25 @@
 
 body {
   margin: 20px;
+  background-color: rgb(152, 139, 196);
 }
 
 .loopstudios {
+  max-width: 1200px;
+  margin: 0 auto;
+
   font: {
     family: "Alata";
     size: 15px;
   }
   color: c.$dark-gray;
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: c.$white;
+  }
 }

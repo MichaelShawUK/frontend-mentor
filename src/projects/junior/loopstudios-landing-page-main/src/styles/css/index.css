@@ -1,5 +1,32 @@
 @import url("https://fonts.googleapis.com/css?family=Alata:400");
 @import url("https://fonts.googleapis.com/css?family=Josefin Sans:300");
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+}
+
+.desktop nav ul {
+  gap: 30px;
+}
+.desktop nav a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+.desktop nav a:hover::after {
+  content: "";
+  width: 26px;
+  position: absolute;
+  border-bottom: 2px solid hsl(0, 0%, 100%);
+  bottom: -12px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +35,22 @@
 
 body {
   margin: 20px;
+  background-color: rgb(152, 139, 196);
 }
 
 .loopstudios {
+  max-width: 1200px;
+  margin: 0 auto;
   font-family: "Alata";
   font-size: 15px;
   color: hsl(0, 0%, 55%);
+}
+.loopstudios ul {
+  list-style: none;
+}
+.loopstudios a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
 }
 
 /*# sourceMappingURL=index.css.map */
