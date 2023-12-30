@@ -1,7 +1,9 @@
 @use "colors" as c;
 @use "sizes" as sizes;
 
-@mixin slide($position) {
+$links: 5;
+
+@mixin staggeredFade($position) {
   animation: fadeIn 0.2s ease-in-out #{0.1s + 0.1s * $position} both;
 }
 
@@ -23,20 +25,10 @@
     margin-bottom: 150px;
   }
 
-  li:nth-child(1) {
-    @include slide(1);
-  }
-  li:nth-child(2) {
-    @include slide(2);
-  }
-  li:nth-child(3) {
-    @include slide(3);
-  }
-  li:nth-child(4) {
-    @include slide(4);
-  }
-  li:nth-child(5) {
-    @include slide(5);
+  @for $i from 1 through $links {
+    li:nth-child(#{$i}) {
+      @include staggeredFade($i);
+    }
   }
 }
 

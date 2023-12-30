@@ -3,6 +3,7 @@ import DeviceModeContext from "./context/DeviceModeContext";
 import useDeviceMode from "./hooks/useDeviceMode";
 
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function Loopstudios() {
   const device = useDeviceMode(768);
@@ -11,6 +12,7 @@ function Loopstudios() {
     <DeviceModeContext.Provider value={device}>
       <div className={`loopstudios ${device}`}>
         <Header />
+        <Hero />
       </div>
     </DeviceModeContext.Provider>
   );
