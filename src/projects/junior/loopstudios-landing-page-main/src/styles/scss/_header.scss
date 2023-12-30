@@ -1,5 +1,19 @@
+@use "sizes" as sizes;
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.logo {
+  width: clamp(150px, 19.5vw, 192px);
+}
+
+.mobile header {
+  margin-top: sizes.$mobile-margin-top;
 }

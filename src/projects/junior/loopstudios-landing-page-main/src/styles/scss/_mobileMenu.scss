@@ -1,0 +1,24 @@
+@use "colors" as c;
+@use "sizes" as sizes;
+
+.mobile-menu {
+  background-color: c.$black;
+  padding: 20px;
+  padding-top: sizes.$mobile-margin-top;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  border: none;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 150px;
+  }
+
+  // .logo {
+  //   width: 150px;
+  // }
+}
