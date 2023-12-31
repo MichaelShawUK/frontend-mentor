@@ -1,5 +1,5 @@
 .desktop main {
-  margin-top: 8.3vw;
+  margin-top: clamp(60px, 8.3vw, 120px);
 }
 
 .mobile main {

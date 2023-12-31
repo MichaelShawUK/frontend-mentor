@@ -7,6 +7,8 @@
 @use "hero";
 @use "main";
 @use "summary";
+@use "creations";
+@use "creation";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -34,11 +36,11 @@ h2 {
 button {
   background-color: transparent;
   font-family: "Alata";
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 3px;
   color: c.$black;
-  border: 1px solid c.$black;
-  padding: 8px 32px;
+  border: 2px solid c.$black;
+  padding: 9px 44px;
   cursor: pointer;
 
   &:hover {
@@ -72,13 +74,11 @@ button {
 
   h2 {
     font-size: 46px;
-    margin-bottom: 24px;
   }
 }
 
 .mobile.loopstudios {
   h2 {
     font-size: 32px;
-    margin-bottom: 16px;
   }
 }

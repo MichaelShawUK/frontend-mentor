@@ -22,6 +22,7 @@ $padding: 100px;
 
 .desktop .summary {
   height: max(calc(928px - 0.3 * 100vw), 500px);
+  margin-bottom: clamp(100px, calc(0.074 * 100vw + 42.9px), 150px);
 
   div {
     position: absolute;
@@ -30,6 +31,10 @@ $padding: 100px;
     right: 0;
     bottom: 0;
     width: calc(450px + $padding);
+  }
+
+  h2 {
+    margin-bottom: 24px;
   }
 }
 
@@ -48,6 +53,10 @@ $padding: 100px;
     padding: 0;
     max-width: 620px;
     margin-inline: auto;
+  }
+
+  h2 {
+    margin-bottom: 16px;
   }
 
   p {

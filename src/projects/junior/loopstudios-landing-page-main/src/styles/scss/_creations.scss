@@ -1,0 +1,59 @@
+.creations {
+  display: grid;
+
+  align-items: center;
+
+  h2 {
+    grid-area: title;
+  }
+
+  button {
+    grid-area: button;
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+.desktop .creations {
+  grid-template-areas:
+    "title button"
+    "gallery gallery";
+  row-gap: 80px;
+
+  button {
+    justify-self: flex-end;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    grid-area: gallery;
+  }
+}
+
+.mobile .creations {
+  grid-template-areas:
+    "title"
+    "gallery"
+    "button";
+
+  margin-top: 80px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .grid-container {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  button {
+    justify-self: center;
+    margin-top: 34px;
+  }
+}
