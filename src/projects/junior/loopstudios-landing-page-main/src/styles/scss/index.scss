@@ -31,6 +31,22 @@ h2 {
   font-weight: 300;
 }
 
+button {
+  background-color: transparent;
+  font-family: "Alata";
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: c.$black;
+  border: 1px solid c.$black;
+  padding: 8px 32px;
+  cursor: pointer;
+
+  &:hover {
+    color: c.$white;
+    background-color: c.$black;
+  }
+}
+
 .loopstudios {
   max-width: sizes.$content-width;
   margin-inline: auto;
