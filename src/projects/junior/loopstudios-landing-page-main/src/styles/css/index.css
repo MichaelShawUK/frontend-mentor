@@ -149,11 +149,6 @@ nav ul {
 .summary div {
   background-color: hsl(0, 0%, 100%);
 }
-.summary h2 {
-  font-family: "Josefin Sans";
-  color: hsl(0, 0%, 0%);
-  font-weight: 300;
-}
 .summary p {
   color: hsl(0, 0%, 41%);
   line-height: 1.8;
@@ -170,10 +165,6 @@ nav ul {
   bottom: 0;
   width: 550px;
 }
-.desktop .summary h2 {
-  font-size: 46px;
-  margin-bottom: 24px;
-}
 
 .mobile .summary img {
   width: 100%;
@@ -189,10 +180,6 @@ nav ul {
   max-width: 620px;
   margin-inline: auto;
 }
-.mobile .summary h2 {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
 .mobile .summary p {
   padding-inline: 20px;
 }
@@ -205,6 +192,12 @@ nav ul {
 
 body {
   margin: 20px;
+}
+
+h2 {
+  font-family: "Josefin Sans";
+  color: hsl(0, 0%, 0%);
+  font-weight: 300;
 }
 
 .loopstudios {
@@ -224,6 +217,15 @@ body {
 
 .desktop.loopstudios {
   margin-top: clamp(40px, 5.2vw, 60px);
+}
+.desktop.loopstudios h2 {
+  font-size: 46px;
+  margin-bottom: 24px;
+}
+
+.mobile.loopstudios h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
 }
 
 /*# sourceMappingURL=index.css.map */

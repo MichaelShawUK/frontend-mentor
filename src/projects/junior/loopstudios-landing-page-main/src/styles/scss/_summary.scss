@@ -4,8 +4,6 @@ $padding: 100px;
 
 .summary {
   position: relative;
-  // width: 100%;
-  // height: max(calc(928px - 0.3 * 100vw), 500px);
   overflow: hidden;
 
   img {
@@ -14,12 +12,6 @@ $padding: 100px;
 
   div {
     background-color: c.$white;
-  }
-
-  h2 {
-    font-family: "Josefin Sans";
-    color: c.$black;
-    font-weight: 300;
   }
 
   p {
@@ -39,11 +31,6 @@ $padding: 100px;
     bottom: 0;
     width: calc(450px + $padding);
   }
-
-  h2 {
-    font-size: 46px;
-    margin-bottom: 24px;
-  }
 }
 
 .mobile .summary {
@@ -61,11 +48,6 @@ $padding: 100px;
     padding: 0;
     max-width: 620px;
     margin-inline: auto;
-  }
-
-  h2 {
-    font-size: 32px;
-    margin-bottom: 16px;
   }
 
   p {

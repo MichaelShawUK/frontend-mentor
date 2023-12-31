@@ -25,6 +25,12 @@ body {
   margin: 20px;
 }
 
+h2 {
+  font-family: "Josefin Sans";
+  color: c.$black;
+  font-weight: 300;
+}
+
 .loopstudios {
   max-width: sizes.$content-width;
   margin-inline: auto;
@@ -47,4 +53,16 @@ body {
 
 .desktop.loopstudios {
   margin-top: sizes.$header-margin-top;
+
+  h2 {
+    font-size: 46px;
+    margin-bottom: 24px;
+  }
+}
+
+.mobile.loopstudios {
+  h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
 }
