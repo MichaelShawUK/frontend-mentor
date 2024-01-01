@@ -1,9 +1,13 @@
 import "./styles/css/index.css";
+import testimonials from "./data/testimonials";
+import Testimonial from "./components/Testimonial";
 
 function Testimonials() {
   return (
     <div className="testimonials">
-      <p>Testimonials</p>
+      {testimonials.map((testimonial) => (
+        <Testimonial key={testimonial.id} testimonial={testimonial} />
+      ))}
     </div>
   );
 }

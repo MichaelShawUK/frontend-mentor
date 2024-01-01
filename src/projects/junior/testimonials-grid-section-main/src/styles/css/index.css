@@ -12,17 +12,59 @@ body {
   font-size: 13px;
 }
 
-.card.accent {
+.testimonial.accent {
   background-color: hsl(263, 55%, 52%);
 }
-.card.accent .name,
-.card.accent .headline {
+.testimonial.accent .name,
+.testimonial.accent .headline {
   color: hsl(0, 0%, 100%);
 }
-.card.accent .status {
+.testimonial.accent .status {
   color: rgba(255, 255, 255, 0.5);
 }
-.card.accent .review {
+.testimonial.accent .review {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.testimonial.light {
+  background-color: hsl(0, 0%, 100%);
+}
+.testimonial.light .name,
+.testimonial.light .headline {
+  color: hsl(219, 29%, 14%);
+}
+.testimonial.light .status {
+  color: rgba(25, 33, 46, 0.5);
+}
+.testimonial.light .review {
+  color: rgba(25, 33, 46, 0.7);
+}
+
+.testimonial.mid {
+  background-color: hsl(217, 19%, 35%);
+}
+.testimonial.mid .name,
+.testimonial.mid .headline {
+  color: hsl(0, 0%, 100%);
+}
+.testimonial.mid .status {
+  color: rgba(255, 255, 255, 0.5);
+}
+.testimonial.mid .review {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.testimonial.dark {
+  background-color: hsl(219, 29%, 14%);
+}
+.testimonial.dark .name,
+.testimonial.dark .headline {
+  color: hsl(0, 0%, 100%);
+}
+.testimonial.dark .status {
+  color: rgba(255, 255, 255, 0.5);
+}
+.testimonial.dark .review {
   color: rgba(255, 255, 255, 0.7);
 }
 

@@ -21,6 +21,8 @@ body {
   }
 }
 
-.card.accent {
-  @include c.card_colors("accent");
+@each $type in ("accent", "light", "mid", "dark") {
+  .testimonial.#{$type} {
+    @include c.card_colors($type);
+  }
 }
