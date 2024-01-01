@@ -29,10 +29,11 @@
 // import Crowdfunding from "./projects/junior/blogr-landing-page-main/src/App";
 // import Crowdfund from "./projects/junior/crowdfunding-product-page-main/src/App";
 // import InteractivePricing from "./projects/junior/interactive-pricing-component-main/src/App";
-import Loopstudios from "./projects/junior/loopstudios-landing-page-main/src/App";
+// import Loopstudios from "./projects/junior/loopstudios-landing-page-main/src/App";
+import Testimonials from "./projects/junior/testimonials-grid-section-main/src/App";
 
 function App() {
-  return <Loopstudios />;
+  return <Testimonials />;
 }
 
 export default App;

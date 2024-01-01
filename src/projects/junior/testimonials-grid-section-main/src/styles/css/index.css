@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow Semi Condensed:500");
+@import url("https://fonts.googleapis.com/css?family=Barlow Semi Condensed:600");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed";
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.card.light {
+  background-color: hsl(217, 19%, 35%);
+}
+.card.light .name,
+.card.light .headline {
+  color: hsl(0, 0%, 100%);
+}
+.card.light .status {
+  color: rgba(255, 255, 255, 0.5);
+}
+.card.light .review {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*# sourceMappingURL=index.css.map */

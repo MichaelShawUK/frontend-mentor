@@ -1,0 +1,49 @@
+@use "sass:color";
+
+$moderate-violet: hsl(263, 55%, 52%);
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$very-dark-blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+$light-gray: hsl(0, 0%, 81%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+@mixin get_colors($color) {
+  @debug $color;
+  .name,
+  .headline {
+    color: $color;
+  }
+
+  .status {
+    color: color.adjust($color, $alpha: -0.5);
+  }
+
+  .review {
+    color: color.adjust($color, $alpha: -0.3);
+  }
+}
+
+@mixin card_colors($type) {
+  $color: $white;
+
+  @if ($type == "light") {
+    background-color: $white;
+    $color: $very-dark-blackish-blue;
+    @include get_colors($color);
+  }
+
+  @if ($type == "dark") {
+    background-color: $very-dark-blackish-blue;
+    @include get_colors($color);
+  }
+
+  @if ($type == "mid") {
+    background-color: $very-dark-grayish-blue;
+    @include get_colors($color);
+  }
+
+  @if ($type == "accent") {
+    background-color: $moderate-violet;
+    @include get_colors($color);
+  }
+}

@@ -1,0 +1,26 @@
+@use "colors" as c;
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Barlow Semi Condensed", 500);
+@include google-font("Barlow Semi Condensed", 600);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: {
+    family: "Barlow Semi Condensed";
+    weight: 500;
+    size: 13px;
+  }
+}
+
+.card.light {
+  @include c.card_colors("mid");
+}
