@@ -26,7 +26,7 @@ $light-grayish-blue: hsl(210, 46%, 95%);
   $color: $white;
 
   @if ($type == "light") {
-    $color: $very-dark-blackish-blue;
+    $color: $very-dark-grayish-blue;
     background-color: $white;
     @include -get_colors($color);
   }
