@@ -10,7 +10,7 @@ function Summary() {
     device === "mobile" ? interactiveMobile : interactiveDesktop;
 
   return (
-    <div className="summary">
+    <section className="summary">
       <img src={interactive} />
       <div>
         <h2>THE LEADER IN INTERACTIVE VR</h2>
@@ -21,7 +21,7 @@ function Summary() {
           experiences that bind to their brand.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

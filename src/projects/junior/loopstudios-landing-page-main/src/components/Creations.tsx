@@ -9,7 +9,7 @@ function Creations() {
   const device = useContext(DeviceModeContext);
 
   return (
-    <div className="creations">
+    <section className="creations">
       <h2>OUR CREATIONS</h2>
       <button>SEE ALL</button>
       <div className="grid-container">
@@ -25,7 +25,7 @@ function Creations() {
         <Creation title="THE CURIOSITY" image={images[device].curiosity} />
         <Creation title="MAKE IT FISHEYE" image={images[device].fisheye} />
       </div>
-    </div>
+    </section>
   );
 }
 
