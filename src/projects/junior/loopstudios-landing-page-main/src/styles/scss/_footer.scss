@@ -12,9 +12,67 @@ footer {
     max-width: sizes.$content-width;
     margin-inline: auto;
     display: grid;
+    align-items: center;
   }
 
   .logo {
     width: 140px;
+    grid-area: logo;
+  }
+
+  nav {
+    grid-area: nav;
+  }
+
+  .socials {
+    grid-area: socials;
+  }
+
+  .copyright {
+    grid-area: copyright;
+  }
+}
+
+.desktop footer {
+  margin-top: sizes.$body-margin + 160px;
+
+  .grid-container {
+    grid-template-areas:
+      "logo socials"
+      "nav copyright";
+
+    row-gap: 20px;
+    padding-block: 20px;
+  }
+
+  .socials,
+  .copyright {
+    justify-self: flex-end;
+  }
+}
+
+.mobile footer {
+  margin-top: sizes.$body-margin + 100px;
+  padding-block: 30px;
+
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      margin-bottom: 30px;
+    }
+
+    nav {
+      margin-bottom: 40px;
+    }
+
+    .socials {
+      margin-bottom: 16px;
+    }
+
+    .copyright {
+      text-align: center;
+    }
   }
 }

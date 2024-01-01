@@ -28,7 +28,7 @@ nav {
   }
 }
 
-.mobile nav {
+.mobile header nav {
   text-transform: uppercase;
   font-family: "Josefin Sans";
   font-weight: 300;
@@ -37,5 +37,13 @@ nav {
   ul {
     flex-direction: column;
     gap: 20px;
+  }
+}
+
+.mobile footer nav {
+  ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
   }
 }

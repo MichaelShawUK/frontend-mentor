@@ -40,15 +40,21 @@ nav ul {
   bottom: -10px;
 }
 
-.mobile nav {
+.mobile header nav {
   text-transform: uppercase;
   font-family: "Josefin Sans";
   font-weight: 300;
   font-size: 26px;
 }
-.mobile nav ul {
+.mobile header nav ul {
   flex-direction: column;
   gap: 20px;
+}
+
+.mobile footer nav ul {
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
 }
 
 .mobile-menu {
@@ -307,9 +313,54 @@ footer .grid-container {
   max-width: 1100px;
   margin-inline: auto;
   display: grid;
+  align-items: center;
 }
 footer .logo {
   width: 140px;
+  grid-area: logo;
+}
+footer nav {
+  grid-area: nav;
+}
+footer .socials {
+  grid-area: socials;
+}
+footer .copyright {
+  grid-area: copyright;
+}
+
+.desktop footer {
+  margin-top: 180px;
+}
+.desktop footer .grid-container {
+  grid-template-areas: "logo socials" "nav copyright";
+  row-gap: 20px;
+  padding-block: 20px;
+}
+.desktop footer .socials,
+.desktop footer .copyright {
+  justify-self: flex-end;
+}
+
+.mobile footer {
+  margin-top: 120px;
+  padding-block: 30px;
+}
+.mobile footer .grid-container {
+  display: flex;
+  flex-direction: column;
+}
+.mobile footer .grid-container .logo {
+  margin-bottom: 30px;
+}
+.mobile footer .grid-container nav {
+  margin-bottom: 40px;
+}
+.mobile footer .grid-container .socials {
+  margin-bottom: 16px;
+}
+.mobile footer .grid-container .copyright {
+  text-align: center;
 }
 
 .socials {
