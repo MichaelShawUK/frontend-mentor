@@ -5,6 +5,7 @@ import useDeviceMode from "./hooks/useDeviceMode";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 function Loopstudios() {
   const device = useDeviceMode(768);
@@ -15,6 +16,7 @@ function Loopstudios() {
         <Header />
         <Hero />
         <Main />
+        <Footer />
       </div>
     </DeviceModeContext.Provider>
   );

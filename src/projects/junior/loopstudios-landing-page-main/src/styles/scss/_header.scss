@@ -4,6 +4,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: sizes.$content-width;
+  margin-inline: auto;
 }
 
 .hamburger {

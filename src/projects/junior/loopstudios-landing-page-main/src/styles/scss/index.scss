@@ -9,6 +9,8 @@
 @use "summary";
 @use "creations";
 @use "creation";
+@use "footer";
+@use "socials";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -24,7 +26,7 @@
 }
 
 body {
-  margin: 20px;
+  margin: sizes.$body-margin;
 }
 
 h2 {
@@ -50,7 +52,6 @@ button {
 }
 
 .loopstudios {
-  max-width: sizes.$content-width;
   margin-inline: auto;
 
   font: {

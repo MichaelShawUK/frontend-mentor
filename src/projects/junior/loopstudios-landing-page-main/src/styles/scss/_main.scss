@@ -1,3 +1,10 @@
+@use "sizes" as sizes;
+
+main {
+  max-width: sizes.$content-width;
+  margin-inline: auto;
+}
+
 .desktop main {
   margin-top: clamp(60px, 8.3vw, 120px);
 }

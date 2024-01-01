@@ -1,0 +1,22 @@
+@use "colors" as c;
+
+.socials {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+
+  .icon {
+    position: relative;
+
+    &:hover {
+      &::after {
+        content: "";
+        width: 26px;
+        position: absolute;
+        border-bottom: 2px solid c.$white;
+        bottom: -4px;
+        left: 0;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 @use "colors" as c;
+@use "sizes" as sizes;
 
 .hero {
   display: flex;
@@ -6,6 +7,8 @@
   font-family: "Josefin Sans";
   display: flex;
   align-items: center;
+  max-width: sizes.$content-width;
+  margin-inline: auto;
 
   img {
     position: absolute;

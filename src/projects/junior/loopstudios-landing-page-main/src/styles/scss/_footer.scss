@@ -1,0 +1,20 @@
+@use "colors" as c;
+@use "sizes" as sizes;
+
+footer {
+  background-color: c.$black;
+  max-width: 1920px;
+  margin-inline: auto;
+  outline: sizes.$body-margin solid c.$black;
+  margin-top: sizes.$body-margin;
+
+  .grid-container {
+    max-width: sizes.$content-width;
+    margin-inline: auto;
+    display: grid;
+  }
+
+  .logo {
+    width: 140px;
+  }
+}
