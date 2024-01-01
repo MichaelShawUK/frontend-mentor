@@ -7,8 +7,7 @@ $white: hsl(0, 0%, 100%);
 $light-gray: hsl(0, 0%, 81%);
 $light-grayish-blue: hsl(210, 46%, 95%);
 
-@mixin get_colors($color) {
-  @debug $color;
+@mixin -get_colors($color) {
   .name,
   .headline {
     color: $color;
@@ -27,23 +26,23 @@ $light-grayish-blue: hsl(210, 46%, 95%);
   $color: $white;
 
   @if ($type == "light") {
-    background-color: $white;
     $color: $very-dark-blackish-blue;
-    @include get_colors($color);
+    background-color: $white;
+    @include -get_colors($color);
   }
 
   @if ($type == "dark") {
     background-color: $very-dark-blackish-blue;
-    @include get_colors($color);
+    @include -get_colors($color);
   }
 
   @if ($type == "mid") {
     background-color: $very-dark-grayish-blue;
-    @include get_colors($color);
+    @include -get_colors($color);
   }
 
   @if ($type == "accent") {
     background-color: $moderate-violet;
-    @include get_colors($color);
+    @include -get_colors($color);
   }
 }

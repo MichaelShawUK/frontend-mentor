@@ -21,6 +21,6 @@ body {
   }
 }
 
-.card.light {
-  @include c.card_colors("mid");
+.card.accent {
+  @include c.card_colors("accent");
 }

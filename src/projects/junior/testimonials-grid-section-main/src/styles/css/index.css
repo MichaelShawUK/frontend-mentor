@@ -12,17 +12,17 @@ body {
   font-size: 13px;
 }
 
-.card.light {
-  background-color: hsl(217, 19%, 35%);
+.card.accent {
+  background-color: hsl(263, 55%, 52%);
 }
-.card.light .name,
-.card.light .headline {
+.card.accent .name,
+.card.accent .headline {
   color: hsl(0, 0%, 100%);
 }
-.card.light .status {
+.card.accent .status {
   color: rgba(255, 255, 255, 0.5);
 }
-.card.light .review {
+.card.accent .review {
   color: rgba(255, 255, 255, 0.7);
 }
 
