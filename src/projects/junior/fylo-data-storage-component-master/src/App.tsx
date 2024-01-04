@@ -25,6 +25,16 @@ function Fylo() {
         <p>
           You've used <span className="bold">815 GB</span> of your storage
         </p>
+        <div className="indicator-bar">
+          <div className="capacity"></div>
+        </div>
+        <div className="limits">
+          <p>0 GB</p>
+          <p>1000 GB</p>
+        </div>
+        <div className="remaining">
+          <span className="bold">185</span> GB LEFT
+        </div>
       </div>
     </div>
   );

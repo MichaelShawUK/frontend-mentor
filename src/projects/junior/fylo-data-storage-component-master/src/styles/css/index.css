@@ -6,8 +6,6 @@
   padding-right: 140px;
   border-radius: 8px;
   border-top-right-radius: 90px;
-  position: absolute;
-  bottom: 320px;
 }
 .explorer .icons {
   display: flex;
@@ -25,6 +23,76 @@
   align-items: center;
 }
 
+.storage {
+  background-color: hsl(228, 56%, 26%);
+  padding: 40px;
+  border-radius: 8px;
+  width: 600px;
+  height: min-content;
+  margin-top: 35px;
+  position: relative;
+}
+.storage .indicator-bar {
+  background-color: hsl(229, 57%, 11%);
+  height: 24px;
+  padding: 4px;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+.storage .capacity {
+  height: 100%;
+  background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  width: 81%;
+  border-radius: 12px;
+  position: relative;
+}
+.storage .capacity::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  display: block;
+  height: 12px;
+  width: 12px;
+  background-color: hsl(243, 100%, 93%);
+  border-radius: 50%;
+  top: 2px;
+}
+.storage .limits {
+  display: flex;
+  justify-content: space-between;
+}
+.storage .remaining {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  padding: 10px 20px;
+  position: absolute;
+  top: -40px;
+  right: 40px;
+  border-radius: 8px;
+  color: hsl(229, 57%, 11%);
+}
+.storage .remaining::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  border-right: 30px #fff solid;
+  border-bottom: 30px solid transparent;
+}
+.storage .remaining .bold {
+  font-size: 36px;
+}
+
+.bold,
+.limits {
+  font-weight: 700;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,11 +103,15 @@
   font-size: 14px;
   font-family: "Raleway";
   font-weight: 400;
+  color: hsl(243, 100%, 93%);
   position: relative;
   height: 100vh;
   background: url("src/projects/junior/fylo-data-storage-component-master/src/assets/images/bg-desktop.png") no-repeat center bottom hsl(229, 57%, 11%);
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
 }
 
 @media (width <= 1440px) {

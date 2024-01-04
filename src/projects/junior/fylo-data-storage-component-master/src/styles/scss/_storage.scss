@@ -1,0 +1,79 @@
+@use "colors" as c;
+@use "sizes";
+
+.storage {
+  background-color: c.$dark-blue;
+  padding: 40px;
+  border-radius: sizes.$component-radius;
+  width: 600px;
+  height: min-content;
+  margin-top: 35px;
+  position: relative;
+
+  .indicator-bar {
+    background-color: c.$very-dark-blue;
+    height: 24px;
+    padding: 4px;
+    border-radius: sizes.$indicator-radius;
+    margin-top: 16px;
+    margin-bottom: 10px;
+  }
+
+  .capacity {
+    height: 100%;
+    background: c.$gradient;
+    width: 81%;
+    border-radius: sizes.$indicator-radius;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 4px;
+      display: block;
+      height: 12px;
+      width: 12px;
+      background-color: c.$pale-blue;
+      border-radius: 50%;
+      top: 2px;
+    }
+  }
+
+  .limits {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .remaining {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    padding: 10px 20px;
+    position: absolute;
+    top: -40px;
+    right: 40px;
+    border-radius: sizes.$component-radius;
+    color: c.$very-dark-blue;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      border-right: 30px #fff solid;
+      border-bottom: 30px solid transparent;
+    }
+
+    .bold {
+      font-size: 36px;
+    }
+  }
+}
+
+.bold,
+.limits {
+  font-weight: 700;
+}

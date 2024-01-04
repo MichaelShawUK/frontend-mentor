@@ -1,5 +1,6 @@
 @use "colors" as c;
 @use "explorer";
+@use "storage";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -21,6 +22,7 @@
     weight: 400;
   }
 
+  color: c.$pale-blue;
   position: relative;
 
   height: 100vh;
@@ -28,7 +30,9 @@
     no-repeat center bottom c.$very-dark-blue;
   display: flex;
   justify-content: center;
-  // align-items: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
 }
 
 @media (width <= 1440px) {
