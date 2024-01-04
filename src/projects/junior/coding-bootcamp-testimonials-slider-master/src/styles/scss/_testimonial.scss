@@ -1,0 +1,108 @@
+@use "colors" as c;
+@use "sizes";
+
+.testimonial {
+  padding: 24px;
+
+  .image-container {
+    background: url("src/projects/junior/coding-bootcamp-testimonials-slider-master/src/assets/images/pattern-bg.svg")
+      no-repeat center center/contain;
+    padding: 34px;
+    position: relative;
+  }
+
+  .buttons {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: fit-content;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+
+    button {
+      border: none;
+      padding: 14px sizes.$button-padding;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #eee;
+      }
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: default;
+      }
+    }
+
+    .prev {
+      background-color: #fff;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    .next {
+      background-color: #fff;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    img {
+      display: block;
+      width: 8px;
+      height: 12px;
+    }
+  }
+
+  .avatar {
+    width: 100%;
+    display: block;
+    border-radius: sizes.$image-radius;
+    box-shadow: 0 40px 40px -40px #335a;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .text-container {
+    background: url("src/projects/junior/coding-bootcamp-testimonials-slider-master/src/assets/images/pattern-quotes.svg")
+      no-repeat top center/18%;
+    padding-top: 24px;
+    margin-top: 24px;
+    padding-inline: 8px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .comment {
+    line-height: 24px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease-in 0.2s both;
+  }
+
+  .name {
+    font-weight: 700;
+  }
+
+  .position {
+    color: c.$grayish-blue;
+    font-weight: 500;
+  }
+
+  .name,
+  .position {
+    font-size: 15px;
+    animation: fadeIn 0.3s ease-in 0.4s both;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

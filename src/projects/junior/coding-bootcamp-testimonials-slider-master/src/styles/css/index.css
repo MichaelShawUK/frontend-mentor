@@ -1,3 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:300");
+@import url("https://fonts.googleapis.com/css?family=Inter:500");
+@import url("https://fonts.googleapis.com/css?family=Inter:700");
+.testimonial {
+  padding: 24px;
+}
+.testimonial .image-container {
+  background: url("src/projects/junior/coding-bootcamp-testimonials-slider-master/src/assets/images/pattern-bg.svg") no-repeat center center/contain;
+  padding: 34px;
+  position: relative;
+}
+.testimonial .buttons {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+.testimonial .buttons button {
+  border: none;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+.testimonial .buttons button:hover {
+  background-color: #eee;
+}
+.testimonial .buttons button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.testimonial .buttons .prev {
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.testimonial .buttons .next {
+  background-color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.testimonial .buttons img {
+  display: block;
+  width: 8px;
+  height: 12px;
+}
+.testimonial .avatar {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 40px 40px -40px rgba(51, 51, 85, 0.6666666667);
+  animation: fadeIn 0.3s ease-in-out;
+}
+.testimonial .text-container {
+  background: url("src/projects/junior/coding-bootcamp-testimonials-slider-master/src/assets/images/pattern-quotes.svg") no-repeat top center/18%;
+  padding-top: 24px;
+  margin-top: 24px;
+  padding-inline: 8px;
+  font-size: 18px;
+  text-align: center;
+}
+.testimonial .comment {
+  line-height: 24px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.3s ease-in 0.2s both;
+}
+.testimonial .name {
+  font-weight: 700;
+}
+.testimonial .position {
+  color: hsl(240, 18%, 77%);
+  font-weight: 500;
+}
+.testimonial .name,
+.testimonial .position {
+  font-size: 15px;
+  animation: fadeIn 0.3s ease-in 0.4s both;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.testimonial-slider {
+  font-family: "Inter";
+  font-size: 32px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  max-width: 1440px;
+  margin-inline: auto;
+  height: 100vh;
+  color: hsl(240, 38%, 20%);
+  background: url("src/projects/junior/coding-bootcamp-testimonials-slider-master/src/assets/images/pattern-curve.svg") no-repeat bottom left/70%;
+}
 
 /*# sourceMappingURL=index.css.map */

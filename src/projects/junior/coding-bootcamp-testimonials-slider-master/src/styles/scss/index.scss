@@ -1,0 +1,38 @@
+@use "colors" as c;
+@use "sass:math";
+@use "testimonial";
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Inter", 300);
+@include google-font("Inter", 500);
+@include google-font("Inter", 700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.testimonial-slider {
+  font: {
+    family: "Inter";
+    size: 32px;
+    weight: 300;
+  }
+  // height: clamp(1px, #{math.div(80000, 1440)}vw, 800px);
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  max-width: 1440px;
+  margin-inline: auto;
+  // outline: 5px solid #0001;
+  // margin-block: 40px;
+  height: 100vh;
+
+  color: c.$dark-blue;
+  background: url("src/projects/junior/coding-bootcamp-testimonials-slider-master/src/assets/images/pattern-curve.svg")
+    no-repeat bottom left/70%;
+}
