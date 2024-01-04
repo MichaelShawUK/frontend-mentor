@@ -31,10 +31,11 @@
 // import InteractivePricing from "./projects/junior/interactive-pricing-component-main/src/App";
 // import Loopstudios from "./projects/junior/loopstudios-landing-page-main/src/App";
 // import Testimonials from "./projects/junior/testimonials-grid-section-main/src/App";
-import Fylo from "./projects/junior/fylo-data-storage-component-master/src/App";
+// import Fylo from "./projects/junior/fylo-data-storage-component-master/src/App";
+import TestimonialSlider from "./projects/junior/coding-bootcamp-testimonials-slider-master/src/App";
 
 function App() {
-  return <Fylo />;
+  return <TestimonialSlider />;
 }
 
 export default App;
