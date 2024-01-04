@@ -62,7 +62,8 @@
   display: flex;
   justify-content: space-between;
 }
-.storage .remaining {
+
+.remaining {
   background-color: #fff;
   color: #000;
   display: flex;
@@ -76,7 +77,7 @@
   border-radius: 8px;
   color: hsl(229, 57%, 11%);
 }
-.storage .remaining::after {
+.remaining::after {
   content: "";
   position: absolute;
   bottom: -20px;
@@ -84,7 +85,7 @@
   border-right: 30px #fff solid;
   border-bottom: 30px solid transparent;
 }
-.storage .remaining .bold {
+.remaining .bold {
   font-size: 36px;
 }
 
@@ -117,6 +118,33 @@
 @media (width <= 1440px) {
   .fylo {
     background-position: left bottom;
+  }
+}
+@media (width <= 768px) {
+  .fylo {
+    background: url("src/projects/junior/fylo-data-storage-component-master/src/assets/images/bg-mobile.png") hsl(229, 57%, 11%) no-repeat fixed top left/cover;
+    display: block;
+    padding-top: 100px;
+  }
+  .fylo .storage {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .explorer {
+    padding-right: 0;
+  }
+  .remaining {
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    top: auto;
+    bottom: -30px;
+  }
+  .remaining::after {
+    display: none;
   }
 }
 

@@ -40,3 +40,36 @@
     background-position: left bottom;
   }
 }
+
+@media (width <= 768px) {
+  .fylo {
+    background: url("src/projects/junior/fylo-data-storage-component-master/src/assets/images/bg-mobile.png")
+      c.$very-dark-blue no-repeat fixed top left/cover;
+
+    display: block;
+    padding-top: 100px;
+
+    .storage {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .explorer {
+    padding-right: 0;
+  }
+
+  .remaining {
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    top: auto;
+    bottom: -30px;
+    &::after {
+      display: none;
+    }
+  }
+}
