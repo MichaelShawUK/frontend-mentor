@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+@import url("https://fonts.googleapis.com/css?family=Raleway, 700:400");
+.explorer {
+  background-color: hsl(228, 56%, 26%);
+  padding: 40px;
+  padding-right: 140px;
+  border-radius: 8px;
+  border-top-right-radius: 90px;
+  position: absolute;
+  bottom: 320px;
+}
+.explorer .icons {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+.explorer .icon {
+  cursor: pointer;
+  background-color: hsl(229, 57%, 11%);
+  height: 44px;
+  width: 44px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fylo {
+  font-size: 14px;
+  font-family: "Raleway";
+  font-weight: 400;
+  position: relative;
+  height: 100vh;
+  background: url("src/projects/junior/fylo-data-storage-component-master/src/assets/images/bg-desktop.png") no-repeat center bottom hsl(229, 57%, 11%);
+  display: flex;
+  justify-content: center;
+}
+
+@media (width <= 1440px) {
+  .fylo {
+    background-position: left bottom;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,38 @@
+@use "colors" as c;
+@use "explorer";
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Raleway");
+@include google-font("Raleway, 700");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fylo {
+  font: {
+    size: 14px;
+    family: "Raleway";
+    weight: 400;
+  }
+
+  position: relative;
+
+  height: 100vh;
+  background: url("src/projects/junior/fylo-data-storage-component-master/src/assets/images/bg-desktop.png")
+    no-repeat center bottom c.$very-dark-blue;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+@media (width <= 1440px) {
+  .fylo {
+    background-position: left bottom;
+  }
+}
