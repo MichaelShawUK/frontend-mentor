@@ -4,19 +4,21 @@
   display: grid;
   grid-template-areas: "avatar name" "avatar status" "headline headline" "review review";
   grid-template-columns: 30px 1fr;
-  padding: 30px;
+  column-gap: 16px;
+  grid-template-rows: 16px 16px auto auto;
+  padding: 34px;
   border-radius: 6px;
   box-shadow: 4px 4px 10px hsl(0, 0%, 81%);
-  padding: 30px;
+  padding: 34px;
   border-radius: 6px;
   box-shadow: 4px 4px 10px hsl(0, 0%, 81%);
-  padding: 30px;
+  padding: 34px;
   border-radius: 6px;
   box-shadow: 4px 4px 10px hsl(0, 0%, 81%);
-  padding: 30px;
+  padding: 34px;
   border-radius: 6px;
   box-shadow: 4px 4px 10px hsl(0, 0%, 81%);
-  padding: 30px;
+  padding: 34px;
   border-radius: 6px;
   box-shadow: 4px 4px 10px hsl(0, 0%, 81%);
 }
@@ -38,6 +40,11 @@
 .testimonial.accent .avatar, .testimonial.dark .avatar {
   outline: 2px solid #9e7ad8;
 }
+.testimonial.accent {
+  background-image: url("src/projects/junior/testimonials-grid-section-main/src/assets/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position-x: 80%;
+}
 .testimonial .name {
   font-weight: 500;
 }
@@ -48,7 +55,7 @@
 .testimonial .headline {
   font-size: 19px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-block: 20px;
 }
 .testimonial .review {
   line-height: 20px;

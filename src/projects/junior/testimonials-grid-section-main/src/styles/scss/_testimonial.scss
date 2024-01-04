@@ -18,6 +18,8 @@
     "review review";
 
   grid-template-columns: 30px 1fr;
+  column-gap: 16px;
+  grid-template-rows: 16px 16px auto auto;
 
   @each $area in ("avatar", "name", "status", "headline", "review") {
     @include apply_grid_area($area);
@@ -35,6 +37,12 @@
     }
   }
 
+  &.accent {
+    background-image: url("src/projects/junior/testimonials-grid-section-main/src/assets/images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+  }
+
   .name {
     font-weight: 500;
   }
@@ -47,7 +55,7 @@
   .headline {
     font-size: 19px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-block: 20px;
   }
 
   .review {
