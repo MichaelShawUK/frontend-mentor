@@ -22,17 +22,20 @@
     size: 32px;
     weight: 300;
   }
-  // height: clamp(1px, #{math.div(80000, 1440)}vw, 800px);
   display: flex;
   justify-content: center;
-  // align-items: center;
   max-width: 1440px;
   margin-inline: auto;
-  // outline: 5px solid #0001;
-  // margin-block: 40px;
   height: 100vh;
 
   color: c.$dark-blue;
   background: url("src/projects/junior/coding-bootcamp-testimonials-slider-master/src/assets/images/pattern-curve.svg")
     no-repeat bottom left/70%;
+}
+
+@media (width >= 768px) {
+  .testimonial-slider {
+    background-size: 45%;
+    max-height: 800px;
+  }
 }

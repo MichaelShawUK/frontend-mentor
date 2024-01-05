@@ -63,6 +63,8 @@
     border-radius: sizes.$image-radius;
     box-shadow: 0 40px 40px -40px #335a;
     animation: fadeIn 0.3s ease-in-out;
+    max-width: 450px;
+    margin-inline: auto;
   }
 
   .text-container {
@@ -77,6 +79,8 @@
 
   .comment {
     line-height: 24px;
+    font-size: clamp(18px, 4.8vw, 22px);
+    line-height: clamp(24px, 6.4vw, 34px);
     margin-bottom: 20px;
     animation: fadeIn 0.3s ease-in 0.2s both;
   }
@@ -104,5 +108,64 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@media (width >= 768px) {
+  .testimonial {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 40px;
+
+    .image-container {
+      grid-area: 1 / 2 / 2 / 3;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-size: contain;
+
+      .avatar {
+        width: 80%;
+        max-width: none;
+      }
+    }
+
+    .text-container {
+      grid-column: 1 / 1 / 2 / 2;
+      margin-right: -140px;
+      z-index: 2;
+      text-align: left;
+      padding-left: clamp(60px, 9.7vw, 140px);
+      margin-right: calc(9.7vw * -1);
+      background-position: top left 35%;
+      background-size: 14%;
+      padding-top: 65px;
+    }
+
+    .comment {
+      margin-bottom: 30px;
+
+      font-size: clamp(22px, 2.4vw, 34px);
+      line-height: clamp(32px, 3.2vw, 46px);
+    }
+
+    .name,
+    .position {
+      font-size: 22px;
+      font-size: 2vw;
+      font-size: clamp(16px, 2vw, 22px);
+      display: inline;
+      padding-right: 10px;
+    }
+
+    .buttons {
+      bottom: 70px;
+      left: 150px;
+      margin-inline: 0;
+    }
   }
 }
