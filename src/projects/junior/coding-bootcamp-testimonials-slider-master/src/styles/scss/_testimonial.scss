@@ -163,9 +163,9 @@
     }
 
     .buttons {
-      bottom: 70px;
-      left: 150px;
       margin-inline: 0;
+      left: clamp(60px, 8vw, 140px);
+      bottom: clamp(70px, calc(356px - 20vw), 200px);
     }
   }
 }
