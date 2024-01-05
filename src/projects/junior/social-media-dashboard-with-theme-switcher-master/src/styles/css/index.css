@@ -1,3 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:400");
+@import url("https://fonts.googleapis.com/css?family=Inter:700");
+header {
+  font-weight: 700;
+}
+header hr {
+  display: none;
+}
 
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.toggle label {
+  pointer-events: none;
+}
+.toggle input {
+  display: none;
+}
+.toggle .switch {
+  height: 20px;
+  width: 40px;
+  background: #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.toggle .switch::before {
+  content: "";
+  display: block;
+  height: 14px;
+  width: 14px;
+  background: hsl(232, 19%, 15%);
+  margin-top: 3px;
+  margin-left: 3px;
+  border-radius: 50%;
+  transform: translateX(20px);
+  transition: transform 0.3s ease-in-out;
+}
+.toggle input:checked + .switch {
+  background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+.toggle input:checked + .switch::before {
+  transform: translateX(0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.social-media-dashboard {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+}
 
 /*# sourceMappingURL=index.css.map */

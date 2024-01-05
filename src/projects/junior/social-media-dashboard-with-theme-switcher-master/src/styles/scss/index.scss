@@ -1,0 +1,22 @@
+@use "header";
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Inter");
+@include google-font("Inter", 700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.social-media-dashboard {
+  font: {
+    family: "Inter";
+    size: 14px;
+    weight: 400;
+  }
+}

@@ -1,0 +1,60 @@
+@use "colors" as c;
+
+$theme-colors: map-get(
+  $map: c.$theme,
+  $key: "dark",
+);
+@debug $theme-colors;
+@debug map-get($theme-colors, "toggle");
+
+header {
+  font-weight: 700;
+
+  hr {
+    display: none;
+  }
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  label {
+    pointer-events: none;
+  }
+
+  input {
+    display: none;
+  }
+
+  .switch {
+    height: 20px;
+    width: 40px;
+    background: #ccc;
+
+    border-radius: 10px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 14px;
+      width: 14px;
+      background: map-get($theme-colors, "header-background");
+      margin-top: 3px;
+      margin-left: 3px;
+      border-radius: 50%;
+      transform: translateX(20px);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  input:checked + .switch {
+    background: map-get($theme-colors, "toggle");
+
+    &::before {
+      transform: translateX(0);
+    }
+  }
+}
