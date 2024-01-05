@@ -1,4 +1,5 @@
 @use "colors" as c;
+@use "sass:color";
 
 $theme-colors: map-get(
   $map: c.$theme,
@@ -9,9 +10,34 @@ $theme-colors: map-get(
 
 header {
   font-weight: 700;
+  padding-bottom: 100px;
+  padding-top: 30px;
+  padding-inline: 20px;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
 
   hr {
-    display: none;
+    // display: none;
+    border: none;
+    margin-block: 16px;
+  }
+}
+
+.dark header {
+  $colors: map-get(c.$theme, "dark");
+  background: map-get($colors, "header-background");
+
+  label,
+  p {
+    color: map-get($colors, "secondary-text");
+  }
+
+  hr {
+    border-bottom: 1px solid
+      color.adjust(map-get($colors, "secondary-text"), $alpha: -0.7);
   }
 }
 
@@ -19,6 +45,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: space-between;
 
   label {
     pointer-events: none;

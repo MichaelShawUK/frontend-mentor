@@ -1,4 +1,8 @@
+@use "colors" as c;
+@use "sizes";
 @use "header";
+@use "accounts";
+@use "account";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -19,4 +23,13 @@
     size: 14px;
     weight: 400;
   }
+
+  // padding: sizes.$app-padding;
+}
+
+.dark.social-media-dashboard {
+  $colors: map-get(c.$theme, "dark");
+
+  color: map-get($colors, "primary-text");
+  background-color: map-get($colors, "background");
 }

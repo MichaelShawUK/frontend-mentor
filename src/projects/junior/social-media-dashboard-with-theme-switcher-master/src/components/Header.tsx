@@ -1,15 +1,9 @@
-import { useRef } from "react";
+interface Props {
+  onToggle: () => void;
+  isDarkMode: boolean;
+}
 
-function Header({ onToggle }: { onToggle: () => void }) {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  function setCheckbox() {
-    if (inputRef.current) {
-      inputRef.current.checked = !inputRef.current.checked;
-      onToggle();
-    }
-  }
-
+function Header({ onToggle, isDarkMode }: Props) {
   return (
     <header>
       <h1>Social Media Dashboard</h1>
@@ -17,8 +11,8 @@ function Header({ onToggle }: { onToggle: () => void }) {
       <hr />
       <div className="toggle">
         <label htmlFor="theme">Dark Mode</label>
-        <input type="checkbox" id="theme" onChange={onToggle} ref={inputRef} />
-        <div className="switch" onClick={setCheckbox}></div>
+        <input type="checkbox" id="theme" checked={isDarkMode} />
+        <div className="switch" onClick={onToggle}></div>
       </div>
     </header>
   );

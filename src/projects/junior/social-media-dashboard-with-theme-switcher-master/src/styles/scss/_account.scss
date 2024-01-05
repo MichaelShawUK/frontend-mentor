@@ -1,0 +1,90 @@
+@use "colors" as c;
+
+@mixin apply-border($platform) {
+  .account.#{$platform} {
+    .flex-wrapper {
+      border-top: 4px solid map-get(c.$platform, $platform);
+    }
+  }
+}
+
+@each $platform in ("facebook", "twitter", "youtube") {
+  @include apply-border($platform);
+}
+
+.account.instagram {
+  .flex-wrapper {
+    border-image-source: map-get(c.$platform, "instagram");
+    border-width: 0;
+
+    border-top-width: 4px;
+    border-style: solid;
+    border-image-slice: 4;
+  }
+}
+
+.account {
+  overflow: hidden;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 700;
+
+  .flex-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 30px;
+    height: 54px;
+  }
+
+  .followers {
+    font-weight: 400;
+    letter-spacing: 5px;
+    margin-block: 20px;
+  }
+
+  span {
+    display: block;
+    font-weight: 700;
+    letter-spacing: normal;
+    font-size: 58px;
+  }
+
+  .increase {
+    color: c.$increase;
+
+    &::before {
+      content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-up.svg");
+    }
+  }
+
+  .decrease {
+    color: c.$decrease;
+
+    &::before {
+      content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-down.svg");
+    }
+  }
+
+  .change {
+    margin-bottom: 30px;
+
+    &::before {
+      vertical-align: 4px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.dark .account {
+  $colors: map-get(c.$theme, "dark");
+
+  background-color: map-get($colors, "card-background");
+
+  color: map-get($colors, "secondary-text");
+
+  span {
+    color: map-get($colors, "primary-text");
+  }
+}

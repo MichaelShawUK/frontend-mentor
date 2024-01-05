@@ -1,0 +1,8 @@
+@use "sizes";
+
+.accounts {
+  margin-top: -50px;
+  margin-inline: sizes.$inline-margin;
+  display: grid;
+  gap: 30px;
+}
