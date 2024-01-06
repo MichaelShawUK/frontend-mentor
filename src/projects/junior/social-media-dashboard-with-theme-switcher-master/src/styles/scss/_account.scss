@@ -1,4 +1,5 @@
 @use "colors" as c;
+@use "sizes";
 
 @mixin apply-border($platform) {
   .account.#{$platform} {
@@ -25,7 +26,7 @@
 
 .account {
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: sizes.$border-radius;
   text-align: center;
   font-weight: 700;
 
@@ -51,29 +52,8 @@
     font-size: 58px;
   }
 
-  .increase {
-    color: c.$increase;
-
-    &::before {
-      content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-up.svg");
-    }
-  }
-
-  .decrease {
-    color: c.$decrease;
-
-    &::before {
-      content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-down.svg");
-    }
-  }
-
   .change {
     margin-bottom: 30px;
-
-    &::before {
-      vertical-align: 4px;
-      margin-right: 5px;
-    }
   }
 }
 

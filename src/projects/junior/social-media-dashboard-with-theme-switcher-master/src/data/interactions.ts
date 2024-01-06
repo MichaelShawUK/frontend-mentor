@@ -3,6 +3,14 @@ import twitter from "../assets/images/icon-twitter.svg";
 import instagram from "../assets/images/icon-instagram.svg";
 import youtube from "../assets/images/icon-youtube.svg";
 
+export interface InteractionType {
+  id: number;
+  platform: string;
+  metric: string;
+  quantity: number;
+  percentChange: number;
+}
+
 const interactions = [
   {
     id: 1,

@@ -3,6 +3,8 @@
 @use "header";
 @use "accounts";
 @use "account";
+@use "overview";
+@use "stat";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -23,8 +25,6 @@
     size: 14px;
     weight: 400;
   }
-
-  // padding: sizes.$app-padding;
 }
 
 .dark.social-media-dashboard {
@@ -32,4 +32,27 @@
 
   color: map-get($colors, "primary-text");
   background-color: map-get($colors, "background");
+}
+
+.increase {
+  color: c.$increase;
+
+  &::before {
+    content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-up.svg");
+  }
+}
+
+.decrease {
+  color: c.$decrease;
+
+  &::before {
+    content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-down.svg");
+  }
+}
+
+.change {
+  &::before {
+    vertical-align: 4px;
+    margin-right: 4px;
+  }
 }

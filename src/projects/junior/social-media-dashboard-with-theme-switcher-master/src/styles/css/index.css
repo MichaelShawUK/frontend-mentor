@@ -116,24 +116,8 @@ header hr {
   letter-spacing: normal;
   font-size: 58px;
 }
-.account .increase {
-  color: hsl(163, 72%, 41%);
-}
-.account .increase::before {
-  content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-up.svg");
-}
-.account .decrease {
-  color: hsl(356, 69%, 56%);
-}
-.account .decrease::before {
-  content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-down.svg");
-}
 .account .change {
   margin-bottom: 30px;
-}
-.account .change::before {
-  vertical-align: 4px;
-  margin-right: 5px;
 }
 
 .dark .account {
@@ -142,6 +126,62 @@ header hr {
 }
 .dark .account span {
   color: hsl(0, 0%, 100%);
+}
+
+.overview {
+  margin-inline: 20px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+.overview h1 {
+  margin-bottom: 30px;
+}
+.overview .stats {
+  display: grid;
+  gap: 20px;
+}
+
+.metric {
+  grid-area: metric;
+}
+
+.icon {
+  grid-area: icon;
+}
+
+.quantity {
+  grid-area: quantity;
+}
+
+.change {
+  grid-area: change;
+}
+
+.stat {
+  border-radius: 6px;
+  padding: 30px;
+  display: grid;
+  grid-template-areas: "metric icon" "quantity change";
+  justify-content: space-between;
+  grid-template-rows: 20px 1fr;
+  font-weight: 700;
+  row-gap: 24px;
+}
+.stat .icon {
+  justify-self: flex-end;
+}
+.stat .quantity {
+  font-size: 30px;
+}
+.stat .change {
+  align-self: flex-end;
+}
+
+.dark .stat {
+  background-color: hsl(228, 28%, 20%);
+}
+.dark .stat .metric {
+  color: hsl(228, 34%, 66%);
 }
 
 * {
@@ -159,6 +199,25 @@ header hr {
 .dark.social-media-dashboard {
   color: hsl(0, 0%, 100%);
   background-color: hsl(230, 17%, 14%);
+}
+
+.increase {
+  color: hsl(163, 72%, 41%);
+}
+.increase::before {
+  content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-up.svg");
+}
+
+.decrease {
+  color: hsl(356, 69%, 56%);
+}
+.decrease::before {
+  content: url("src/projects/junior/social-media-dashboard-with-theme-switcher-master/src/assets/images/icon-down.svg");
+}
+
+.change::before {
+  vertical-align: 4px;
+  margin-right: 4px;
 }
 
 /*# sourceMappingURL=index.css.map */

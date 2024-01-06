@@ -1,0 +1,48 @@
+@use "colors" as c;
+@use "sizes";
+@use "sass:string";
+
+@mixin apply-grid-area($area) {
+  .#{$area} {
+    grid-area: string.unquote($area);
+  }
+}
+
+@each $area in ("metric", "icon", "quantity", "change") {
+  @include apply_grid_area($area);
+}
+
+.stat {
+  border-radius: sizes.$border-radius;
+  padding: 30px;
+  display: grid;
+  grid-template-areas:
+    "metric icon"
+    "quantity change";
+  justify-content: space-between;
+  grid-template-rows: 20px 1fr;
+  font-weight: 700;
+  row-gap: 24px;
+
+  .icon {
+    justify-self: flex-end;
+  }
+
+  .quantity {
+    font-size: 30px;
+  }
+
+  .change {
+    align-self: flex-end;
+  }
+}
+
+.dark .stat {
+  $colors: map-get(c.$theme, "dark");
+
+  background-color: map-get($colors, "card-background");
+
+  .metric {
+    color: map-get($colors, "secondary-text");
+  }
+}
