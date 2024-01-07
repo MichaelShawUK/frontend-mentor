@@ -33,10 +33,11 @@
 // import Testimonials from "./projects/junior/testimonials-grid-section-main/src/App";
 // import Fylo from "./projects/junior/fylo-data-storage-component-master/src/App";
 // import TestimonialSlider from "./projects/junior/coding-bootcamp-testimonials-slider-master/src/App";
-import SocialMediaDashboard from "./projects/junior/social-media-dashboard-with-theme-switcher-master/src/App";
+// import SocialMediaDashboard from "./projects/junior/social-media-dashboard-with-theme-switcher-master/src/App";
+import Insure from "./projects/junior/insure-landing-page-master/src/App";
 
 function App() {
-  return <SocialMediaDashboard />;
+  return <Insure />;
 }
 
 export default App;
