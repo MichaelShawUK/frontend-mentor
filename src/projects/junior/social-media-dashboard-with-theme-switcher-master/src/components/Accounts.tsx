@@ -4,11 +4,11 @@ import Account from "./Account";
 
 function Accounts() {
   return (
-    <div className="accounts">
+    <article className="accounts">
       {accounts.map((account) => (
         <Account account={account} />
       ))}
-    </div>
+    </article>
   );
 }
 

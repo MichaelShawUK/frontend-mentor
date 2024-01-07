@@ -29,6 +29,7 @@
   border-radius: sizes.$border-radius;
   text-align: center;
   font-weight: 700;
+  cursor: pointer;
 
   .flex-wrapper {
     display: flex;
@@ -66,5 +67,9 @@
 
   span {
     color: map-get($colors, "primary-text");
+  }
+
+  &:hover {
+    background-color: map-get($colors, "hover");
   }
 }

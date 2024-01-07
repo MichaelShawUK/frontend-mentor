@@ -25,13 +25,17 @@
     size: 14px;
     weight: 400;
   }
+
+  height: 100vh;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 20px;
 }
 
 .dark.social-media-dashboard {
   $colors: map-get(c.$theme, "dark");
 
   color: map-get($colors, "primary-text");
-  background-color: map-get($colors, "background");
 }
 
 .increase {
@@ -55,4 +59,8 @@
     vertical-align: 4px;
     margin-right: 4px;
   }
+}
+
+body:has(#root .dark) {
+  background-color: map-get(map-get(c.$theme, "dark"), "background");
 }

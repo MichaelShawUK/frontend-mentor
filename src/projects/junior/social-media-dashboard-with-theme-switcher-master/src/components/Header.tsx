@@ -6,6 +6,7 @@ interface Props {
 function Header({ onToggle, isDarkMode }: Props) {
   return (
     <header>
+      <div className="background"></div>
       <h1>Social Media Dashboard</h1>
       <p>Total Followers: 23,004</p>
       <hr />

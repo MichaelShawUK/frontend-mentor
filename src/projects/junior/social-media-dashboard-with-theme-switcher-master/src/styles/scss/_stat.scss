@@ -23,6 +23,7 @@
   grid-template-rows: 20px 1fr;
   font-weight: 700;
   row-gap: 24px;
+  cursor: pointer;
 
   .icon {
     justify-self: flex-end;
@@ -30,10 +31,12 @@
 
   .quantity {
     font-size: 30px;
+    align-self: flex-end;
   }
 
   .change {
     align-self: flex-end;
+    padding-bottom: 3px;
   }
 }
 
@@ -44,5 +47,9 @@
 
   .metric {
     color: map-get($colors, "secondary-text");
+  }
+
+  &:hover {
+    background-color: map-get($colors, "hover");
   }
 }

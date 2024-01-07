@@ -1,8 +1,20 @@
 @use "sizes";
 
 .accounts {
-  margin-top: -50px;
-  margin-inline: sizes.$inline-margin;
   display: grid;
   gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+}
+
+@media (width <= 1100px) {
+  .accounts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 525px) {
+  .accounts {
+    grid-template-columns: 1fr;
+  }
 }

@@ -10,17 +10,37 @@ $theme-colors: map-get(
 
 header {
   font-weight: 700;
-  padding-bottom: 100px;
   padding-top: 30px;
-  padding-inline: 20px;
+  background-color: transparent;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-areas:
+    "header toggle"
+    "followers toggle";
+
+  .background {
+    position: absolute;
+    height: 210px;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    z-index: -1;
+  }
 
   h1 {
     font-size: 24px;
     margin-bottom: 4px;
+    grid-area: header;
+  }
+
+  p {
+    grid-area: followers;
   }
 
   hr {
-    // display: none;
+    display: none;
     border: none;
     margin-block: 16px;
   }
@@ -28,7 +48,10 @@ header {
 
 .dark header {
   $colors: map-get(c.$theme, "dark");
-  background: map-get($colors, "header-background");
+
+  .background {
+    background: map-get($colors, "header-background");
+  }
 
   label,
   p {
@@ -45,7 +68,8 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  justify-content: space-between;
+  justify-content: flex-end;
+  grid-area: toggle;
 
   label {
     pointer-events: none;
@@ -82,6 +106,24 @@ header {
 
     &::before {
       transform: translateX(0);
+    }
+  }
+}
+
+@media (width <= 1100px) {
+  header {
+    display: block;
+    margin-bottom: 30px;
+    hr {
+      display: block;
+    }
+
+    .toggle {
+      justify-content: space-between;
+    }
+
+    .background {
+      height: 230px;
     }
   }
 }
