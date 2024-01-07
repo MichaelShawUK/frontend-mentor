@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=DM Serif Display:400");
 @import url("https://fonts.googleapis.com/css?family=Karla:400");
 @import url("https://fonts.googleapis.com/css?family=Karla:700");
-nav {
-  display: flex;
-}
 nav ul {
   list-style: none;
+  display: flex;
+  gap: 10px 20px;
 }
 nav a {
   text-decoration: none;
@@ -13,6 +12,10 @@ nav a {
 }
 nav li:last-child {
   border: 1px solid red;
+}
+
+.mobile nav ul {
+  flex-direction: column;
 }
 
 * {

@@ -1,8 +1,8 @@
 nav {
-  display: flex;
-
   ul {
     list-style: none;
+    display: flex;
+    gap: 10px 20px;
   }
 
   a {
@@ -12,5 +12,14 @@ nav {
 
   li:last-child {
     border: 1px solid red;
+  }
+}
+
+.desktop nav {
+}
+
+.mobile nav {
+  ul {
+    flex-direction: column;
   }
 }
