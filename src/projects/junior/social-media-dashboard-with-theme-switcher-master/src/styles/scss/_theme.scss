@@ -37,6 +37,10 @@
         &::before {
           background: map-get(map-get(c.$theme, "light"), "header-background");
         }
+
+        &:hover {
+          background: map-get(map-get(c.$theme, "dark"), "toggle");
+        }
       }
       input:checked + .switch {
         background: map-get(map-get(c.$theme, "dark"), "toggle");

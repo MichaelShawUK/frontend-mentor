@@ -24,6 +24,9 @@ body:has(#root .dark) {
 .dark header .toggle .switch::before {
   background: hsl(225, 100%, 98%);
 }
+.dark header .toggle .switch:hover {
+  background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
 .dark header .toggle input:checked + .switch {
   background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
@@ -75,6 +78,9 @@ body:has(#root .light) {
 }
 .light header .toggle .switch::before {
   background: hsl(225, 100%, 98%);
+}
+.light header .toggle .switch:hover {
+  background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
 .light header .toggle input:checked + .switch {
   background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
