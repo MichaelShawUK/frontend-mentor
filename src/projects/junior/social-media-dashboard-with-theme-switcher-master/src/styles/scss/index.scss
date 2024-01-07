@@ -1,4 +1,5 @@
 @use "colors" as c;
+@use "theme";
 @use "sizes";
 @use "header";
 @use "accounts";
@@ -32,12 +33,6 @@
   padding-inline: 20px;
 }
 
-.dark.social-media-dashboard {
-  $colors: map-get(c.$theme, "dark");
-
-  color: map-get($colors, "primary-text");
-}
-
 .increase {
   color: c.$increase;
 
@@ -59,8 +54,4 @@
     vertical-align: 4px;
     margin-right: 4px;
   }
-}
-
-body:has(#root .dark) {
-  background-color: map-get(map-get(c.$theme, "dark"), "background");
 }

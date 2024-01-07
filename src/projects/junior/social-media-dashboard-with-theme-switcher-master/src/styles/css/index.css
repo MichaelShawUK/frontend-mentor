@@ -1,5 +1,109 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:400");
 @import url("https://fonts.googleapis.com/css?family=Inter:700");
+body:has(#root .dark) {
+  background-color: hsl(230, 17%, 14%);
+}
+
+.dark.social-media-dashboard {
+  color: hsl(0, 0%, 100%);
+}
+
+.dark header .background {
+  background: hsl(232, 19%, 15%);
+}
+.dark header label,
+.dark header p {
+  color: hsl(228, 34%, 66%);
+}
+.dark header hr {
+  border-bottom: 1px solid rgba(139, 151, 198, 0.3);
+}
+.dark header .toggle .switch {
+  background: hsl(230, 22%, 74%);
+}
+.dark header .toggle .switch::before {
+  background: hsl(225, 100%, 98%);
+}
+.dark header .toggle input:checked + .switch {
+  background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+.dark header .toggle input:checked + .switch::before {
+  background: hsl(232, 19%, 15%);
+}
+
+.dark .account {
+  background-color: hsl(228, 28%, 20%);
+  color: hsl(228, 34%, 66%);
+}
+.dark .account span {
+  color: hsl(0, 0%, 100%);
+}
+.dark .account:hover {
+  background-color: #333a56;
+}
+
+.dark .stat {
+  background-color: hsl(228, 28%, 20%);
+}
+.dark .stat .metric {
+  color: hsl(228, 34%, 66%);
+}
+.dark .stat:hover {
+  background-color: #333a56;
+}
+
+body:has(#root .light) {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.light.social-media-dashboard {
+  color: hsl(230, 17%, 14%);
+}
+
+.light header .background {
+  background: hsl(225, 100%, 98%);
+}
+.light header label,
+.light header p {
+  color: hsl(228, 12%, 44%);
+}
+.light header hr {
+  border-bottom: 1px solid rgba(99, 104, 126, 0.3);
+}
+.light header .toggle .switch {
+  background: hsl(230, 22%, 74%);
+}
+.light header .toggle .switch::before {
+  background: hsl(225, 100%, 98%);
+}
+.light header .toggle input:checked + .switch {
+  background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+.light header .toggle input:checked + .switch::before {
+  background: hsl(232, 19%, 15%);
+}
+
+.light .account {
+  background-color: hsl(227, 47%, 96%);
+  color: hsl(228, 12%, 44%);
+}
+.light .account span {
+  color: hsl(230, 17%, 14%);
+}
+.light .account:hover {
+  background-color: #e1e3f0;
+}
+
+.light .stat {
+  background-color: hsl(227, 47%, 96%);
+}
+.light .stat .metric {
+  color: hsl(228, 12%, 44%);
+}
+.light .stat:hover {
+  background-color: #e1e3f0;
+}
+
 header {
   font-weight: 700;
   padding-top: 30px;
@@ -32,17 +136,6 @@ header hr {
   margin-block: 16px;
 }
 
-.dark header .background {
-  background: hsl(232, 19%, 15%);
-}
-.dark header label,
-.dark header p {
-  color: hsl(228, 34%, 66%);
-}
-.dark header hr {
-  border-bottom: 1px solid rgba(139, 151, 198, 0.3);
-}
-
 .toggle {
   display: flex;
   align-items: center;
@@ -59,7 +152,6 @@ header hr {
 .toggle .switch {
   height: 20px;
   width: 40px;
-  background: #ccc;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -68,15 +160,11 @@ header hr {
   display: block;
   height: 14px;
   width: 14px;
-  background: hsl(232, 19%, 15%);
   margin-top: 3px;
   margin-left: 3px;
   border-radius: 50%;
   transform: translateX(20px);
   transition: transform 0.3s ease-in-out;
-}
-.toggle input:checked + .switch {
-  background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
 .toggle input:checked + .switch::before {
   transform: translateX(0);
@@ -164,17 +252,6 @@ header hr {
   margin-bottom: 30px;
 }
 
-.dark .account {
-  background-color: hsl(228, 28%, 20%);
-  color: hsl(228, 34%, 66%);
-}
-.dark .account span {
-  color: hsl(0, 0%, 100%);
-}
-.dark .account:hover {
-  background-color: #333a56;
-}
-
 .overview {
   margin-top: 40px;
   padding-bottom: 40px;
@@ -242,16 +319,6 @@ header hr {
   padding-bottom: 3px;
 }
 
-.dark .stat {
-  background-color: hsl(228, 28%, 20%);
-}
-.dark .stat .metric {
-  color: hsl(228, 34%, 66%);
-}
-.dark .stat:hover {
-  background-color: #333a56;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -266,10 +333,6 @@ header hr {
   max-width: 1440px;
   margin-inline: auto;
   padding-inline: 20px;
-}
-
-.dark.social-media-dashboard {
-  color: hsl(0, 0%, 100%);
 }
 
 .increase {
@@ -289,10 +352,6 @@ header hr {
 .change::before {
   vertical-align: 4px;
   margin-right: 4px;
-}
-
-body:has(#root .dark) {
-  background-color: hsl(230, 17%, 14%);
 }
 
 /*# sourceMappingURL=index.css.map */

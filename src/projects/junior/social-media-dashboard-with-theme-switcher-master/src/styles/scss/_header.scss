@@ -1,13 +1,6 @@
 @use "colors" as c;
 @use "sass:color";
 
-$theme-colors: map-get(
-  $map: c.$theme,
-  $key: "dark",
-);
-@debug $theme-colors;
-@debug map-get($theme-colors, "toggle");
-
 header {
   font-weight: 700;
   padding-top: 30px;
@@ -46,24 +39,6 @@ header {
   }
 }
 
-.dark header {
-  $colors: map-get(c.$theme, "dark");
-
-  .background {
-    background: map-get($colors, "header-background");
-  }
-
-  label,
-  p {
-    color: map-get($colors, "secondary-text");
-  }
-
-  hr {
-    border-bottom: 1px solid
-      color.adjust(map-get($colors, "secondary-text"), $alpha: -0.7);
-  }
-}
-
 .toggle {
   display: flex;
   align-items: center;
@@ -82,7 +57,6 @@ header {
   .switch {
     height: 20px;
     width: 40px;
-    background: #ccc;
 
     border-radius: 10px;
     cursor: pointer;
@@ -92,7 +66,6 @@ header {
       display: block;
       height: 14px;
       width: 14px;
-      background: map-get($theme-colors, "header-background");
       margin-top: 3px;
       margin-left: 3px;
       border-radius: 50%;
@@ -102,8 +75,6 @@ header {
   }
 
   input:checked + .switch {
-    background: map-get($theme-colors, "toggle");
-
     &::before {
       transform: translateX(0);
     }

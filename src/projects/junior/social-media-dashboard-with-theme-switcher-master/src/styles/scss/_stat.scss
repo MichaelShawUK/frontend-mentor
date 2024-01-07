@@ -39,17 +39,3 @@
     padding-bottom: 3px;
   }
 }
-
-.dark .stat {
-  $colors: map-get(c.$theme, "dark");
-
-  background-color: map-get($colors, "card-background");
-
-  .metric {
-    color: map-get($colors, "secondary-text");
-  }
-
-  &:hover {
-    background-color: map-get($colors, "hover");
-  }
-}

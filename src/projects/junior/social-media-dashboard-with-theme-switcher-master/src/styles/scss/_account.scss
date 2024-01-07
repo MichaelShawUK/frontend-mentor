@@ -57,19 +57,3 @@
     margin-bottom: 30px;
   }
 }
-
-.dark .account {
-  $colors: map-get(c.$theme, "dark");
-
-  background-color: map-get($colors, "card-background");
-
-  color: map-get($colors, "secondary-text");
-
-  span {
-    color: map-get($colors, "primary-text");
-  }
-
-  &:hover {
-    background-color: map-get($colors, "hover");
-  }
-}

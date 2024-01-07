@@ -1,0 +1,79 @@
+@use "colors" as c;
+@use "sass:color";
+
+@function theme-color($theme, $property) {
+  $colors: map-get(c.$theme, #{$theme});
+  @return map-get($colors, $property);
+}
+
+@mixin add-theme($theme) {
+  body:has(#root .#{$theme}) {
+    background-color: theme-color($theme, "background");
+  }
+
+  .#{$theme}.social-media-dashboard {
+    color: theme-color($theme, "primary-text");
+  }
+
+  .#{$theme} header {
+    .background {
+      background: theme-color($theme, "header-background");
+    }
+
+    label,
+    p {
+      color: theme-color($theme, "secondary-text");
+    }
+
+    hr {
+      border-bottom: 1px solid
+        color.adjust(theme-color($theme, "secondary-text"), $alpha: -0.7);
+    }
+
+    .toggle {
+      .switch {
+        background: map-get(map-get(c.$theme, "light"), "toggle");
+
+        &::before {
+          background: map-get(map-get(c.$theme, "light"), "header-background");
+        }
+      }
+      input:checked + .switch {
+        background: map-get(map-get(c.$theme, "dark"), "toggle");
+
+        &::before {
+          background: map-get(map-get(c.$theme, "dark"), "header-background");
+        }
+      }
+    }
+  }
+
+  .#{$theme} .account {
+    background-color: theme-color($theme, "card-background");
+
+    color: theme-color($theme, "secondary-text");
+
+    span {
+      color: theme-color($theme, "primary-text");
+    }
+
+    &:hover {
+      background-color: theme-color($theme, "hover");
+    }
+  }
+
+  .#{$theme} .stat {
+    background-color: theme-color($theme, "card-background");
+
+    .metric {
+      color: theme-color($theme, "secondary-text");
+    }
+
+    &:hover {
+      background-color: theme-color($theme, "hover");
+    }
+  }
+}
+
+@include add-theme("dark");
+@include add-theme("light");
