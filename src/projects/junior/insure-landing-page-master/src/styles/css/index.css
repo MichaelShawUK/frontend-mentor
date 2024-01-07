@@ -1,6 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=DM Serif Display:400");
 @import url("https://fonts.googleapis.com/css?family=Karla:400");
 @import url("https://fonts.googleapis.com/css?family=Karla:700");
+nav {
+  display: flex;
+}
+nav ul {
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+  color: initial;
+}
+nav li:last-child {
+  border: 1px solid red;
+}
+
 * {
   margin: 0;
   padding: 0;
