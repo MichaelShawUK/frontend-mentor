@@ -1,0 +1,21 @@
+@use "sizes";
+
+header {
+  .wrapper {
+    max-width: sizes.$content-width;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: 1px solid red;
+    padding-block: 20px;
+  }
+
+  img {
+    display: block;
+  }
+
+  button {
+    border: none;
+  }
+}

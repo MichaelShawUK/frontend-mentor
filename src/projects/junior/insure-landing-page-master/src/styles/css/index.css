@@ -1,17 +1,50 @@
 @import url("https://fonts.googleapis.com/css?family=DM Serif Display:400");
 @import url("https://fonts.googleapis.com/css?family=Karla:400");
 @import url("https://fonts.googleapis.com/css?family=Karla:700");
+header .wrapper {
+  max-width: 1100px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: 1px solid red;
+  padding-block: 20px;
+}
+header img {
+  display: block;
+}
+header button {
+  border: none;
+}
+
 nav ul {
   list-style: none;
   display: flex;
-  gap: 10px 20px;
+  align-items: center;
+  gap: 10px 24px;
 }
 nav a {
   text-decoration: none;
-  color: initial;
+  color: inherit;
+  font-weight: 700;
 }
 nav li:last-child {
-  border: 1px solid red;
+  background-color: hsl(256, 26%, 20%);
+  color: #fff;
+}
+nav li:last-child a {
+  padding: 8px 24px;
+  display: block;
+}
+nav li:last-child a:hover {
+  color: #fff;
+}
+
+.desktop nav {
+  color: hsl(273, 4%, 51%);
+}
+.desktop nav a:hover {
+  color: hsl(270, 9%, 17%);
 }
 
 .mobile nav ul {
@@ -27,6 +60,10 @@ nav li:last-child {
 body {
   font-family: "Karla";
   font-size: 16px;
+}
+
+.insure {
+  margin-inline: 20px;
 }
 
 h1,

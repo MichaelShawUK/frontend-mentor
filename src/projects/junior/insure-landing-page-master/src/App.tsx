@@ -3,7 +3,7 @@ import "./styles/css/index.css";
 import useDeviceMode from "./hooks/useDeviceMode";
 import DeviceModeContext from "./context/DeviceModeContext";
 
-import Nav from "./components/Nav";
+import Header from "./components/Header";
 
 function Insure() {
   const device = useDeviceMode(768);
@@ -12,7 +12,8 @@ function Insure() {
   return (
     <DeviceModeContext.Provider value={device}>
       <div className={`insure ${device}`}>
-        <Nav />
+        <Header mode={device} />
+        <Header mode="modal" />
         <h1>heading</h1>
         <p>INSURE</p>
       </div>

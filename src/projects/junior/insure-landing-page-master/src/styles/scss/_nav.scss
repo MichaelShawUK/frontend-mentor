@@ -1,21 +1,42 @@
+@use "colors" as c;
+
 nav {
   ul {
     list-style: none;
     display: flex;
-    gap: 10px 20px;
+    align-items: center;
+    gap: 10px 24px;
   }
 
   a {
     text-decoration: none;
-    color: initial;
+    color: inherit;
+    font-weight: 700;
   }
 
   li:last-child {
-    border: 1px solid red;
+    background-color: c.$dark-violet;
+    color: #fff;
+
+    a {
+      padding: 8px 24px;
+      display: block;
+    }
+
+    a:hover {
+      color: #fff;
+    }
   }
 }
 
 .desktop nav {
+  color: c.$dark-grayish-violet;
+
+  a {
+    &:hover {
+      color: c.$very-dark-violet;
+    }
+  }
 }
 
 .mobile nav {
