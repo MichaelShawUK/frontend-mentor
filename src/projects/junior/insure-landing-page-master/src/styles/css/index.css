@@ -10,7 +10,6 @@ header .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  outline: 1px solid red;
   padding-block: 20px;
 }
 header img {
@@ -18,10 +17,7 @@ header img {
 }
 header button {
   border: none;
-}
-
-.mobile header {
-  padding-inline: 20px;
+  cursor: pointer;
 }
 
 nav ul {
@@ -81,13 +77,18 @@ nav li:last-child {
 
 .mobile-nav {
   border: none;
-  width: unset;
-  height: unset;
+  width: 100%;
+  height: 100%;
+  max-width: unset;
+  max-height: unset;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: hsl(270, 9%, 17%) url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-mobile-nav.svg") no-repeat bottom center/100%;
+}
+.mobile-nav header {
+  padding-inline: 20px;
 }
 
 * {

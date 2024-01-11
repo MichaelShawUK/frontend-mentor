@@ -9,7 +9,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    outline: 1px solid red;
     padding-block: 20px;
   }
 
@@ -19,11 +18,6 @@ header {
 
   button {
     border: none;
-  }
-}
-
-.mobile {
-  header {
-    padding-inline: sizes.$margin-inline;
+    cursor: pointer;
   }
 }
