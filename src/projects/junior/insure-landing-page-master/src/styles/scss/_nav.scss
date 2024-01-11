@@ -1,11 +1,12 @@
 @use "colors" as c;
+@use "sizes";
 
 nav {
   ul {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 10px 24px;
+    gap: 40px 24px;
   }
 
   a {
@@ -15,7 +16,22 @@ nav {
   }
 
   li:last-child {
-    background-color: c.$dark-violet;
+    // background-color: c.$very-dark-violet;
+    color: #fff;
+  }
+}
+
+.desktop nav {
+  color: c.$dark-grayish-violet;
+
+  a {
+    &:hover {
+      color: c.$very-dark-violet;
+    }
+  }
+
+  li:last-child {
+    background-color: c.$very-dark-violet;
     color: #fff;
 
     a {
@@ -29,18 +45,27 @@ nav {
   }
 }
 
-.desktop nav {
-  color: c.$dark-grayish-violet;
-
-  a {
-    &:hover {
-      color: c.$very-dark-violet;
-    }
-  }
-}
-
 .mobile nav {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 50px;
+  text-align: center;
+  margin-inline: sizes.$margin-inline;
+
   ul {
     flex-direction: column;
+  }
+
+  li:last-child {
+    border: 2px solid #fff;
+    width: 100%;
+    max-width: 500px;
+    margin-top: -12px;
+
+    a {
+      width: 100%;
+      display: block;
+      padding-block: 12px;
+    }
   }
 }

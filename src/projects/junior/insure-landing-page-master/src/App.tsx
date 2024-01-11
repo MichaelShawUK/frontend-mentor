@@ -4,6 +4,7 @@ import useDeviceMode from "./hooks/useDeviceMode";
 import DeviceModeContext from "./context/DeviceModeContext";
 
 import Header from "./components/Header";
+import MobileNav from "./components/MobileNav";
 
 function Insure() {
   const device = useDeviceMode(768);
@@ -12,8 +13,8 @@ function Insure() {
   return (
     <DeviceModeContext.Provider value={device}>
       <div className={`insure ${device}`}>
+        <MobileNav />
         <Header mode={device} />
-        <Header mode="modal" />
         <h1>heading</h1>
         <p>INSURE</p>
       </div>

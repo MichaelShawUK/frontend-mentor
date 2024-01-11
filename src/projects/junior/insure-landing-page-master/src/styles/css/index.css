@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=DM Serif Display:400");
 @import url("https://fonts.googleapis.com/css?family=Karla:400");
 @import url("https://fonts.googleapis.com/css?family=Karla:700");
+header {
+  background-color: #fff;
+}
 header .wrapper {
   max-width: 1100px;
   margin-inline: auto;
@@ -17,11 +20,15 @@ header button {
   border: none;
 }
 
+.mobile header {
+  padding-inline: 20px;
+}
+
 nav ul {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 10px 24px;
+  gap: 40px 24px;
 }
 nav a {
   text-decoration: none;
@@ -29,14 +36,6 @@ nav a {
   font-weight: 700;
 }
 nav li:last-child {
-  background-color: hsl(256, 26%, 20%);
-  color: #fff;
-}
-nav li:last-child a {
-  padding: 8px 24px;
-  display: block;
-}
-nav li:last-child a:hover {
   color: #fff;
 }
 
@@ -46,9 +45,49 @@ nav li:last-child a:hover {
 .desktop nav a:hover {
   color: hsl(270, 9%, 17%);
 }
+.desktop nav li:last-child {
+  background-color: hsl(270, 9%, 17%);
+  color: #fff;
+}
+.desktop nav li:last-child a {
+  padding: 8px 24px;
+  display: block;
+}
+.desktop nav li:last-child a:hover {
+  color: #fff;
+}
 
+.mobile nav {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 50px;
+  text-align: center;
+  margin-inline: 20px;
+}
 .mobile nav ul {
   flex-direction: column;
+}
+.mobile nav li:last-child {
+  border: 2px solid #fff;
+  width: 100%;
+  max-width: 500px;
+  margin-top: -12px;
+}
+.mobile nav li:last-child a {
+  width: 100%;
+  display: block;
+  padding-block: 12px;
+}
+
+.mobile-nav {
+  border: none;
+  width: unset;
+  height: unset;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: hsl(270, 9%, 17%) url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-mobile-nav.svg") no-repeat bottom center/100%;
 }
 
 * {
