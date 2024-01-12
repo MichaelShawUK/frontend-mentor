@@ -1,0 +1,92 @@
+@use "colors" as c;
+@use "sizes";
+
+.features {
+  margin-inline: sizes.$margin-inline;
+
+  ul {
+    list-style: none;
+  }
+
+  p {
+    color: c.$dark-grayish-violet;
+    line-height: 26px;
+  }
+}
+
+.desktop .features {
+  max-width: sizes.$content-width;
+  margin-inline: auto;
+  margin-bottom: 140px;
+
+  h1 {
+    font-size: clamp(38px, 5vw, 74px);
+    margin-bottom: 80px;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  img {
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+.mobile .features {
+  text-align: center;
+  margin-bottom: 100px;
+
+  ul {
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  h1 {
+    font-size: 46px;
+    font-size: clamp(26px, 12.2vw, 46px);
+    margin-bottom: 60px;
+  }
+
+  li {
+    margin-bottom: 50px;
+  }
+
+  img {
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    padding-inline: 6px;
+  }
+}
+
+$margin-breakpoint: calc(sizes.$content-width + 2 * sizes.$margin-inline);
+
+@media (width <= $margin-breakpoint) {
+  .desktop .features {
+    margin-inline: sizes.$margin-inline;
+  }
+}
+
+@media (width <= sizes.$content-width) {
+  .desktop .features {
+    text-align: center;
+
+    p {
+      padding-inline: 8px;
+    }
+  }
+}
