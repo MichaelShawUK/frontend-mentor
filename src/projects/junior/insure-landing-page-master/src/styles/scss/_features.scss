@@ -73,13 +73,7 @@
   }
 }
 
-$margin-breakpoint: calc(sizes.$content-width + 2 * sizes.$margin-inline);
-
-@media (width <= $margin-breakpoint) {
-  .desktop .features {
-    margin-inline: sizes.$margin-inline;
-  }
-}
+@include sizes.responsive-margins(".desktop .features");
 
 @media (width <= sizes.$content-width) {
   .desktop .features {

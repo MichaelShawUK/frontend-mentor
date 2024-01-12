@@ -1,2 +1,14 @@
+@use "sass:string";
+
 $content-width: 1100px;
 $margin-inline: 20px;
+
+@mixin responsive-margins($selector) {
+  $margin-breakpoint: calc($content-width + 2 * $margin-inline);
+
+  @media (width <= $margin-breakpoint) {
+    #{string.unquote($selector)} {
+      margin-inline: $margin-inline;
+    }
+  }
+}
