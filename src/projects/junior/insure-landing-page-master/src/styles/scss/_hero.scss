@@ -1,0 +1,68 @@
+@use "colors" as c;
+@use "sizes";
+@use "sass:color";
+
+.hero {
+  img {
+    display: block;
+  }
+
+  .introduction {
+    color: #fff;
+  }
+}
+
+.mobile .hero {
+  text-align: center;
+
+  img {
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .introduction {
+    padding-inline: sizes.$margin-inline;
+    padding-top: 90px;
+    padding-bottom: 260px;
+    background: url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-left-mobile.svg")
+        no-repeat,
+      url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-right-mobile.svg")
+        no-repeat bottom right,
+      linear-gradient(c.$dark-violet 69%, #fff 69%);
+    position: relative;
+
+    h1 {
+      font-size: 46px;
+      line-height: 46px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      padding-inline: 8px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      font-weight: 700;
+      padding: 8px 24px;
+      letter-spacing: 2px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      color: red;
+      display: block;
+      border-bottom: 1px solid color.scale(c.$dark-violet, $lightness: 60%);
+      width: 155px;
+      margin-inline: auto;
+    }
+  }
+}

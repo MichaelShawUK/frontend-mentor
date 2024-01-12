@@ -3,8 +3,9 @@ import "./styles/css/index.css";
 import useDeviceMode from "./hooks/useDeviceMode";
 import DeviceModeContext from "./context/DeviceModeContext";
 
-import Header from "./components/Header";
 import MobileNav from "./components/MobileNav";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 import { useState } from "react";
 
@@ -19,10 +20,11 @@ function Insure() {
   return (
     <DeviceModeContext.Provider value={device}>
       <div className={`insure ${device}`}>
-        <MobileNav isOpen={isMobileNavOpen} closeMobileNav={closeMobileNav} />
+        {device === "mobile" && (
+          <MobileNav isOpen={isMobileNavOpen} closeMobileNav={closeMobileNav} />
+        )}
         <Header mode={device} openMobileNav={openMobileNav} />
-        <h1>heading</h1>
-        <p>INSURE</p>
+        <Main />
       </div>
     </DeviceModeContext.Provider>
   );

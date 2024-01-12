@@ -1,5 +1,4 @@
 @use "colors" as c;
-@use "sizes";
 
 .mobile-nav {
   border: none;
@@ -14,8 +13,4 @@
   background: c.$very-dark-violet
     url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-mobile-nav.svg")
     no-repeat bottom center/ 100%;
-
-  header {
-    padding-inline: sizes.$margin-inline;
-  }
 }

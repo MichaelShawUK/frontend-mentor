@@ -1,12 +1,13 @@
 @use "colors" as c;
 @use "sizes";
+@use "sass:color";
 
 nav {
   ul {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 40px 24px;
+    gap: 40px 30px;
   }
 
   a {
@@ -16,7 +17,6 @@ nav {
   }
 
   li:last-child {
-    // background-color: c.$very-dark-violet;
     color: #fff;
   }
 }
@@ -31,16 +31,16 @@ nav {
   }
 
   li:last-child {
-    background-color: c.$very-dark-violet;
-    color: #fff;
-
     a {
       padding: 8px 24px;
       display: block;
+      color: c.$very-dark-violet;
+      outline: 2px solid c.$very-dark-violet;
     }
 
     a:hover {
       color: #fff;
+      background-color: c.$very-dark-violet;
     }
   }
 }
@@ -48,9 +48,10 @@ nav {
 .mobile nav {
   color: #fff;
   font-size: 20px;
-  margin-top: 50px;
+  padding-top: 50px;
   text-align: center;
-  margin-inline: sizes.$margin-inline;
+  padding-inline: sizes.$margin-inline;
+  background-color: color.adjust(c.$very-dark-violet, $alpha: -0.1);
 
   ul {
     flex-direction: column;

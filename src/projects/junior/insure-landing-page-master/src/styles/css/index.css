@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Karla:700");
 header {
   background-color: #fff;
+  padding-inline: 20px;
 }
 header .wrapper {
   max-width: 1100px;
@@ -24,7 +25,7 @@ nav ul {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 40px 24px;
+  gap: 40px 30px;
 }
 nav a {
   text-decoration: none;
@@ -41,24 +42,24 @@ nav li:last-child {
 .desktop nav a:hover {
   color: hsl(270, 9%, 17%);
 }
-.desktop nav li:last-child {
-  background-color: hsl(270, 9%, 17%);
-  color: #fff;
-}
 .desktop nav li:last-child a {
   padding: 8px 24px;
   display: block;
+  color: hsl(270, 9%, 17%);
+  outline: 2px solid hsl(270, 9%, 17%);
 }
 .desktop nav li:last-child a:hover {
   color: #fff;
+  background-color: hsl(270, 9%, 17%);
 }
 
 .mobile nav {
   color: #fff;
   font-size: 20px;
-  margin-top: 50px;
+  padding-top: 50px;
   text-align: center;
-  margin-inline: 20px;
+  padding-inline: 20px;
+  background-color: rgba(43, 39, 47, 0.9);
 }
 .mobile nav ul {
   flex-direction: column;
@@ -87,8 +88,57 @@ nav li:last-child {
   bottom: 0;
   background: hsl(270, 9%, 17%) url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-mobile-nav.svg") no-repeat bottom center/100%;
 }
-.mobile-nav header {
+
+.hero img {
+  display: block;
+}
+.hero .introduction {
+  color: #fff;
+}
+
+.mobile .hero {
+  text-align: center;
+}
+.mobile .hero img {
+  margin-inline: auto;
+  width: 100%;
+}
+.mobile .hero .introduction {
   padding-inline: 20px;
+  padding-top: 90px;
+  padding-bottom: 260px;
+  background: url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-left-mobile.svg") no-repeat, url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-right-mobile.svg") no-repeat bottom right, linear-gradient(hsl(256, 26%, 20%) 69%, #fff 69%);
+  position: relative;
+}
+.mobile .hero .introduction h1 {
+  font-size: 46px;
+  line-height: 46px;
+  margin-bottom: 20px;
+}
+.mobile .hero .introduction p {
+  padding-inline: 8px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+.mobile .hero .introduction button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 24px;
+  letter-spacing: 2px;
+}
+.mobile .hero .introduction::after {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  color: red;
+  display: block;
+  border-bottom: 1px solid #a398c3;
+  width: 155px;
+  margin-inline: auto;
 }
 
 * {
@@ -104,6 +154,8 @@ body {
 
 .insure {
   margin-inline: 20px;
+  max-width: 1920px;
+  margin-inline: auto;
 }
 
 h1,

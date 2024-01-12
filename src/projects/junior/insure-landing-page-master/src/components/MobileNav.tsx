@@ -15,10 +15,10 @@ function MobileNav({ isOpen, closeMobileNav }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
-    if (!dialogRef.current) return;
+    const menu = dialogRef.current;
 
-    if (isOpen) dialogRef.current.showModal();
-    if (!isOpen) dialogRef.current.close();
+    if (menu && isOpen) dialogRef.current.showModal();
+    if (menu && !isOpen) dialogRef.current.close();
   }, [isOpen]);
 
   useEffect(() => {
@@ -34,8 +34,6 @@ function MobileNav({ isOpen, closeMobileNav }: Props) {
   }, [closeMobileNav]);
 
   useEffect(() => {
-    if (!dialogRef.current) return;
-
     if (device !== "mobile") closeMobileNav();
   }, [device, closeMobileNav]);
 
