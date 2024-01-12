@@ -89,11 +89,94 @@ nav li:last-child {
   background: hsl(270, 9%, 17%) url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-mobile-nav.svg") no-repeat bottom center/100%;
 }
 
+.desktop main {
+  padding-inline: 20px;
+  background: url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-left-desktop.svg") no-repeat bottom left, linear-gradient(hsl(256, 26%, 20%) 600px, #fff 600px);
+}
+
 .hero img {
   display: block;
+  width: 100%;
 }
 .hero .introduction {
   color: #fff;
+}
+.hero button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 24px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.desktop .hero {
+  position: relative;
+}
+.desktop .hero .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 450px;
+  right: -20px;
+  background: url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-right-desktop.svg") no-repeat top -80px right;
+}
+.desktop .hero .wrapper {
+  max-width: 1100px;
+  margin-inline: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr minmax(420px, 1fr);
+  gap: 20px;
+  grid-template-areas: "introduction image";
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+.desktop .hero .wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 60px;
+  display: block;
+  border-top: 1px solid #a398c3;
+  width: 155px;
+}
+.desktop .hero .introduction {
+  grid-area: introduction;
+  padding-top: 80px;
+  position: relative;
+}
+.desktop .hero .introduction h1 {
+  font-size: 74px;
+  line-height: 72px;
+  font-size: 38px;
+  font-size: 4.9vw;
+  font-size: clamp(38px, 5vw, 74px);
+  line-height: clamp(36px, 4.9vw, 72px);
+  margin-bottom: 30px;
+}
+.desktop .hero .introduction p {
+  line-height: 26px;
+  margin-bottom: 30px;
+  background-color: rgba(45, 38, 64, 0.7);
+}
+.desktop .hero .introduction::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  border-top: 1px solid #fff;
+  display: block;
+  width: 155px;
+}
+.desktop .hero button {
+  background-color: rgba(45, 38, 64, 0.7);
+}
+.desktop .hero button:hover {
+  background-color: #fff;
+  color: hsl(256, 26%, 20%);
+}
+.desktop .hero img {
+  grid-area: image;
 }
 
 .mobile .hero {
@@ -120,21 +203,12 @@ nav li:last-child {
   line-height: 24px;
   margin-bottom: 30px;
 }
-.mobile .hero .introduction button {
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  font-weight: 700;
-  padding: 8px 24px;
-  letter-spacing: 2px;
-}
 .mobile .hero .introduction::after {
   content: "";
   position: absolute;
   bottom: 40px;
   left: 0;
   right: 0;
-  color: red;
   display: block;
   border-bottom: 1px solid #a398c3;
   width: 155px;

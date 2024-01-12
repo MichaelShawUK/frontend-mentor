@@ -1,0 +1,9 @@
+@use "sizes";
+@use "colors" as c;
+
+.desktop main {
+  padding-inline: sizes.$margin-inline;
+  background: url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-left-desktop.svg")
+      no-repeat bottom left,
+    linear-gradient(c.$dark-violet 600px, #fff 600px);
+}

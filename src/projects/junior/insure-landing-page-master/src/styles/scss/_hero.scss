@@ -5,10 +5,100 @@
 .hero {
   img {
     display: block;
+    width: 100%;
   }
 
   .introduction {
     color: #fff;
+  }
+
+  button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 24px;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+}
+
+.desktop .hero {
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 450px;
+    right: sizes.$margin-inline * -1;
+    background: url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-right-desktop.svg")
+      no-repeat top -80px right;
+  }
+
+  .wrapper {
+    max-width: sizes.$content-width;
+    margin-inline: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr minmax(420px, 1fr);
+    gap: 20px;
+    grid-template-areas: "introduction image";
+    padding-top: 100px;
+    padding-bottom: 200px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 60px;
+      display: block;
+      border-top: 1px solid color.scale(c.$dark-violet, $lightness: 60%);
+      width: 155px;
+    }
+  }
+
+  .introduction {
+    grid-area: introduction;
+    padding-top: 80px;
+    position: relative;
+
+    h1 {
+      font-size: 74px;
+      line-height: 72px;
+      font-size: 38px;
+      font-size: 4.9vw;
+      font-size: clamp(38px, 5vw, 74px);
+      line-height: clamp(36px, 4.9vw, 72px);
+      margin-bottom: 30px;
+    }
+
+    p {
+      line-height: 26px;
+      margin-bottom: 30px;
+      background-color: color.adjust(c.$dark-violet, $alpha: -0.3);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      border-top: 1px solid #fff;
+      display: block;
+      width: 155px;
+    }
+  }
+
+  button {
+    background-color: color.adjust(c.$dark-violet, $alpha: -0.3);
+
+    &:hover {
+      background-color: #fff;
+      color: c.$dark-violet;
+    }
+  }
+
+  img {
+    grid-area: image;
   }
 }
 
@@ -43,22 +133,12 @@
       margin-bottom: 30px;
     }
 
-    button {
-      background-color: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-      font-weight: 700;
-      padding: 8px 24px;
-      letter-spacing: 2px;
-    }
-
     &::after {
       content: "";
       position: absolute;
       bottom: 40px;
       left: 0;
       right: 0;
-      color: red;
       display: block;
       border-bottom: 1px solid color.scale(c.$dark-violet, $lightness: 60%);
       width: 155px;

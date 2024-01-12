@@ -3,6 +3,7 @@
 @use "header";
 @use "nav";
 @use "mobileNav";
+@use "main";
 @use "hero";
 
 @mixin google-font($family, $weight: 400) {
