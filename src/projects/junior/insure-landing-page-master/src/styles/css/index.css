@@ -90,8 +90,7 @@ nav li:last-child {
 }
 
 .desktop main {
-  padding-inline: 20px;
-  background: url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-left-desktop.svg") no-repeat bottom left, linear-gradient(hsl(256, 26%, 20%) 600px, #fff 600px);
+  background: linear-gradient(hsl(256, 26%, 20%) 600px, #fff 600px);
 }
 
 .hero img {
@@ -113,13 +112,14 @@ nav li:last-child {
 
 .desktop .hero {
   position: relative;
+  background: url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-left-desktop.svg") no-repeat bottom left;
 }
 .desktop .hero .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 450px;
-  right: -20px;
+  right: 0;
   background: url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-intro-right-desktop.svg") no-repeat top -80px right;
 }
 .desktop .hero .wrapper {
@@ -145,12 +145,10 @@ nav li:last-child {
   grid-area: introduction;
   padding-top: 80px;
   position: relative;
+  padding-left: 20px;
+  margin-left: -20px;
 }
 .desktop .hero .introduction h1 {
-  font-size: 74px;
-  line-height: 72px;
-  font-size: 38px;
-  font-size: 4.9vw;
   font-size: clamp(38px, 5vw, 74px);
   line-height: clamp(36px, 4.9vw, 72px);
   margin-bottom: 30px;
@@ -194,8 +192,8 @@ nav li:last-child {
   position: relative;
 }
 .mobile .hero .introduction h1 {
-  font-size: 46px;
-  line-height: 46px;
+  font-size: clamp(14px, 11.8vw, 46px);
+  line-height: clamp(14px, 11.8vw, 46px);
   margin-bottom: 20px;
 }
 .mobile .hero .introduction p {
@@ -215,6 +213,11 @@ nav li:last-child {
   margin-inline: auto;
 }
 
+@media (width <= 1140px) {
+  .desktop .hero .wrapper {
+    margin-inline: 20px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
