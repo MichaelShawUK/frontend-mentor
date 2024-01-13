@@ -6,6 +6,7 @@
 @use "main";
 @use "hero";
 @use "features";
+@use "about";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -29,7 +30,6 @@ body {
 }
 
 .insure {
-  margin-inline: sizes.$margin-inline;
   max-width: 1920px;
   margin-inline: auto;
 }
