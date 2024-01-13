@@ -1,0 +1,23 @@
+@use "colors" as c;
+@use "sizes";
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  li {
+    width: min-content;
+
+    &:hover {
+      svg path {
+        fill: c.$very-dark-violet;
+      }
+    }
+  }
+}
+
+.mobile .socials {
+  justify-content: center;
+}

@@ -6,6 +6,7 @@ import DeviceModeContext from "./context/DeviceModeContext";
 import MobileNav from "./components/MobileNav";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 import { useState } from "react";
 
@@ -25,6 +26,7 @@ function Insure() {
         )}
         <Header mode={device} openMobileNav={openMobileNav} />
         <Main />
+        <Footer />
       </div>
     </DeviceModeContext.Provider>
   );

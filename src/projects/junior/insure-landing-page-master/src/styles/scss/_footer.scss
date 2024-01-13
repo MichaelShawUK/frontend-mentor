@@ -1,0 +1,26 @@
+@use "colors" as c;
+@use "sizes";
+@use "sass:color";
+
+footer {
+  background: c.$very-light-gray;
+}
+
+.mobile footer {
+  text-align: center;
+  background: c.$very-light-gray
+    url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-footer-mobile.svg")
+    no-repeat top left;
+  padding-top: 90px;
+
+  .logo {
+    margin-bottom: 26px;
+  }
+
+  .socials-container {
+    border-bottom: 1px solid
+      color.scale(c.$dark-grayish-violet, $lightness: 60%);
+    margin-inline: sizes.$margin-inline;
+    padding-bottom: 36px;
+  }
+}

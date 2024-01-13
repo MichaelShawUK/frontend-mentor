@@ -1,0 +1,39 @@
+@use "colors" as c;
+
+.footer-nav {
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  ul {
+    list-style: none;
+  }
+
+  h4 {
+    font-family: Karla;
+    font-weight: 700;
+    color: c.$dark-grayish-violet;
+    margin-bottom: 34px;
+  }
+
+  a {
+    color: c.$very-dark-violet;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul > li > ul > li {
+    margin-bottom: 14px;
+  }
+
+  ul > li {
+    margin-bottom: 40px;
+  }
+}
+
+.mobile .footer-nav {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
