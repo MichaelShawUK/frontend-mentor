@@ -308,6 +308,25 @@ nav li:last-child {
   background-color: #fff;
 }
 
+.desktop .about {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  background: hsl(256, 26%, 20%) url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-how-we-work-desktop.svg") no-repeat top right;
+  padding-block: 60px;
+  padding-inline: min(9.1vw, 100px);
+  margin-bottom: 200px;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.desktop .about h1 {
+  font-size: min(4.4vw, 48px);
+  line-height: min(4.4vw, 48px);
+}
+.desktop .about button {
+  height: min-content;
+}
+
 .mobile .about {
   text-align: center;
   background: hsl(256, 26%, 20%) url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-how-we-work-mobile.svg") no-repeat top right;

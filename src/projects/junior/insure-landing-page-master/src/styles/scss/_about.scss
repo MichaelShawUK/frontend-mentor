@@ -20,6 +20,29 @@
   }
 }
 
+.desktop .about {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  background: c.$dark-violet
+    url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-how-we-work-desktop.svg")
+    no-repeat top right;
+  padding-block: 60px;
+  padding-inline: min(9.1vw, 100px);
+  margin-bottom: 200px;
+  max-width: sizes.$content-width;
+  margin-inline: auto;
+
+  h1 {
+    font-size: min(4.4vw, 48px);
+    line-height: min(4.4vw, 48px);
+  }
+
+  button {
+    height: min-content;
+  }
+}
+
 .mobile .about {
   text-align: center;
   background: c.$dark-violet
