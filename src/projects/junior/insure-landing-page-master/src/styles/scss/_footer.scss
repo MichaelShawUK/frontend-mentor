@@ -3,7 +3,29 @@
 @use "sass:color";
 
 footer {
-  background: c.$very-light-gray;
+  .socials-container {
+    border-bottom: 1px solid
+      color.scale(c.$dark-grayish-violet, $lightness: 60%);
+  }
+}
+
+.desktop footer {
+  background: c.$very-light-gray
+    url("src/projects/junior/insure-landing-page-master/src/assets/images/bg-pattern-footer-desktop.svg")
+    no-repeat top left;
+  padding-top: 70px;
+
+  .logo {
+    height: min-content;
+  }
+
+  .socials-container {
+    max-width: sizes.$content-width;
+    display: flex;
+    justify-content: space-between;
+    margin-inline: auto;
+    padding-bottom: 24px;
+  }
 }
 
 .mobile footer {
@@ -18,9 +40,9 @@ footer {
   }
 
   .socials-container {
-    border-bottom: 1px solid
-      color.scale(c.$dark-grayish-violet, $lightness: 60%);
     margin-inline: sizes.$margin-inline;
-    padding-bottom: 36px;
+    padding-bottom: 40px;
   }
 }
+
+@include sizes.responsive-margins(".desktop footer .socials-container");

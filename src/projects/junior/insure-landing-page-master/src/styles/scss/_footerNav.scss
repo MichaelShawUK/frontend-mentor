@@ -1,4 +1,5 @@
 @use "colors" as c;
+@use "sizes";
 
 .footer-nav {
   font-weight: 700;
@@ -33,7 +34,21 @@
   }
 }
 
+.desktop .footer-nav {
+  max-width: sizes.$content-width;
+  margin-inline: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+  & > ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .mobile .footer-nav {
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
+
+@include sizes.responsive-margins(".desktop .footer-nav");
