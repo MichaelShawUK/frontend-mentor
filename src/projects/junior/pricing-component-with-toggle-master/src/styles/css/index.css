@@ -1,3 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+.toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.toggle p {
+  color: hsl(234, 14%, 74%);
+}
+.toggle input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.toggle input:focus + .switch {
+  outline: 2px solid hsl(232, 13%, 33%);
+}
+.toggle input:checked + .switch::before {
+  transform: translateX(22px);
+}
+.toggle .switch {
+  display: inline-block;
+  height: 28px;
+  width: 50px;
+  background: linear-gradient(160deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border-radius: 15px;
+  cursor: pointer;
+  margin-inline: 20px;
+}
+.toggle .switch::before {
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: hsl(240, 78%, 98%);
+  margin: 4px;
+  transition: transform ease-in 0.2s;
+}
+.toggle .switch:hover {
+  background: hsl(234, 14%, 74%);
+}
 
+.package {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 24px;
+  display: inline-block;
+  width: 340px;
+}
+.package .name {
+  margin-bottom: 20px;
+}
+.package .price {
+  color: hsl(232, 13%, 33%);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.package .price span {
+  font-size: 50px;
+}
+.package ul {
+  border-top: 1px solid #e1e2e8;
+  margin-block: 10px;
+  margin-bottom: 30px;
+}
+.package ul li {
+  border-bottom: 1px solid #e1e2e8;
+  padding-block: 14px;
+}
+.package button {
+  background: linear-gradient(160deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: #fff;
+  width: 100%;
+  font-family: "Montserrat";
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.package button:hover {
+  color: hsl(237, 63%, 64%);
+  background: #fff;
+  outline: 1px solid hsl(237, 63%, 64%);
+}
+.package.accent {
+  background: linear-gradient(160deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: #fff;
+  padding-block: 40px;
+}
+.package.accent .price {
+  color: #fff;
+}
+.package.accent button {
+  background: #fff;
+  color: hsl(237, 63%, 64%);
+}
+.package.accent button:hover {
+  color: #fff;
+  background: hsl(237, 63%, 64%);
+  outline: 1px solid #fff;
+}
+.package.accent + .package {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.package:has(+ .accent) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pricing-component-toggle {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 15px;
+  background: url("src/projects/junior/pricing-component-with-toggle-master/src/assets/images/bg-top.svg") no-repeat top right, hsl(240, 78%, 98%) url("src/projects/junior/pricing-component-with-toggle-master/src/assets/images/bg-bottom.svg") no-repeat bottom left;
+  color: hsl(233, 13%, 49%);
+  height: 100vh;
+  max-width: 1920px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  text-align: center;
+}
+.pricing-component-toggle h1 {
+  margin-bottom: 40px;
+}
+.pricing-component-toggle li {
+  list-style: none;
+}
 
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,46 @@
+@use "colors" as c;
+@use "toggle";
+@use "package";
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Montserrat", 700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pricing-component-toggle {
+  font: {
+    family: "Montserrat";
+    weight: 700;
+    size: 15px;
+  }
+  background: url("src/projects/junior/pricing-component-with-toggle-master/src/assets/images/bg-top.svg")
+      no-repeat top right,
+    c.$very-light-grayish-blue
+      url("src/projects/junior/pricing-component-with-toggle-master/src/assets/images/bg-bottom.svg")
+      no-repeat bottom left;
+  color: c.$grayish-blue;
+  height: 100vh;
+  max-width: 1920px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  padding-top: 60px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 40px;
+  }
+
+  li {
+    list-style: none;
+  }
+}
