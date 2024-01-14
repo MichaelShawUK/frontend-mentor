@@ -68,6 +68,14 @@
       color: #fff;
     }
 
+    ul {
+      border-top: 1px solid c.$light-grayish-blue;
+
+      li {
+        border-bottom: 1px solid c.$light-grayish-blue;
+      }
+    }
+
     button {
       background: #fff;
       color: c.$violet;

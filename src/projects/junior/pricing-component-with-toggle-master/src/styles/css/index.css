@@ -95,6 +95,12 @@
 .package.accent .price {
   color: #fff;
 }
+.package.accent ul {
+  border-top: 1px solid hsl(234, 14%, 74%);
+}
+.package.accent ul li {
+  border-bottom: 1px solid hsl(234, 14%, 74%);
+}
 .package.accent button {
   background: #fff;
   color: hsl(237, 63%, 64%);
@@ -125,13 +131,14 @@
   font-size: 15px;
   background: url("src/projects/junior/pricing-component-with-toggle-master/src/assets/images/bg-top.svg") no-repeat top right, hsl(240, 78%, 98%) url("src/projects/junior/pricing-component-with-toggle-master/src/assets/images/bg-bottom.svg") no-repeat bottom left;
   color: hsl(233, 13%, 49%);
-  height: 100vh;
+  min-height: 100vh;
   max-width: 1920px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 60px;
+  padding-bottom: 40px;
   text-align: center;
 }
 .pricing-component-toggle h1 {
@@ -139,6 +146,38 @@
 }
 .pricing-component-toggle li {
   list-style: none;
+}
+
+@media (width <= 1040px) {
+  .packages {
+    display: flex;
+    width: 100%;
+    padding-inline: 20px;
+  }
+  .packages .accent {
+    padding-block: 24px;
+  }
+}
+@media (width <= 768px) {
+  .pricing-component-toggle {
+    background: hsl(240, 78%, 98%) url("src/projects/junior/pricing-component-with-toggle-master/src/assets/images/bg-top.svg") no-repeat top -36px right -200px;
+  }
+  .packages {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-inline: 20px;
+  }
+  .packages .package {
+    width: 100%;
+    max-width: 400px;
+  }
+  .package.accent + .package {
+    border-radius: 6px;
+  }
+  .package:has(+ .accent) {
+    border-radius: 6px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,4 +1,5 @@
 @use "colors" as c;
+@use "sizes";
 @use "toggle";
 @use "package";
 
@@ -26,14 +27,14 @@
       url("src/projects/junior/pricing-component-with-toggle-master/src/assets/images/bg-bottom.svg")
       no-repeat bottom left;
   color: c.$grayish-blue;
-  height: 100vh;
+  min-height: 100vh;
   max-width: 1920px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
   padding-top: 60px;
+  padding-bottom: 40px;
   text-align: center;
 
   h1 {
@@ -42,5 +43,47 @@
 
   li {
     list-style: none;
+  }
+}
+
+@media (width <= 1040px) {
+  .packages {
+    display: flex;
+    width: 100%;
+    padding-inline: 20px;
+
+    .accent {
+      padding-block: 24px;
+    }
+  }
+}
+
+@media (width <= 768px) {
+  .pricing-component-toggle {
+    background: c.$very-light-grayish-blue
+      url("src/projects/junior/pricing-component-with-toggle-master/src/assets/images/bg-top.svg")
+      no-repeat top -36px right -200px;
+  }
+
+  .packages {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-inline: 20px;
+
+    .package {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  .package {
+    &.accent + .package {
+      border-radius: sizes.$border-radius;
+    }
+
+    &:has(+ .accent) {
+      border-radius: sizes.$border-radius;
+    }
   }
 }
