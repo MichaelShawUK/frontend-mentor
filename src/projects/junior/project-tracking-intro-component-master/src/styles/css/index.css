@@ -2,6 +2,29 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow:400");
 @import url("https://fonts.googleapis.com/css?family=Barlow Condensed:400");
 @import url("https://fonts.googleapis.com/css?family=Barlow Condensed:700");
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+header .icon {
+  display: none;
+  cursor: pointer;
+}
+
+@media (width <= 425px) {
+  header nav {
+    display: none;
+  }
+  header .logo {
+    height: 22px;
+    width: 22px;
+  }
+  header .icon {
+    display: inline;
+  }
+}
 nav ul {
   display: flex;
   list-style: none;
@@ -40,6 +63,14 @@ nav li:last-child::before {
     display: none;
   }
 }
+.mobile-menu {
+  width: calc(100% - 60px);
+  padding: 20px;
+  border: none;
+  margin-inline: auto;
+  box-shadow: 0 2px 8px #bbbcc4;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -51,9 +82,16 @@ nav li:last-child::before {
   font-size: 18px;
   font-weight: 400;
   color: hsl(230, 29%, 20%);
+  padding: 30px;
+  background: url("src/projects/junior/project-tracking-intro-component-master/src/assets/images/background-mobile.svg") no-repeat top right/50%;
 }
 .project-tracking p {
   font-family: "Barlow";
+}
+.project-tracking .illustration {
+  width: 150%;
+  margin-top: 20px;
+  margin-bottom: 21.3vw;
 }
 
 /*# sourceMappingURL=index.css.map */

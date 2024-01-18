@@ -1,0 +1,11 @@
+@use "sizes";
+@use "colors" as c;
+@use "sass:color";
+
+.mobile-menu {
+  width: calc(100% - 2 * sizes.$margin-mobile);
+  padding: sizes.$link-gap-mobile;
+  border: none;
+  margin-inline: auto;
+  box-shadow: 0 2px 8px color.adjust(c.$grayish-blue, $lightness: 10%);
+}

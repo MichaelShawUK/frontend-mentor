@@ -1,0 +1,30 @@
+@use "sizes";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+
+  .icon {
+    display: none;
+    cursor: pointer;
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  header {
+    nav {
+      display: none;
+    }
+
+    .logo {
+      height: 22px;
+      width: 22px;
+    }
+
+    .icon {
+      display: inline;
+    }
+  }
+}

@@ -1,5 +1,9 @@
 @use "colors" as c;
+@use "sizes";
+
+@use "header";
 @use "nav";
+@use "mobileMenu";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -23,10 +27,19 @@
   }
 
   color: c.$very-dark-blue;
+  padding: sizes.$margin-mobile;
+  background: url("src/projects/junior/project-tracking-intro-component-master/src/assets/images/background-mobile.svg")
+    no-repeat top right/ 50%;
 
   p {
     font: {
       family: "Barlow";
     }
+  }
+
+  .illustration {
+    width: 150%;
+    margin-top: 20px;
+    margin-bottom: 21.3vw;
   }
 }
