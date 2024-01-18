@@ -1,0 +1,31 @@
+@use "colors" as c;
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Barlow");
+@include google-font("Barlow Condensed");
+@include google-font("Barlow Condensed", 700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.project-tracking {
+  font: {
+    family: "Barlow Condensed";
+    size: 18px;
+    weight: 400;
+  }
+
+  color: c.$very-dark-blue;
+
+  p {
+    font: {
+      family: "Barlow";
+    }
+  }
+}

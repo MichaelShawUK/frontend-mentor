@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow:400");
+@import url("https://fonts.googleapis.com/css?family=Barlow Condensed:400");
+@import url("https://fonts.googleapis.com/css?family=Barlow Condensed:700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.project-tracking {
+  font-family: "Barlow Condensed";
+  font-size: 18px;
+  font-weight: 400;
+  color: hsl(230, 29%, 20%);
+}
+.project-tracking p {
+  font-family: "Barlow";
+}
+
+/*# sourceMappingURL=index.css.map */
