@@ -1,0 +1,51 @@
+@use "colors" as c;
+@use "sizes";
+@use "sass:color";
+
+nav {
+  ul {
+    display: flex;
+    list-style: none;
+    gap: sizes.$link-gap-desktop;
+  }
+
+  a {
+    color: initial;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  li:last-child {
+    a {
+      color: c.$grayish-blue;
+    }
+
+    &::before {
+      content: "\25cf";
+      color: c.$grayish-blue;
+      margin-right: sizes.$link-gap-desktop;
+      bottom: 1px;
+      position: relative;
+    }
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  nav {
+    text-align: center;
+    ul {
+      flex-direction: column;
+      gap: sizes.$link-gap-mobile;
+    }
+
+    li:last-child {
+      border-top: 1px solid color.adjust(c.$grayish-blue, $lightness: 20%);
+      padding-top: sizes.$link-gap-mobile;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
