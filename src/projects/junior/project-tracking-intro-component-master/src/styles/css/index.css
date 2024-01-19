@@ -84,14 +84,55 @@ nav li:last-child::before {
   color: hsl(230, 29%, 20%);
   padding: 30px;
   background: url("src/projects/junior/project-tracking-intro-component-master/src/assets/images/background-mobile.svg") no-repeat top right/50%;
-}
-.project-tracking p {
-  font-family: "Barlow";
+  overflow: hidden;
 }
 .project-tracking .illustration {
   width: 150%;
   margin-top: 20px;
   margin-bottom: 21.3vw;
+}
+.project-tracking h3 {
+  font-weight: 400;
+  font-size: 18px;
+  color: hsl(231, 7%, 65%);
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+.project-tracking h3 span {
+  font-weight: 700;
+  background-color: hsl(230, 29%, 20%);
+  color: #fff;
+  padding: 3px 10px 4px;
+  border-radius: 15px;
+  letter-spacing: 1px;
+  margin-right: 14px;
+  font-size: 16px;
+}
+.project-tracking h1 {
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+.project-tracking p {
+  font-family: "Barlow";
+  margin-bottom: 30px;
+}
+.project-tracking button {
+  background-color: hsl(0, 100%, 68%);
+  color: #fff;
+  border: none;
+  font-family: "Barlow Condensed";
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.project-tracking > span {
+  color: hsl(231, 7%, 65%);
+  letter-spacing: 3px;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=index.css.map */
