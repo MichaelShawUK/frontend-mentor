@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Bai Jamjuree:400");
+@import url("https://fonts.googleapis.com/css?family=Bai Jamjuree:600");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.clipboard {
+  font-family: "Bai Jamjuree";
+  font-size: 18px;
+  font-weight: 400;
+  color: hsl(201, 11%, 66%);
+}
+.clipboard h1,
+.clipboard h2,
+.clipboard h3,
+.clipboard h4,
+.clipboard h5,
+.clipboard h6 {
+  color: hsl(210, 10%, 33%);
+  font-weight: 600;
+}
 
 /*# sourceMappingURL=index.css.map */
