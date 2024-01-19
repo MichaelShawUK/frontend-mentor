@@ -26,7 +26,10 @@ function ProjectTracking() {
             <span>NEW</span>MONOGRAPH DASHBOARD
           </h3>
           <h1>POWERFUL INSIGHTS INTO YOUR TEAM</h1>
-          <p>Project planning and time tracking for agile teams</p>
+          <p>
+            Project planning and time tracking
+            <br /> for agile teams
+          </p>
           <button>SCHEDULE A DEMO</button>
           <span>TO SEE A PREVIEW</span>
         </div>

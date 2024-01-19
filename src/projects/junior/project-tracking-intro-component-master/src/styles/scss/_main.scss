@@ -1,11 +1,27 @@
 @use "colors" as c;
+@use "sizes";
 @use "sass:color";
 
 main {
+  display: grid;
+  grid-template-areas: "text illustration";
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: sizes.$content-width;
+  margin-inline: auto;
+
+  .text {
+    grid-area: text;
+  }
+
   .illustration {
     width: 150%;
     margin-top: 20px;
-    margin-bottom: 21.3vw;
+    margin-inline: auto;
+    display: block;
+    margin-bottom: min(21.3vw, 80px);
+    grid-area: illustration;
   }
 
   h3 {
@@ -28,8 +44,9 @@ main {
   }
 
   h1 {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: clamp(40px, 4.2vw, 60px);
+    line-height: clamp(40px, 4.2vw, 60px);
+
     margin-bottom: 20px;
   }
 
@@ -37,7 +54,7 @@ main {
     font: {
       family: "Barlow";
     }
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     color: c.$dark-grayish-blue;
   }
 
@@ -65,5 +82,19 @@ main {
     color: c.$grayish-blue;
     letter-spacing: 3px;
     font-size: 14px;
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  main {
+    display: block;
+
+    .illustration {
+      max-width: 600px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
   }
 }

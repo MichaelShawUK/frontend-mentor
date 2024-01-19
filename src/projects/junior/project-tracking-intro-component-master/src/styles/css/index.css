@@ -6,14 +6,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  max-width: 1100px;
+  margin-inline: auto;
+  width: 100%;
+  margin-bottom: 100px;
 }
 header .icon {
   display: none;
   cursor: pointer;
 }
 
-@media (width <= 425px) {
+@media (width <= 768px) {
+  header {
+    margin-bottom: 50px;
+  }
   header nav {
     display: none;
   }
@@ -50,7 +56,7 @@ nav li:last-child::before {
   position: relative;
 }
 
-@media (width <= 425px) {
+@media (width <= 768px) {
   nav {
     text-align: center;
   }
@@ -72,12 +78,28 @@ nav li:last-child::before {
   border: none;
   margin-inline: auto;
   box-shadow: 0 2px 8px #bbbcc4;
+  margin-top: -20px;
 }
 
+main {
+  display: grid;
+  grid-template-areas: "text illustration";
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+main .text {
+  grid-area: text;
+}
 main .illustration {
   width: 150%;
   margin-top: 20px;
-  margin-bottom: 21.3vw;
+  margin-inline: auto;
+  display: block;
+  margin-bottom: min(21.3vw, 80px);
+  grid-area: illustration;
 }
 main h3 {
   font-weight: 400;
@@ -97,13 +119,13 @@ main h3 span {
   font-size: 16px;
 }
 main h1 {
-  font-size: 40px;
-  line-height: 40px;
+  font-size: clamp(40px, 4.2vw, 60px);
+  line-height: clamp(40px, 4.2vw, 60px);
   margin-bottom: 20px;
 }
 main p {
   font-family: "Barlow";
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   color: hsl(230, 11%, 40%);
 }
 main button {
@@ -128,6 +150,17 @@ main .text > span {
   font-size: 14px;
 }
 
+@media (width <= 768px) {
+  main {
+    display: block;
+  }
+  main .illustration {
+    max-width: 600px;
+  }
+  main p {
+    margin-bottom: 30px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -140,8 +173,16 @@ main .text > span {
   font-weight: 400;
   color: hsl(230, 29%, 20%);
   padding: 30px;
-  background: url("src/projects/junior/project-tracking-intro-component-master/src/assets/images/background-mobile.svg") no-repeat top right/50%;
+  display: grid;
+  background: url("src/projects/junior/project-tracking-intro-component-master/src/assets/images/background-desktop.svg") no-repeat top right/50%;
   overflow: hidden;
+}
+
+@media (width <= 768px) {
+  .project-tracking {
+    display: block;
+    background: url("src/projects/junior/project-tracking-intro-component-master/src/assets/images/background-mobile.svg") no-repeat top min((76vw - 286px) * -1, 0px) right/50%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

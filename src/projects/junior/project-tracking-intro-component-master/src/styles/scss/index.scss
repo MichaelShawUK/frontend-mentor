@@ -29,8 +29,21 @@
 
   color: c.$very-dark-blue;
   padding: sizes.$margin-mobile;
-  background: url("src/projects/junior/project-tracking-intro-component-master/src/assets/images/background-mobile.svg")
+  // min-height: 100vh;
+  display: grid;
+
+  background: url("src/projects/junior/project-tracking-intro-component-master/src/assets/images/background-desktop.svg")
     no-repeat top right/ 50%;
 
   overflow: hidden;
+}
+
+@media (width <= sizes.$breakpoint) {
+  .project-tracking {
+    display: block;
+    $top-offset: calc((0.76 * 100vw - 286px) * -1);
+
+    background: url("src/projects/junior/project-tracking-intro-component-master/src/assets/images/background-mobile.svg")
+      no-repeat top min($top-offset, 0px) right/ 50%;
+  }
 }
