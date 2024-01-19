@@ -36,10 +36,11 @@
 // import SocialMediaDashboard from "./projects/junior/social-media-dashboard-with-theme-switcher-master/src/App";
 // import Insure from "./projects/junior/insure-landing-page-master/src/App";
 // import PricingComponentToggle from "./projects/junior/pricing-component-with-toggle-master/src/App";
-import ProjectTracking from "./projects/junior/project-tracking-intro-component-master/src/App";
+// import ProjectTracking from "./projects/junior/project-tracking-intro-component-master/src/App";
+import Clipboard from "./projects/junior/clipboard-landing-page-master/src/App";
 
 function App() {
-  return <ProjectTracking />;
+  return <Clipboard />;
 }
 
 export default App;
