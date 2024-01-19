@@ -2,10 +2,36 @@
 @import url("https://fonts.googleapis.com/css?family=Bai Jamjuree:600");
 .desktop header {
   padding-top: 140px;
+  margin-bottom: 60px;
 }
 
 .mobile header {
-  padding-top: 100px;
+  padding-top: 120px;
+  margin-bottom: 60px;
+}
+
+.desktop .introduction {
+  max-width: 760px;
+  margin-inline: auto;
+}
+.desktop .introduction h1 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+.desktop .introduction p {
+  font-size: 22px;
+  line-height: 32px;
+  margin-bottom: 30px;
+}
+
+.mobile .introduction h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.mobile .introduction p {
+  font-size: 17px;
+  line-height: 28px;
+  margin-bottom: 40px;
 }
 
 * {
@@ -72,7 +98,8 @@
 .clipboard.mobile button {
   display: block;
   margin-inline: auto;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,29 @@
+@use "sizes";
+
+.desktop .introduction {
+  max-width: sizes.$main-content-width;
+  margin-inline: auto;
+  h1 {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+}
+
+.mobile .introduction {
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+}
