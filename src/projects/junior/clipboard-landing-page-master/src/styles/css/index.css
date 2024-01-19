@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Bai Jamjuree:400");
 @import url("https://fonts.googleapis.com/css?family=Bai Jamjuree:600");
+.desktop header {
+  padding-top: 140px;
+}
+
+.mobile header {
+  padding-top: 100px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +19,10 @@
   font-size: 18px;
   font-weight: 400;
   color: hsl(201, 11%, 66%);
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  text-align: center;
 }
 .clipboard h1,
 .clipboard h2,
@@ -20,6 +32,47 @@
 .clipboard h6 {
   color: hsl(210, 10%, 33%);
   font-weight: 600;
+}
+.clipboard button {
+  color: #fff;
+  font-weight: 600;
+  font-family: "Bai Jamjuree";
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  border: none;
+  padding-block: 16px;
+  padding-inline: 40px;
+  border-radius: 27px;
+  cursor: pointer;
+  margin-inline: 10px;
+  margin-block: 30px;
+}
+.clipboard button.ios {
+  background-color: hsl(171, 66%, 44%);
+  box-shadow: #209e8b 0 2px 0 1px, #aceee4 0px 14px 14px;
+}
+.clipboard button.ios:hover {
+  background-color: #5cbaac;
+}
+.clipboard button.mac {
+  background-color: hsl(233, 100%, 69%);
+  box-shadow: #2c45ff 0 2px 0 1px, #c8ceff 0px 14px 14px;
+}
+.clipboard button.mac:hover {
+  background-color: #8996ff;
+}
+
+.clipboard.desktop {
+  background: url("src/projects/junior/clipboard-landing-page-master/src/assets/images/bg-header-desktop.png") no-repeat top center/100%;
+}
+
+.clipboard.mobile {
+  background: url("src/projects/junior/clipboard-landing-page-master/src/assets/images/bg-header-mobile.png") no-repeat top center/100%;
+}
+.clipboard.mobile button {
+  display: block;
+  margin-inline: auto;
+  width: 300px;
 }
 
 /*# sourceMappingURL=index.css.map */
