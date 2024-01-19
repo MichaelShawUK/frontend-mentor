@@ -19,14 +19,18 @@ function ProjectTracking() {
         closeMenu={closeMobileMenu}
       />
       <MobileMenu isOpen={isMobileMenuOpen} />
-      <img src={illustration} className="illustration" />
-      <h3>
-        <span>NEW</span>MONOGRAPH DASHBOARD
-      </h3>
-      <h1>POWERFUL INSIGHTS INTO YOUR TEAM</h1>
-      <p>Project planning and time tracking for agile teams</p>
-      <button>SCHEDULE A DEMO</button>
-      <span>TO SEE A PREVIEW</span>
+      <main>
+        <img src={illustration} className="illustration" />
+        <div className="text">
+          <h3>
+            <span>NEW</span>MONOGRAPH DASHBOARD
+          </h3>
+          <h1>POWERFUL INSIGHTS INTO YOUR TEAM</h1>
+          <p>Project planning and time tracking for agile teams</p>
+          <button>SCHEDULE A DEMO</button>
+          <span>TO SEE A PREVIEW</span>
+        </div>
+      </main>
     </div>
   );
 }

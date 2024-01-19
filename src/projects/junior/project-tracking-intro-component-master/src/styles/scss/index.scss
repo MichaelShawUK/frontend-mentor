@@ -4,6 +4,7 @@
 @use "header";
 @use "nav";
 @use "mobileMenu";
+@use "main";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -32,63 +33,4 @@
     no-repeat top right/ 50%;
 
   overflow: hidden;
-
-  .illustration {
-    width: 150%;
-    margin-top: 20px;
-    margin-bottom: 21.3vw;
-  }
-
-  h3 {
-    font-weight: 400;
-    font-size: 18px;
-    color: c.$grayish-blue;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-
-    span {
-      font-weight: 700;
-      background-color: c.$very-dark-blue;
-      color: #fff;
-      padding: 3px 10px 4px;
-      border-radius: 15px;
-      letter-spacing: 1px;
-      margin-right: 14px;
-      font-size: 16px;
-    }
-  }
-
-  h1 {
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font: {
-      family: "Barlow";
-    }
-    margin-bottom: 30px;
-  }
-
-  button {
-    background-color: c.$red;
-    color: #fff;
-    border: none;
-    font: {
-      family: "Barlow Condensed";
-      weight: 700;
-      size: 14px;
-    }
-    letter-spacing: 1px;
-    padding: 10px 16px;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-
-  & > span {
-    color: c.$grayish-blue;
-    letter-spacing: 3px;
-    font-size: 14px;
-  }
 }
