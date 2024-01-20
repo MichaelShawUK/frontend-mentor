@@ -1,0 +1,33 @@
+@use "sizes";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: sizes.$max-content-width;
+  margin-inline: auto;
+  padding-block: 40px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  .logo {
+    height: 30px;
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  header {
+    padding-top: 30px;
+    padding-bottom: 80px;
+
+    button {
+      &.secondary {
+        padding: 0.4em 2em;
+      }
+    }
+
+    .logo {
+      height: 18px;
+    }
+  }
+}

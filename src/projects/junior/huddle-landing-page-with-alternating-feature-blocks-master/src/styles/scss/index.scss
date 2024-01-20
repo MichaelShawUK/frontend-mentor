@@ -1,3 +1,10 @@
+@use "colors" as c;
+@use "sizes";
+
+@use "header";
+@use "callToAction";
+@use "main";
+
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
 }
@@ -19,6 +26,8 @@
     weight: 400;
   }
 
+  color: c.$very-dark-cyan;
+
   h1,
   h2,
   h3,
@@ -28,6 +37,57 @@
     font: {
       family: "Poppins";
       weight: 600;
+    }
+  }
+
+  button {
+    font: {
+      family: "Open Sans";
+      weight: 700;
+    }
+
+    cursor: pointer;
+
+    border: none;
+    padding: 1.2em 5em;
+    border-radius: 2em;
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &.primary {
+      background-color: c.$pink;
+      color: #fff;
+    }
+
+    &.secondary {
+      background-color: #fff;
+      color: c.$very-dark-cyan;
+
+      box-shadow: 0 2px 5px #0003;
+    }
+  }
+
+  .header-wrapper {
+    background: c.$very-pale-cyan
+      url("src/projects/junior/huddle-landing-page-with-alternating-feature-blocks-master/src/assets/images/bg-hero-desktop.svg")
+      no-repeat top center/100%;
+    padding-bottom: 60px;
+    padding-inline: sizes.$inline-spacing;
+    max-width: 1920px;
+    margin-inline: auto;
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  .huddle-alternating {
+    text-align: center;
+
+    .header-wrapper {
+      background: c.$very-pale-cyan
+        url("src/projects/junior/huddle-landing-page-with-alternating-feature-blocks-master/src/assets/images/bg-hero-mobile.svg")
+        no-repeat top center/100%;
     }
   }
 }

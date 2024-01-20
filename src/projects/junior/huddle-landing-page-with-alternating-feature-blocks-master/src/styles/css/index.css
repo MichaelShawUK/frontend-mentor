@@ -1,6 +1,108 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:600");
 @import url("https://fonts.googleapis.com/css?family=Open Sans:400");
 @import url("https://fonts.googleapis.com/css?family=Open Sans:700");
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: 40px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+header .logo {
+  height: 30px;
+}
+
+@media (width <= 768px) {
+  header {
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+  header button.secondary {
+    padding: 0.4em 2em;
+  }
+  header .logo {
+    height: 18px;
+  }
+}
+.call-to-action {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  align-items: center;
+  gap: 52px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.call-to-action img {
+  width: 100%;
+}
+.call-to-action h1 {
+  font-size: 38px;
+  font-size: min(3.4vw, 38px);
+  font-size: clamp(26px, 3.4vw, 38px);
+  line-height: 52px;
+  line-height: min(4.7vw, 52px);
+  line-height: clamp(38px, 4.7vw, 52px);
+  margin-bottom: 24px;
+}
+.call-to-action p {
+  line-height: 28px;
+  margin-bottom: 24px;
+  font-size: clamp(16px, 1.6vw, 18px);
+}
+
+@media (width <= 768px) {
+  .call-to-action {
+    display: block;
+  }
+  .call-to-action p {
+    margin-bottom: 40px;
+  }
+  .call-to-action button {
+    margin-bottom: 60px;
+  }
+  .call-to-action img {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+main {
+  max-width: 1200px;
+  margin-inline: auto;
+  margin-top: 100px;
+  padding-inline: 20px;
+}
+main .card {
+  border-radius: 20px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1333333333);
+  margin-bottom: 40px;
+}
+main p {
+  color: hsl(208, 11%, 55%);
+}
+
+@media (width <= 768px) {
+  main img {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 40px;
+  }
+  main .card {
+    padding: 50px 30px 40px 30px;
+  }
+  main h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  main p {
+    font-size: 15px;
+    line-height: 22px;
+    max-width: 450px;
+    margin-inline: auto;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +113,7 @@
   font-family: "Open Sans";
   font-size: 18px;
   font-weight: 400;
+  color: hsl(192, 100%, 9%);
 }
 .huddle-alternating h1,
 .huddle-alternating h2,
@@ -20,6 +123,42 @@
 .huddle-alternating h6 {
   font-family: "Poppins";
   font-weight: 600;
+}
+.huddle-alternating button {
+  font-family: "Open Sans";
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  padding: 1.2em 5em;
+  border-radius: 2em;
+}
+.huddle-alternating button:hover {
+  opacity: 0.75;
+}
+.huddle-alternating button.primary {
+  background-color: hsl(322, 100%, 66%);
+  color: #fff;
+}
+.huddle-alternating button.secondary {
+  background-color: #fff;
+  color: hsl(192, 100%, 9%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.huddle-alternating .header-wrapper {
+  background: hsl(192, 100%, 96%) url("src/projects/junior/huddle-landing-page-with-alternating-feature-blocks-master/src/assets/images/bg-hero-desktop.svg") no-repeat top center/100%;
+  padding-bottom: 60px;
+  padding-inline: 20px;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+@media (width <= 768px) {
+  .huddle-alternating {
+    text-align: center;
+  }
+  .huddle-alternating .header-wrapper {
+    background: hsl(192, 100%, 96%) url("src/projects/junior/huddle-landing-page-with-alternating-feature-blocks-master/src/assets/images/bg-hero-mobile.svg") no-repeat top center/100%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
