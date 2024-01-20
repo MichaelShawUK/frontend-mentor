@@ -1,0 +1,32 @@
+@use "colors" as c;
+
+footer {
+  background: c.$footer-bg;
+
+  .socials {
+    display: flex;
+  }
+}
+
+.mobile footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .logo {
+    width: 54px;
+    margin-bottom: 40px;
+  }
+
+  nav {
+    margin-bottom: 40px;
+
+    li {
+      margin-bottom: 28px;
+    }
+  }
+
+  .socials {
+    justify-content: center;
+    gap: 40px;
+  }
+}

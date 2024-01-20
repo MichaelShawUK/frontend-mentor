@@ -1,0 +1,67 @@
+@use "sizes";
+
+.mobile main {
+  padding-inline: sizes.$margin-inline;
+
+  p {
+    font-size: 16px;
+    line-height: 26px;
+    padding-inline: 8px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .image {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+
+  .snippets {
+    margin-bottom: 180px;
+
+    img {
+      width: 100%;
+    }
+
+    h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    li {
+      margin-bottom: 50px;
+    }
+  }
+
+  .access {
+    margin-bottom: 60px;
+  }
+
+  .workflow {
+    margin-bottom: 120px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-top: 90px;
+
+      li {
+        margin-bottom: 50px;
+      }
+
+      .icon {
+        margin-bottom: 40px;
+      }
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

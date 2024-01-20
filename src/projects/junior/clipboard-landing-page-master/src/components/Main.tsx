@@ -13,13 +13,13 @@ function Main() {
     <main>
       <Introduction />
       <section className="snippets">
-        <h2>Kepp track of your snippets</h2>
+        <h2>Keep track of your snippets</h2>
         <p>
           Clipboard instantly stores any item you copy in the cloud, meaning you
           can access your snippets immediately on all your devices. Our Mac and
           iOS apps will help you organize everything.
         </p>
-        <img src={computer} />
+        <img src={computer} className="image" />
         <ul>
           <li>
             <h3>Quick Search</h3>
@@ -47,7 +47,7 @@ function Main() {
           Whether you're on the goo, or at your computer, you can access all
           your Clipboard snippets in a few simple clicks.
         </p>
-        <img src={devices} />
+        <img src={devices} className="image" />
       </section>
       <section className="workflow">
         <h2>Supercharge your workflow</h2>

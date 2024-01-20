@@ -10,6 +10,58 @@
   margin-bottom: 60px;
 }
 
+.mobile main {
+  padding-inline: 26px;
+}
+.mobile main p {
+  font-size: 16px;
+  line-height: 26px;
+  padding-inline: 8px;
+}
+.mobile main h2 {
+  margin-bottom: 20px;
+}
+.mobile main .image {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+.mobile main .snippets {
+  margin-bottom: 180px;
+}
+.mobile main .snippets img {
+  width: 100%;
+}
+.mobile main .snippets h3 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+.mobile main .snippets li {
+  margin-bottom: 50px;
+}
+.mobile main .access {
+  margin-bottom: 60px;
+}
+.mobile main .workflow {
+  margin-bottom: 120px;
+}
+.mobile main .workflow h2 {
+  margin-bottom: 10px;
+}
+.mobile main .workflow ul {
+  margin-top: 90px;
+}
+.mobile main .workflow ul li {
+  margin-bottom: 50px;
+}
+.mobile main .workflow ul .icon {
+  margin-bottom: 40px;
+}
+.mobile main .workflow ul h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
 .desktop .introduction {
   max-width: 760px;
   margin-inline: auto;
@@ -24,14 +76,63 @@
   margin-bottom: 30px;
 }
 
+.mobile .introduction {
+  margin-bottom: 160px;
+}
 .mobile .introduction h1 {
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .mobile .introduction p {
-  font-size: 17px;
-  line-height: 28px;
+  margin-bottom: 44px;
+}
+
+.clients ul {
+  display: flex;
+}
+
+.mobile .clients {
+  margin-bottom: 160px;
+}
+.mobile .clients ul {
+  flex-direction: column;
+  gap: 53px;
+}
+.mobile .clients img {
+  transform: scale(0.85);
+}
+
+.mobile .call-to-action {
+  margin-bottom: 175px;
+}
+.mobile .call-to-action p {
+  margin-bottom: 44px;
+}
+
+footer {
+  background: #f5f6f8;
+}
+footer .socials {
+  display: flex;
+}
+
+.mobile footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.mobile footer .logo {
+  width: 54px;
   margin-bottom: 40px;
+}
+.mobile footer nav {
+  margin-bottom: 40px;
+}
+.mobile footer nav li {
+  margin-bottom: 28px;
+}
+.mobile footer .socials {
+  justify-content: center;
+  gap: 40px;
 }
 
 * {
@@ -47,7 +148,6 @@
   color: hsl(201, 11%, 66%);
   max-width: 1920px;
   margin-inline: auto;
-  padding-inline: 24px;
   text-align: center;
 }
 .clipboard h1,
@@ -71,21 +171,28 @@
   border-radius: 27px;
   cursor: pointer;
   margin-inline: 10px;
-  margin-block: 30px;
+  margin-block: 28px;
 }
 .clipboard button.ios {
   background-color: hsl(171, 66%, 44%);
-  box-shadow: #209e8b 0 2px 0 1px, #aceee4 0px 14px 14px;
+  box-shadow: #209e8b 0 2px 0 1px, #aceee4 0px 10px 10px;
 }
 .clipboard button.ios:hover {
   background-color: #5cbaac;
 }
 .clipboard button.mac {
   background-color: hsl(233, 100%, 69%);
-  box-shadow: #2c45ff 0 2px 0 1px, #c8ceff 0px 14px 14px;
+  box-shadow: #2c45ff 0 2px 0 1px, #c8ceff 0px 10px 10px;
 }
 .clipboard button.mac:hover {
   background-color: #8996ff;
+}
+.clipboard ul {
+  list-style: none;
+}
+.clipboard a {
+  color: hsl(210, 10%, 33%);
+  text-decoration: none;
 }
 
 .clipboard.desktop {
