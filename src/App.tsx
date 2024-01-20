@@ -37,10 +37,11 @@
 // import Insure from "./projects/junior/insure-landing-page-master/src/App";
 // import PricingComponentToggle from "./projects/junior/pricing-component-with-toggle-master/src/App";
 // import ProjectTracking from "./projects/junior/project-tracking-intro-component-master/src/App";
-import Clipboard from "./projects/junior/clipboard-landing-page-master/src/App";
+// import Clipboard from "./projects/junior/clipboard-landing-page-master/src/App";
+import HuddleAlternating from "./projects/junior/huddle-landing-page-with-alternating-feature-blocks-master/src/App";
 
 function App() {
-  return <Clipboard />;
+  return <HuddleAlternating />;
 }
 
 export default App;
