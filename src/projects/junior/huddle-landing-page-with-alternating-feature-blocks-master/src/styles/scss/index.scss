@@ -1,0 +1,33 @@
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Poppins", 600);
+@include google-font("Open Sans");
+@include google-font("Open Sans", 700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.huddle-alternating {
+  font: {
+    family: "Open Sans";
+    size: 18px;
+    weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font: {
+      family: "Poppins";
+      weight: 600;
+    }
+  }
+}

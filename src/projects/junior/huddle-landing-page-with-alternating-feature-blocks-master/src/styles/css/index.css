@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:600");
+@import url("https://fonts.googleapis.com/css?family=Open Sans:400");
+@import url("https://fonts.googleapis.com/css?family=Open Sans:700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.huddle-alternating {
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 400;
+}
+.huddle-alternating h1,
+.huddle-alternating h2,
+.huddle-alternating h3,
+.huddle-alternating h4,
+.huddle-alternating h5,
+.huddle-alternating h6 {
+  font-family: "Poppins";
+  font-weight: 600;
+}
 
 /*# sourceMappingURL=index.css.map */
