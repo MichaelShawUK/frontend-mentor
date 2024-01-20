@@ -1,7 +1,5 @@
 import logo from "../assets/images/logo.svg";
-import facebook from "../assets/images/icon-facebook.svg";
-import twitter from "../assets/images/icon-twitter.svg";
-import instagram from "../assets/images/icon-instagram.svg";
+import Socials from "./Socials";
 
 function Footer() {
   return (
@@ -26,23 +24,7 @@ function Footer() {
           </li>
         </ul>
       </nav>
-      <ul className="socials">
-        <li>
-          <a href="#facebook">
-            <img src={facebook} className="icon" />
-          </a>
-        </li>
-        <li>
-          <a href="#twitter">
-            <img src={twitter} className="icon" />
-          </a>
-        </li>
-        <li>
-          <a href="#instagram">
-            <img src={instagram} className="icon" />
-          </a>
-        </li>
-      </ul>
+      <Socials />
     </footer>
   );
 }

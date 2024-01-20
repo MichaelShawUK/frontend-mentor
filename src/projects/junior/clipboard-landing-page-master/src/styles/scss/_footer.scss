@@ -3,8 +3,24 @@
 footer {
   background: c.$footer-bg;
 
+  nav {
+    a {
+      &:hover {
+        color: c.$strong-cyan;
+      }
+    }
+  }
+
   .socials {
     display: flex;
+
+    li {
+      &:hover {
+        svg path {
+          fill: c.$strong-cyan;
+        }
+      }
+    }
   }
 }
 
