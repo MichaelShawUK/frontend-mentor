@@ -63,6 +63,7 @@
 }
 .desktop main .access img {
   width: 65%;
+  max-width: 900px;
 }
 .desktop main .workflow {
   margin-bottom: 160px;
