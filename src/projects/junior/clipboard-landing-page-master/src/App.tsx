@@ -13,10 +13,6 @@ function Clipboard() {
       <Header />
       <Main />
       <Footer />
-      {/* <img
-        src="src/projects/junior/clipboard-landing-page-master/design/mobile-design.jpg"
-        style={{ borderTop: "3px solid red" }}
-      /> */}
     </div>
   );
 }

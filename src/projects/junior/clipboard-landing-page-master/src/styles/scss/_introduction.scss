@@ -1,17 +1,17 @@
 @use "sizes";
 
 .desktop .introduction {
-  max-width: sizes.$main-content-width;
-  margin-inline: auto;
+  margin-bottom: 130px;
+
   h1 {
-    font-size: 48px;
-    margin-bottom: 24px;
+    font-size: 44px;
+    margin-bottom: 20px;
   }
 
   p {
-    font-size: 22px;
-    line-height: 32px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
   }
 }
 

@@ -1,6 +1,24 @@
+@use "sizes";
+
 .clients {
   ul {
     display: flex;
+  }
+}
+
+.desktop .clients {
+  max-width: sizes.$max-width;
+  margin-inline: auto;
+  margin-bottom: 160px;
+  padding-inline: sizes.$inline-spacing;
+
+  ul {
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  img {
+    width: 100%;
   }
 }
 

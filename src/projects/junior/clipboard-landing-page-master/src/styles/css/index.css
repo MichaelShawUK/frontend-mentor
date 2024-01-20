@@ -1,13 +1,94 @@
 @import url("https://fonts.googleapis.com/css?family=Bai Jamjuree:400");
 @import url("https://fonts.googleapis.com/css?family=Bai Jamjuree:600");
 .desktop header {
-  padding-top: 140px;
+  padding-top: 130px;
   margin-bottom: 60px;
 }
 
 .mobile header {
   padding-top: 120px;
   margin-bottom: 60px;
+}
+
+.desktop main h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+.desktop main p {
+  line-height: 30px;
+}
+.desktop main section h2, .desktop main section > p {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.desktop main .snippets {
+  margin-bottom: 140px;
+}
+.desktop main .snippets .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 80px;
+  margin-left: -30px;
+}
+.desktop main .snippets .wrapper ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+  height: 100%;
+  margin-left: clamp(60px, 8.3vw, 120px);
+  max-width: 360px;
+  padding-right: 20px;
+}
+.desktop main .snippets .wrapper img {
+  width: 100%;
+  max-width: 735px;
+  justify-self: flex-end;
+}
+.desktop main .snippets .wrapper p {
+  font-size: 16px;
+}
+.desktop main .snippets ul {
+  text-align: left;
+}
+.desktop main .snippets h3 {
+  font-size: 24px;
+}
+.desktop main .access {
+  margin-bottom: 30px;
+}
+.desktop main .access p {
+  margin-bottom: 80px;
+}
+.desktop main .access img {
+  width: 65%;
+}
+.desktop main .workflow {
+  margin-bottom: 160px;
+}
+.desktop main .workflow ul {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+.desktop main .workflow li {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 80px 50px 1fr;
+}
+.desktop main .workflow li p {
+  font-size: 16px;
+}
+.desktop main .workflow .icon {
+  justify-self: center;
+}
+.desktop main .workflow h3 {
+  font-size: 24px;
 }
 
 .mobile main {
@@ -64,17 +145,16 @@
 }
 
 .desktop .introduction {
-  max-width: 760px;
-  margin-inline: auto;
+  margin-bottom: 130px;
 }
 .desktop .introduction h1 {
-  font-size: 48px;
-  margin-bottom: 24px;
+  font-size: 44px;
+  margin-bottom: 20px;
 }
 .desktop .introduction p {
-  font-size: 22px;
-  line-height: 32px;
-  margin-bottom: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 20px;
 }
 
 .mobile .introduction {
@@ -92,6 +172,20 @@
   display: flex;
 }
 
+.desktop .clients {
+  max-width: 1100px;
+  margin-inline: auto;
+  margin-bottom: 160px;
+  padding-inline: 20px;
+}
+.desktop .clients ul {
+  justify-content: space-between;
+  gap: 40px;
+}
+.desktop .clients img {
+  width: 100%;
+}
+
 .mobile .clients {
   margin-bottom: 160px;
 }
@@ -101,6 +195,13 @@
 }
 .mobile .clients img {
   transform: scale(0.85);
+}
+
+.desktop .call-to-action {
+  margin-bottom: 160px;
+}
+.desktop .call-to-action p {
+  margin-bottom: 44px;
 }
 
 .mobile .call-to-action {
@@ -121,6 +222,34 @@ footer .socials {
 }
 footer .socials li:hover svg path {
   fill: hsl(171, 66%, 44%);
+}
+
+.desktop footer {
+  padding-block: 60px;
+}
+.desktop footer .wrapper {
+  max-width: 1100px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 54px 1fr 120px;
+  align-items: center;
+  padding-inline: 20px;
+}
+.desktop footer .logo {
+  width: 54px;
+}
+.desktop footer nav ul {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  grid-auto-flow: column;
+  text-align: left;
+  width: 500px;
+  margin-inline: auto;
+}
+.desktop footer .socials {
+  max-width: 120px;
+  justify-content: space-between;
 }
 
 .mobile footer {

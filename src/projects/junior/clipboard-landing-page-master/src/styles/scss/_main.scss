@@ -1,5 +1,108 @@
 @use "sizes";
 
+.desktop main {
+  h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    line-height: 30px;
+  }
+
+  section {
+    h2,
+    & > p {
+      max-width: sizes.$main-content-width;
+      margin-inline: auto;
+    }
+  }
+
+  .snippets {
+    margin-bottom: 140px;
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      margin-top: 80px;
+      margin-left: -30px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 10px;
+        height: 100%;
+        margin-left: clamp(60px, 8.3vw, 120px);
+        max-width: 360px;
+        padding-right: sizes.$inline-spacing;
+      }
+
+      img {
+        width: 100%;
+        max-width: 735px;
+        justify-self: flex-end;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    ul {
+      text-align: left;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+  }
+
+  .access {
+    margin-bottom: 30px;
+
+    p {
+      margin-bottom: 80px;
+    }
+    img {
+      width: 65%;
+    }
+  }
+
+  .workflow {
+    margin-bottom: 160px;
+
+    ul {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: sizes.$max-width;
+      margin-inline: auto;
+      padding-inline: sizes.$inline-spacing;
+    }
+
+    li {
+      display: grid;
+      justify-content: center;
+      grid-template-rows: 80px 50px 1fr;
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .icon {
+      justify-self: center;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+  }
+}
+
 .mobile main {
   padding-inline: sizes.$margin-inline;
 
