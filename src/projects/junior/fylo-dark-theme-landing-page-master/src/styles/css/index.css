@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+@import url("https://fonts.googleapis.com/css?family=Raleway:700");
+@import url("https://fonts.googleapis.com/css?family=Open Sans:400");
+@import url("https://fonts.googleapis.com/css?family=Open Sans:700");
+header {
+  background-color: hsl(217, 28%, 15%);
+  max-width: 1920px;
+  padding-block: 70px;
+  padding-inline: 20px;
+}
+header .wrapper {
+  max-width: 1280px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header ul {
+  font-size: 16px;
+  display: flex;
+  gap: 60px;
+}
+header a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fylo-dark {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(218, 28%, 13%);
+  max-width: 1920px;
+  margin-inline: auto;
+}
+.fylo-dark a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+.fylo-dark button {
+  background: linear-gradient(90deg, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+  color: hsl(0, 0%, 100%);
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 1.2em;
+  border-radius: 1.7em;
+  min-width: 280px;
+  cursor: pointer;
+}
+.fylo-dark button:hover {
+  background: hsl(187, 62%, 72%);
+}
+.fylo-dark ul {
+  list-style: none;
+}
+.fylo-dark header,
+.fylo-dark h1,
+.fylo-dark h2,
+.fylo-dark h3,
+.fylo-dark h4,
+.fylo-dark h5,
+.fylo-dark h6,
+.fylo-dark button {
+  font-family: "Raleway";
+}
+
+/*# sourceMappingURL=index.css.map */

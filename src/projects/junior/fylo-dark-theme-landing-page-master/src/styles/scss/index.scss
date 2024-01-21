@@ -1,0 +1,68 @@
+@use "colors" as c;
+@use "sizes";
+
+@use "header";
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Raleway");
+@include google-font("Raleway", 700);
+@include google-font("Open Sans");
+@include google-font("Open Sans", 700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fylo-dark {
+  font: {
+    family: "Open Sans";
+    size: 14px;
+    weight: 400;
+  }
+
+  color: c.$white;
+  background-color: c.$main-bg;
+  max-width: sizes.$max-page-width;
+  margin-inline: auto;
+
+  a {
+    color: c.$white;
+    text-decoration: none;
+  }
+
+  button {
+    background: linear-gradient(90deg, c.$gradient1, c.$gradient2);
+    color: c.$white;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 1.2em;
+    border-radius: 1.7em;
+    min-width: 280px;
+    cursor: pointer;
+
+    &:hover {
+      background: c.$button-hover;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  header,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button {
+    font-family: "Raleway";
+  }
+}

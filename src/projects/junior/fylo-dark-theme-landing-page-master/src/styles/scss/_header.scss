@@ -1,0 +1,30 @@
+@use "colors" as c;
+@use "sizes";
+
+header {
+  background-color: c.$intro-email-bg;
+  max-width: sizes.$max-page-width;
+  padding-block: 70px;
+  padding-inline: sizes.$inline-spacing;
+
+  .wrapper {
+    max-width: sizes.$max-content-width;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul {
+    font-size: 16px;
+    display: flex;
+    gap: 60px;
+  }
+
+  a {
+    &:hover {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
