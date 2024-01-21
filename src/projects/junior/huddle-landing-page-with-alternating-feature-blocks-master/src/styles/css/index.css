@@ -68,19 +68,45 @@ header .logo {
     max-width: 400px;
   }
 }
+.main-wrapper {
+  margin-inline: 20px;
+}
+
 main {
   max-width: 1200px;
   margin-inline: auto;
   margin-top: 100px;
-  padding-inline: 20px;
 }
 main .card {
   border-radius: 20px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1333333333);
   margin-bottom: 40px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  gap: 7%;
+}
+main .card:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+main .card:nth-child(even) {
+  justify-content: flex-end;
+}
+main img {
+  width: 40%;
+}
+main .text-wrapper {
+  width: 45%;
+}
+main h2 {
+  margin-bottom: 14px;
+  font-size: clamp(22px, 2.7vw, 27px);
 }
 main p {
   color: hsl(208, 11%, 55%);
+  line-height: 30px;
+  font-size: clamp(15px, 1.8vw, 18px);
+  line-height: clamp(22px, 3vw, 30px);
 }
 
 @media (width <= 768px) {
@@ -91,6 +117,10 @@ main p {
   }
   main .card {
     padding: 50px 30px 40px 30px;
+    display: block;
+  }
+  main .text-wrapper {
+    width: 100%;
   }
   main h2 {
     font-size: 22px;
@@ -103,6 +133,166 @@ main p {
     margin-inline: auto;
   }
 }
+.sign-up {
+  background: linear-gradient(#fff 70%, hsl(192, 100%, 9%) 30%);
+  margin-top: 120px;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+.sign-up .wrapper {
+  background: #fff;
+  display: block;
+  text-align: center;
+  max-width: 700px;
+  padding: 40px;
+  margin-inline: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1333333333);
+}
+.sign-up h1 {
+  margin-bottom: 26px;
+}
+.sign-up button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (width <= 768px) {
+  .sign-up .wrapper {
+    padding: 40px clamp(14px, 4.5vw, 40px);
+  }
+  .sign-up h1 {
+    font-size: clamp(20px, 4.5vw, 27px);
+    margin-bottom: clamp(18px, 3.4vw, 26px);
+  }
+  .sign-up button {
+    font-size: 12px;
+  }
+}
+footer {
+  background-color: hsl(192, 100%, 9%);
+  color: #fff;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+footer .flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 56px;
+}
+footer li {
+  list-style: none;
+}
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer .wrapper {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+footer .logo {
+  width: 180px;
+  margin-bottom: 30px;
+}
+footer .contact {
+  padding-left: 20px;
+  max-width: 400px;
+}
+footer .contact li {
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+footer .address::marker {
+  content: url("src/projects/junior/huddle-landing-page-with-alternating-feature-blocks-master/src/assets/images/icon-location.svg");
+  width: 20px;
+  display: block;
+}
+footer .phone::marker {
+  content: url("src/projects/junior/huddle-landing-page-with-alternating-feature-blocks-master/src/assets/images/icon-phone.svg");
+}
+footer .email::marker {
+  content: url("src/projects/junior/huddle-landing-page-with-alternating-feature-blocks-master/src/assets/images/icon-email.svg");
+}
+footer nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  max-width: 300px;
+  row-gap: 20px;
+  height: min-content;
+}
+footer nav a {
+  height: min-content;
+}
+footer .copyright {
+  text-align: right;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+@media (width <= 768px) {
+  footer {
+    text-align: left;
+  }
+  footer .flex-container {
+    display: block;
+  }
+  footer .contact {
+    margin-bottom: 40px;
+  }
+  footer nav {
+    display: block;
+    margin-bottom: 40px;
+  }
+  footer nav a {
+    display: block;
+    margin-bottom: 10px;
+    width: max-content;
+  }
+  footer .socials {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  footer .copyright {
+    text-align: center;
+  }
+}
+.socials {
+  display: flex;
+  gap: 16px;
+}
+.socials li {
+  border: 1px solid #fff;
+  height: 42px;
+  width: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.socials li:hover {
+  border-color: hsl(322, 100%, 66%);
+}
+.socials li:hover path {
+  fill: hsl(322, 100%, 66%);
+}
+.socials a {
+  display: block;
+  height: 20px;
+}
+.socials svg {
+  height: 20px;
+}
+
 * {
   margin: 0;
   padding: 0;

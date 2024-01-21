@@ -1,20 +1,52 @@
 @use "sizes";
 @use "colors" as c;
 
+.main-wrapper {
+  margin-inline: sizes.$inline-spacing;
+}
+
 main {
   max-width: sizes.$max-content-width;
   margin-inline: auto;
   margin-top: 100px;
-  padding-inline: sizes.$inline-spacing;
 
   .card {
     border-radius: 20px;
     box-shadow: 0 0 6px #0002;
     margin-bottom: 40px;
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+    gap: 7%;
+
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-child(even) {
+      justify-content: flex-end;
+    }
+  }
+
+  img {
+    width: 40%;
+  }
+
+  .text-wrapper {
+    width: 45%;
+  }
+
+  h2 {
+    margin-bottom: 14px;
+    font-size: clamp(22px, 2.7vw, 27px);
   }
 
   p {
     color: c.$grayish-blue;
+    line-height: 30px;
+    font-size: clamp(15px, 1.8vw, 18px);
+    line-height: clamp(22px, 3vw, 30px);
   }
 }
 
@@ -28,6 +60,11 @@ main {
 
     .card {
       padding: 50px 30px 40px 30px;
+      display: block;
+    }
+
+    .text-wrapper {
+      width: 100%;
     }
 
     h2 {
