@@ -3,9 +3,9 @@
 
 header {
   background-color: c.$intro-email-bg;
-  max-width: sizes.$max-page-width;
-  padding-block: 70px;
   padding-inline: sizes.$inline-spacing;
+  padding-top: clamp(30px, 8vw, 70px);
+  padding-bottom: clamp(40px, 10.7vw, 70px);
 
   .wrapper {
     max-width: sizes.$max-content-width;
@@ -15,10 +15,15 @@ header {
     align-items: center;
   }
 
+  .logo {
+    height: clamp(24px, 3.6vw, 52px);
+  }
+
   ul {
-    font-size: 16px;
     display: flex;
-    gap: 60px;
+
+    font-size: clamp(12px, 3.2vw, 16px);
+    gap: clamp(26px, 6.9vw, 60px);
   }
 
   a {

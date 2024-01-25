@@ -1,0 +1,44 @@
+@use "sizes";
+@use "colors" as c;
+
+.introduction {
+  text-align: center;
+  padding-inline: sizes.$inline-spacing;
+  background: c.$intro-email-bg
+    url("src/projects/junior/fylo-dark-theme-landing-page-master/src/assets/images/bg-curvy-desktop.svg")
+    no-repeat bottom center/100%;
+
+  .illustration {
+    width: max(50%, calc(320px - (sizes.$inline-spacing * 2)));
+    max-width: 720px;
+  }
+
+  .wrapper {
+    margin-inline: auto;
+    max-width: 800px;
+  }
+
+  h1 {
+    font-size: clamp(24px, 2.8vw, 40px);
+    line-height: 1.4em;
+    padding-inline: min(1em, 2.8vw);
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  p {
+    font-size: clamp(14px, 1.4vw, 20px);
+    line-height: 1.6em;
+    width: clamp(280px, 80vw, 75%);
+    margin-inline: auto;
+    margin-bottom: 1.5em;
+  }
+}
+
+@media (width <= 425px) {
+  .introduction {
+    background: url("src/projects/junior/fylo-dark-theme-landing-page-master/src/assets/images/bg-curvy-desktop.svg")
+        no-repeat center/100%,
+      linear-gradient(c.$intro-email-bg 59%, c.$main-bg 59%);
+  }
+}

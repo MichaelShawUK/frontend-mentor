@@ -4,9 +4,9 @@
 @import url("https://fonts.googleapis.com/css?family=Open Sans:700");
 header {
   background-color: hsl(217, 28%, 15%);
-  max-width: 1920px;
-  padding-block: 70px;
   padding-inline: 20px;
+  padding-top: clamp(30px, 8vw, 70px);
+  padding-bottom: clamp(40px, 10.7vw, 70px);
 }
 header .wrapper {
   max-width: 1280px;
@@ -15,16 +15,52 @@ header .wrapper {
   justify-content: space-between;
   align-items: center;
 }
+header .logo {
+  height: clamp(24px, 3.6vw, 52px);
+}
 header ul {
-  font-size: 16px;
   display: flex;
-  gap: 60px;
+  font-size: clamp(12px, 3.2vw, 16px);
+  gap: clamp(26px, 6.9vw, 60px);
 }
 header a:hover {
   font-weight: bold;
   text-decoration: underline;
 }
 
+.introduction {
+  text-align: center;
+  padding-inline: 20px;
+  background: hsl(217, 28%, 15%) url("src/projects/junior/fylo-dark-theme-landing-page-master/src/assets/images/bg-curvy-desktop.svg") no-repeat bottom center/100%;
+}
+.introduction .illustration {
+  width: max(50%, 280px);
+  max-width: 720px;
+}
+.introduction .wrapper {
+  margin-inline: auto;
+  max-width: 800px;
+}
+.introduction h1 {
+  font-size: clamp(24px, 2.8vw, 40px);
+  line-height: 1.4em;
+  padding-inline: min(1em, 2.8vw);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.introduction p {
+  font-size: clamp(14px, 1.4vw, 20px);
+  line-height: 1.6em;
+  width: clamp(280px, 80vw, 75%);
+  margin-inline: auto;
+  margin-bottom: 1.5em;
+}
+
+@media (width <= 425px) {
+  .introduction {
+    background: url("src/projects/junior/fylo-dark-theme-landing-page-master/src/assets/images/bg-curvy-desktop.svg") no-repeat center/100%, linear-gradient(hsl(217, 28%, 15%) 59%, hsl(218, 28%, 13%) 59%);
+  }
+}
 * {
   margin: 0;
   padding: 0;
