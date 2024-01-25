@@ -63,7 +63,7 @@ header a:hover {
 }
 .features {
   font-size: 14px;
-  margin-top: 8em;
+  margin-top: 10em;
   row-gap: 5em;
   padding-inline: 20px;
   max-width: 1280px;
@@ -116,6 +116,67 @@ header a:hover {
     height: 60px;
     display: block;
     margin-inline: auto;
+  }
+}
+.summary {
+  padding-inline: 20px;
+  max-width: 1280px;
+  margin-inline: auto;
+  margin-top: 10em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+}
+.summary img {
+  width: 100%;
+  display: block;
+  margin-inline: auto;
+}
+.summary h3 {
+  font-size: clamp(24px, 2.8vw, 40px);
+  margin-bottom: 1.2em;
+  margin-top: 2em;
+}
+.summary p {
+  line-height: 1.7em;
+  margin-bottom: 1.2em;
+}
+.summary .accent {
+  color: hsl(176, 68%, 64%);
+  cursor: pointer;
+  width: max-content;
+}
+.summary .accent::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid hsl(176, 68%, 64%);
+}
+.summary .accent span {
+  vertical-align: sub;
+  padding-left: 0.5em;
+}
+.summary .accent:hover {
+  color: #fff;
+}
+.summary .accent:hover::after {
+  border-color: #fff;
+}
+.summary .accent:hover use {
+  fill: #fff;
+}
+
+@media (width <= 768px) {
+  .summary {
+    display: block;
+  }
+  .summary img {
+    width: 90%;
+    max-width: 400px;
+  }
+  .summary h3 {
+    font-size: clamp(18px, 2vw, 20px);
   }
 }
 * {

@@ -1,0 +1,76 @@
+@use "colors" as c;
+@use "sizes";
+
+.summary {
+  padding-inline: sizes.$inline-spacing;
+  max-width: sizes.$max-content-width;
+  margin-inline: auto;
+  margin-top: 10em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+
+  img {
+    width: 100%;
+    display: block;
+    margin-inline: auto;
+  }
+
+  h3 {
+    font-size: clamp(24px, 2.8vw, 40px);
+
+    margin-bottom: 1.2em;
+    margin-top: 2em;
+  }
+
+  p {
+    line-height: 1.7em;
+    margin-bottom: 1.2em;
+  }
+
+  .accent {
+    color: c.$gradient1;
+    cursor: pointer;
+    width: max-content;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid c.$gradient1;
+    }
+
+    span {
+      vertical-align: sub;
+      padding-left: 0.5em;
+    }
+
+    &:hover {
+      color: #fff;
+
+      &::after {
+        border-color: #fff;
+      }
+
+      use {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  .summary {
+    display: block;
+
+    img {
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h3 {
+      font-size: clamp(18px, 2vw, 20px);
+    }
+  }
+}

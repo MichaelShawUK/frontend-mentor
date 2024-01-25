@@ -3,6 +3,7 @@ import "./styles/css/index.css";
 import Header from "./components/Header";
 import Introduction from "./components/Introduction";
 import Features from "./components/Features";
+import Summary from "./components/Summary";
 
 function FyloDark() {
   return (
@@ -11,6 +12,7 @@ function FyloDark() {
       <main>
         <Introduction />
         <Features />
+        <Summary />
       </main>
       {/* <img
         src="src/projects/junior/fylo-dark-theme-landing-page-master/design/mobile-design.jpg"
