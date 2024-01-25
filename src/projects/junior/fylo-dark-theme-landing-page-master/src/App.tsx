@@ -2,12 +2,16 @@ import "./styles/css/index.css";
 
 import Header from "./components/Header";
 import Introduction from "./components/Introduction";
+import Features from "./components/Features";
 
 function FyloDark() {
   return (
     <div className="fylo-dark">
       <Header />
-      <Introduction />
+      <main>
+        <Introduction />
+        <Features />
+      </main>
       {/* <img
         src="src/projects/junior/fylo-dark-theme-landing-page-master/design/mobile-design.jpg"
         style={{

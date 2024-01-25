@@ -1,0 +1,68 @@
+@use "sizes";
+
+.features {
+  font-size: 14px;
+  margin-top: 8em;
+  row-gap: 5em;
+  padding-inline: sizes.$inline-spacing;
+  max-width: sizes.$max-content-width;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  li {
+    text-align: center;
+    width: 35%;
+    display: grid;
+    grid-template-rows: 100px max-content max-content;
+  }
+
+  img {
+    justify-self: center;
+    align-self: center;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-size: clamp(18px, 2vw, 20px);
+    margin-top: 1em;
+  }
+
+  p {
+    margin-top: 1em;
+    line-height: 1.7em;
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  .features {
+    display: block;
+    max-width: 400px;
+    margin-top: 8em;
+
+    li {
+      margin-bottom: 5em;
+      width: auto;
+      display: block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    p {
+      margin-top: 1em;
+    }
+
+    h3 {
+      margin-top: 1.5em;
+    }
+
+    img {
+      height: 60px;
+      display: block;
+      margin-inline: auto;
+    }
+  }
+}

@@ -61,6 +61,63 @@ header a:hover {
     background: url("src/projects/junior/fylo-dark-theme-landing-page-master/src/assets/images/bg-curvy-desktop.svg") no-repeat center/100%, linear-gradient(hsl(217, 28%, 15%) 59%, hsl(218, 28%, 13%) 59%);
   }
 }
+.features {
+  font-size: 14px;
+  margin-top: 8em;
+  row-gap: 5em;
+  padding-inline: 20px;
+  max-width: 1280px;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.features li {
+  text-align: center;
+  width: 35%;
+  display: grid;
+  grid-template-rows: 100px max-content max-content;
+}
+.features img {
+  justify-self: center;
+  align-self: center;
+}
+.features h3 {
+  font-size: 20px;
+  font-size: clamp(18px, 2vw, 20px);
+  margin-top: 1em;
+}
+.features p {
+  margin-top: 1em;
+  line-height: 1.7em;
+}
+
+@media (width <= 768px) {
+  .features {
+    display: block;
+    max-width: 400px;
+    margin-top: 8em;
+  }
+  .features li {
+    margin-bottom: 5em;
+    width: auto;
+    display: block;
+  }
+  .features li:last-child {
+    margin-bottom: 0;
+  }
+  .features p {
+    margin-top: 1em;
+  }
+  .features h3 {
+    margin-top: 1.5em;
+  }
+  .features img {
+    height: 60px;
+    display: block;
+    margin-inline: auto;
+  }
+}
 * {
   margin: 0;
   padding: 0;
