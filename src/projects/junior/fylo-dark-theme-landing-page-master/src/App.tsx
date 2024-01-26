@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Introduction from "./components/Introduction";
 import Features from "./components/Features";
 import Summary from "./components/Summary";
+import Testimonials from "./components/Testimonials";
 
 function FyloDark() {
   return (
@@ -13,6 +14,7 @@ function FyloDark() {
         <Introduction />
         <Features />
         <Summary />
+        <Testimonials />
       </main>
       {/* <img
         src="src/projects/junior/fylo-dark-theme-landing-page-master/design/mobile-design.jpg"
