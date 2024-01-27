@@ -7,6 +7,8 @@
 @use "summary";
 @use "testimonials";
 @use "callToAction";
+@use "footer";
+@use "socials";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");

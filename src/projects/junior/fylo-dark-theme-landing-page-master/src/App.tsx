@@ -6,6 +6,7 @@ import Features from "./components/Features";
 import Summary from "./components/Summary";
 import Testimonials from "./components/Testimonials";
 import CallToAction from "./components/CallToAction";
+import Footer from "./components/Footer";
 
 function FyloDark() {
   return (
@@ -18,6 +19,8 @@ function FyloDark() {
         <Testimonials />
         <CallToAction />
       </main>
+      <Footer />
+
       {/* <img
         src="src/projects/junior/fylo-dark-theme-landing-page-master/design/mobile-design.jpg"
         style={{
