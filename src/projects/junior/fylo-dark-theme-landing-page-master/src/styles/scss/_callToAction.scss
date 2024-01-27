@@ -1,0 +1,96 @@
+@use "colors" as c;
+@use "sizes";
+
+.call-to-action {
+  padding-inline: sizes.$inline-spacing;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(c.$main-bg 50%, c.$footer-bg 50%);
+  text-align: center;
+  margin-top: 10em;
+
+  .wrapper {
+    background-color: c.$intro-email-bg;
+    border-radius: 6px;
+    max-width: 768px;
+    padding: 2.5em 4em 0;
+    box-shadow: 4px 4px 4px c.$footer-bg;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p:not(.error) {
+    margin-block: 1em 2em;
+    line-height: 1.5;
+    padding-inline: 2em;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 20px;
+    position: relative;
+    padding-bottom: 3em;
+  }
+
+  form button {
+    font-size: 14px;
+    min-width: unset;
+    padding: 1em 2em;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 1em 2em;
+    border-radius: 1.5em;
+    border: none;
+  }
+
+  .error {
+    color: c.$light-red;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 2em;
+    position: absolute;
+    bottom: 1em;
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  .call-to-action {
+    .wrapper {
+      padding-inline: 2em;
+    }
+
+    h2 {
+      font-size: clamp(18px, 4.8vw, 30px);
+    }
+
+    p:not(.error) {
+      padding-inline: 0;
+    }
+
+    form {
+      display: block;
+    }
+
+    input {
+      margin-bottom: 1em;
+    }
+
+    input,
+    button {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .error {
+      text-align: center;
+      left: 0;
+      right: 0;
+    }
+  }
+}

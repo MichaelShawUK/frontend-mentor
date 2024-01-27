@@ -232,6 +232,84 @@ header a:hover {
     margin-bottom: 0;
   }
 }
+.call-to-action {
+  padding-inline: 20px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(hsl(218, 28%, 13%) 50%, hsl(216, 53%, 9%) 50%);
+  text-align: center;
+  margin-top: 10em;
+}
+.call-to-action .wrapper {
+  background-color: hsl(217, 28%, 15%);
+  border-radius: 6px;
+  max-width: 768px;
+  padding: 2.5em 4em 0;
+  box-shadow: 4px 4px 4px hsl(216, 53%, 9%);
+}
+.call-to-action h2 {
+  font-size: 30px;
+}
+.call-to-action p:not(.error) {
+  margin-block: 1em 2em;
+  line-height: 1.5;
+  padding-inline: 2em;
+}
+.call-to-action form {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 3em;
+}
+.call-to-action form button {
+  font-size: 14px;
+  min-width: unset;
+  padding: 1em 2em;
+}
+.call-to-action input {
+  font-size: 14px;
+  padding: 1em 2em;
+  border-radius: 1.5em;
+  border: none;
+}
+.call-to-action .error {
+  color: hsl(0, 100%, 63%);
+  font-weight: 700;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 2em;
+  position: absolute;
+  bottom: 1em;
+}
+
+@media (width <= 768px) {
+  .call-to-action .wrapper {
+    padding-inline: 2em;
+  }
+  .call-to-action h2 {
+    font-size: clamp(18px, 4.8vw, 30px);
+  }
+  .call-to-action p:not(.error) {
+    padding-inline: 0;
+  }
+  .call-to-action form {
+    display: block;
+  }
+  .call-to-action input {
+    margin-bottom: 1em;
+  }
+  .call-to-action input,
+  .call-to-action button {
+    width: 100%;
+    max-width: 350px;
+  }
+  .call-to-action .error {
+    text-align: center;
+    left: 0;
+    right: 0;
+  }
+}
 * {
   margin: 0;
   padding: 0;
