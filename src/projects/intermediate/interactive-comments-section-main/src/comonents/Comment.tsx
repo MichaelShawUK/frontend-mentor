@@ -1,11 +1,18 @@
-import { useContext } from "react";
-
 import { CommentType, ReplyType } from "../types/types";
-import CurrentUserContext from "../context/CurrentUserContext";
 import transformPath from "../util/transformPath";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import {
+  incrementCommentScore,
+  decrementCommentScore,
+} from "../app/commentsSlice";
 
-function Comment({ comment }: { comment: CommentType | ReplyType }) {
-  const currentUser = useContext(CurrentUserContext);
+interface Props {
+  comment: CommentType | ReplyType;
+}
+
+function Comment({ comment }: Props) {
+  const dispatch = useAppDispatch();
+  const currentUser = useAppSelector((state) => state.currentUser);
 
   const isCurrentUser = currentUser.username === comment.user.username;
 
@@ -29,9 +36,13 @@ function Comment({ comment }: { comment: CommentType | ReplyType }) {
       </div>
       <p className="content">{comment.content}</p>
       <div className="score">
-        <button>+</button>
+        <button onClick={() => dispatch(incrementCommentScore(comment.id))}>
+          +
+        </button>
         <span>{comment.score}</span>
-        <button>-</button>
+        <button onClick={() => dispatch(decrementCommentScore(comment.id))}>
+          -
+        </button>
       </div>
     </article>
   );

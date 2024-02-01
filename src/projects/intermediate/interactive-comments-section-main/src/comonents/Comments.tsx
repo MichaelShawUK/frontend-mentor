@@ -1,7 +1,16 @@
-import { CommentType } from "../types/types";
+// import { CommentType } from "../types/types";
+import { useAppSelector } from "../app/hooks";
 import Comment from "./Comment";
+import { selectComments } from "../app/commentsSlice";
 
-function Comments({ comments }: { comments: CommentType[] }) {
+// interface Props {
+//   comments: CommentType[];
+//   onUpvote: (id: number) => void;
+// }
+
+function Comments() {
+  const comments = useAppSelector(selectComments);
+
   return (
     <section className="comments">
       {comments.map((comment) => {
