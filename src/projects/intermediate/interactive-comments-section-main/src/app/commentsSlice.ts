@@ -58,10 +58,29 @@ const commentsSlice = createSlice({
         }
       });
     },
+    removeComment(state, action: PayloadAction<number | null>) {
+      const newComments: CommentType[] = [];
+
+      state.entities.forEach((comment) => {
+        const replies = comment.replies.filter(
+          (reply) => reply.id !== action.payload
+        );
+
+        comment = { ...comment, replies };
+
+        if (comment.id !== action.payload) newComments.push(comment);
+      });
+
+      state.entities = newComments;
+    },
   },
 });
 
 export default commentsSlice.reducer;
 export const selectComments = (state: RootState) => state.comments.entities;
-export const { addComment, incrementCommentScore, decrementCommentScore } =
-  commentsSlice.actions;
+export const {
+  addComment,
+  incrementCommentScore,
+  decrementCommentScore,
+  removeComment,
+} = commentsSlice.actions;

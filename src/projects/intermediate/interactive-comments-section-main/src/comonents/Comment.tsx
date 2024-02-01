@@ -8,13 +8,18 @@ import {
 
 interface Props {
   comment: CommentType | ReplyType;
+  onDelete: (commentId: number) => void;
 }
 
-function Comment({ comment }: Props) {
+function Comment({ comment, onDelete }: Props) {
   const dispatch = useAppDispatch();
   const currentUser = useAppSelector((state) => state.currentUser);
 
   const isCurrentUser = currentUser.username === comment.user.username;
+
+  function isReply(comment: CommentType | ReplyType): comment is ReplyType {
+    return (comment as ReplyType).replyingTo !== undefined;
+  }
 
   return (
     <article className="comment">
@@ -27,14 +32,17 @@ function Comment({ comment }: Props) {
       <div className="actions">
         {isCurrentUser ? (
           <>
-            <button>Delete</button>
+            <button onClick={() => onDelete(comment.id)}>Delete</button>
             <button>Edit</button>
           </>
         ) : (
           <button>Reply</button>
         )}
       </div>
-      <p className="content">{comment.content}</p>
+      <p className="content">
+        {isReply(comment) && <span>@{comment.replyingTo} </span>}
+        {comment.content}
+      </p>
       <div className="score">
         <button onClick={() => dispatch(incrementCommentScore(comment.id))}>
           +

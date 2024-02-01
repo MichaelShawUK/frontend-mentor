@@ -1,28 +1,36 @@
-// import { CommentType } from "../types/types";
 import { useAppSelector } from "../app/hooks";
 import Comment from "./Comment";
 import { selectComments } from "../app/commentsSlice";
 
-// interface Props {
-//   comments: CommentType[];
-//   onUpvote: (id: number) => void;
-// }
+interface Props {
+  deleteComment: (commentId: number) => void;
+}
 
-function Comments() {
+function Comments({ deleteComment }: Props) {
   const comments = useAppSelector(selectComments);
 
   return (
     <section className="comments">
       {comments.map((comment) => {
         if (comment.replies.length === 0) {
-          return <Comment comment={comment} key={comment.id} />;
+          return (
+            <Comment
+              comment={comment}
+              key={comment.id}
+              onDelete={deleteComment}
+            />
+          );
         } else {
           return (
             <div className="conversation" key={comment.id}>
-              <Comment comment={comment} />
+              <Comment comment={comment} onDelete={deleteComment} />
               <div className="replies">
                 {comment.replies.map((reply) => (
-                  <Comment comment={reply} key={reply.id} />
+                  <Comment
+                    comment={reply}
+                    key={reply.id}
+                    onDelete={deleteComment}
+                  />
                 ))}
               </div>
             </div>

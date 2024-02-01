@@ -1,14 +1,7 @@
 import { useState } from "react";
 
-// import CurrentUserContext from "../context/CurrentUserContext";
-// import { revertPath } from "../util/transformPath";
-// import { CommentType } from "../types/types";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { addComment } from "../app/commentsSlice";
-
-// interface Props {
-//   onAddComment: (comment: CommentType) => void;
-// }
 
 function AddCommentForm() {
   const currentUser = useAppSelector((state) => state.currentUser);
@@ -30,22 +23,6 @@ function AddCommentForm() {
       })
     );
 
-    // const commentObject: CommentType = {
-    //   id: Math.random(),
-    //   content: comment,
-    //   createdAt: "just now",
-    //   score: 1,
-    //   user: {
-    //     image: {
-    //       png: revertPath(currentUser.avatar),
-    //       webp: "",
-    //     },
-    //     username: currentUser.username,
-    //   },
-    //   replies: [],
-    // };
-
-    // onAddComment(commentObject);
     setInputValue("");
   }
 
