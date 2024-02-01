@@ -73,6 +73,22 @@ const commentsSlice = createSlice({
 
       state.entities = newComments;
     },
+    editComment(state, action: PayloadAction<{ id: number; content: string }>) {
+      if (action.payload.content.trim().length === 0) return;
+
+      state.entities.forEach((comment) => {
+        if (comment.id === action.payload.id) {
+          comment.content = action.payload.content;
+          return;
+        }
+        comment.replies.forEach((reply) => {
+          if (reply.id === action.payload.id) {
+            reply.content = action.payload.content;
+            return;
+          }
+        });
+      });
+    },
   },
 });
 
@@ -83,4 +99,5 @@ export const {
   incrementCommentScore,
   decrementCommentScore,
   removeComment,
+  editComment,
 } = commentsSlice.actions;

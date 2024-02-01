@@ -1,9 +1,12 @@
+import { useState } from "react";
+
 import { CommentType, ReplyType } from "../types/types";
 import transformPath from "../util/transformPath";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
   incrementCommentScore,
   decrementCommentScore,
+  editComment,
 } from "../app/commentsSlice";
 
 interface Props {
@@ -11,14 +14,44 @@ interface Props {
   onDelete: (commentId: number) => void;
 }
 
+function isReply(comment: CommentType | ReplyType): comment is ReplyType {
+  return (comment as ReplyType).replyingTo !== undefined;
+}
+
 function Comment({ comment, onDelete }: Props) {
   const dispatch = useAppDispatch();
   const currentUser = useAppSelector((state) => state.currentUser);
+  const [inEditMode, setInEditMode] = useState(false);
+  const [editedComment, setEditedComment] = useState(comment.content);
 
   const isCurrentUser = currentUser.username === comment.user.username;
 
-  function isReply(comment: CommentType | ReplyType): comment is ReplyType {
-    return (comment as ReplyType).replyingTo !== undefined;
+  function editCommentHandler(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    dispatch(editComment({ id: comment.id, content: editedComment }));
+    setInEditMode(false);
+    if (editedComment.trim().length === 0) setEditedComment(comment.content);
+  }
+
+  let content;
+
+  if (inEditMode) {
+    content = (
+      <form onSubmit={(event) => editCommentHandler(event)}>
+        <textarea
+          value={editedComment}
+          onChange={(event) => setEditedComment(event.target.value)}
+        ></textarea>
+        <button>Update</button>
+      </form>
+    );
+  } else {
+    content = (
+      <p className="content">
+        {isReply(comment) && <span>@{comment.replyingTo} </span>}
+        {comment.content}
+      </p>
+    );
   }
 
   return (
@@ -33,16 +66,13 @@ function Comment({ comment, onDelete }: Props) {
         {isCurrentUser ? (
           <>
             <button onClick={() => onDelete(comment.id)}>Delete</button>
-            <button>Edit</button>
+            <button onClick={() => setInEditMode(true)}>Edit</button>
           </>
         ) : (
           <button>Reply</button>
         )}
       </div>
-      <p className="content">
-        {isReply(comment) && <span>@{comment.replyingTo} </span>}
-        {comment.content}
-      </p>
+      {content}
       <div className="score">
         <button onClick={() => dispatch(incrementCommentScore(comment.id))}>
           +
