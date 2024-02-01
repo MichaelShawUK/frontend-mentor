@@ -1,13 +1,30 @@
+import { useState } from "react";
+
 import "./styles/css/index.css";
-import { formatDistanceToNowStrict } from "date-fns";
+import data from "./data.json";
+import transformPath from "./util/transformPath";
+import CurrentUserContext from "./context/CurrentUserContext";
+import Comments from "./comonents/Comments";
+import AddCommentForm from "./comonents/AddCommentForm";
 
 function InteractiveComments() {
-  const result = formatDistanceToNowStrict(new Date(2023, 1, 30), {
-    addSuffix: true,
-  });
-  console.log(result);
+  const [comments, setComments] = useState(data.comments);
 
-  return <div className="interactive-comments">interactive comments</div>;
+  const currentUser = {
+    username: data.currentUser.username,
+    avatar: transformPath(data.currentUser.image.png),
+  };
+
+  function onAddComment() {}
+
+  return (
+    <CurrentUserContext.Provider value={currentUser}>
+      <div className="interactive-comments">
+        <Comments comments={comments} />
+        <AddCommentForm />
+      </div>
+    </CurrentUserContext.Provider>
+  );
 }
 
 export default InteractiveComments;
