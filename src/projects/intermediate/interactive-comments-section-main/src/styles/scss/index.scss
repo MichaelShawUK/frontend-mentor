@@ -1,0 +1,26 @@
+@use "colors" as c;
+@use "sizes";
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Rubik");
+@include google-font("Rubik", 500);
+@include google-font("Rubik", 700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.interactive-comments {
+  font: {
+    family: "Rubik";
+    weight: 400;
+    size: 16px;
+  }
+
+  color: c.$grayish-blue;
+}
