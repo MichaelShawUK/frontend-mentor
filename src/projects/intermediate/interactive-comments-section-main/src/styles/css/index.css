@@ -39,10 +39,207 @@
   background: rgba(0, 0, 0, 0.5333333333);
 }
 
+.comments {
+  max-width: 768px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.replies {
+  margin-left: 38px;
+  padding-left: 38px;
+  border-left: 2px solid #d8d9f3;
+}
+
+@media (width <= 700px) {
+  .comments {
+    padding-inline: 10px;
+  }
+  .replies {
+    margin-left: 0;
+    padding-left: 10px;
+  }
+}
+.comment {
+  background-color: hsl(0, 0%, 100%);
+  margin-top: 1.2em;
+  border-radius: 8px;
+  padding: 1.5em;
+  display: grid;
+  grid-template-areas: "score meta actions" "score content content";
+  grid-template-columns: 34px 1fr 150px;
+  gap: 14px 24px;
+}
+.comment .meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  grid-area: meta;
+}
+.comment .avatar {
+  width: 32px;
+  height: 32px;
+}
+.comment .author {
+  font-weight: 500;
+  color: hsl(212, 24%, 26%);
+}
+.comment .current-user-badge {
+  background-color: hsl(238, 40%, 52%);
+  color: hsl(0, 0%, 100%);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 1px 4px 2px;
+  border-radius: 2px;
+}
+.comment .actions {
+  display: flex;
+  gap: 24px;
+  grid-area: actions;
+  justify-self: flex-end;
+}
+.comment .content {
+  grid-area: content;
+  line-height: 1.6;
+  margin-right: 20px;
+  overflow: hidden;
+}
+.comment form {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 18px;
+  width: 100%;
+}
+.comment form button {
+  height: min-content;
+}
+.comment .replying-to {
+  color: hsl(238, 40%, 52%);
+  font-weight: 500;
+}
+
+.score {
+  width: fit-content;
+  border-radius: 6px;
+  background-color: hsl(228, 33%, 97%);
+  grid-area: score;
+  height: min-content;
+}
+.score button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  height: 30px;
+  width: 34px;
+  background-color: unset;
+  cursor: pointer;
+}
+.score button:hover path {
+  fill: hsl(238, 40%, 52%);
+}
+.score span {
+  height: 30px;
+  width: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(238, 40%, 52%);
+  font-weight: 500;
+}
+
+@media (width <= 700px) {
+  .comment {
+    padding: 1em;
+    grid-template-areas: "meta meta" "content content" "score actions";
+    grid-template-columns: 90px 1fr;
+  }
+  .comment .content {
+    margin-right: 0;
+  }
+  .comment form {
+    display: block;
+  }
+  .comment form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .comment form button {
+    margin-left: auto;
+    display: block;
+  }
+  .score {
+    display: flex;
+  }
+  .score span,
+  .score button {
+    height: 32px;
+    width: 30px;
+  }
+}
+.new-comment-wrapper {
+  max-width: 768px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  margin-top: 1.5em;
+}
+
+.add-comment-form {
+  margin-top: 0.5em;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  padding: 1.5em;
+  display: flex;
+  gap: 18px;
+}
+.add-comment-form .avatar {
+  height: 40px;
+  width: 40px;
+}
+.add-comment-form form {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 18px;
+  width: 100%;
+}
+.add-comment-form form button {
+  height: min-content;
+}
+
+@media (width <= 700px) {
+  .new-comment-wrapper {
+    padding-inline: 10px;
+  }
+  .add-comment-form {
+    padding: 1em;
+    position: relative;
+  }
+  .add-comment-form .avatar {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    bottom: 22px;
+  }
+  .add-comment-form form {
+    display: block;
+  }
+  .add-comment-form form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .add-comment-form form button {
+    display: block;
+    margin-left: auto;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(228, 33%, 97%);
 }
 
 .interactive-comments {
@@ -50,6 +247,7 @@
   font-weight: 400;
   font-size: 16px;
   color: hsl(211, 10%, 45%);
+  margin-bottom: 2em;
 }
 .interactive-comments button.form {
   color: hsl(0, 0%, 100%);
@@ -76,6 +274,49 @@
 }
 .interactive-comments button.form:hover {
   opacity: 0.5;
+}
+.interactive-comments button.icon {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: hsl(238, 40%, 52%);
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: initial;
+}
+.interactive-comments button.icon.delete {
+  color: hsl(358, 79%, 66%);
+}
+.interactive-comments button.icon:hover {
+  opacity: 0.5;
+}
+.interactive-comments button.icon::before {
+  margin-right: 6px;
+}
+.interactive-comments button.icon.delete::before {
+  content: url("src/projects/intermediate/interactive-comments-section-main/src/assets/images/icon-delete.svg");
+}
+.interactive-comments button.icon.edit::before {
+  content: url("src/projects/intermediate/interactive-comments-section-main/src/assets/images/icon-edit.svg");
+}
+.interactive-comments button.icon.reply::before {
+  content: url("src/projects/intermediate/interactive-comments-section-main/src/assets/images/icon-reply.svg");
+}
+.interactive-comments textarea {
+  font-family: "Rubik";
+  font-size: inherit;
+  height: 6em;
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  line-height: 1.5;
+  resize: none;
+  overflow: hidden;
+  border-color: #e2e3e6;
+  color: hsl(212, 24%, 26%);
+}
+.interactive-comments textarea:focus-within {
+  outline: none;
+  border-color: hsl(212, 24%, 26%);
 }
 
 /*# sourceMappingURL=index.css.map */

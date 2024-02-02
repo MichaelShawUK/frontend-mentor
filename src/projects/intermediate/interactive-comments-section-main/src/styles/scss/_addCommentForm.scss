@@ -1,0 +1,64 @@
+@use "colors" as c;
+@use "sizes";
+
+.new-comment-wrapper {
+  max-width: 768px;
+  margin-inline: auto;
+  padding-inline: sizes.$inline-spacing;
+  margin-top: 1.5em;
+}
+
+.add-comment-form {
+  margin-top: 0.5em;
+  background-color: c.$white;
+  border-radius: 8px;
+  padding: 1.5em;
+  display: flex;
+  gap: 18px;
+
+  .avatar {
+    height: 40px;
+    width: 40px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    gap: 18px;
+    width: 100%;
+
+    button {
+      height: min-content;
+    }
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  .new-comment-wrapper {
+    padding-inline: sizes.$inline-spacing-mobile;
+  }
+
+  .add-comment-form {
+    padding: 1em;
+    position: relative;
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      bottom: 22px;
+    }
+
+    form {
+      display: block;
+      textarea {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      button {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  }
+}

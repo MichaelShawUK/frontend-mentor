@@ -27,7 +27,9 @@ function InteractiveComments() {
           commentToDelete={commentToDelete}
         />
         <Comments deleteComment={deleteComment} />
-        <AddCommentForm mode="NEW COMMENT" />
+        <div className="new-comment-wrapper">
+          <AddCommentForm mode="NEW COMMENT" />
+        </div>
       </div>
     </Provider>
   );

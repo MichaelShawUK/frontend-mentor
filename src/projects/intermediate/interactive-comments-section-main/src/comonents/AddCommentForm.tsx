@@ -21,7 +21,10 @@ function AddCommentForm({ mode, replyingTo, parentId, onSubmit }: Props) {
     event.preventDefault();
     const comment = inputValue.trim();
 
-    if (comment.length === 0) return;
+    if (comment.length === 0) {
+      if (mode === "REPLY" && onSubmit) onSubmit();
+      return;
+    }
 
     if (mode === "NEW COMMENT") {
       dispatch(
@@ -51,11 +54,12 @@ function AddCommentForm({ mode, replyingTo, parentId, onSubmit }: Props) {
 
   return (
     <section className="add-comment-form">
-      <img src={currentUser.avatar} />
+      <img src={currentUser.avatar} className="avatar" />
       <form onSubmit={submitFormHandler}>
         <textarea
           onChange={(event) => setInputValue(event.target.value)}
           value={inputValue}
+          placeholder="Add a comment..."
         ></textarea>
         <button className="form send">
           {mode === "REPLY" ? "Reply" : "Send"}

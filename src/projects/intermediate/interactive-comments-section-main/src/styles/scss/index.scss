@@ -2,6 +2,9 @@
 @use "sizes";
 
 @use "modal";
+@use "comments";
+@use "comment";
+@use "addCommentForm";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
@@ -17,6 +20,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: c.$very-light-gray;
+}
+
 .interactive-comments {
   font: {
     family: "Rubik";
@@ -25,6 +32,7 @@
   }
 
   color: c.$grayish-blue;
+  margin-bottom: 2em;
 
   button {
     &.form {
@@ -43,8 +51,6 @@
       }
       text-transform: uppercase;
       border: none;
-      // padding: 0.8em 1.7em;
-      // padding-inline: 1.7em;
       padding-block: 0.8em;
       border-radius: 6px;
       cursor: pointer;
@@ -56,6 +62,57 @@
       &:hover {
         opacity: 0.5;
       }
+    }
+
+    &.icon {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: c.$moderate-blue;
+
+      &.delete {
+        color: c.$soft-red;
+      }
+
+      font: {
+        family: "Rubik";
+        weight: 500;
+        size: initial;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &::before {
+        margin-right: 6px;
+      }
+
+      @each $type in ("delete", "edit", "reply") {
+        &.#{$type}::before {
+          content: url("src/projects/intermediate/interactive-comments-section-main/src/assets/images/icon-#{$type}.svg");
+        }
+      }
+    }
+  }
+
+  textarea {
+    font: {
+      family: "Rubik";
+      size: inherit;
+    }
+    height: 6em;
+    padding: 0.6em 1em;
+    border-radius: 8px;
+    line-height: 1.5;
+    resize: none;
+    overflow: hidden;
+    border-color: #e2e3e6;
+    color: c.$dark-blue;
+
+    &:focus-within {
+      outline: none;
+      border-color: c.$dark-blue;
     }
   }
 }

@@ -1,0 +1,25 @@
+@use "colors" as c;
+@use "sizes";
+
+.comments {
+  max-width: 768px;
+  margin-inline: auto;
+  padding-inline: sizes.$inline-spacing;
+}
+
+.replies {
+  margin-left: 38px;
+  padding-left: 38px;
+  border-left: 2px solid #d8d9f3;
+}
+
+@media (width <= sizes.$breakpoint) {
+  .comments {
+    padding-inline: sizes.$inline-spacing-mobile;
+  }
+
+  .replies {
+    margin-left: 0;
+    padding-left: sizes.$inline-spacing-mobile;
+  }
+}

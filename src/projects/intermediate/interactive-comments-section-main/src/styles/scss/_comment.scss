@@ -1,0 +1,144 @@
+@use "colors" as c;
+@use "sizes";
+
+.comment {
+  background-color: c.$white;
+  margin-top: 1.2em;
+  border-radius: 8px;
+  padding: 1.5em;
+  display: grid;
+  grid-template-areas:
+    "score meta actions"
+    "score content content";
+  grid-template-columns: 34px 1fr 150px;
+  gap: 14px 24px;
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    grid-area: meta;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .author {
+    font-weight: 500;
+    color: c.$dark-blue;
+  }
+
+  .current-user-badge {
+    background-color: c.$moderate-blue;
+    color: c.$white;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 1px 4px 2px;
+    border-radius: 2px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 24px;
+    grid-area: actions;
+    justify-self: flex-end;
+  }
+
+  .content {
+    grid-area: content;
+    line-height: 1.6;
+    margin-right: 20px;
+    overflow: hidden;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    gap: 18px;
+    width: 100%;
+
+    button {
+      height: min-content;
+    }
+  }
+
+  .replying-to {
+    color: c.$moderate-blue;
+    font-weight: 500;
+  }
+}
+
+.score {
+  width: fit-content;
+  border-radius: 6px;
+  background-color: c.$very-light-gray;
+  grid-area: score;
+  height: min-content;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    height: 30px;
+    width: 34px;
+    background-color: unset;
+    cursor: pointer;
+
+    &:hover {
+      path {
+        fill: c.$moderate-blue;
+      }
+    }
+  }
+  span {
+    height: 30px;
+    width: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: c.$moderate-blue;
+    font-weight: 500;
+  }
+}
+
+@media (width <= sizes.$breakpoint) {
+  .comment {
+    padding: 1em;
+    grid-template-areas:
+      "meta meta"
+      "content content"
+      "score actions";
+    grid-template-columns: 90px 1fr;
+
+    .content {
+      margin-right: 0;
+    }
+
+    form {
+      display: block;
+
+      textarea {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      button {
+        margin-left: auto;
+        display: block;
+      }
+    }
+  }
+
+  .score {
+    display: flex;
+
+    span,
+    button {
+      height: 32px;
+      width: 30px;
+    }
+  }
+}
