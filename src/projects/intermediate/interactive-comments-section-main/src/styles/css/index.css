@@ -1,6 +1,44 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik:400");
 @import url("https://fonts.googleapis.com/css?family=Rubik:500");
 @import url("https://fonts.googleapis.com/css?family=Rubik:700");
+.modal {
+  border: none;
+  max-width: unset;
+  max-height: unset;
+  height: 100vh;
+  width: 100%;
+  background-color: transparent;
+}
+.modal .flex-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal .wrapper {
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 2em;
+  width: 375px;
+  margin-bottom: 100px;
+  margin-inline: 20px;
+}
+.modal h2 {
+  font-weight: 500;
+}
+.modal p {
+  color: hsl(211, 10%, 45%);
+  margin-block: 1em;
+}
+.modal .actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5333333333);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +50,32 @@
   font-weight: 400;
   font-size: 16px;
   color: hsl(211, 10%, 45%);
+}
+.interactive-comments button.form {
+  color: hsl(0, 0%, 100%);
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: none;
+  padding-block: 0.8em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.interactive-comments button.form.cancel {
+  background-color: hsl(211, 10%, 45%);
+}
+.interactive-comments button.form.confirm {
+  background-color: hsl(358, 79%, 66%);
+}
+.interactive-comments button.form.send {
+  background-color: hsl(238, 40%, 52%);
+}
+.interactive-comments button.form.send {
+  width: 100px;
+}
+.interactive-comments button.form:hover {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -37,14 +37,27 @@ function DeleteModal({ showModal, onClose, commentToDelete }: Props) {
   }, [onClose]);
 
   return (
-    <dialog className="delete-modal" ref={dialogRef}>
-      <h2>Delete comment</h2>
-      <p>
-        Are you sure you want to delete this comment? This will remove the
-        comment and can't be undone.
-      </p>
-      <button onClick={() => dialogRef.current?.close()}>No, Cancel</button>
-      <button onClick={confirmCommentDeletion}>Yes, Delete</button>
+    <dialog className="modal" ref={dialogRef}>
+      <div className="flex-container">
+        <div className="wrapper">
+          <h2>Delete comment</h2>
+          <p>
+            Are you sure you want to delete this comment? This will remove the
+            comment and can't be undone.
+          </p>
+          <div className="actions">
+            <button
+              className="form cancel"
+              onClick={() => dialogRef.current?.close()}
+            >
+              No, Cancel
+            </button>
+            <button className="form confirm" onClick={confirmCommentDeletion}>
+              Yes, Delete
+            </button>
+          </div>
+        </div>
+      </div>
     </dialog>
   );
 }

@@ -1,6 +1,8 @@
 @use "colors" as c;
 @use "sizes";
 
+@use "modal";
+
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
 }
@@ -23,4 +25,37 @@
   }
 
   color: c.$grayish-blue;
+
+  button {
+    &.form {
+      color: c.$white;
+
+      @each $type, $color in c.$form-buttons {
+        &.#{$type} {
+          background-color: $color;
+        }
+      }
+
+      font: {
+        family: "Rubik";
+        weight: 500;
+        size: 16px;
+      }
+      text-transform: uppercase;
+      border: none;
+      // padding: 0.8em 1.7em;
+      // padding-inline: 1.7em;
+      padding-block: 0.8em;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &.send {
+        width: 100px;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
 }

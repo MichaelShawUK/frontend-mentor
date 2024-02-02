@@ -57,7 +57,9 @@ function AddCommentForm({ mode, replyingTo, parentId, onSubmit }: Props) {
           onChange={(event) => setInputValue(event.target.value)}
           value={inputValue}
         ></textarea>
-        <button>{mode === "REPLY" ? "Reply" : "Send"}</button>
+        <button className="form send">
+          {mode === "REPLY" ? "Reply" : "Send"}
+        </button>
       </form>
     </section>
   );

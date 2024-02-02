@@ -44,7 +44,7 @@ function Comment({ comment, onDelete }: Props) {
         value={editedComment}
         onChange={(event) => setEditedComment(event.target.value)}
       ></textarea>
-      <button>Update</button>
+      <button className="form send">Update</button>
     </form>
   );
 

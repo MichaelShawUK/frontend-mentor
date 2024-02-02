@@ -7,3 +7,18 @@ $grayish-blue: hsl(211, 10%, 45%);
 $light-gray: hsl(223, 19%, 93%);
 $very-light-gray: hsl(228, 33%, 97%);
 $white: hsl(0, 0%, 100%);
+
+$form-buttons: (
+  "cancel": $grayish-blue,
+  "confirm": $soft-red,
+  "send": $moderate-blue,
+);
+
+@mixin button-colors {
+  @each $type, $color in $form-buttons {
+    button.form.#{$type} {
+      background-color: $color;
+      color: $white;
+    }
+  }
+}

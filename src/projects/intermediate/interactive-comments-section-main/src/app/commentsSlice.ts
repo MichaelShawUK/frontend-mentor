@@ -46,7 +46,6 @@ const commentsSlice = createSlice({
 
       for (let i = 0; i < state.entities.length; i++) {
         const comment = state.entities[i];
-        console.log("i: ", i);
         if (comment.id === parentId) {
           parent = comment;
           break;
