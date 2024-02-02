@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import data from "../data.json";
 import { revertPath } from "../util/transformPath";
 import { RootState } from "./store";
-import { CommentType } from "../types/types";
+import { CommentType, ReplyType, AddReplyPayload } from "../types/types";
 
 interface CommentsState {
   entities: CommentType[];
@@ -37,6 +37,48 @@ const commentsSlice = createSlice({
 
       state.entities.push(comment);
       state.nextId++;
+    },
+    addReply(state, action: PayloadAction<AddReplyPayload>) {
+      const { parentId, replyingTo, content, username, avatar } =
+        action.payload;
+
+      let parent: CommentType | undefined;
+
+      for (let i = 0; i < state.entities.length; i++) {
+        const comment = state.entities[i];
+        console.log("i: ", i);
+        if (comment.id === parentId) {
+          parent = comment;
+          break;
+        }
+        for (let j = 0; j < comment.replies.length; j++) {
+          const reply = comment.replies[j];
+          if (reply.id === parentId) {
+            parent = comment;
+            break;
+          }
+        }
+      }
+
+      const reply: ReplyType = {
+        id: state.nextId,
+        createdAt: "just now",
+        replyingTo,
+        score: 1,
+        user: {
+          username,
+          image: {
+            png: revertPath(avatar),
+            webp: "",
+          },
+        },
+        content,
+      };
+
+      if (parent) {
+        parent.replies.push(reply);
+        state.nextId++;
+      }
     },
     incrementCommentScore(state, action: PayloadAction<number>) {
       state.entities.forEach((comment) => {
@@ -100,4 +142,5 @@ export const {
   decrementCommentScore,
   removeComment,
   editComment,
+  addReply,
 } = commentsSlice.actions;

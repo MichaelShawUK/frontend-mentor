@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { CommentType, ReplyType } from "../types/types";
+import { CommentType, ReplyType, isReply } from "../types/types.d";
 import transformPath from "../util/transformPath";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
@@ -8,21 +8,26 @@ import {
   decrementCommentScore,
   editComment,
 } from "../app/commentsSlice";
+import AddCommentForm from "./AddCommentForm";
 
 interface Props {
   comment: CommentType | ReplyType;
   onDelete: (commentId: number) => void;
 }
 
-function isReply(comment: CommentType | ReplyType): comment is ReplyType {
-  return (comment as ReplyType).replyingTo !== undefined;
-}
+// function isReply(comment: CommentType | ReplyType): comment is ReplyType {
+//   return (comment as ReplyType).replyingTo !== undefined;
+// }
 
 function Comment({ comment, onDelete }: Props) {
   const dispatch = useAppDispatch();
   const currentUser = useAppSelector((state) => state.currentUser);
   const [inEditMode, setInEditMode] = useState(false);
   const [editedComment, setEditedComment] = useState(comment.content);
+  const [showReplyForm, setShowReplyForm] = useState(false);
+
+  const openReplyForm = () => setShowReplyForm(true);
+  const closeReplyForm = () => setShowReplyForm(false);
 
   const isCurrentUser = currentUser.username === comment.user.username;
 
@@ -33,56 +38,66 @@ function Comment({ comment, onDelete }: Props) {
     if (editedComment.trim().length === 0) setEditedComment(comment.content);
   }
 
-  let content;
+  const editForm = (
+    <form onSubmit={(event) => editCommentHandler(event)}>
+      <textarea
+        value={editedComment}
+        onChange={(event) => setEditedComment(event.target.value)}
+      ></textarea>
+      <button>Update</button>
+    </form>
+  );
 
-  if (inEditMode) {
-    content = (
-      <form onSubmit={(event) => editCommentHandler(event)}>
-        <textarea
-          value={editedComment}
-          onChange={(event) => setEditedComment(event.target.value)}
-        ></textarea>
-        <button>Update</button>
-      </form>
-    );
-  } else {
-    content = (
-      <p className="content">
-        {isReply(comment) && <span>@{comment.replyingTo} </span>}
-        {comment.content}
-      </p>
-    );
-  }
+  const displayComment = (
+    <p className="content">
+      {isReply(comment) && <span>@{comment.replyingTo} </span>}
+      {comment.content}
+    </p>
+  );
+
+  const content = inEditMode ? editForm : displayComment;
+
+  const editActions = (
+    <>
+      <button onClick={() => onDelete(comment.id)}>Delete</button>
+      <button onClick={() => setInEditMode(true)}>Edit</button>
+    </>
+  );
+
+  const respondActions = <button onClick={openReplyForm}>Reply</button>;
+
+  const actions = isCurrentUser ? editActions : respondActions;
 
   return (
-    <article className="comment">
-      <div className="meta">
-        <img src={transformPath(comment.user.image.png)} className="avatar" />
-        <p className="author">{comment.user.username}</p>
-        {isCurrentUser && <p className="current-user-badge">you</p>}
-        <p className="age">{comment.createdAt}</p>
-      </div>
-      <div className="actions">
-        {isCurrentUser ? (
-          <>
-            <button onClick={() => onDelete(comment.id)}>Delete</button>
-            <button onClick={() => setInEditMode(true)}>Edit</button>
-          </>
-        ) : (
-          <button>Reply</button>
-        )}
-      </div>
-      {content}
-      <div className="score">
-        <button onClick={() => dispatch(incrementCommentScore(comment.id))}>
-          +
-        </button>
-        <span>{comment.score}</span>
-        <button onClick={() => dispatch(decrementCommentScore(comment.id))}>
-          -
-        </button>
-      </div>
-    </article>
+    <>
+      <article className="comment">
+        <div className="meta">
+          <img src={transformPath(comment.user.image.png)} className="avatar" />
+          <p className="author">{comment.user.username}</p>
+          {isCurrentUser && <p className="current-user-badge">you</p>}
+          <p className="age">{comment.createdAt}</p>
+        </div>
+        <div className="actions">{actions}</div>
+        {content}
+        <div className="score">
+          <button onClick={() => dispatch(incrementCommentScore(comment.id))}>
+            +
+          </button>
+          <span>{comment.score}</span>
+          <button onClick={() => dispatch(decrementCommentScore(comment.id))}>
+            -
+          </button>
+        </div>
+      </article>
+      {showReplyForm && (
+        <AddCommentForm
+          mode="REPLY"
+          replyingTo={comment.user.username}
+          parentId={comment.id}
+          onSubmit={closeReplyForm}
+        />
+      )}
+    </>
   );
 }
 

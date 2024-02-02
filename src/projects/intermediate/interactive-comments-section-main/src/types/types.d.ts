@@ -40,3 +40,17 @@ export interface ReplyType {
     username: string;
   };
 }
+
+export interface AddReplyPayload {
+  parentId: number;
+  replyingTo: string;
+  content: string;
+  username: string;
+  avatar: string;
+}
+
+export function isReply(
+  comment: CommentType | ReplyType
+): comment is ReplyType {
+  return (comment as ReplyType).replyingTo !== undefined;
+}

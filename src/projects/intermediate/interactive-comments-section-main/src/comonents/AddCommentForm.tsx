@@ -1,9 +1,16 @@
 import { useState } from "react";
 
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { addComment } from "../app/commentsSlice";
+import { addComment, addReply } from "../app/commentsSlice";
 
-function AddCommentForm() {
+interface Props {
+  mode: "NEW COMMENT" | "REPLY";
+  replyingTo?: string;
+  parentId?: number;
+  onSubmit?: () => void;
+}
+
+function AddCommentForm({ mode, replyingTo, parentId, onSubmit }: Props) {
   const currentUser = useAppSelector((state) => state.currentUser);
 
   const dispatch = useAppDispatch();
@@ -15,13 +22,29 @@ function AddCommentForm() {
     const comment = inputValue.trim();
 
     if (comment.length === 0) return;
-    dispatch(
-      addComment({
-        content: comment,
-        username: currentUser.username,
-        avatar: currentUser.avatar,
-      })
-    );
+
+    if (mode === "NEW COMMENT") {
+      dispatch(
+        addComment({
+          content: comment,
+          username: currentUser.username,
+          avatar: currentUser.avatar,
+        })
+      );
+    }
+
+    if (mode === "REPLY" && parentId && replyingTo && onSubmit) {
+      dispatch(
+        addReply({
+          parentId,
+          replyingTo,
+          content: comment,
+          username: currentUser.username,
+          avatar: currentUser.avatar,
+        })
+      );
+      onSubmit();
+    }
 
     setInputValue("");
   }
@@ -34,7 +57,7 @@ function AddCommentForm() {
           onChange={(event) => setInputValue(event.target.value)}
           value={inputValue}
         ></textarea>
-        <button>Send</button>
+        <button>{mode === "REPLY" ? "Reply" : "Send"}</button>
       </form>
     </section>
   );
