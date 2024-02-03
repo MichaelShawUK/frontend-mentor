@@ -1,0 +1,20 @@
+@use "colors" as c;
+
+@mixin google-font($family, $weight: 400) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
+}
+
+@include google-font("Kumbh Sans");
+@include google-font("Kumbh Sans", 700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ecommerce-product-page {
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  color: c.$dark-grayish-blue;
+}

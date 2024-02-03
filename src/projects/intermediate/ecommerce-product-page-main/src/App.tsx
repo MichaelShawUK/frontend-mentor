@@ -1,3 +1,5 @@
+import "./styles/css/index.css";
+
 function EcommerceProductPage() {
   return (
     <div className="ecommerce-product-page">
