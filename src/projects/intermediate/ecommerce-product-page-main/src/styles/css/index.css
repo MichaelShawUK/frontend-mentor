@@ -1,5 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Kumbh Sans:400");
 @import url("https://fonts.googleapis.com/css?family=Kumbh Sans:700");
+header {
+  display: grid;
+  align-items: center;
+}
+
+.desktop header {
+  grid-template-columns: 145px 1fr 22px 50px;
+  gap: 50px;
+  padding: 20px;
+}
+.desktop header .avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.mobile header {
+  grid-template-columns: 16px 1fr 22px 24px;
+  gap: 20px;
+  padding: 24px;
+}
+.mobile header .avatar {
+  width: 24px;
+  height: 24px;
+}
+
+.desktop nav ul {
+  display: flex;
+  gap: 33px;
+  gap: min(33px, 3vw);
+  font-size: 15px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +42,15 @@
   font-family: "Kumbh Sans";
   font-size: 16px;
   color: hsl(219, 9%, 45%);
+  margin-inline: auto;
+  max-width: 1150px;
+}
+.ecommerce-product-page ul {
+  list-style: none;
+}
+.ecommerce-product-page a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=index.css.map */

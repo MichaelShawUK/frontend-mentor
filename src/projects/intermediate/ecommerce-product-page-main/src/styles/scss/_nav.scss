@@ -1,0 +1,8 @@
+.desktop nav {
+  ul {
+    display: flex;
+    gap: 33px;
+    gap: min(33px, 3vw);
+    font-size: 15px;
+  }
+}
