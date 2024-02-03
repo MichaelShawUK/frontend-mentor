@@ -1,0 +1,56 @@
+@use "colors" as c;
+@use "sizes";
+
+$num-links: 5;
+
+.mobile-menu {
+  max-width: unset;
+  max-height: unset;
+  height: 100vh;
+  border: none;
+  padding: 24px;
+  width: 250px;
+
+  animation: slideIn ease-in 0.3s;
+
+  img {
+    margin-bottom: 40px;
+    animation: fadeIn ease-in 0.8s both;
+  }
+
+  li {
+    margin-bottom: 20px;
+
+    @for $i from 1 through $num-links {
+      &:nth-child(#{$i}) {
+        animation: fadeIn ease-in 0.3s calc(0.2s + 0.1s * $i) both;
+      }
+    }
+  }
+
+  a {
+    font-weight: bold;
+  }
+
+  &::backdrop {
+    background: c.$lightbox-bg;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-250px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

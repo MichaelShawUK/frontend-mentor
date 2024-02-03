@@ -7,16 +7,28 @@ import menu from "../assets/images/icon-menu.svg";
 
 import Nav from "./Nav";
 
-function Header() {
+interface Props {
+  onOpen: () => void;
+}
+
+function Header({ onOpen }: Props) {
   const device = useDevice();
 
   return (
     <header>
-      {device === "mobile" && <img src={menu} className="menu" />}
+      {device === "mobile" && (
+        <button>
+          <img src={menu} className="menu" onClick={onOpen} />
+        </button>
+      )}
       <img src={logo} className="logo" />
       {device === "desktop" && <Nav />}
-      <img src={cart} className="cart" />
-      <img src={avatar} className="avatar" />
+      <button>
+        <img src={cart} className="cart" />
+      </button>
+      <button>
+        <img src={avatar} className="avatar" />
+      </button>
     </header>
   );
 }
