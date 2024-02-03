@@ -40,10 +40,11 @@
 // import Clipboard from "./projects/junior/clipboard-landing-page-master/src/App";
 // import HuddleAlternating from "./projects/junior/huddle-landing-page-with-alternating-feature-blocks-master/src/App";
 // import FyloDark from "./projects/junior/fylo-dark-theme-landing-page-master/src/App";
-import InteractiveComments from "./projects/intermediate/interactive-comments-section-main/src/App";
+// import InteractiveComments from "./projects/intermediate/interactive-comments-section-main/src/App";
+import EcommerceProductPage from "./projects/intermediate/ecommerce-product-page-main/src/App";
 
 function App() {
-  return <InteractiveComments />;
+  return <EcommerceProductPage />;
 }
 
 export default App;
