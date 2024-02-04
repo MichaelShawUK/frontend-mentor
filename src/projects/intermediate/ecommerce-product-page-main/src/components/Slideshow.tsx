@@ -1,19 +1,33 @@
+import { useState } from "react";
+
 import img1 from "../assets/images/image-product-1.jpg";
 import img2 from "../assets/images/image-product-2.jpg";
 import img3 from "../assets/images/image-product-3.jpg";
 import img4 from "../assets/images/image-product-4.jpg";
 
 function Slideshow() {
+  const [currentImage, setCurrentImage] = useState(1);
+
+  const images = [img1, img2, img3, img4];
+  const numImages = images.length;
+
+  const prevImage = () => setCurrentImage((image) => Math.max(1, --image));
+  const nextImage = () =>
+    setCurrentImage((image) => Math.min(++image, numImages));
+
   return (
     <section className="slideshow">
-      <div className="carousel">
-        <img src={img1} />
-        <img src={img2} />
-        <img src={img3} />
-        <img src={img4} />
+      <div className="carousel" data-image={currentImage}>
+        {images.map((image, index) => (
+          <img key={index} src={image} />
+        ))}
       </div>
       <div className="actions">
-        <button className="previous">
+        <button
+          className="previous"
+          onClick={prevImage}
+          disabled={currentImage === 1}
+        >
           <svg
             width="35%"
             height="35%"
@@ -23,13 +37,17 @@ function Slideshow() {
             <path
               d="M11 1 3 9l8 8"
               stroke="#1D2026"
-              stroke-width="4"
+              strokeWidth="4"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             />
           </svg>
         </button>
-        <button className="next">
+        <button
+          className="next"
+          onClick={nextImage}
+          disabled={currentImage === numImages}
+        >
           <svg
             width="35%"
             height="35%"
@@ -39,9 +57,9 @@ function Slideshow() {
             <path
               d="m2 1 8 8-8 8"
               stroke="#1D2026"
-              stroke-width="4"
+              strokeWidth="4"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             />
           </svg>
         </button>
