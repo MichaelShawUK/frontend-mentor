@@ -6,6 +6,7 @@ import DeviceContext from "./context/DeviceContext";
 
 import Header from "./components/Header";
 import MobileMenu from "./components/MobileMenu";
+import Slideshow from "./components/Slideshow";
 
 import mobileDesign from "../design/mobile-design.jpg";
 import desktopDesign from "../design/desktop-design.jpg";
@@ -24,6 +25,7 @@ function EcommerceProductPage() {
           <MobileMenu show={showMenu} onClose={closeMenu} />
         )}
         <Header onOpen={openMenu} />
+        <Slideshow />
       </div>
       <img
         src={device === "mobile" ? mobileDesign : desktopDesign}

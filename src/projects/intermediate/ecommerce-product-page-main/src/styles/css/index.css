@@ -98,7 +98,7 @@ header img {
 
 @keyframes slideIn {
   from {
-    transform: translateX(-250px);
+    transform: translateX(-200px);
   }
   to {
     transform: translateX(0);
@@ -110,6 +110,48 @@ header img {
   }
   to {
     opacity: 1;
+  }
+}
+.slideshow img {
+  display: block;
+}
+
+.mobile .slideshow {
+  position: relative;
+}
+.mobile .slideshow .carousel {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 100%);
+  transform: translateX(-50%);
+}
+.mobile .slideshow img {
+  width: 100%;
+}
+.mobile .slideshow button {
+  border: none;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+.mobile .slideshow .actions {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-inline: 14px;
+  height: 100%;
+}
+
+@keyframes next {
+  from {
+    transform: translateX(0);
   }
 }
 * {
