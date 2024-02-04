@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import PreviousArrow from "../svg/PreviousArrow";
+import NextArrow from "../svg/NextArrow";
+
 import img1 from "../assets/images/image-product-1.jpg";
 import img2 from "../assets/images/image-product-2.jpg";
 import img3 from "../assets/images/image-product-3.jpg";
@@ -28,40 +31,14 @@ function Slideshow() {
           onClick={prevImage}
           disabled={currentImage === 1}
         >
-          <svg
-            width="35%"
-            height="35%"
-            viewBox="0 0 12 18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11 1 3 9l8 8"
-              stroke="#1D2026"
-              strokeWidth="4"
-              fill="none"
-              fillRule="evenodd"
-            />
-          </svg>
+          <PreviousArrow height="13" />
         </button>
         <button
           className="next"
           onClick={nextImage}
           disabled={currentImage === numImages}
         >
-          <svg
-            width="35%"
-            height="35%"
-            viewBox="0 0 12 18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="m2 1 8 8-8 8"
-              stroke="#1D2026"
-              strokeWidth="4"
-              fill="none"
-              fillRule="evenodd"
-            />
-          </svg>
+          <NextArrow height="13" />
         </button>
       </div>
     </section>

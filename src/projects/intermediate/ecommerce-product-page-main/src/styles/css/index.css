@@ -136,7 +136,7 @@ header img {
 }
 .mobile .slideshow img {
   width: 100%;
-  transition: transform ease-in-out 0.6s;
+  transition: transform ease-in-out 0.4s;
 }
 .mobile .slideshow button {
   border: none;
@@ -147,8 +147,13 @@ header img {
   width: 38px;
   height: 38px;
   border-radius: 50%;
+  cursor: pointer;
+}
+.mobile .slideshow button:hover path {
+  stroke: hsl(26, 100%, 55%);
 }
 .mobile .slideshow button:disabled {
+  pointer-events: none;
   opacity: 0.5;
 }
 .mobile .slideshow .actions {
@@ -197,16 +202,78 @@ header img {
   text-decoration: line-through;
 }
 
+.mobile .product-info {
+  margin-top: 26px;
+  margin-bottom: 26px;
+}
+.mobile .product-info .brand {
+  margin-bottom: 14px;
+}
 .mobile .product-info .name {
   font-size: 30px;
+  margin-bottom: 0.5em;
+}
+.mobile .product-info .summary {
+  margin-bottom: 1.8em;
 }
 .mobile .product-info .price {
   display: flex;
   align-items: center;
   gap: 20px;
+  max-width: 375px;
+  margin-inline: auto;
 }
 .mobile .product-info .price .previous {
   margin-left: auto;
+}
+
+.add-to-cart .quantity-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgb(87, 231, 250);
+  background-color: hsl(223, 64%, 98%);
+  border-radius: 8px;
+}
+.add-to-cart .quantity-input button {
+  border: none;
+  width: 60px;
+  height: 54px;
+  background-color: transparent;
+}
+.add-to-cart .quantity-input .quantity {
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  text-align: center;
+  height: 54px;
+  background-color: hsl(223, 64%, 98%);
+  color: hsl(220, 13%, 13%);
+}
+.add-to-cart .cart-push {
+  border: none;
+  height: 54px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: 16px;
+}
+
+.mobile .add-to-cart {
+  width: 100%;
+  padding-inline: 20px;
+  max-width: 400px;
+  margin-inline: auto;
+  margin-bottom: 30px;
+}
+.mobile .add-to-cart .quantity-input {
+  margin-bottom: 16px;
+}
+.mobile .add-to-cart .cart-push {
+  width: 100%;
 }
 
 * {
@@ -228,6 +295,22 @@ header img {
 .ecommerce-product-page a {
   color: inherit;
   text-decoration: none;
+}
+.ecommerce-product-page button {
+  cursor: pointer;
+}
+.ecommerce-product-page button.primary {
+  background-color: hsl(26, 100%, 55%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+.ecommerce-product-page input::-webkit-outer-spin-button,
+.ecommerce-product-page input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ecommerce-product-page input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /*# sourceMappingURL=index.css.map */

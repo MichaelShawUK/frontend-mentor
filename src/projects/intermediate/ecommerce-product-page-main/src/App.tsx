@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import MobileMenu from "./components/MobileMenu";
 import Slideshow from "./components/Slideshow";
 import ProductInfo from "./components/ProductInfo";
+import AddToCart from "./components/AddToCart";
 
 import mobileDesign from "../design/mobile-design.jpg";
 import desktopDesign from "../design/desktop-design.jpg";
@@ -29,6 +30,7 @@ function EcommerceProductPage() {
         <main>
           <Slideshow />
           <ProductInfo />
+          <AddToCart />
         </main>
       </div>
       <img
