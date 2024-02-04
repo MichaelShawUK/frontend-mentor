@@ -162,6 +162,53 @@ header img {
   height: 100%;
 }
 
+.product-info {
+  padding-inline: 20px;
+}
+.product-info .brand {
+  text-transform: uppercase;
+  color: hsl(26, 100%, 55%);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.product-info .name {
+  color: hsl(220, 13%, 13%);
+}
+.product-info .summary {
+  line-height: 1.6;
+}
+.product-info .price .current {
+  color: hsl(220, 13%, 13%);
+  font-weight: 700;
+  font-size: 30px;
+}
+.product-info .price .discount {
+  font-weight: 700;
+  color: hsl(26, 100%, 55%);
+  background-color: hsl(25, 100%, 94%);
+  border-radius: 4px;
+  padding-inline: 7px;
+  padding-block: 2px;
+  display: inline-block;
+}
+.product-info .price .previous {
+  color: hsl(220, 14%, 75%);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.mobile .product-info .name {
+  font-size: 30px;
+}
+.mobile .product-info .price {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.mobile .product-info .price .previous {
+  margin-left: auto;
+}
+
 * {
   margin: 0;
   padding: 0;

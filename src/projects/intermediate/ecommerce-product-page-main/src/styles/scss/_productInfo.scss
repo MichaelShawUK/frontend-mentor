@@ -1,0 +1,61 @@
+@use "colors" as c;
+@use "sizes";
+
+.product-info {
+  padding-inline: sizes.$inline-spacing;
+
+  .brand {
+    text-transform: uppercase;
+    color: c.$orange;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .name {
+    color: c.$very-dark-blue;
+  }
+
+  .summary {
+    line-height: 1.6;
+  }
+
+  .price {
+    .current {
+      color: c.$very-dark-blue;
+      font-weight: 700;
+      font-size: 30px;
+    }
+
+    .discount {
+      font-weight: 700;
+      color: c.$orange;
+      background-color: c.$pale-orange;
+      border-radius: 4px;
+      padding-inline: 7px;
+      padding-block: 2px;
+      display: inline-block;
+    }
+
+    .previous {
+      color: c.$grayish-blue;
+      font-weight: 700;
+      text-decoration: line-through;
+    }
+  }
+}
+
+.mobile .product-info {
+  .name {
+    font-size: 30px;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .previous {
+      margin-left: auto;
+    }
+  }
+}
