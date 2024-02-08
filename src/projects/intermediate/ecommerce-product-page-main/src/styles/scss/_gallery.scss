@@ -1,0 +1,51 @@
+@use "colors" as c;
+@use "sizes";
+
+.gallery {
+  padding-inline: sizes.$inline-spacing;
+
+  img {
+    display: block;
+    // border-radius: 5%;
+  }
+
+  button {
+    border: none;
+    background: none;
+    display: block;
+  }
+
+  .display-image {
+    width: 100%;
+    margin-bottom: 5%;
+    border-radius: 3.5%;
+  }
+
+  li,
+  li img {
+    border-radius: 10%;
+  }
+
+  .image-picker {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  li {
+    cursor: pointer;
+    max-width: 20%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .selected {
+    outline: 2px solid c.$orange;
+
+    img {
+      filter: opacity(0.4);
+    }
+  }
+}

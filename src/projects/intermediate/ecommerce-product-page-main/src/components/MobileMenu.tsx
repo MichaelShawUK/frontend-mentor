@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-
+import useModal from "../hooks/useModal";
 import close from "../assets/images/icon-close.svg";
 
 import Nav from "./Nav";
@@ -10,26 +9,13 @@ interface Props {
 }
 
 function MobileMenu({ show, onClose }: Props) {
-  const menuRef = useRef<HTMLDialogElement>(null);
-
-  useEffect(() => {
-    const menu = menuRef.current;
-
-    if (menu && show) menu.showModal();
-    if (menu && !show) menu.close();
-  }, [show]);
-
-  useEffect(() => {
-    const menu = menuRef.current;
-
-    if (menu) menu.addEventListener("close", onClose);
-
-    return () => menu?.removeEventListener("close", onClose);
-  }, [onClose]);
+  const menuRef = useModal(show, onClose);
 
   return (
     <dialog className="mobile-menu" ref={menuRef}>
-      <img src={close} onClick={onClose} />
+      <button onClick={onClose}>
+        <img src={close} />
+      </button>
       <Nav />
     </dialog>
   );

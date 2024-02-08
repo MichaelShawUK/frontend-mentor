@@ -2,6 +2,8 @@
 @use "sizes";
 
 .add-to-cart {
+  padding-inline: sizes.$inline-spacing;
+
   .quantity-input {
     display: flex;
     align-items: center;
@@ -42,9 +44,18 @@
   }
 }
 
+.desktop .add-to-cart {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+
+  input {
+    width: 30px;
+  }
+}
+
 .mobile .add-to-cart {
   width: 100%;
-  padding-inline: sizes.$inline-spacing;
   max-width: 400px;
   margin-inline: auto;
   margin-bottom: 30px;

@@ -17,7 +17,7 @@ function AddToCart() {
   function incrementQuantity() {
     setQuantity((amount) => {
       let quantity = +amount;
-      return (++quantity).toString();
+      return Math.min(99, ++quantity).toString();
     });
   }
 
@@ -28,6 +28,7 @@ function AddToCart() {
   function badInputHandler(event: React.FocusEvent<HTMLInputElement>) {
     if (event.target.value === "") setQuantity("0");
     if (+event.target.value < 0) setQuantity("0");
+    if (+event.target.value > 99) setQuantity("99");
   }
 
   return (

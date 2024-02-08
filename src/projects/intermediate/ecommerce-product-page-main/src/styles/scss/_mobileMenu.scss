@@ -13,9 +13,15 @@ $num-links: 5;
 
   animation: slideIn ease-in 0.3s;
 
-  img {
+  button {
+    border: none;
+    background: none;
     margin-bottom: 40px;
+  }
+
+  img {
     animation: fadeIn ease-in 0.8s both;
+    display: block;
   }
 
   li {

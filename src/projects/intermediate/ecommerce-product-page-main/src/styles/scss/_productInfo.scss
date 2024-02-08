@@ -44,6 +44,30 @@
   }
 }
 
+.desktop .product-info {
+  .brand {
+    margin-bottom: 14px;
+  }
+
+  .name {
+    font-size: clamp(24px, 3.1vw, 44px);
+    margin-bottom: 0.5em;
+  }
+
+  .summary {
+    margin-bottom: 1.8em;
+  }
+
+  .price {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 8px;
+    margin-bottom: 2em;
+  }
+}
+
 .mobile .product-info {
   margin-top: 26px;
   margin-bottom: 26px;
@@ -67,6 +91,16 @@
     gap: 20px;
     max-width: 375px;
     margin-inline: auto;
+
+    .previous {
+      margin-left: auto;
+    }
+  }
+}
+
+@media (width <= 1050px) {
+  .desktop .product-info .price {
+    grid-template-columns: max-content max-content 1fr;
 
     .previous {
       margin-left: auto;

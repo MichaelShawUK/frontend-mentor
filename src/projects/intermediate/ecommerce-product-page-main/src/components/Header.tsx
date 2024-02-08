@@ -17,8 +17,8 @@ function Header({ onOpen }: Props) {
   return (
     <header>
       {device === "mobile" && (
-        <button>
-          <img src={menu} className="menu" onClick={onOpen} />
+        <button onClick={onOpen}>
+          <img src={menu} className="menu" />
         </button>
       )}
       <img src={logo} className="logo" />

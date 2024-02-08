@@ -19,7 +19,7 @@ header {
 .desktop header {
   grid-template-columns: 145px 1fr 22px 50px;
   gap: 50px;
-  padding-inline: sizes.$inline-spacing;
+  margin-inline: sizes.$inline-spacing;
   padding-block: 30px 34px;
   border-bottom: 1px solid #e0e0e6;
 
