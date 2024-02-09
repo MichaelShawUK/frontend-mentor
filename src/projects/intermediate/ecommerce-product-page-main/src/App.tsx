@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Provider } from "react-redux";
 
 import "./styles/css/index.css";
 import useDeviceMode from "./hooks/useDeviceMode";
 import DeviceContext from "./context/DeviceContext";
+import store from "./app/store";
 
 import Header from "./components/Header";
 import MobileMenu from "./components/MobileMenu";
@@ -12,8 +14,13 @@ import AddToCart from "./components/AddToCart";
 import Gallery from "./components/Gallery";
 import Lightbox from "./components/Lightbox";
 
-import mobileDesign from "../design/mobile-design.jpg";
-import desktopDesign from "../design/desktop-design.jpg";
+function StoreWrapper() {
+  return (
+    <Provider store={store}>
+      <EcommerceProductPage />
+    </Provider>
+  );
+}
 
 function EcommerceProductPage() {
   const device = useDeviceMode(768);
@@ -58,12 +65,8 @@ function EcommerceProductPage() {
         {device === "mobile" && mobileMarkup}
         {device === "desktop" && desktopMarkup}
       </div>
-      {/* <img
-        src={device === "mobile" ? mobileDesign : desktopDesign}
-        style={{ display: "block" }}
-      /> */}
     </DeviceContext.Provider>
   );
 }
 
-export default EcommerceProductPage;
+export default StoreWrapper;

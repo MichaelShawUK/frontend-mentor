@@ -3,22 +3,16 @@
 $num-images: 4;
 
 @mixin animate-slideshow() {
-  @for $i from 2 through $num-images {
+  @for $i from 1 through $num-images - 1 {
     &[data-image="#{$i}"] {
       img {
-        transform: translateX(calc(100% - ($i * 100%)));
+        transform: translateX(calc($i * -100%));
       }
     }
   }
 }
 
 .slideshow {
-  img {
-    display: block;
-  }
-}
-
-.mobile .slideshow {
   position: relative;
 
   .carousel {
@@ -33,6 +27,7 @@ $num-images: 4;
   img {
     width: 100%;
     transition: transform ease-in-out 0.4s;
+    display: block;
   }
 
   button {
@@ -67,5 +62,35 @@ $num-images: 4;
     width: 100%;
     padding-inline: 14px;
     height: 100%;
+  }
+}
+
+.desktop .slideshow {
+  max-width: 540px;
+  border-radius: 3%;
+  overflow: hidden;
+  height: min-content;
+  margin-inline: 25px;
+
+  .actions {
+    padding-inline: 0;
+    position: fixed;
+    width: 540px;
+    // height: max-content;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .previous {
+    position: relative;
+    left: -25px;
+  }
+
+  .next {
+    position: relative;
+    right: -25px;
   }
 }

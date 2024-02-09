@@ -1,7 +1,7 @@
 .desktop main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 10px;
+  padding-bottom: 80px;
   gap: clamp(1px, calc(0.25 * 100vw - 192px), 70px);
   max-width: 1050px;
   margin-inline: auto;

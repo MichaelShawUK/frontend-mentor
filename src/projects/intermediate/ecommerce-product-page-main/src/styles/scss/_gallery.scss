@@ -6,7 +6,6 @@
 
   img {
     display: block;
-    // border-radius: 5%;
   }
 
   button {
@@ -19,6 +18,7 @@
     width: 100%;
     margin-bottom: 5%;
     border-radius: 3.5%;
+    cursor: pointer;
   }
 
   li,
@@ -35,6 +35,10 @@
   li {
     cursor: pointer;
     max-width: 20%;
+
+    &:not(.selected):hover {
+      opacity: 0.7;
+    }
 
     img {
       width: 100%;

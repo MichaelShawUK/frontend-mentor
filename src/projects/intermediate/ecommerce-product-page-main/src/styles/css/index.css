@@ -117,10 +117,42 @@ header img {
     opacity: 1;
   }
 }
+.lightbox {
+  max-width: unset;
+  max-height: unset;
+  height: 100vh;
+  width: 100%;
+  border: none;
+  background: transparent;
+}
+.lightbox .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: max-content;
+  margin-inline: auto;
+}
+.lightbox .close-btn {
+  z-index: 1;
+  border: none;
+  background: transparent;
+  margin-left: auto;
+  margin-right: 25px;
+  margin-bottom: 14px;
+}
+.lightbox .close-btn:hover path {
+  fill: hsl(26, 100%, 55%);
+}
+.lightbox::backdrop {
+  background: hsla(0, 0%, 0%, 0.75);
+}
+
 .desktop main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 10px;
+  padding-bottom: 80px;
   gap: clamp(1px, 25vw - 192px, 70px);
   max-width: 1050px;
   margin-inline: auto;
@@ -132,33 +164,30 @@ header img {
   justify-content: center;
 }
 
-.slideshow img {
-  display: block;
-}
-
-.mobile .slideshow {
+.slideshow {
   position: relative;
 }
-.mobile .slideshow .carousel {
+.slideshow .carousel {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 100%);
   overflow: hidden;
 }
-.mobile .slideshow .carousel[data-image="2"] img {
+.slideshow .carousel[data-image="1"] img {
   transform: translateX(-100%);
 }
-.mobile .slideshow .carousel[data-image="3"] img {
+.slideshow .carousel[data-image="2"] img {
   transform: translateX(-200%);
 }
-.mobile .slideshow .carousel[data-image="4"] img {
+.slideshow .carousel[data-image="3"] img {
   transform: translateX(-300%);
 }
-.mobile .slideshow img {
+.slideshow img {
   width: 100%;
   transition: transform ease-in-out 0.4s;
+  display: block;
 }
-.mobile .slideshow button {
+.slideshow button {
   border: none;
   background-color: hsl(0, 0%, 100%);
   display: flex;
@@ -169,14 +198,14 @@ header img {
   border-radius: 50%;
   cursor: pointer;
 }
-.mobile .slideshow button:hover path {
+.slideshow button:hover path {
   stroke: hsl(26, 100%, 55%);
 }
-.mobile .slideshow button:disabled {
+.slideshow button:disabled {
   pointer-events: none;
   opacity: 0.5;
 }
-.mobile .slideshow .actions {
+.slideshow .actions {
   position: absolute;
   top: 0;
   display: flex;
@@ -185,6 +214,31 @@ header img {
   width: 100%;
   padding-inline: 14px;
   height: 100%;
+}
+
+.desktop .slideshow {
+  max-width: 540px;
+  border-radius: 3%;
+  overflow: hidden;
+  height: min-content;
+  margin-inline: 25px;
+}
+.desktop .slideshow .actions {
+  padding-inline: 0;
+  position: fixed;
+  width: 540px;
+}
+.desktop .slideshow button {
+  width: 50px;
+  height: 50px;
+}
+.desktop .slideshow .previous {
+  position: relative;
+  left: -25px;
+}
+.desktop .slideshow .next {
+  position: relative;
+  right: -25px;
 }
 
 .gallery {
@@ -202,6 +256,7 @@ header img {
   width: 100%;
   margin-bottom: 5%;
   border-radius: 3.5%;
+  cursor: pointer;
 }
 .gallery li,
 .gallery li img {
@@ -215,6 +270,9 @@ header img {
 .gallery li {
   cursor: pointer;
   max-width: 20%;
+}
+.gallery li:not(.selected):hover {
+  opacity: 0.7;
 }
 .gallery li img {
   width: 100%;
@@ -340,6 +398,10 @@ header img {
   background-color: hsl(223, 64%, 98%);
   color: hsl(220, 13%, 13%);
 }
+.add-to-cart .increment:hover,
+.add-to-cart .decrement:hover {
+  opacity: 0.65;
+}
 .add-to-cart .cart-push {
   border: none;
   height: 54px;
@@ -349,6 +411,9 @@ header img {
   justify-content: center;
   gap: 14px;
   font-size: 16px;
+}
+.add-to-cart .cart-push:hover {
+  opacity: 0.7;
 }
 
 .desktop .add-to-cart {

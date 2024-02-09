@@ -1,0 +1,39 @@
+@use "colors" as c;
+
+.lightbox {
+  max-width: unset;
+  max-height: unset;
+  height: 100vh;
+  width: 100%;
+  border: none;
+  background: transparent;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  .close-btn {
+    z-index: 1;
+    border: none;
+    background: transparent;
+    margin-left: auto;
+    margin-right: 25px;
+    margin-bottom: 14px;
+
+    &:hover {
+      path {
+        fill: c.$orange;
+      }
+    }
+  }
+
+  &::backdrop {
+    background: c.$lightbox-bg;
+  }
+}

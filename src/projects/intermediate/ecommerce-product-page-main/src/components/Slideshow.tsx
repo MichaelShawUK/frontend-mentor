@@ -1,5 +1,12 @@
 import { useState } from "react";
 
+import { useAppSelector, useAppDispatch } from "../hooks/useStore";
+import {
+  selectCurrentImage,
+  nextImage,
+  previousImage,
+} from "../app/gallerySlice";
+
 import PreviousArrow from "../svg/PreviousArrow";
 import NextArrow from "../svg/NextArrow";
 
@@ -9,14 +16,19 @@ import img3 from "../assets/images/image-product-3.jpg";
 import img4 from "../assets/images/image-product-4.jpg";
 
 function Slideshow() {
-  const [currentImage, setCurrentImage] = useState(1);
+  // const [currentImage, setCurrentImage] = useState(1);
+  const dispatch = useAppDispatch();
+
+  const currentImage = useAppSelector(selectCurrentImage);
 
   const images = [img1, img2, img3, img4];
   const numImages = images.length;
 
-  const prevImage = () => setCurrentImage((image) => Math.max(1, --image));
-  const nextImage = () =>
-    setCurrentImage((image) => Math.min(++image, numImages));
+  // const prevImage = () => setCurrentImage((image) => Math.max(1, --image));
+  // const nextImage = () =>
+  //   setCurrentImage((image) => Math.min(++image, numImages));
+  const goToPrevImage = () => dispatch(previousImage());
+  const goToNextImage = () => dispatch(nextImage());
 
   return (
     <section className="slideshow">
@@ -28,15 +40,15 @@ function Slideshow() {
       <div className="actions">
         <button
           className="previous"
-          onClick={prevImage}
-          disabled={currentImage === 1}
+          onClick={goToPrevImage}
+          disabled={currentImage === 0}
         >
           <PreviousArrow height="13" />
         </button>
         <button
           className="next"
-          onClick={nextImage}
-          disabled={currentImage === numImages}
+          onClick={goToNextImage}
+          disabled={currentImage === numImages - 1}
         >
           <NextArrow height="13" />
         </button>
