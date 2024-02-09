@@ -1,5 +1,6 @@
 import useModal from "../hooks/useModal";
 import Slideshow from "./Slideshow";
+import ImagePicker from "./ImagePicker";
 
 import CloseIcon from "../svg/CloseIcon";
 
@@ -18,6 +19,7 @@ function Lightbox({ show, onClose }: Props) {
           <CloseIcon color="#fff" width="20" height="20" />
         </button>
         <Slideshow />
+        <ImagePicker />
       </div>
     </dialog>
   );

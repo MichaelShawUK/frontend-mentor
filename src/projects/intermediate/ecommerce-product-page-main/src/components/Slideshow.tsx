@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { useAppSelector, useAppDispatch } from "../hooks/useStore";
 import {
   selectCurrentImage,
@@ -16,7 +14,6 @@ import img3 from "../assets/images/image-product-3.jpg";
 import img4 from "../assets/images/image-product-4.jpg";
 
 function Slideshow() {
-  // const [currentImage, setCurrentImage] = useState(1);
   const dispatch = useAppDispatch();
 
   const currentImage = useAppSelector(selectCurrentImage);
@@ -24,9 +21,6 @@ function Slideshow() {
   const images = [img1, img2, img3, img4];
   const numImages = images.length;
 
-  // const prevImage = () => setCurrentImage((image) => Math.max(1, --image));
-  // const nextImage = () =>
-  //   setCurrentImage((image) => Math.min(++image, numImages));
   const goToPrevImage = () => dispatch(previousImage());
   const goToNextImage = () => dispatch(nextImage());
 

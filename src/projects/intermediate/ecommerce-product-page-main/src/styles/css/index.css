@@ -141,12 +141,51 @@ header img {
   margin-left: auto;
   margin-right: 25px;
   margin-bottom: 14px;
+  margin-top: 50px;
 }
 .lightbox .close-btn:hover path {
   fill: hsl(26, 100%, 55%);
 }
 .lightbox::backdrop {
   background: hsla(0, 0%, 0%, 0.75);
+}
+
+.lightbox .image-picker {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 2;
+  max-width: 450px;
+  margin-top: 30px;
+}
+.lightbox .image-picker img {
+  display: block;
+}
+.lightbox .image-picker li,
+.lightbox .image-picker li img {
+  border-radius: 10%;
+}
+.lightbox .image-picker button {
+  border: none;
+  background: none;
+  display: block;
+}
+.lightbox .image-picker li {
+  cursor: pointer;
+  max-width: 20%;
+  background-color: #fff;
+}
+.lightbox .image-picker li:not(.selected):hover img {
+  opacity: 0.7;
+}
+.lightbox .image-picker li img {
+  width: 100%;
+}
+.lightbox .image-picker .selected {
+  outline: 2px solid hsl(26, 100%, 55%);
+}
+.lightbox .image-picker .selected img {
+  filter: opacity(0.4);
 }
 
 .desktop main {
