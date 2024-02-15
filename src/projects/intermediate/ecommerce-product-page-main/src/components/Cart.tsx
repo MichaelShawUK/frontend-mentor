@@ -1,10 +1,11 @@
 import thumbnail from "../assets/images/image-product-1-thumbnail.jpg";
 import deleteIcon from "../assets/images/icon-delete.svg";
 
-import { useAppSelector } from "../hooks/useStore";
-import { selectCartQuantity } from "../app/cartSlice";
+import { useAppSelector, useAppDispatch } from "../hooks/useStore";
+import { selectCartQuantity, removeFromCart } from "../app/cartSlice";
 
 function Cart() {
+  const dispatch = useAppDispatch();
   const quantity = useAppSelector(selectCartQuantity);
 
   return (
@@ -18,7 +19,9 @@ function Cart() {
             Fall Limited Edition Sneakers $125.00 x {quantity}{" "}
             <span className="total">${(125 * quantity).toFixed(2)}</span>
           </p>
-          <img src={deleteIcon} className="delete-icon" />
+          <button onClick={() => dispatch(removeFromCart())}>
+            <img src={deleteIcon} className="delete-icon" />
+          </button>
           <button className="primary">Checkout</button>
         </>
       )}

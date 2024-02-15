@@ -12,6 +12,18 @@ header button {
 header img {
   display: block;
 }
+header .cart-btn {
+  position: relative;
+}
+header .cart-btn span {
+  position: absolute;
+  background-color: hsl(26, 100%, 55%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  padding: 0px 8px 1px;
+  border-radius: 10px;
+  top: -10px;
+}
 
 .desktop header {
   grid-template-columns: 145px 1fr 22px 50px;

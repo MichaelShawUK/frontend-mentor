@@ -14,6 +14,20 @@ header {
   img {
     display: block;
   }
+
+  .cart-btn {
+    position: relative;
+
+    span {
+      position: absolute;
+      background-color: c.$orange;
+      color: c.$white;
+      font-weight: 700;
+      padding: 0px 8px 1px;
+      border-radius: 10px;
+      top: -10px;
+    }
+  }
 }
 
 .desktop header {

@@ -1,11 +1,22 @@
 import { useState } from "react";
 
+import { useAppDispatch } from "../hooks/useStore";
+import { addQuantityToCart } from "../app/cartSlice";
+
 import CartIcon from "../svg/CartIcon";
 import MinusIcon from "../svg/MinusIcon";
 import PlusIcon from "../svg/PlusIcon";
 
 function AddToCart() {
+  const dispatch = useAppDispatch();
+
   const [quantity, setQuantity] = useState("1");
+
+  function submitHandler(event: React.FormEvent) {
+    event.preventDefault();
+    console.log(quantity);
+    dispatch(addQuantityToCart(+quantity));
+  }
 
   function decrementQuantity() {
     setQuantity((amount) => {
@@ -32,7 +43,7 @@ function AddToCart() {
   }
 
   return (
-    <form className="add-to-cart">
+    <form className="add-to-cart" onSubmit={submitHandler}>
       <div className="quantity-input">
         <button type="button" className="decrement" onClick={decrementQuantity}>
           <MinusIcon width="13" />
