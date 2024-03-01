@@ -13,7 +13,6 @@ import ProductInfo from "./components/ProductInfo";
 import AddToCart from "./components/AddToCart";
 import Gallery from "./components/Gallery";
 import Lightbox from "./components/Lightbox";
-import Cart from "./components/Cart";
 
 function StoreWrapper() {
   return (
@@ -65,7 +64,6 @@ function EcommerceProductPage() {
       <div className={`ecommerce-product-page ${device}`}>
         {device === "mobile" && mobileMarkup}
         {device === "desktop" && desktopMarkup}
-        <Cart />
       </div>
     </DeviceContext.Provider>
   );

@@ -11,6 +11,7 @@
 @use "gallery";
 @use "productInfo";
 @use "addToCart";
+@use "cart";
 
 @mixin google-font($family, $weight: 400) {
   @import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}");
